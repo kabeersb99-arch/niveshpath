@@ -73,3 +73,7 @@ footer{margin:22px 0 0;text-align:center;line-height:1.6}
 .logo{width:64px;height:64px;border-radius:16px;background:var(--acc2);color:var(--acc);display:grid;place-items:center;font-size:2rem;font-weight:700;margin:0 auto 6px}
 @media (min-width:700px){#nav button{font-size:.88rem}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.btn.sel{border-color:var(--acc);color:var(--acc)}
+#nav button{padding-left:0;padding-right:0}
+@media (max-width:420px){#nav button{font-size:.66rem}}

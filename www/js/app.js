@@ -1,7 +1,8 @@
 import * as F from './finance.js';
 import { TIERS, INSTRUMENTS as I1, LESSONS as L1, GLOSSARY as G1, NOT_FOR_YOU, REVIEWED } from './content.js';
 import { INSTRUMENTS2, LESSONS2, GLOSSARY2 } from './content2.js';
-const INSTRUMENTS = I1.concat(INSTRUMENTS2), LESSONS = L1.concat(LESSONS2).sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true })), GLOSSARY = { ...G1, ...GLOSSARY2 };
+import { LESSONS3, GLOSSARY3 } from './content3.js';
+const INSTRUMENTS = I1.concat(INSTRUMENTS2), LESSONS = L1.concat(LESSONS2, LESSONS3).sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true })), GLOSSARY = { ...G1, ...GLOSSARY2, ...GLOSSARY3 };
 
 /* ---------- data ---------- */
 const B = window.NP_BUNDLE || { facts: { facts: {}, assumptions: { returns: {}, stress: {}, taxOnGain: {} } }, live: { feeds: {}, updates: [] } };
@@ -81,9 +82,10 @@ const goldPerGram = () => (MET().gold999 || 0) / 10;
 const EXTRA_TYPES = [
   { id: 'indexfund', name: 'Nifty 50 / Sensex index fund', bucket: 'growth', drop: 50 },
   { id: 'debtmf', name: 'Liquid / debt mutual fund', bucket: 'safety', drop: 2 },
+  { id: 'mfother', name: 'Other mutual fund (equity or hybrid)', bucket: 'growth', drop: 50 },
 ];
 const KIND = { ppf: ['ppf', 1], nsc: ['fixed', 1], kvp: ['fixed', 1], potd: ['fixed', 4], pord: ['fixed', 4], pomis: ['fixed', 0], scss: ['fixed', 0], ssy: ['fixed', 1], posb: ['fixed', 1], frsb: ['fixed', 0], tbill: ['fixed', 0], bankfd: ['fixed', 4], bankrd: ['fixed', 4], sfbfd: ['fixed', 4] };
-const SECURITIES = new Set(['frsb', 'tbill', 'gsec', 'sgb', 'goldetf', 'goldfof', 'silveretf', 'egr', 'indexfund', 'debtmf', 'liquidmf', 'giltmf', 'corpbond', 'taxfree', 'niftyfund', 'niftyetf', 'reit', 'ipo', 'smeipo', 'stocks']);
+const SECURITIES = new Set(['frsb', 'tbill', 'gsec', 'sgb', 'goldetf', 'goldfof', 'silveretf', 'egr', 'indexfund', 'debtmf', 'mfother', 'liquidmf', 'giltmf', 'corpbond', 'taxfree', 'niftyfund', 'niftyetf', 'reit', 'ipo', 'smeipo', 'stocks']);
 const BANK = new Set(['bankfd', 'bankrd', 'sfbfd']);
 const BUCKETS = { safety: 'Safety (FD, RD, TD, liquid)', core: 'Core safe growth (PPF, NSC, RBI bonds)', gold: 'Inflation hedge (gold, silver)', growth: 'Learning growth (index fund)' };
 const typeOf = (id) => INSTRUMENTS.find((i) => i.id === id) || EXTRA_TYPES.find((i) => i.id === id) || { id, name: id, bucket: 'safety' };
@@ -158,6 +160,8 @@ function tokens() {
     px10: F.bondPrice(100, 7, +fact('gsec10').value || 7, 10).toFixed(2), pay10: Math.round(F.bondPrice(100, 7, +fact('gsec10').value || 7, 10) * 100).toLocaleString('en-IN'),
     maxDrop: p.maxDrop, eqCap: F.equityCap(p.maxDrop, (A().stress || {}).equity || 50).toFixed(0), eqAmt: Math.round(1000 * F.equityCap(p.maxDrop, (A().stress || {}).equity || 50)).toLocaleString('en-IN'),
     ipoLot: fact('ipo.rules').value, ipoRetail: 'Allotment in an oversubscribed retail portion is by lottery.', ipoSme: fact('ipo.sme').value,
+    dd2008: fact('dd.2008').value, dd2020: fact('dd.2020').value, dd2026: fact('dd.2026').value, cagr10: fact('nifty.cagr10').value, eq2008: (F.equityCap(p.maxDrop, (A().stress || {}).equity || 50) * 0.6).toFixed(0),
+    slabs: fact('tax.slabsFull').value, taxEq: fact('tax.equity').value, taxDebt: fact('tax.debtMf').value, taxGold: fact('tax.gold').value, upsPay: fact('ups.payout').value,
     basic: p.basicPay.toLocaleString('en-IN'), six: sixMonths().toLocaleString('en-IN'), two: (2 * p.basicPay).toLocaleString('en-IN'), ups: fact('ups.option').value,
   };
 }
@@ -301,12 +305,12 @@ function vLearn() {
   if (sub && sub.calc) return vCalc();
   if (sub && sub.gloss) return `<button class="back" data-back="1">‹ Learn</button><h1>Glossary</h1>${card('', `<dl class="gl">${Object.keys(GLOSSARY).sort().map((k) => `<dt>${esc(k)}</dt><dd>${esc(GLOSSARY[k])}</dd>`).join('')}</dl>`)}`;
   const done = LESSONS.filter((l) => state.progress[l.id]).length;
-  let h = `<h1>Academy</h1><p class="muted">${done} of ${LESSONS.length} lessons done · Phases 1 and 2 cover safe products, bonds, index funds and IPOs. The rest arrives in Phase 3.</p>
+  let h = `<h1>Academy</h1><p class="muted">${done} of ${LESSONS.length} lessons done · All eleven levels, L0 to L10.</p>
   <div class="btns"><button class="btn ghost" data-sub="calc">Calculators</button><button class="btn ghost" data-sub="gloss">Glossary</button>
   <label class="tog"><input type="checkbox" id="eli" ${state.settings.eli ? 'checked' : ''}> Explain like I'm new</label></div>`;
   LEVELS.forEach((name, lv) => {
     const ls2 = LESSONS.filter((l) => l.level === lv);
-    h += `<section class="card"><h2>${esc(name)}</h2>${ls2.length ? `<div class="list">${ls2.map((l) => { const pr = state.progress[l.id]; const due = pr && new Date(pr.next) <= today(); return `<button class="item" data-lesson="${l.id}"><span><span class="muted small">${l.id}</span> <b>${esc(l.title)}</b></span><span class="chip ${pr ? (due ? 'fit-warn' : 'fit-ok') : 'fit-mut'}">${pr ? (due ? 'revise' : pr.score + '/5') : 'new'}</span></button>`; }).join('')}</div>` : '<p class="muted small">Coming in a later phase.</p>'}</section>`;
+    h += `<section class="card"><h2>${esc(name)}</h2>${ls2.length ? `<div class="list">${ls2.map((l) => { const pr = state.progress[l.id]; const due = pr && new Date(pr.next) <= today(); return `<button class="item" data-lesson="${l.id}"><span><span class="muted small">${l.id}</span> <b>${esc(l.title)}</b></span><span class="chip ${pr ? (due ? 'fit-warn' : 'fit-ok') : 'fit-mut'}">${pr ? (due ? 'revise' : pr.score + '/5') : 'new'}</span></button>`; }).join('')}</div>` : ''}</section>`;
   });
   return h;
 }
@@ -316,7 +320,7 @@ function vLesson(l) {
   const links = LESSONS.filter((x) => x.id !== l.id && Math.abs(x.level - l.level) <= 1).slice(0, 4);
   return `<button class="back" data-back="1">‹ Academy</button><div class="muted small">${l.id} · about 3 minutes</div><h1>${esc(l.title)}</h1>
   ${card(state.settings.eli ? 'In plain words' : '', (state.settings.eli ? `<p class="simple">${fill(l.simple)}</p>` : '') + `<div class="body">${l.body.map((p) => `<p>${fill(p)}</p>`).join('')}</div>`)}
-  ${card('Worked example with your numbers', `<p>${fill(l.example)}</p><div class="btns">${inst ? `<button class="btn ghost" data-inst="${inst.id}">See it live: ${esc(inst.name)}</button>` : ''}${l.tool ? `<button class="btn ghost" data-tool="${l.tool}">Open the ${l.tool === 'bonds' ? 'bond tools' : l.tool === 'ipo' ? 'IPO centre' : 'fund list'}</button>` : ''}</div>`)}
+  ${card('Worked example with your numbers', `<p>${fill(l.example)}</p><div class="btns">${inst ? `<button class="btn ghost" data-inst="${inst.id}">See it live: ${esc(inst.name)}</button>` : ''}${l.tool ? `<button class="btn ghost" data-tool="${l.tool}">Open the ${({ bonds: 'bond tools', ipo: 'IPO centre', funds: 'fund list', tax: 'Tax view', pension: 'UPS vs NPS calculator', plan: 'plan' })[l.tool]}</button>` : ''}</div>`)}
   ${card('Quiz', l.quiz.map((q, qi) => { const a = quizAns[qi]; return `<div class="q"><p><b>${qi + 1}.</b> ${fill(q.q)}</p>${q.o.map((o, oi) => `<button class="opt ${a != null ? (oi === q.a ? 'right' : oi === a ? 'wrong' : '') : ''}" data-q="${qi}" data-o="${oi}" ${a != null ? 'disabled' : ''}>${fill(o)}</button>`).join('')}${a != null ? `<p class="why2 ${a === q.a ? 'up' : 'down'}">${a === q.a ? 'Correct.' : 'Not quite.'} <span class="muted">${fill(q.why)}</span></p>` : ''}</div>`; }).join('') + (Object.keys(quizAns).length === l.quiz.length ? `<div class="alert ok">Score ${l.quiz.filter((q, qi) => quizAns[qi] === q.a).length} of ${l.quiz.length}. Saved. Next revision: ${fmtD(state.progress[l.id]?.next)}.</div>` : ''))}
   ${card('Related topics', `<div class="list">${links.map((x) => `<button class="item" data-lesson="${x.id}"><span><span class="muted small">${x.id}</span> ${esc(x.title)}</span></button>`).join('')}</div>`)}
   <div class="src">Sources: ${l.sources.map((s) => `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`).join(' · ')} · last reviewed ${fmtD(REVIEWED)}</div>`;
@@ -369,6 +373,7 @@ function allocStats(w) {
   return { low: F.blended(w, ret('low')), mid: F.blended(w, ret('mid')), high: F.blended(w, ret('high')), post: F.blended(w, midPost), worst: F.worstCase(w, a.stress) };
 }
 function vPlan() {
+  if (sub && sub.pension) return vPension();
   const p = P(), a = A(), ck = state.plan.checks || {}, sel = ALLOCS[state.plan.alloc] || ALLOCS.ultra, r = SS().rates;
   const hasLoan = p.loanBal > 0 && p.emi > 0, loan = hasLoan ? F.loanPayoff(p.loanBal, p.loanRate, p.emi) : { months: 0, interest: 0 }, pre = hasLoan ? F.prepayEffect(p.loanBal, p.loanRate, p.emi, p.corpus) : { interestSaved: 0, monthsSaved: 0 };
   const fr = +fact('frsb').value || 0, fd = +fact('fd.sbi1y').value || 0;
@@ -378,7 +383,7 @@ function vPlan() {
     ${chk('emergency', 'Emergency fund', (p.emergency ? inr(p.emergency) + ' set aside. ' : 'Aim for 6 months of expenses. ') + 'Keep it apart from investments.')}
     ${chk('term', 'Term life insurance', 'Pure term cover, bought directly online. Never an insurance-plus-investment plan.' + (p.dependents ? ' You support ' + p.dependents + ' people.' : ''))}
     ${chk('health', 'Health cover check', 'Confirm CGHS coverage for you and dependents after joining. Decide if a top-up is needed.')}
-    ${chk('pension', 'Choose UPS or NPS', 'Form A1 within 30 days of joining' + (p.joinDate ? ', by about ' + fmtD(addDays(p.joinDate, 30)) : '') + '. Lesson L8-01.')}
+    ${chk('pension', 'Choose UPS or NPS <button class="btn ghost" data-tool="pension">Open calculator</button>', 'Form A1 within 30 days of joining' + (p.joinDate ? ', by about ' + fmtD(addDays(p.joinDate, 30)) : '') + '. Lessons L8-01, L8-02.')}
     ${chk('ppf', 'Open a PPF account', 'Minimum ₹500. Opening before 31 March starts the 15-year clock one year earlier.')}
     ${p.loanBal > 0 && p.emi > 0 ? `<h3>Loan: prepay or invest?</h3>
     <table class="tbl kvt">${row('Loan left', inr(p.loanBal) + ' at ' + pc(p.loanRate, 1) + ', EMI ' + inr(p.emi))}${row('At this EMI', loan.months + ' months, ' + inr(loan.interest) + ' more interest')}
@@ -417,7 +422,7 @@ function vPlan() {
     ${need > p.monthly ? `<tr><td colspan="2"><div class="alert warn">That is more than the ${inr(p.monthly)} a month you plan to invest. Lower the target, move the date, or count savings you already hold. Do not chase a higher return to close the gap.</div></td></tr>` : ''}` : ''}
     ${p.loanBal > 0 && p.emi > 0 ? `<tr><td><b>Loan freedom</b><div class="muted small">${inr(p.loanBal)} at ${pc(p.loanRate, 1)}</div></td><td class="r">${loan.months} months at the current EMI: about ${fmtD(addDays(today(), loan.months * 30.44))}</td></tr>` : ''}
     <tr><td><b>PPF matures</b><div class="muted small">if opened this financial year</div></td><td class="r">1 April ${(today().getMonth() >= 3 ? today().getFullYear() + 1 : today().getFullYear()) + 15}</td></tr></table>
-    <p class="muted small">House, children's education and retirement top-up goals arrive with the goal planner in Phase 3. Edit targets in Settings.</p>`);
+    <p class="muted small">Edit the short-term goal and loan in Settings.</p>`) + goalsCard();
   const pf = portfolio();
   if (pf.value > 0) {
     const map = { sovereign: 'core', deposit: 'safety', gold: 'gold', equity: 'growth' };
@@ -429,6 +434,9 @@ function vPlan() {
 /* ---------- PORTFOLIO ---------- */
 let formOpen = null;
 function vPortfolio() {
+  if (sub && sub.tax) return vTax();
+  if (sub && sub.comp) return vCompliance();
+  if (sub && sub.cas) return vCas();
   const pf = portfolio(), p = P(), lim = +fact('dicgc').value || 500000, six = sixMonths();
   const used = (pf.txTotal / six) * 100, mcls = used >= 100 ? 'bad' : used >= 80 ? 'warn' : used >= 50 ? 'amb' : 'ok';
   const gain = pf.value - pf.invested, dd = F.drawdown(state.peak, pf.value);
@@ -441,10 +449,7 @@ function vPortfolio() {
   h += card('Conduct-rule meter, ' + today().getFullYear(), `<div class="meter"><span class="m-${mcls}" style="width:${Math.min(100, used)}%"></span></div>
     <div class="kv"><span>Transactions in shares, securities and funds</span><b>${inr(pf.txTotal)} of ${inr(six)} (${pc(used, 0)})</b></div>
     ${used >= 100 ? '<div class="alert bad">Over six months\' basic pay. An intimation is due by 31 January.</div>' : used >= 80 ? '<div class="alert warn">80% of the reporting threshold used.</div>' : used >= 50 ? '<div class="alert amb">Half of the reporting threshold used.</div>' : ''}
-    ${pf.bigTx.length ? `<div class="alert warn">${pf.bigTx.length} single transaction(s) above two months' basic pay (${inr(2 * p.basicPay)}). These may need reporting within a month.</div>` : ''}
-    ${srcFact('conduct.annual')}
-    <p class="muted small">Counts buys and sells of funds, ETFs, bonds, T-Bills, G-Secs and SGBs (a cautious reading). PPF, NSC and deposits are not counted. <b>Always check for department-specific instructions with your office.</b></p>
-    <button class="btn ghost" data-act="draft">Draft intimation details</button><div id="draft"></div>`);
+    <div class="btns"><button class="btn ghost" data-psub="comp">Open Compliance</button><button class="btn ghost" data-psub="tax">Tax view</button><button class="btn ghost" data-psub="cas">Import CAS</button></div>`);
   const over = Object.keys(pf.byBank).filter((k) => pf.byBank[k] > lim);
   if (over.length) h += `<div class="alert bad">DICGC limit: ${over.map((k) => `${esc(k)} holds ${inr(pf.byBank[k])}`).join('; ')}. Cover is ${inr(lim)} per bank. Move the excess to another bank or a Post Office TD.</div>`;
   h += `<div class="btns"><button class="btn" data-act="addHolding">+ Add holding</button>${pf.rows.length ? '<button class="btn ghost" data-act="csv">Export CSV</button>' : ''}</div><div id="csv"></div>`;
@@ -456,7 +461,7 @@ function vPortfolio() {
   if (pf.value > 0) h += card('Where the money sits', `<table class="tbl">${Object.keys(BUCKETS).map((b) => `<tr><td>${BUCKETS[b]}</td><td class="r">${inr(pf.byBucket[b] || 0)}</td><td class="r">${pc(((pf.byBucket[b] || 0) / pf.value) * 100, 0)}</td></tr>`).join('')}</table>`);
   const mats = state.holdings.filter((x) => x.maturity).sort((a, b) => (a.maturity > b.maturity ? 1 : -1));
   if (mats.length) h += card('Maturity calendar', `<table class="tbl">${mats.map((x) => `<tr><th class="nowrap">${fmtD(x.maturity)}</th><td>${esc(x.name)}</td><td class="r">${inr(F.holdingValue(x, new Date(x.maturity)).value)}</td></tr>`).join('')}</table>`);
-  h += `<p class="muted small">CAS import and the tax view arrive in Phase 3. PAN, Aadhaar and account numbers are never asked for or stored.</p>`;
+  h += `<p class="muted small">PAN, Aadhaar and account numbers are never asked for or stored.</p>`;
   return h;
 }
 function holdingForm() {
@@ -492,8 +497,8 @@ function saveForm() {
 }
 function afterChange() { const pf = portfolio(); if (pf.value > state.peak) state.peak = pf.value; if (!state.holdings.length) state.peak = 0; save(); render(); }
 function draftText() {
-  const pf = portfolio(), p = P(), yr = today().getFullYear();
-  const lines = state.holdings.filter((h) => SECURITIES.has(h.type)).flatMap((h) => h.txns.filter((t) => new Date(t.date).getFullYear() === yr).map((t) => `${fmtD(t.date)} | ${t.amount >= 0 ? 'Purchase' : 'Sale'} | ${h.name}${h.inst ? ' (' + h.inst + ')' : ''} | ${inr(Math.abs(t.amount))}`));
+  const p = P(), yr = compYear || today().getFullYear(), cd = compData(yr), pf = { txTotal: cd.total };
+  const lines = cd.tx.map((t) => `${fmtD(t.date)} | ${t.amount >= 0 ? 'Purchase' : 'Sale'} | ${t.name}${t.inst ? ' (' + t.inst + ')' : ''} | ${inr(Math.abs(t.amount))}`);
   return `DRAFT - details for intimation of transactions in shares, securities, debentures and mutual funds (DoPT OM 11013/6/2018-Estt.A-III dated 07.02.2019)
 Calendar year: ${yr}
 1. Name and designation: ${p.name || '[name]'}, ${p.designation || '[designation]'}
@@ -520,7 +525,7 @@ function vMore() {
   return `<h1>Settings</h1>
   ${card('My profile', `<div class="grid2">
     <label class="f">Name (optional)<input id="p_name" value="${esc(p.name)}"></label><label class="f">Designation (optional, for the intimation draft)<input id="p_designation" value="${esc(p.designation || '')}"></label>
-    ${num('p_basicPay', 'Basic pay (₹)', p.basicPay)}${num('p_takeHome', 'Take-home a month (₹)', p.takeHome)}
+    ${num('p_basicPay', 'Basic pay (₹)', p.basicPay)}${num('p_daPct', 'DA % (from your salary slip)', p.daPct || 0)}${num('p_yearsService', 'Years of service until retirement', p.yearsService || 32)}${num('p_takeHome', 'Take-home a month (₹)', p.takeHome)}
     <label class="f">Joining date<input id="p_joinDate" type="date" value="${esc(p.joinDate)}"></label>
     ${num('p_corpus', 'Starting corpus (₹)', p.corpus)}${num('p_monthly', 'Monthly investment (₹)', p.monthly)}${num('p_stepUp', 'Yearly step-up %', p.stepUp)}
     ${num('p_maxDrop', 'Largest fall I accept %', p.maxDrop)}${num('p_slab', 'My tax slab % on interest', p.slab)}
@@ -533,11 +538,11 @@ function vMore() {
   ${card('Notifications', '<p class="muted">Changes appear as Update cards on Home and dates under Coming up. Push alerts to your phone need a free Firebase project that only you can create; say the word and the next build wires it in.</p>')}
   ${card('Backup and lock', `<p class="muted small">Your data lives only on this device, encrypted with your PIN (AES-256-GCM). ${memoryOnly ? '<b class="warnTxt">This browser is not letting the app store data, so it will be lost when you close the page.</b>' : ''}</p>
     <div class="btns"><button class="btn ghost" data-act="backup">Create encrypted backup</button><button class="btn ghost" data-act="showRestore">Restore</button><button class="btn ghost" data-act="lock">Lock now</button><button class="btn ghost danger" data-act="wipe">Erase everything</button></div><div id="bk"></div>`)}
-  ${card('About', `<p><b>NiveshPath</b> 0.2 (Phase 2). A private learning and tracking tool for one user.</p><p class="muted">Education and tracking only. It is not a SEBI-registered investment adviser, does not place orders and carries no referral links. No investment is guaranteed. Verify every figure at its source and double-check major decisions with a SEBI-registered adviser or a CA.</p><p class="muted small">No analytics. No PAN, Aadhaar, bank account numbers or passwords are stored.</p>`)}`;
+  ${card('About', `<p><b>NiveshPath</b> 0.3 (Phase 3). A private learning and tracking tool for one user.</p><p class="muted">Education and tracking only. It is not a SEBI-registered investment adviser, does not place orders and carries no referral links. No investment is guaranteed. Verify every figure at its source and double-check major decisions with a SEBI-registered adviser or a CA.</p><p class="muted small">No analytics. No PAN, Aadhaar, bank account numbers or passwords are stored.</p>`)}`;
 }
 function saveProfile() {
   const p = P();
-  ['basicPay', 'takeHome', 'corpus', 'monthly', 'stepUp', 'maxDrop', 'slab', 'emergency', 'loanBal', 'loanRate', 'emi', 'weddingTarget', 'dependents'].forEach((k) => { p[k] = nval('p_' + k); });
+  ['basicPay', 'takeHome', 'corpus', 'monthly', 'stepUp', 'maxDrop', 'slab', 'emergency', 'loanBal', 'loanRate', 'emi', 'weddingTarget', 'dependents', 'daPct', 'yearsService'].forEach((k) => { p[k] = nval('p_' + k); });
   p.name = val('p_name').trim(); p.designation = val('p_designation').trim(); p.joinDate = val('p_joinDate'); p.weddingBy = val('p_weddingBy'); state.profileSet = true;
   state.settings.inflation = nval('s_infl');
   save(); toast('Profile saved'); render();
@@ -654,6 +659,149 @@ function vNews() {
   return card('Headlines that touch your money', items.length ? items.slice(0, 40).map((i) => `<div class="upd"><div class="ud">${i.at ? fmtDT(i.at) : ''}<br>${esc(i.src)}</div><div><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a></div></div>`).join('') + srcFeed('news') + `<p class="muted small">Headlines and links only, filtered by keywords (PPF, RBI, inflation, gold, NPS, IPO, tax and similar). Tap to read at the publisher. PIB and Business Standard refuse automated access, so they are not included.</p>` : `<p class="muted">Waiting for the first news fetch.</p>`);
 }
 
+/* ---------- PHASE 3: pension calculator, tax view, compliance, CAS import ---------- */
+function vPension() {
+  const p = P(), a = (A().pension || {}), pay = Math.round(p.basicPay * (1 + (p.daPct || 0) / 100));
+  return `<button class="back" data-back="1">‹ My plan</button><h1>UPS or NPS</h1><p class="muted">A model to help you think, built on the published rules. It is not the official calculator and cannot know future pay commissions, markets or annuity rates.</p>
+  ${card('Your inputs', `<div class="grid2">${num('n_basic', 'Basic pay now (₹ a month)', p.basicPay)}${num('n_da', 'DA % now (from your salary slip)', p.daPct || 0)}${num('n_years', 'Years of service until retirement', p.yearsService || 32)}${num('n_growth', 'Yearly growth of basic + DA %', a.growthPct || 7)}${num('n_share', 'Basic as % of (basic + DA) at retirement', Math.round((a.basicShare || 0.67) * 100))}${num('n_ann', 'Annuity rate at retirement %', a.annuityPct || 6)}${num('n_infl', 'Inflation %', planInfl())}</div>
+    <p class="muted small">Basic + DA today: ${inr(pay)}. Growth of 7% is roughly a 3% increment plus DA. The basic share matters because the UPS payout is half of <i>basic</i>: just after a pay commission basic is 100% of basic + DA, late in a cycle it can be near 60%. ${chip('assumption')}</p>`)}
+  <div id="o_pension"></div>
+  ${card('The rules behind this', `<table class="tbl kvt">${row('UPS payout', esc(String(fact('ups.payout').value)))}${row('UPS lump sum', esc(String(fact('ups.lump').value)))}${row('Contributions', esc(String(fact('ups.contrib').value)))}${row('NPS at retirement', esc(String(fact('nps.exit').value)))}${row('Investment options', esc(String(fact('nps.options').value)))}${row('Choosing', esc(String(fact('ups.option').value)))}</table>${srcFact('ups.payout')}${srcFact('nps.exit')}${srcFact('nps.options')}`)}
+  ${card('Before you sign Form A1', `<ul class="why"><li>Read the PFRDA UPS page and FAQ in full.</li><li>Run the official UPS calculator on the NPS Trust website with your real figures.</li><li>Ask your DDO for the exact last date${p.joinDate ? ' (about ' + fmtD(addDays(p.joinDate, 30)) + ')' : ''} and whether your office has any instructions.</li><li>If you do nothing, you stay in NPS.</li></ul><button class="btn ghost" data-lesson="L8-02">Lesson L8-02</button>`)}`;
+}
+function pensionUpdate() {
+  if (!$('#n_basic')) return;
+  const a = A().pension || {}, pay = nval('n_basic') * (1 + nval('n_da') / 100), base = { pay, years: nval('n_years'), growthPct: nval('n_growth'), basicShare: Math.min(1, nval('n_share') / 100), annuityPct: nval('n_ann'), inflationPct: nval('n_infl') };
+  if (!(pay > 0) || !(base.years > 0)) { $('#o_pension').innerHTML = ''; return; }
+  const sc = [['Low', a.npsLow || 7], ['Middle', a.npsMid || 9], ['High', a.npsHigh || 11]].map(([n, r]) => [n, r, F.pensionProject({ ...base, npsReturnPct: r })]);
+  const u = sc[0][2].ups, be = F.pensionBreakEven(base);
+  const sens = [100, 67, 50].map((s) => [s, F.pensionProject({ ...base, basicShare: s / 100 }).ups]);
+  $('#o_pension').innerHTML = card('At retirement, after ' + base.years + ' years', `<div class="scroll"><table class="tbl"><tr><th></th><th class="r">Monthly pension</th><th class="r">In today's ₹</th><th class="r">Lump sum</th><th class="r">In today's ₹</th></tr>
+    <tr><td><b>UPS</b><div class="muted small">assured, rises with DA</div></td><td class="r"><b>${lk(u.pension)}</b></td><td class="r">${inr(u.pensionToday)}</td><td class="r">${lk(u.lump)}</td><td class="r">${lk(u.lumpToday)}</td></tr>
+    ${sc.map(([n, r, x]) => `<tr><td>NPS, ${n.toLowerCase()} (${r}% a year)<div class="muted small">fixed annuity, not indexed</div></td><td class="r">${lk(x.nps.pension)}</td><td class="r">${inr(x.nps.pensionToday)}</td><td class="r">${lk(x.nps.lump)}</td><td class="r">${lk(x.nps.lumpToday)}</td></tr>`).join('')}</table></div>
+    <p>NPS must earn about <b>${pc(be, 1)}</b> a year for ${base.years} years, after costs, for its starting pension to equal the UPS payout. Even then the UPS payout keeps rising with dearness relief while a standard annuity stays flat, and the UPS family payout is ${inr(u.family / Math.pow(1 + base.inflationPct / 100, base.years))} a month in today's rupees.</p>
+    <p class="muted small">NPS gives a much larger lump sum (60% of the pot) in exchange for a smaller, unindexed pension. You contribute the same 10% under both: about ${lk(sc[0][2].ownContribution)} over your career.</p>
+    <table class="tbl"><tr><th>If basic is this share of basic + DA at retirement</th><th class="r">UPS pension, today's ₹</th></tr>${sens.map(([s, x]) => `<tr><td>${s}%${s === 100 ? ' (just after a pay commission)' : s === 50 ? ' (late in a cycle)' : ''}</td><td class="r">${inr(x.pensionToday)}</td></tr>`).join('')}</table>
+    <p class="muted small">Every figure above follows from your inputs and the planning assumptions. None is a promise. ${chip('assumption')}</p>`);
+}
+
+function interestIncome() {
+  const now = today(); let taxable = 0, exempt = 0; const rows = [];
+  for (const h of state.holdings) {
+    if (h.kind === 'market' || !h.rate) continue;
+    const v = F.holdingValue(h, now).value, yr = (v * h.rate) / 100, ex = h.type === 'ppf' || h.type === 'ssy';
+    if (h.maturity && new Date(h.maturity) < now) continue;
+    if (ex) exempt += yr; else taxable += yr;
+    rows.push({ name: h.name, yr, ex });
+  }
+  return { taxable, exempt, rows };
+}
+const LT_MONTHS = { niftyfund: 12, niftyetf: 12, indexfund: 12, stocks: 12, ipo: 12, reit: 12, mfother: 12, goldetf: 12, silveretf: 12, sgb: 12, goldfof: 24, physgold: 24, egr: 12 };
+function gainsIfSold() {
+  const now = today(), rows = []; let eqLong = 0, other = 0;
+  for (const h of state.holdings.filter((x) => x.kind === 'market')) {
+    const inv = h.txns.reduce((s, t) => s + t.amount, 0), gain = (+h.currentValue || 0) - inv, first = h.txns.map((t) => t.date).sort()[0];
+    const months = first ? (now - new Date(first)) / F.DAY / 30.44 : 0, lt = LT_MONTHS[h.type], slab = lt == null, long = !slab && months > lt, eq = ['niftyfund', 'niftyetf', 'indexfund', 'stocks', 'ipo', 'mfother'].includes(h.type);
+    let rate = slab ? P().slab : long ? 12.5 : eq ? 20 : P().slab;
+    if (eq && long) eqLong += Math.max(0, gain);
+    const tax = gain > 0 ? (gain * rate) / 100 : 0; if (!(eq && long)) other += tax;
+    rows.push({ name: h.name, gain, how: slab ? 'slab rate (debt fund)' : long ? 'long-term, 12.5%' : 'short-term, ' + (eq ? '20%' : 'slab rate'), tax, eqLong: eq && long });
+  }
+  const eqTax = Math.max(0, eqLong - 125000) * 0.125;
+  return { rows, eqLong, eqTax, total: other + eqTax };
+}
+function vTax() {
+  const p = P(), ii = interestIncome(), g = gainsIfSold(), sal = p.annualSalary || 0;
+  const newBase = Math.max(0, sal - 75000), ded = Math.min(150000, state.holdings.filter((h) => ['ppf', 'nsc', 'ssy'].includes(h.type) || (h.type === 'potd' && h.maturity && (new Date(h.maturity) - new Date(h.txns[0].date)) / F.DAY > 1800)).reduce((s, h) => s + h.txns.filter((t) => t.amount > 0 && fyOf(t.date) === fyOf(today())).reduce((a, t) => a + t.amount, 0), 0));
+  const oldBase = Math.max(0, sal - 50000 - ded);
+  const tn0 = F.taxNew(newBase), tn1 = F.taxNew(newBase + ii.taxable), to1 = F.taxOld(oldBase + ii.taxable), mr = F.marginalRate(newBase, ii.taxable || 10000);
+  return `<button class="back" data-back="1">‹ Portfolio</button><h1>Tax view</h1><p class="muted">An estimate for tax year ${fyOf(today())}, from your holdings and the salary you enter. It is not a tax computation. Check Form 16 and ask a CA.</p>
+  ${card('Your salary', `<div class="grid2">${num('t_sal', 'Gross salary for the year, before deductions (₹)', sal || '')}</div><button class="btn" data-act="saveSalary">Save</button><p class="muted small">Used only on this device. Your employer's and your own NPS/UPS contributions are not modelled.</p>`)}
+  ${card('Interest your holdings earn in a year', ii.rows.length ? `<table class="tbl">${ii.rows.map((r) => `<tr><td>${esc(r.name)}</td><td class="r">${inr(r.yr)}</td><td class="r">${r.ex ? '<span class="chip fit-ok">tax-free</span>' : '<span class="chip fit-warn">taxable</span>'}</td></tr>`).join('')}<tr><th>Taxable interest</th><th class="r">${inr(ii.taxable)}</th><th></th></tr><tr><th>Tax-free interest</th><th class="r">${inr(ii.exempt)}</th><th></th></tr></table>` : '<p class="muted">No interest-bearing holdings logged.</p>')}
+  ${sal ? card('New regime vs old regime', `<table class="tbl"><tr><th></th><th class="r">New (default)</th><th class="r">Old</th></tr>
+    <tr><td>Salary</td><td class="r">${inr(sal)}</td><td class="r">${inr(sal)}</td></tr><tr><td>Standard deduction</td><td class="r">−${inr(75000)}</td><td class="r">−${inr(50000)}</td></tr>
+    <tr><td>PPF, NSC, 5-year TD deposited this year (max ₹1.5 lakh)</td><td class="r">not allowed</td><td class="r">−${inr(ded)}</td></tr><tr><td>Taxable interest</td><td class="r">+${inr(ii.taxable)}</td><td class="r">+${inr(ii.taxable)}</td></tr>
+    <tr><th>Taxable income</th><th class="r">${inr(newBase + ii.taxable)}</th><th class="r">${inr(oldBase + ii.taxable)}</th></tr><tr><th>Tax with 4% cess</th><th class="r">${inr(tn1)}</th><th class="r">${inr(to1)}</th></tr></table>
+    <p>Your interest adds <b>${inr(tn1 - tn0)}</b> of tax in the new regime. That is a true rate of <b>${pc(mr, 1)}</b> on your interest.${Math.abs(mr - p.slab) > 2 ? ` Your profile uses ${p.slab}%. <button class="btn ghost" data-act="useSlab" data-v="${mr.toFixed(1)}">Use ${pc(mr, 1)} in my plan</button>` : ''}</p>
+    ${newBase <= 1200000 && newBase + ii.taxable > 1200000 ? '<div class="alert warn">Your interest pushes taxable income over ₹12 lakh, where the rebate ends. Tax-free interest (PPF) avoids this.</div>' : ''}
+    ${srcFact('tax.slabsFull')}${srcFact('tax.old')}`) : ''}
+  ${card('If you sold your market holdings today', g.rows.length ? `<table class="tbl"><tr><th>Holding</th><th class="r">Gain</th><th class="r">Tax</th></tr>${g.rows.map((r) => `<tr><td>${esc(r.name)}<div class="muted small">${esc(r.how)}</div></td><td class="r ${r.gain < 0 ? 'down' : ''}">${inr(r.gain)}</td><td class="r">${r.eqLong ? 'see below' : inr(r.tax)}</td></tr>`).join('')}</table>
+    <p class="muted small">Long-term equity gains: ${inr(g.eqLong)}. The first ₹1.25 lakh a year is exempt, so tax is ${inr(g.eqTax)}. Estimated total if everything were sold today: <b>${inr(g.total)}</b>. Holding period is counted from your first purchase, which overstates it for SIPs. Selling also adds to your conduct-rule total.</p>${srcFact('tax.equity')}${srcFact('tax.gold')}` : '<p class="muted">No market-linked holdings logged.</p>')}`;
+}
+const fyOf = (d) => { const x = new Date(d), y = x.getMonth() >= 3 ? x.getFullYear() : x.getFullYear() - 1; return y + '-' + String(y + 1).slice(2); };
+
+let compYear = null;
+function compData(yr) {
+  const tx = [];
+  state.holdings.filter((h) => SECURITIES.has(h.type)).forEach((h) => (h.txns || []).forEach((t) => { if (new Date(t.date).getFullYear() === yr) tx.push({ date: t.date, name: h.name, inst: h.inst, amount: t.amount, big: Math.abs(t.amount) > 2 * P().basicPay }); }));
+  tx.sort((a, b) => (a.date > b.date ? 1 : -1));
+  return { tx, total: tx.reduce((s, t) => s + Math.abs(t.amount), 0) };
+}
+function vCompliance() {
+  const p = P(), yrs = [...new Set(state.holdings.flatMap((h) => h.txns.map((t) => new Date(t.date).getFullYear())).concat(today().getFullYear()))].sort().reverse();
+  const yr = compYear && yrs.includes(compYear) ? compYear : yrs[0]; compYear = yr;
+  const d = compData(yr), six = sixMonths(), used = (d.total / six) * 100, cls = used >= 100 ? 'bad' : used >= 80 ? 'warn' : used >= 50 ? 'amb' : 'ok';
+  const sips = d.tx.filter((t) => t.amount > 0).length, months = Math.max(1, new Set(d.tx.map((t) => t.date.slice(0, 7))).size), pace = yr === today().getFullYear() ? (d.total / Math.max(1, today().getMonth() + 1)) * 12 : d.total;
+  return `<button class="back" data-back="1">‹ Portfolio</button><h1>Compliance</h1><div class="alert warn"><b>Always check for department-specific instructions with your office.</b> This screen helps you keep count. It is not legal advice and it does not file anything.</div>
+  ${card('Calendar year <select id="compYear" class="inl">' + yrs.map((y) => `<option ${y === yr ? 'selected' : ''}>${y}</option>`).join('') + '</select>', `<div class="meter"><span class="m-${cls}" style="width:${Math.min(100, used)}%"></span></div>
+    <div class="kv"><span>Transactions in shares, securities, debentures and mutual funds</span><b>${inr(d.total)}</b></div><div class="kv"><span>Reporting threshold (6 × basic pay ${inr(p.basicPay)})</span><b>${inr(six)}</b></div><div class="kv"><span>Used</span><b>${pc(used, 0)}</b></div>
+    ${yr === today().getFullYear() && d.total ? `<div class="kv"><span>At this pace by 31 December</span><b class="${pace > six ? 'down' : ''}">${inr(pace)}</b></div>` : ''}
+    ${used >= 100 ? `<div class="alert bad">Over the threshold. Send the intimation in the prescribed proforma by 31 January ${yr + 1}.</div>` : used >= 80 ? '<div class="alert warn">80% used. One or two more instalments will cross the line.</div>' : used >= 50 ? '<div class="alert amb">Half used.</div>' : '<div class="alert ok">Below half of the threshold.</div>'}
+    ${d.tx.some((t) => t.big) ? `<div class="alert warn">${d.tx.filter((t) => t.big).length} single transaction(s) above two months' basic pay (${inr(2 * p.basicPay)}). ${esc(String(fact('conduct.single').value))}.</div>` : ''}
+    ${srcFact('conduct.annual')}${srcFact('conduct.single')}`)}
+  ${card('Transaction log, ' + yr, d.tx.length ? `<div class="scroll"><table class="tbl"><tr><th>Date</th><th>Security</th><th>Type</th><th class="r">Amount</th></tr>${d.tx.map((t) => `<tr><td class="nowrap">${fmtD(t.date)}</td><td>${esc(t.name)}${t.inst ? `<div class="muted small">${esc(t.inst)}</div>` : ''}</td><td>${t.amount >= 0 ? 'Purchase' : 'Sale'}</td><td class="r ${t.big ? 'warnTxt' : ''}">${inr(Math.abs(t.amount))}</td></tr>`).join('')}</table></div><p class="muted small">${sips} purchase(s) across ${months} month(s). Counted: funds, ETFs, bonds, T-Bills, G-Secs, SGBs, RBI bonds, shares and IPO allotments. Not counted: PPF, NSC, bank and post office deposits, physical gold.</p>` : '<p class="muted">Nothing logged for this year. Add holdings in Portfolio; every deposit and withdrawal lands here.</p>')}
+  ${card('Intimation draft', `<button class="btn ghost" data-act="draft">Prepare draft for ${yr}</button><div id="draft"></div><p class="muted small">You copy the details into your office's proforma and submit it yourself.</p>`)}
+  ${card('Allowed and not allowed', `<table class="tbl"><tr><th class="up">Allowed (investment)</th><th class="down">Not allowed (speculation)</th></tr>
+    <tr><td>PPF, NSC, deposits, RBI bonds, G-Secs held for the long term</td><td>Intraday trading</td></tr><tr><td>Monthly SIP in an index fund</td><td>Futures and options</td></tr><tr><td>Holding shares or funds for years</td><td>Frequent purchase and sale of shares or securities</td></tr><tr><td>Applying to an IPO to hold</td><td>Flipping every IPO on listing day</td></tr><tr><td>Gold through a regulated fund</td><td>Crypto, forex and margin trading</td></tr></table>
+    <p class="muted small">${esc(String(fact('conduct.speculation').value))} Also: do not invest in a company you deal with officially, and do not use information from your work.</p>${srcFact('conduct.speculation')}<button class="btn ghost" data-lesson="L7-01">Lesson L7-01</button>`)}`;
+}
+
+let casFound = null, casMsg = '';
+function vCas() {
+  return `<button class="back" data-back="1">‹ Portfolio</button><h1>Import a mutual fund statement</h1>
+  ${card('CAMS / KFintech Consolidated Account Statement', `<ol class="how"><li>Request a CAS by email from CAMS or KFintech ("Detailed", all folios). You choose a password for the PDF.</li><li>Pick the PDF below and type that password.</li></ol>
+    <label class="f">Statement PDF<input id="cas_file" type="file" accept="application/pdf,.pdf"></label><label class="f">PDF password<input id="cas_pw" type="password" autocomplete="off"></label>
+    <div class="btns"><button class="btn" data-act="casRead">Read statement</button></div>
+    <details><summary>Or paste the statement text</summary><label class="f">Text copied from the PDF<textarea id="cas_text" rows="6" class="copy"></textarea></label><button class="btn ghost" data-act="casText">Read pasted text</button></details>
+    <p class="muted small">The file is read on this device only and is never uploaded. The password is used once and not kept. PAN, name, address, email and phone are skipped and not stored. <b>This reader was tested on a sample in the CAMS layout, not on a real statement.</b> Compare every figure with your PDF before saving. NSDL/CDSL demat statements are not supported yet.</p>
+    ${casMsg ? `<div class="alert ${casFound && casFound.length ? 'ok' : 'warn'}">${esc(casMsg)}</div>` : ''}`)}
+  ${casFound && casFound.length ? card('Found ' + casFound.length + ' holding(s)', `<div class="scroll"><table class="tbl"><tr><th>Scheme</th><th class="r">Units</th><th class="r">Value</th><th class="r">Cost</th></tr>${casFound.map((h) => `<tr><td>${esc(h.scheme)}<div class="muted small">${esc(h.amc || '')} · folio ${esc(h.folio)} · ${esc(typeOf(h.type).name)} · ${h.txns.length} transaction(s)</div></td><td class="r">${h.units}</td><td class="r">${inr(h.value)}<div class="muted small">${fmtD(h.navDate)}</div></td><td class="r">${h.cost != null ? inr(h.cost) : '—'}</td></tr>`).join('')}</table></div>
+    <div class="btns"><button class="btn" data-act="casSave">Save to portfolio</button><button class="btn ghost" data-act="casClear">Discard</button></div><p class="muted small">Saving replaces holdings imported earlier from the same folio and scheme. Purchases and redemptions flow into the Compliance log.</p>`) : ''}`;
+}
+async function casRead() {
+  const f = $('#cas_file').files[0], pw = val('cas_pw');
+  if (!f) return toast('Choose the PDF first');
+  casMsg = 'Reading…'; casFound = null; render();
+  try {
+    const pdfjs = await import('../vendor/pdf.min.mjs');
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL('../vendor/pdf.worker.min.mjs', import.meta.url).href;
+    const { parseCasText, itemsToLines } = await import('./cas.js');
+    const doc = await pdfjs.getDocument({ data: new Uint8Array(await f.arrayBuffer()), password: pw || undefined }).promise;
+    let text = '';
+    for (let i = 1; i <= doc.numPages; i++) text += itemsToLines((await (await doc.getPage(i)).getTextContent()).items).join('\n') + '\n';
+    casFound = parseCasText(text);
+    casMsg = casFound.length ? `Read ${doc.numPages} page(s).` : `Read ${doc.numPages} page(s) but found no holdings. The layout may differ from what this reader expects. Try pasting the text, or add holdings by hand.`;
+  } catch (e) { casMsg = /password/i.test(String(e && (e.name + e.message))) ? 'Wrong or missing password.' : 'Could not read this PDF: ' + String((e && e.message) || e).slice(0, 120); }
+  render();
+}
+async function casFromText() { const { parseCasText } = await import('./cas.js'); casFound = parseCasText(val('cas_text')); casMsg = casFound.length ? 'Read the pasted text.' : 'No holdings found in the pasted text.'; render(); }
+function casSave() {
+  for (const h of casFound) {
+    const key = 'cas:' + h.folio + ':' + (h.isin || h.scheme);
+    state.holdings = state.holdings.filter((x) => x.casKey !== key);
+    const txns = h.txns.length ? h.txns.map((t) => ({ date: t.date, amount: t.amount })) : [{ date: h.navDate || iso(today()), amount: h.cost != null ? h.cost : h.value }];
+    state.holdings.push({ id: uid(), casKey: key, type: h.type, name: h.scheme.slice(0, 80), inst: h.amc || '', kind: 'market', comp: 0, rate: 0, maturity: '', currentValue: h.value || 0, valueDate: h.navDate || iso(today()), units: h.units, txns });
+  }
+  const n = casFound.length; casFound = null; casMsg = ''; sub = null; afterChange(); toast(n + ' holding(s) saved');
+}
+
+function goalsCard() {
+  const gs = state.goals || [], fd = +fact('fd.sbi1y').value || 6, r = SS().rates.ppf || 7;
+  return card('More goals', `${gs.length ? `<table class="tbl">${gs.map((g, i) => { const m = Math.max(1, Math.round((new Date(g.by) - today()) / F.DAY / 30.44)), rate = m <= 36 ? fd : r, need = F.monthlyForGoal(g.amount, m, rate, g.have || 0); return `<tr><td><b>${esc(g.name)}</b><div class="muted small">${inr(g.amount)} by ${fmtD(g.by)} (${m} months)${g.have ? ' · ' + inr(g.have) + ' saved' : ''}</div></td><td class="r">about <b>${inr(need)}</b> a month at ${pc(rate, 1)}<div class="muted small">${m <= 36 ? 'deposits only (under 3 years)' : 'safe-rate estimate (PPF rate)'}</div></td><td><button class="btn ghost danger" data-act="delGoal" data-i="${i}">×</button></td></tr>`; }).join('')}</table>` : '<p class="muted small">House down-payment, children\'s education, a retirement top-up: add each with an amount and a date.</p>'}
+    <div class="grid2"><label class="f">Goal<input id="g_name" placeholder="e.g. House down-payment"></label>${num('g_amt', 'Amount needed (₹)', '')}<label class="f">By<input id="g_by" type="date"></label>${num('g_have', 'Already saved for it (₹)', '')}</div><button class="btn ghost" data-act="addGoal">Add goal</button>
+    <p class="muted small">Goals under 3 years are costed at the FD rate, longer ones at the PPF rate. Both are before inflation: raise the amount for what the goal will cost then.</p>`);
+}
+
 /* ---------- shell ---------- */
 let locked = true;
 const NAV = [['home', 'Home'], ['learn', 'Learn'], ['instruments', 'Products'], ['markets', 'Markets'], ['plan', 'Plan'], ['portfolio', 'Portfolio'], ['more', 'Settings']];
@@ -664,7 +812,7 @@ function render() {
   $('#nav').hidden = false;
   $('#nav').innerHTML = NAV.map(([k, l]) => `<button class="${k === view ? 'on' : ''}" data-go="${k}">${l}</button>`).join('');
   app.innerHTML = `${memoryOnly ? '<div class="alert warn">Storage is unavailable here, so changes last only until you close this page.</div>' : ''}${(VIEWS[view] || vHome)()}<footer class="muted small">Education and tracking only · not a SEBI-registered adviser · no investment is guaranteed · <b>check department-specific instructions with your office</b></footer>`;
-  calcUpdate(); bondUpdate(); ipoUpdate();
+  calcUpdate(); bondUpdate(); ipoUpdate(); pensionUpdate();
 }
 function go(v, s = null) { view = v; sub = s; quizAns = {}; formOpen = null; try { history.replaceState(null, '', '#' + v); } catch { /* ignore */ } render(); window.scrollTo(0, 0); }
 
@@ -680,7 +828,8 @@ document.addEventListener('click', async (e) => {
   if (d.q != null) return answer(+d.q, +d.o);
   if (d.mtab) return go('markets', { tab: d.mtab });
   if (d.fcat) { fundCat = d.fcat; return render(); }
-  if (d.tool) return go('markets', { tab: d.tool });
+  if (d.tool) return d.tool === 'tax' ? go('portfolio', { tax: true }) : d.tool === 'pension' ? go('plan', { pension: true }) : d.tool === 'plan' ? go('plan') : go('markets', { tab: d.tool });
+  if (d.psub) return go('portfolio', { [d.psub]: true });
   if (d.alloc) { state.plan.alloc = d.alloc; save(); return render(); }
   if (d.addtype) { view = 'portfolio'; sub = null; formOpen = { mode: 'add', type: d.addtype }; render(); return window.scrollTo(0, 0); }
   if (d.copy) { const ta = document.getElementById(d.copy); ta.select(); try { await navigator.clipboard.writeText(ta.value); toast('Copied'); } catch { try { document.execCommand('copy'); toast('Copied'); } catch { toast('Select the text and copy it'); } } return; }
@@ -698,6 +847,14 @@ document.addEventListener('click', async (e) => {
     case 'draft': $('#draft').innerHTML = copyBox('draftT', draftText()); return;
     case 'csv': $('#csv').innerHTML = copyBox('csvT', csvText()); return;
     case 'saveProfile': return saveProfile();
+    case 'saveSalary': P().annualSalary = nval('t_sal'); save(); return render();
+    case 'useSlab': P().slab = +d.v; save(); toast('Plan now uses ' + d.v + '%'); return render();
+    case 'casRead': return casRead();
+    case 'casText': return casFromText();
+    case 'casSave': return casSave();
+    case 'casClear': casFound = null; casMsg = ''; return render();
+    case 'addGoal': { const a = nval('g_amt'), by = val('g_by'); if (!(a > 0) || !by) return toast('Enter an amount and a date'); (state.goals = state.goals || []).push({ name: val('g_name') || 'Goal', amount: a, by, have: nval('g_have') }); save(); return render(); }
+    case 'delGoal': state.goals.splice(+d.i, 1); save(); return render();
     case 'backup': $('#bk').innerHTML = KEY ? `<p class="muted small">Copy this text and keep it somewhere safe. It can only be opened with your PIN.</p>` + copyBox('bkT', await encryptState()) : '<p class="muted">Nothing to back up in memory-only mode.</p>'; return;
     case 'showRestore': $('#bk').innerHTML = `<label class="f">Paste a backup<textarea id="rsT" rows="5" class="copy"></textarea></label><button class="btn" data-act="restore">Restore</button><p class="muted small">You will need the PIN that was in use when the backup was made. This replaces the data on this device.</p>`; return;
     case 'restore': try { const b = JSON.parse(val('rsT')); if (!b.salt || !b.ct) throw 0; ls.set(VKEY, JSON.stringify(b)); KEY = null; locked = true; render(); toast('Backup loaded. Enter its PIN.'); } catch { toast('That is not a valid backup'); } return;
@@ -708,9 +865,10 @@ document.addEventListener('change', (e) => {
   if (t.id === 'eli') { state.settings.eli = t.checked; save(); return render(); }
   if (t.dataset.check) { state.plan.checks = state.plan.checks || {}; state.plan.checks[t.dataset.check] = t.checked; return save(); }
   if (t.id === 'b_td') return bondUpdate();
+  if (t.id === 'compYear') { compYear = +t.value; return render(); }
   if (t.id === 'h_type') { formOpen = { mode: 'add', type: t.value }; return render(); }
 });
-document.addEventListener('input', (e) => { const id = e.target.id || ''; if (id.startsWith('c_')) calcUpdate(); if (id.startsWith('b_')) bondUpdate(); if (id.startsWith('i_')) ipoUpdate(); });
+document.addEventListener('input', (e) => { const id = e.target.id || ''; if (id.startsWith('c_')) calcUpdate(); if (id.startsWith('b_')) bondUpdate(); if (id.startsWith('i_')) ipoUpdate(); if (id.startsWith('n_')) pensionUpdate(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Enter' && locked && (e.target.id === 'pin' || e.target.id === 'pin2')) { ls.get(VKEY) ? doUnlock() : doCreate(); } });
 window.addEventListener('hashchange', () => { const v = location.hash.slice(1); if (!locked && VIEWS[v] && v !== view) go(v); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) hiddenAt = Date.now(); else if (!locked && hiddenAt && Date.now() - hiddenAt > 5 * 60000 && ls.get(VKEY)) { KEY = null; locked = true; state = defState(); render(); } });

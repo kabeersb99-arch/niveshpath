@@ -240,3 +240,56 @@ export const currentYield = (couponPct, price, face = 100) => ((face * couponPct
 
 /** Odds of getting one lot in an oversubscribed retail IPO category (lottery): about 1 / times subscribed (by applications). */
 export const ipoLotOdds = (timesSubscribed) => (timesSubscribed <= 1 ? 1 : 1 / timesSubscribed);
+
+/* ---------- Phase 3: income tax, pension, goals ---------- */
+const slabTax = (income, slabs) => { let tax = 0, prev = 0; for (const [upto, rate] of slabs) { if (income > prev) tax += (Math.min(income, upto) - prev) * rate; prev = upto; } return tax; };
+export const NEW_SLABS = [[400000, 0], [800000, 0.05], [1200000, 0.10], [1600000, 0.15], [2000000, 0.20], [2400000, 0.25], [Infinity, 0.30]];
+export const OLD_SLABS = [[250000, 0], [500000, 0.05], [1000000, 0.20], [Infinity, 0.30]];
+/** New-regime tax on taxable income taxed at slab rates (after standard deduction). Rebate to Rs 12 lakh with marginal relief, 4% cess. Surcharge (above Rs 50 lakh) is not modelled. */
+export function taxNew(taxable) {
+  const t = Math.max(0, taxable);
+  let tax = slabTax(t, NEW_SLABS);
+  if (t <= 1200000) tax = 0; else tax = Math.min(tax, t - 1200000);
+  return tax * 1.04;
+}
+/** Old-regime tax on taxable income (after deductions). Rebate to Rs 5 lakh, 4% cess. */
+export function taxOld(taxable) {
+  const t = Math.max(0, taxable);
+  const tax = t <= 500000 ? 0 : slabTax(t, OLD_SLABS);
+  return tax * 1.04;
+}
+/** Extra tax caused by adding `extra` income on top of `base` taxable income, as a % of the extra (your true rate on interest). */
+export function marginalRate(base, extra, fn = taxNew) {
+  return extra > 0 ? ((fn(base + extra) - fn(base)) / extra) * 100 : 0;
+}
+
+/**
+ * UPS vs NPS projection. All money values are nominal rupees at retirement unless stated.
+ * pay = basic + DA today (monthly). growthPct = yearly growth of basic + DA. basicShare = basic / (basic + DA) at retirement.
+ */
+export function pensionProject({ pay, years, growthPct = 7, basicShare = 0.67, npsReturnPct = 9, annuityPct = 6, inflationPct = 5 }) {
+  const months = Math.round(years * 12), g = Math.pow(1 + growthPct / 100, 1 / 12) - 1, r = Math.pow(1 + npsReturnPct / 100, 1 / 12) - 1;
+  let p = pay, corpus = 0, own = 0;
+  for (let m = 0; m < months; m++) { corpus = (corpus + p * 0.24) * (1 + r); own += p * 0.10; p *= 1 + g; }
+  const finalPay = pay * Math.pow(1 + growthPct / 100, years), finalBasic = finalPay * basicShare;
+  const factor = years >= 25 ? 1 : years >= 10 ? years / 25 : 0;
+  const upsPension = years >= 10 ? Math.max(10000, 0.5 * finalBasic * factor) : 0;
+  const upsLump = (finalPay / 10) * Math.floor(months / 6);
+  const npsLump = corpus * 0.6, npsPension = (corpus * 0.4 * annuityPct) / 100 / 12;
+  const real = Math.pow(1 + inflationPct / 100, years);
+  return { months, finalPay, finalBasic, ownContribution: own, ups: { pension: upsPension, lump: upsLump, family: upsPension * 0.6, pensionToday: upsPension / real, lumpToday: upsLump / real },
+    nps: { corpus, lump: npsLump, pension: npsPension, pensionToday: npsPension / real, lumpToday: npsLump / real } };
+}
+/** NPS return (% a year) at which the NPS annuity equals the UPS payout in the first year. */
+export function pensionBreakEven(args) {
+  let lo = 0, hi = 30;
+  for (let i = 0; i < 60; i++) { const mid = (lo + hi) / 2, x = pensionProject({ ...args, npsReturnPct: mid }); if (x.nps.pension < x.ups.pension) lo = mid; else hi = mid; }
+  return (lo + hi) / 2;
+}
+
+/** Monthly saving needed to reach a target in `months` at a yearly rate (deposits at the start of each month). */
+export function monthlyForGoal(target, months, ratePct, have = 0) {
+  const r = Math.pow(1 + ratePct / 100, 1 / 12) - 1, n = Math.max(1, Math.round(months));
+  const fvHave = have * Math.pow(1 + r, n), need = Math.max(0, target - fvHave);
+  return r === 0 ? need / n : (need * r) / ((Math.pow(1 + r, n) - 1) * (1 + r));
+}

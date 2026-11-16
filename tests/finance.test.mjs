@@ -128,3 +128,47 @@ test('Current yield and IPO odds', () => {
   near(F.currentYield(7, 93.2), 7.51, 0.01);
   assert.equal(F.ipoLotOdds(0.8), 1); near(F.ipoLotOdds(25), 0.04, 1e-9);
 });
+
+/* ---------- Phase 3 ---------- */
+test('New regime: nil up to Rs 12 lakh, marginal relief just above, published Rs 15 lakh example', () => {
+  assert.equal(F.taxNew(1200000), 0);
+  near(F.taxNew(1210000), 10400, 0.01);       // tax capped at the Rs 10,000 above 12 lakh, plus 4% cess
+  near(F.taxNew(1500000), 109200, 0.01);      // Bajaj Housing Finance worked example
+  near(F.taxNew(1600000), 124800, 0.01);
+  near(F.taxNew(3000000), (300000 + 180000) * 1.04, 0.01);
+});
+
+test('Old regime: rebate to Rs 5 lakh and the published Rs 7 lakh example', () => {
+  assert.equal(F.taxOld(500000), 0);
+  near(F.taxOld(700000), 54600, 0.01);        // Tata Capital worked example
+  near(F.taxOld(1000000), 117000, 0.01);
+});
+
+test('Marginal rate on interest: nil well below Rs 12 lakh, 15.6% in the 12-16 lakh slab', () => {
+  assert.equal(F.marginalRate(900000, 50000), 0);
+  near(F.marginalRate(1400000, 50000), 15.6, 1e-6);
+  assert.ok(F.marginalRate(1190000, 50000) > 15.6, 'crossing the rebate line costs more than the slab rate');
+});
+
+test('UPS: 50% of final basic after 25+ years, pro-rata between 10 and 25, minimum Rs 10,000, lump sum per six months', () => {
+  const a = F.pensionProject({ pay: 100000, years: 30, growthPct: 0, basicShare: 0.6 });
+  near(a.ups.pension, 30000, 1e-6); near(a.ups.family, 18000, 1e-6);
+  near(a.ups.lump, 10000 * 60, 1e-6);
+  near(F.pensionProject({ pay: 100000, years: 20, growthPct: 0, basicShare: 0.6 }).ups.pension, 24000, 1e-6);
+  assert.equal(F.pensionProject({ pay: 20000, years: 12, growthPct: 0, basicShare: 0.6 }).ups.pension, 10000);
+  assert.equal(F.pensionProject({ pay: 100000, years: 8, growthPct: 0 }).ups.pension, 0);
+});
+
+test('NPS: 24% of pay goes in; 60% lump sum and 40% annuity', () => {
+  const a = F.pensionProject({ pay: 100000, years: 10, growthPct: 0, npsReturnPct: 0, annuityPct: 6 });
+  near(a.nps.corpus, 24000 * 120, 1e-3); near(a.nps.lump, 0.6 * 2880000, 1e-3); near(a.nps.pension, (0.4 * 2880000 * 0.06) / 12, 1e-3);
+  near(a.ownContribution, 10000 * 120, 1e-3);
+  const be = F.pensionBreakEven({ pay: 100000, years: 32, growthPct: 7, basicShare: 0.67, annuityPct: 6 });
+  near(F.pensionProject({ pay: 100000, years: 32, growthPct: 7, basicShare: 0.67, annuityPct: 6, npsReturnPct: be }).nps.pension, F.pensionProject({ pay: 100000, years: 32, growthPct: 7, basicShare: 0.67 }).ups.pension, 1);
+});
+
+test('Goal: monthly saving needed', () => {
+  near(F.monthlyForGoal(120000, 12, 0), 10000, 1e-6);
+  near(F.monthlyForGoal(120000, 12, 0, 60000), 5000, 1e-6);
+  assert.ok(F.monthlyForGoal(700000, 13, 6.25) < 700000 / 13);
+});

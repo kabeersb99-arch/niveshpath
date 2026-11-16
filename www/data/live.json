@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-16T01:46:00.000Z",
+  "updatedAt": "2026-11-16T09:10:15.043Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "seed",
-      "ok": true,
+      "ok": false,
       "fetchedAt": "2026-11-16T01:46:00.000Z",
       "expectedHours": 36,
       "kind": "official periodic",
@@ -14,42 +14,2039 @@
         "quarter": "Q3 FY 2026-27",
         "from": "2026-10-01",
         "to": "2026-12-31",
-        "rates": { "ppf": 7.1, "nsc": 7.7, "kvp": 7.5, "td1": 6.9, "td2": 7.0, "td3": 7.1, "td5": 7.5, "rd": 6.7, "mis": 7.4, "ssy": 8.2, "scss": 8.2, "sb": 4.0 },
+        "rates": {
+          "ppf": 7.1,
+          "nsc": 7.7,
+          "kvp": 7.5,
+          "td1": 6.9,
+          "td2": 7,
+          "td3": 7.1,
+          "td5": 7.5,
+          "rd": 6.7,
+          "mis": 7.4,
+          "ssy": 8.2,
+          "scss": 8.2,
+          "sb": 4
+        },
         "kvpMonths": 115
       },
       "history": [
-        { "from": "2024-01-01", "note": "Rates as notified from 1 Jan 2024. Unchanged in every quarter since (richify.ai, citing the Ministry of Finance memoranda).", "rates": { "ppf": 7.1, "nsc": 7.7, "kvp": 7.5, "td1": 6.9, "td2": 7.0, "td3": 7.1, "td5": 7.5, "rd": 6.7, "mis": 7.4, "ssy": 8.2, "scss": 8.2, "sb": 4.0 } }
-      ]
+        {
+          "from": "2024-01-01",
+          "note": "Rates as notified from 1 Jan 2024. Unchanged in every quarter since (richify.ai, citing the Ministry of Finance memoranda).",
+          "rates": {
+            "ppf": 7.1,
+            "nsc": 7.7,
+            "kvp": 7.5,
+            "td1": 6.9,
+            "td2": 7,
+            "td3": 7.1,
+            "td5": 7.5,
+            "rd": 6.7,
+            "mis": 7.4,
+            "ssy": 8.2,
+            "scss": 8.2,
+            "sb": 4
+          }
+        }
+      ],
+      "error": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181: fetch failed",
+      "lastGoodAt": "2026-11-16T01:46:00.000Z",
+      "lastTriedAt": "2026-11-16T09:10:15.043Z"
     },
     "metals": {
       "label": "IBJA gold and silver",
-      "mode": "seed",
+      "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-16T01:46:00.000Z",
+      "fetchedAt": "2026-11-16T09:10:15.043Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
       "url": "https://ibjarates.com/",
-      "data": { "date": "2026-11-13", "session": "PM", "gold999": 135809, "gold995": 135265, "gold916": 124401, "gold750": 101857, "gold585": 79448, "silver999": 178000, "am": { "gold999": 135884, "silver999": 177500 } }
+      "data": {
+        "date": "2026-11-13",
+        "gold999": 135809,
+        "gold995": 135265,
+        "gold916": 124401,
+        "gold750": 101857,
+        "gold585": 79448,
+        "silver999": 178000,
+        "session": "PM",
+        "am": {
+          "gold999": 135884,
+          "silver999": 177500
+        }
+      },
+      "lastTriedAt": "2026-11-16T09:10:15.043Z"
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
-      "mode": "seed",
-      "ok": false,
-      "error": "Waiting for the first scheduled fetch. The build sandbox could not reach AMFI.",
-      "fetchedAt": null,
+      "mode": "auto",
+      "ok": true,
+      "fetchedAt": "2026-11-16T09:10:15.043Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
       "url": "https://portal.amfiindia.com/spages/NAVAll.txt",
-      "data": { "funds": [] }
+      "data": {
+        "asOf": "2026-11-15",
+        "count": 191,
+        "funds": [
+          {
+            "code": "153357",
+            "name": "360 ONE Gold ETF",
+            "plan": "Direct Plan",
+            "option": "GROWTH Option",
+            "amc": "360 ONE Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 132.1289,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "115127",
+            "name": "Aditya Birla Sun Life Gold ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Aditya Birla Sun Life Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 118.9731,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153826",
+            "name": "ANGEL ONE GOLD ETF",
+            "plan": "Direct Plan",
+            "option": "",
+            "amc": "Angel One Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 12.6486,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "113434",
+            "name": "Axis Gold ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Axis Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 112.6003,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153930",
+            "name": "Bandhan Gold ETF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Bandhan Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 135.2765,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152231",
+            "name": "Baroda BNP Paribas Gold ETF",
+            "plan": "Regular Plan",
+            "option": "Growth Option",
+            "amc": "Baroda BNP Paribas Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 130.9469,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153933",
+            "name": "Choice Gold ETF",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Choice Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 134.3253,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "151737",
+            "name": "DSP Gold ETF",
+            "plan": "",
+            "option": "",
+            "amc": "DSP Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 13.148,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152193",
+            "name": "Edelweiss Gold ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Edelweiss Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 135.2371,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152957",
+            "name": "Groww Gold ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Groww Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 13.2141,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "113049",
+            "name": "HDFC Gold ETF",
+            "plan": "",
+            "option": "Growth Option",
+            "amc": "HDFC Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 115.4937,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154294",
+            "name": "HSBC Gold ETF",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "HSBC Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 117.8271,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "113076",
+            "name": "ICICI Prudential Gold ETF",
+            "plan": "",
+            "option": "",
+            "amc": "ICICI Prudential Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 115.8325,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "112368",
+            "name": "Invesco India Gold Exchange Traded Fund",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 117.5976,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "106193",
+            "name": "KOTAK GOLD ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Kotak Mahindra Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 112.8501,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "151961",
+            "name": "LIC MF Gold Exchange Traded Fund",
+            "plan": "",
+            "option": "",
+            "amc": "LIC Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 121.9085,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "151416",
+            "name": "Mirae Asset Gold ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Mirae Asset Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 131.5744,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153780",
+            "name": "Motilal Oswal Gold ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Motilal Oswal Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 133.8516,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "140088",
+            "name": "Nippon India ETF Gold BeES",
+            "plan": "Direct Plan",
+            "option": "",
+            "amc": "Nippon India Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 111.729,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "107693",
+            "name": "Quantum Gold ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Quantum Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 111.9955,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "111954",
+            "name": "SBI Gold ETF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "SBI Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 115.2867,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152284",
+            "name": "Tata Gold Exchange Traded Fund",
+            "plan": "",
+            "option": "",
+            "amc": "Tata Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 13.1568,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154092",
+            "name": "The Wealth Company Gold ETF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "The Wealth Company Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 134.8041,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153337",
+            "name": "Union Gold ETF",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Union Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 132.5123,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "105463",
+            "name": "UTI - Gold Exchange Traded Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "UTI Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 113.7363,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152476",
+            "name": "Zerodha CASE Gold ETF",
+            "plan": "Direct Plan",
+            "option": "",
+            "amc": "Zerodha CASE Mutual Fund",
+            "cat": "Gold ETF",
+            "nav": 21.2763,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "120546",
+            "name": "Aditya Birla Sun Life Gold Fund",
+            "plan": "Direct Plan",
+            "option": "GROWTH",
+            "amc": "Aditya Birla Sun Life Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 40.806,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153828",
+            "name": "ANGEL ONE GOLD ETF FOF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Angel One Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 12.2462,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153827",
+            "name": "ANGEL ONE GOLD ETF FOF",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Angel One Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 12.3184,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "120473",
+            "name": "Axis Gold Fund",
+            "plan": "Direct Plan",
+            "option": "Growth option",
+            "amc": "Axis Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 42.544,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154129",
+            "name": "Bandhan Gold ETF FOF",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Bandhan Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 8.8458,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154130",
+            "name": "Bandhan Gold ETF FOF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Bandhan Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 8.8119,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153795",
+            "name": "Baroda BNP Paribas Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Baroda BNP Paribas Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 13.5116,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153794",
+            "name": "Baroda BNP Paribas Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth Option",
+            "amc": "Baroda BNP Paribas Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 13.4606,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152183",
+            "name": "DSP Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "DSP Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 21.2892,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152184",
+            "name": "DSP Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "IDCW",
+            "amc": "DSP Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 21.2892,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152182",
+            "name": "DSP Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "DSP Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 21.0544,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152181",
+            "name": "DSP Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "IDCW",
+            "amc": "DSP Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 21.0544,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "119277",
+            "name": "DSP World Gold Mining Overseas Equity Omni FoF",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "DSP Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 57.9367,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154208",
+            "name": "Edelweiss Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Edelweiss Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 8.3764,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154209",
+            "name": "Edelweiss Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Edelweiss Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 8.3484,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152980",
+            "name": "Groww Gold ETF FOF",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Groww Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 16.5802,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153004",
+            "name": "Groww Gold ETF FOF",
+            "plan": "Direct Plan",
+            "option": "Income Distribution cum capital withdrawal",
+            "amc": "Groww Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 16.5802,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153006",
+            "name": "Groww Gold ETF FOF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Groww Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 16.4812,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153005",
+            "name": "Groww Gold ETF FOF",
+            "plan": "Regular Plan",
+            "option": "Income Distribution cum capital withdrawal",
+            "amc": "Groww Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 16.4817,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "119132",
+            "name": "HDFC Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "HDFC Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 42.1992,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "115934",
+            "name": "HDFC Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth Option",
+            "amc": "HDFC Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 40.1458,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154295",
+            "name": "HSBC Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "HSBC Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 9.333,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154297",
+            "name": "HSBC Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "IDCW",
+            "amc": "HSBC Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 9.333,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154298",
+            "name": "HSBC Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "HSBC Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 9.3107,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154296",
+            "name": "HSBC Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "IDCW",
+            "amc": "HSBC Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 9.3106,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "120685",
+            "name": "ICICI Prudential Gold ETF FOF",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "ICICI Prudential Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 43.2862,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "120686",
+            "name": "ICICI Prudential Gold ETF FOF",
+            "plan": "Direct Plan",
+            "option": "IDCW",
+            "amc": "ICICI Prudential Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 43.2902,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "115833",
+            "name": "ICICI Prudential Gold ETF FOF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "ICICI Prudential Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 41.6289,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "115834",
+            "name": "ICICI Prudential Gold ETF FOF",
+            "plan": "Regular Plan",
+            "option": "IDCW",
+            "amc": "ICICI Prudential Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 41.6298,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "120531",
+            "name": "Invesco India Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 39.6062,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "120530",
+            "name": "Invesco India Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "IDCW",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 39.5456,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "116077",
+            "name": "Invesco India Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 37.9754,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "116075",
+            "name": "Invesco India Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "IDCW",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 37.9795,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "119781",
+            "name": "Kotak Gold Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Kotak Mahindra Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 54.5775,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "151974",
+            "name": "LIC MF Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "LIC Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 37.0852,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "151973",
+            "name": "LIC MF Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "LIC Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 35.0382,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153007",
+            "name": "Mirae Asset Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Mirae Asset Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 17.098,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153008",
+            "name": "Mirae Asset Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "IDCW",
+            "amc": "Mirae Asset Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 17.097,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153009",
+            "name": "Mirae Asset Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Mirae Asset Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 16.914,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153010",
+            "name": "Mirae Asset Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "IDCW",
+            "amc": "Mirae Asset Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 16.904,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "118663",
+            "name": "Nippon India Gold Savings Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Nippon India Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 53.9286,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "115132",
+            "name": "Quantum Gold ETF FOF",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Quantum Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 51.8204,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "141064",
+            "name": "Quantum Gold ETF FOF",
+            "plan": "Regular Plan",
+            "option": "Growth Option",
+            "amc": "Quantum Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 50.9383,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "119788",
+            "name": "SBI GOLD FUND",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "SBI Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 41.2804,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154727",
+            "name": "Shriram Gold ETF Passive FOF",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Shriram Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 9.2307,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154726",
+            "name": "Shriram Gold ETF Passive FOF",
+            "plan": "Direct Plan",
+            "option": "IDCWREINVESTMENT",
+            "amc": "Shriram Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 9.2307,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154724",
+            "name": "Shriram Gold ETF Passive FOF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Shriram Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 9.2245,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154728",
+            "name": "Shriram Gold ETF Passive FOF",
+            "plan": "Regular Plan",
+            "option": "REINVESTMENT",
+            "amc": "Shriram Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 9.2246,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152287",
+            "name": "Tata Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Tata Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 20.8195,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152288",
+            "name": "Tata Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "IDCW Payout Option",
+            "amc": "Tata Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 20.8195,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152289",
+            "name": "Tata Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "IDCW Reinvestment Option",
+            "amc": "Tata Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 20.8195,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152290",
+            "name": "Tata Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth Option",
+            "amc": "Tata Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 20.5315,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152286",
+            "name": "Tata Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "IDCW Payout Option",
+            "amc": "Tata Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 20.5315,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152291",
+            "name": "Tata Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "IDCW Reinvestment Option",
+            "amc": "Tata Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 20.5315,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154131",
+            "name": "The Wealth Company Gold ETF FOF",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "The Wealth Company Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 8.6232,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154132",
+            "name": "The Wealth Company Gold ETF FOF",
+            "plan": "Direct Plan",
+            "option": "IDCW",
+            "amc": "The Wealth Company Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 8.6231,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154133",
+            "name": "The Wealth Company Gold ETF FOF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "The Wealth Company Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 8.5935,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154134",
+            "name": "The Wealth Company Gold ETF FOF",
+            "plan": "Regular Plan",
+            "option": "IDCW",
+            "amc": "The Wealth Company Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 8.5932,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153340",
+            "name": "Union Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Union Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 15.4794,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153339",
+            "name": "Union Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "IDCW Option",
+            "amc": "Union Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 15.4794,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153338",
+            "name": "Union Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth Option",
+            "amc": "Union Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 15.4085,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153341",
+            "name": "Union Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "IDCW Option",
+            "amc": "Union Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 15.4085,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "150714",
+            "name": "UTI Gold ETF Fund of Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "UTI Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 25.9955,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "150715",
+            "name": "UTI Gold ETF Fund of Fund",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "UTI Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 25.5553,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153011",
+            "name": "Zerodha CASE Gold ETF FoF",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Zerodha CASE Mutual Fund",
+            "cat": "Gold fund of funds",
+            "nav": 17.655,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "125345",
+            "name": "360 ONE Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "GROWTH Option",
+            "amc": "360 ONE Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 2196.3258,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "154051",
+            "name": "Abakkus Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Abakkus Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 105.5598,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119568",
+            "name": "Aditya Birla Sun Life Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "GROWTH",
+            "amc": "Aditya Birla Sun Life Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 464.0264,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "154589",
+            "name": "ASK Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "ASK MUTUAL FUND",
+            "cat": "Liquid fund",
+            "nav": 1013.4996,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "120389",
+            "name": "Axis Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Axis Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 3195.7164,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "151833",
+            "name": "Bajaj Finserv Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Bajaj Finserv Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1253.4022,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "118364",
+            "name": "BANDHAN LIQUID Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Bandhan Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 3466.3647,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119369",
+            "name": "BANK OF INDIA LIQUID FUND",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Bank of India Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 3307.7196,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119415",
+            "name": "BARODA BNP PARIBAS LIQUID FUND",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Baroda BNP Paribas Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 3308.7033,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "118305",
+            "name": "Canara Robeco Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "GROWTH OPTION",
+            "amc": "Canara Robeco Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 3440.8527,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "154011",
+            "name": "Capitalmind Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Capitalmind Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1064.3842,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "154782",
+            "name": "Carnelian Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Carnelian Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1004.8767,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119125",
+            "name": "DSP Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "DSP Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 4107.5118,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "140196",
+            "name": "Edelweiss Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Edelweiss Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 3712.609,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "118577",
+            "name": "Franklin India Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Super Institutional Growth",
+            "amc": "Franklin Templeton Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 4318.8436,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119135",
+            "name": "Groww Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Groww Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 2784.4119,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119091",
+            "name": "HDFC Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "HDFC Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 5637.4947,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "120197",
+            "name": "ICICI Prudential Liquid Fund -",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "ICICI Prudential Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 424.8114,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "120537",
+            "name": "Invesco India Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 3940.8044,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "139390",
+            "name": "Invesco India Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1000,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "139389",
+            "name": "Invesco India Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1867.8632,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "139388",
+            "name": "Invesco India Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1000,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "139387",
+            "name": "Invesco India Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1867.4409,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "147157",
+            "name": "ITI Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "ITI Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1488.6479,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "153651",
+            "name": "JioBlackRock Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Jio BlackRock Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1089.1715,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "120406",
+            "name": "JM Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "JM Financial Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 78.3187,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "148414",
+            "name": "JM Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Unclaimed Application Refund Amount I.E.F - Growth Plan",
+            "amc": "JM Financial Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 41.4437,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "148413",
+            "name": "JM Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Unclaimed Brokerage I.E.F - Growth Plan",
+            "amc": "JM Financial Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 41.4437,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119766",
+            "name": "Kotak Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Kotak Mahindra Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 5800.6492,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "120249",
+            "name": "LIC MF Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "LIC Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 5211.7788,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "139538",
+            "name": "Mahindra Manulife Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Mahindra Manulife Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1870.8081,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "118859",
+            "name": "Mirae Asset Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Mirae Asset Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 3030.784,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "118701",
+            "name": "Nippon India Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Nippon India Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 7031.3788,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "143269",
+            "name": "Parag Parikh Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "PPFAS Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1587.3779,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "138299",
+            "name": "PGIM India Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Direct Growth",
+            "amc": "PGIM India Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 374.7467,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "120837",
+            "name": "Quant Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "quant Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 45.9461,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "148512",
+            "name": "Quant Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Unclaimed Redemption Plan-Growth Option",
+            "amc": "quant Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 13.3371,
+            "date": "2025-12-15"
+          },
+          {
+            "code": "103734",
+            "name": "Quantum Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Quantum Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 38.1096,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119800",
+            "name": "SBI LIQUID FUND",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "SBI Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 4488.1259,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "153035",
+            "name": "Shriram Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Shriram Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1133.4589,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "149664",
+            "name": "Sundaram Liquid Fund (Formerly Known as Principal Cash Management Fund)",
+            "plan": "Direct Plan",
+            "option": "GROWTH",
+            "amc": "Sundaram Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 2538.7056,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119861",
+            "name": "Tata Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Tata Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 4532.554,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "153883",
+            "name": "The Wealth Company Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "The Wealth Company Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1072.3198,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "148841",
+            "name": "TRUSTMF Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Trust Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1389.6153,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "153570",
+            "name": "UNIFI LIQUID FUND",
+            "plan": "Direct Plan",
+            "option": "GROWTH",
+            "amc": "Unifi Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1085.2968,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "119303",
+            "name": "Union Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Union Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 2769.7429,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "120304",
+            "name": "UTI - Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "UTI Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 470.8526,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "145971",
+            "name": "WhiteOak Capital Liquid Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "WhiteOak Capital Mutual Fund",
+            "cat": "Liquid fund",
+            "nav": 1536.5267,
+            "date": "2026-11-15"
+          },
+          {
+            "code": "151165",
+            "name": "360 ONE ELSS Tax Saver Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "GROWTH Option",
+            "amc": "360 ONE Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 14.3059,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "119648",
+            "name": "Aditya Birla Sun Life Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "GROWTH",
+            "amc": "Aditya Birla Sun Life Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 262.9031,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153529",
+            "name": "ANGEL ONE NIFTY 50 INDEX FUND",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Angel One Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 10.3682,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "149373",
+            "name": "Axis Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Axis Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 15.3114,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153506",
+            "name": "Bajaj Finserv Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Bajaj Finserv Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 10.2826,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "118482",
+            "name": "BANDHAN Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Bandhan Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 56.3772,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152329",
+            "name": "Baroda BNP Paribas Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Baroda BNP Paribas Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 11.8838,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154301",
+            "name": "Choice Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Choice Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 10.8881,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "146376",
+            "name": "DSP Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "DSP Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 24.8619,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "149250",
+            "name": "Edelweiss Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Edelweiss Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 14.9449,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "118581",
+            "name": "Franklin India NSE Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Franklin Templeton Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 215.4704,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153704",
+            "name": "Groww Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Groww Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 10.0946,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "119063",
+            "name": "HDFC Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "HDFC Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 246.196,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "151157",
+            "name": "HSBC NIFTY 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "HSBC Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 29.8091,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153787",
+            "name": "JioBlackRock Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Jio BlackRock Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 10.2098,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "148978",
+            "name": "Kotak Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Kotak Mahindra Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 16.736,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "120307",
+            "name": "LIC MF Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "LIC Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 150.7329,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152972",
+            "name": "Mirae Asset Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Mirae Asset Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 10.5029,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "147794",
+            "name": "Motilal Oswal Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Motilal Oswal Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 21.9689,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "149039",
+            "name": "Navi Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Navi Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 16.6272,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154814",
+            "name": "quant Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "quant Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 11.1032,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "118881",
+            "name": "Taurus Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Taurus Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 51.0755,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "120716",
+            "name": "UTI Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "UTI Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 177.162,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153906",
+            "name": "Zerodha CASE Nifty 50 Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Zerodha CASE Mutual Fund",
+            "cat": "Nifty 50 index fund",
+            "nav": 10.079,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152422",
+            "name": "Axis BSE Sensex Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Axis Mutual Fund",
+            "cat": "Sensex index fund",
+            "nav": 11.5011,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "119065",
+            "name": "HDFC BSE Sensex Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "HDFC Mutual Fund",
+            "cat": "Sensex index fund",
+            "nav": 781.5365,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154340",
+            "name": "Invesco India BSE Sensex Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Invesco Mutual Fund",
+            "cat": "Sensex index fund",
+            "nav": 10.6992,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153286",
+            "name": "Kotak BSE Sensex Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "Kotak Mahindra Mutual Fund",
+            "cat": "Sensex index fund",
+            "nav": 10.91,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "120308",
+            "name": "LIC MF BSE Sensex Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "LIC Mutual Fund",
+            "cat": "Sensex index fund",
+            "nav": 164.6444,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152062",
+            "name": "NAVI BSE SENSEX INDEX FUND",
+            "plan": "Direct Plan",
+            "option": "GROWTH",
+            "amc": "Navi Mutual Fund",
+            "cat": "Sensex index fund",
+            "nav": 12.7233,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "151769",
+            "name": "SBI BSE Sensex Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "SBI Mutual Fund",
+            "cat": "Sensex index fund",
+            "nav": 13.4773,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "149803",
+            "name": "UTI BSE Sensex Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "UTI Mutual Fund",
+            "cat": "Sensex index fund",
+            "nav": 14.7687,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153932",
+            "name": "Zerodha CASE BSE SENSEX Index Fund",
+            "plan": "Direct Plan",
+            "option": "Growth Option",
+            "amc": "Zerodha CASE Mutual Fund",
+            "cat": "Sensex index fund",
+            "nav": 9.8501,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153415",
+            "name": "360 ONE Silver ETF",
+            "plan": "Direct Plan",
+            "option": "GROWTH Option",
+            "amc": "360 ONE Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 173.7304,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "149779",
+            "name": "Aditya Birla Sun Life Silver ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Aditya Birla Sun Life Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 176.3401,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154205",
+            "name": "ANGEL ONE SILVER ETF",
+            "plan": "Direct Plan",
+            "option": "",
+            "amc": "Angel One Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 6.7851,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "150610",
+            "name": "Axis Silver ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Axis Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 175.9047,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153929",
+            "name": "Bandhan Silver ETF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "Bandhan Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 178.1329,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "150523",
+            "name": "DSP Silver ETF",
+            "plan": "",
+            "option": "",
+            "amc": "DSP Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 16.9675,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152212",
+            "name": "Edelweiss Silver ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Edelweiss Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 176.7284,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153524",
+            "name": "Groww Silver ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Groww Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 17.3395,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "150556",
+            "name": "HDFC Silver ETF",
+            "plan": "",
+            "option": "Growth Option",
+            "amc": "HDFC Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 168.9069,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "149464",
+            "name": "ICICI PRUDENTIAL SILVER ETF",
+            "plan": "",
+            "option": "",
+            "amc": "ICICI Prudential Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 176.114,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "150948",
+            "name": "Kotak Silver ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Kotak Mahindra Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 17.1338,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "151779",
+            "name": "Mirae Asset Silver ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Mirae Asset Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 172.2769,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153820",
+            "name": "Motilal Oswal Silver ETF",
+            "plan": "",
+            "option": "",
+            "amc": "Motilal Oswal Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 175.0742,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "149758",
+            "name": "Nippon India Silver ETF",
+            "plan": "Direct Plan",
+            "option": "",
+            "amc": "Nippon India Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 168.8614,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "154625",
+            "name": "quant Silver ETF",
+            "plan": "Direct Plan",
+            "option": "",
+            "amc": "quant Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 17.8988,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152725",
+            "name": "SBI Silver ETF",
+            "plan": "Regular Plan",
+            "option": "Growth",
+            "amc": "SBI Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 173.3667,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "152285",
+            "name": "Tata Silver Exchange Traded Fund",
+            "plan": "",
+            "option": "",
+            "amc": "Tata Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 17.2102,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "151730",
+            "name": "UTI Silver Exchange Traded Fund",
+            "plan": "Direct Plan",
+            "option": "Growth",
+            "amc": "UTI Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 170.5627,
+            "date": "2026-11-13"
+          },
+          {
+            "code": "153413",
+            "name": "Zerodha CASE Silver ETF",
+            "plan": "Direct Plan",
+            "option": "",
+            "amc": "Zerodha CASE Mutual Fund",
+            "cat": "Silver ETF",
+            "nav": 17.8338,
+            "date": "2026-11-13"
+          }
+        ]
+      },
+      "lastTriedAt": "2026-11-16T09:10:15.043Z"
     }
   },
   "updates": [
-    { "id": "u-cpi-2026-10", "date": "2026-11-12", "title": "Inflation rose to 6.09% in October", "body": "CPI inflation moved above the RBI's 6% upper limit (September: 5.54%). At 6.09% inflation, PPF's 7.1% is a real return of about 1%, and a 6.25% FD is negative after tax.", "url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf", "source": "MoSPI" },
-    { "id": "u-repo-2026-10", "date": "2026-10-07", "title": "RBI raised the repo rate to 5.50%", "body": "First hike since February 2023 (from 5.25%). When rates rise, existing bond prices fall and new deposits tend to pay more. The 10-year G-Sec yield is around 7.3%.", "url": "https://www.business-standard.com/finance/news/rbi-mpc-october-2026-repo-rate-hike-inflation-growth-gdp-sanjay-malhotra-126100700222_1.html", "source": "Business Standard" },
-    { "id": "u-ss-2026-q3", "date": "2026-09-30", "title": "Small savings rates unchanged for Oct-Dec 2026", "body": "PPF 7.1%, NSC 7.7%, 5-year TD 7.5%. Tenth quarter without a change. Next review around 31 December.", "url": "https://www.business-standard.com/amp/finance/news/interest-rates-on-small-savings-schemes-remain-unchanged-for-oct-dec-126093001595_1.html", "source": "Business Standard" },
-    { "id": "u-goldduty-2026-05", "date": "2026-05-13", "title": "Gold and silver import duty raised to 15%", "body": "Up from 6%. Indian gold prices include this duty, so they sit well above the international price.", "url": "https://taxguru.in/custom-duty/customs-duty-gold-silver-raised-15-percent-effective-13-may-2026.html", "source": "TaxGuru" },
-    { "id": "u-sgbtax-2026-04", "date": "2026-04-01", "title": "SGBs bought on the exchange lost their tax-free exit", "body": "Only original subscribers who hold to maturity keep the capital-gains exemption. This matters because exchange purchase is now the only way to buy an SGB.", "url": "https://cleartax.in/s/capital-gain-tax-on-sovereign-gold-bond-sgb", "source": "ClearTax" }
+    {
+      "id": "u-cpi-2026-10",
+      "date": "2026-11-12",
+      "title": "Inflation rose to 6.09% in October",
+      "body": "CPI inflation moved above the RBI's 6% upper limit (September: 5.54%). At 6.09% inflation, PPF's 7.1% is a real return of about 1%, and a 6.25% FD is negative after tax.",
+      "url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf",
+      "source": "MoSPI"
+    },
+    {
+      "id": "u-repo-2026-10",
+      "date": "2026-10-07",
+      "title": "RBI raised the repo rate to 5.50%",
+      "body": "First hike since February 2023 (from 5.25%). When rates rise, existing bond prices fall and new deposits tend to pay more. The 10-year G-Sec yield is around 7.3%.",
+      "url": "https://www.business-standard.com/finance/news/rbi-mpc-october-2026-repo-rate-hike-inflation-growth-gdp-sanjay-malhotra-126100700222_1.html",
+      "source": "Business Standard"
+    },
+    {
+      "id": "u-ss-2026-q3",
+      "date": "2026-09-30",
+      "title": "Small savings rates unchanged for Oct-Dec 2026",
+      "body": "PPF 7.1%, NSC 7.7%, 5-year TD 7.5%. Tenth quarter without a change. Next review around 31 December.",
+      "url": "https://www.business-standard.com/amp/finance/news/interest-rates-on-small-savings-schemes-remain-unchanged-for-oct-dec-126093001595_1.html",
+      "source": "Business Standard"
+    },
+    {
+      "id": "u-goldduty-2026-05",
+      "date": "2026-05-13",
+      "title": "Gold and silver import duty raised to 15%",
+      "body": "Up from 6%. Indian gold prices include this duty, so they sit well above the international price.",
+      "url": "https://taxguru.in/custom-duty/customs-duty-gold-silver-raised-15-percent-effective-13-may-2026.html",
+      "source": "TaxGuru"
+    },
+    {
+      "id": "u-sgbtax-2026-04",
+      "date": "2026-04-01",
+      "title": "SGBs bought on the exchange lost their tax-free exit",
+      "body": "Only original subscribers who hold to maturity keep the capital-gains exemption. This matters because exchange purchase is now the only way to buy an SGB.",
+      "url": "https://cleartax.in/s/capital-gain-tax-on-sovereign-gold-bond-sgb",
+      "source": "ClearTax"
+    }
   ]
 }

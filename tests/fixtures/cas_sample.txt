@@ -1,0 +1,29 @@
+Consolidated Account Statement
+01-Jan-2026 To 13-Nov-2026
+Email Id: someone@example.com
+Sample Investor Name
+PAN: ABCDE1234F
+Sample One Mutual Fund
+Folio No: 12345678 / 0
+PAN: ABCDE1234F KYC: OK PAN: OK
+S101G-Sample One Nifty 50 Index Fund - Direct Plan - Growth (Advisor: DIRECT) Registrar : CAMS
+ISIN: INF000000001
+Opening Unit Balance: 0.000
+05-Jan-2026 Purchase 4,999.75 21.186 235.9900 21.186
+05-Jan-2026 *** Stamp Duty *** 0.25
+05-Feb-2026 Systematic Investment 4,999.75 22.510 222.1100 43.696
+10-Mar-2026 Redemption (2,000.00) (9.524) 210.0000 34.172
+Closing Unit Balance: 34.172 NAV on 13-Nov-2026: INR 245.1200 Valuation on 13-Nov-2026: INR 8,376.24
+Total Cost Value: 7,999.50
+Sample Two Mutual Fund
+Folio No: 9988776655
+G77-Sample Two Gold ETF Fund of Fund - Direct Plan - Growth (Advisor: DIRECT) Registrar : KFINTECH
+ISIN: INF000000008
+Opening Unit Balance: 0.000
+02-Apr-2026 Purchase 999.95 25.000 39.9980 25.000
+Closing Unit Balance: 25.000 NAV on 13-Nov-2026: INR 41.7700 Valuation on 13-Nov-2026: INR 1,044.25
+Total Cost Value: 999.95
+L9-Sample Two Liquid Fund - Direct Plan - Growth (Advisor: DIRECT) Registrar : KFINTECH
+ISIN: INF000000099
+Opening Unit Balance: 3.000
+Closing Unit Balance: 0.000 NAV on 13-Nov-2026: INR 1,253.4022 Valuation on 13-Nov-2026: INR 0.00

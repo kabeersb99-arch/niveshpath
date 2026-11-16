@@ -1,0 +1,55 @@
+{
+  "updatedAt": "2026-11-16T01:46:00.000Z",
+  "feeds": {
+    "smallSavings": {
+      "label": "Small savings rates",
+      "mode": "seed",
+      "ok": true,
+      "fetchedAt": "2026-11-16T01:46:00.000Z",
+      "expectedHours": 36,
+      "kind": "official periodic",
+      "source": "Ministry of Finance (DEA) memorandum of 30 Sep 2026, as reported by Business Standard and Angel One",
+      "url": "https://www.angelone.in/news/personal-finance/finance-minister-announces-small-savings-interest-rates-for-october-december-2026-quarter",
+      "data": {
+        "quarter": "Q3 FY 2026-27",
+        "from": "2026-10-01",
+        "to": "2026-12-31",
+        "rates": { "ppf": 7.1, "nsc": 7.7, "kvp": 7.5, "td1": 6.9, "td2": 7.0, "td3": 7.1, "td5": 7.5, "rd": 6.7, "mis": 7.4, "ssy": 8.2, "scss": 8.2, "sb": 4.0 },
+        "kvpMonths": 115
+      },
+      "history": [
+        { "from": "2024-01-01", "note": "Rates as notified from 1 Jan 2024. Unchanged in every quarter since (richify.ai, citing the Ministry of Finance memoranda).", "rates": { "ppf": 7.1, "nsc": 7.7, "kvp": 7.5, "td1": 6.9, "td2": 7.0, "td3": 7.1, "td5": 7.5, "rd": 6.7, "mis": 7.4, "ssy": 8.2, "scss": 8.2, "sb": 4.0 } }
+      ]
+    },
+    "metals": {
+      "label": "IBJA gold and silver",
+      "mode": "seed",
+      "ok": true,
+      "fetchedAt": "2026-11-16T01:46:00.000Z",
+      "expectedHours": 30,
+      "kind": "official, twice daily",
+      "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
+      "url": "https://ibjarates.com/",
+      "data": { "date": "2026-11-13", "session": "PM", "gold999": 135809, "gold995": 135265, "gold916": 124401, "gold750": 101857, "gold585": 79448, "silver999": 178000, "am": { "gold999": 135884, "silver999": 177500 } }
+    },
+    "nav": {
+      "label": "AMFI mutual fund NAVs",
+      "mode": "seed",
+      "ok": false,
+      "error": "Waiting for the first scheduled fetch. The build sandbox could not reach AMFI.",
+      "fetchedAt": null,
+      "expectedHours": 30,
+      "kind": "official, end of day",
+      "source": "AMFI daily NAV file",
+      "url": "https://portal.amfiindia.com/spages/NAVAll.txt",
+      "data": { "funds": [] }
+    }
+  },
+  "updates": [
+    { "id": "u-cpi-2026-10", "date": "2026-11-12", "title": "Inflation rose to 6.09% in October", "body": "CPI inflation moved above the RBI's 6% upper limit (September: 5.54%). At 6.09% inflation, PPF's 7.1% is a real return of about 1%, and a 6.25% FD is negative after tax.", "url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf", "source": "MoSPI" },
+    { "id": "u-repo-2026-10", "date": "2026-10-07", "title": "RBI raised the repo rate to 5.50%", "body": "First hike since February 2023 (from 5.25%). When rates rise, existing bond prices fall and new deposits tend to pay more. The 10-year G-Sec yield is around 7.3%.", "url": "https://www.business-standard.com/finance/news/rbi-mpc-october-2026-repo-rate-hike-inflation-growth-gdp-sanjay-malhotra-126100700222_1.html", "source": "Business Standard" },
+    { "id": "u-ss-2026-q3", "date": "2026-09-30", "title": "Small savings rates unchanged for Oct-Dec 2026", "body": "PPF 7.1%, NSC 7.7%, 5-year TD 7.5%. Tenth quarter without a change. Next review around 31 December.", "url": "https://www.business-standard.com/amp/finance/news/interest-rates-on-small-savings-schemes-remain-unchanged-for-oct-dec-126093001595_1.html", "source": "Business Standard" },
+    { "id": "u-goldduty-2026-05", "date": "2026-05-13", "title": "Gold and silver import duty raised to 15%", "body": "Up from 6%. Indian gold prices include this duty, so they sit well above the international price.", "url": "https://taxguru.in/custom-duty/customs-duty-gold-silver-raised-15-percent-effective-13-may-2026.html", "source": "TaxGuru" },
+    { "id": "u-sgbtax-2026-04", "date": "2026-04-01", "title": "SGBs bought on the exchange lost their tax-free exit", "body": "Only original subscribers who hold to maturity keep the capital-gains exemption. This matters because exchange purchase is now the only way to buy an SGB.", "url": "https://cleartax.in/s/capital-gain-tax-on-sovereign-gold-bond-sgb", "source": "ClearTax" }
+  ]
+}

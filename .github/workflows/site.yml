@@ -29,6 +29,10 @@ jobs:
       - name: Refresh data (scheduled or manual runs only)
         if: github.event_name != 'push'
         run: node scripts/update_all.mjs
+      - name: Probe candidate sources (diagnostic only)
+        if: github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        run: node scripts/probe.mjs
       - name: Rebuild bundle
         run: node scripts/bundle.mjs
       - name: Commit new data

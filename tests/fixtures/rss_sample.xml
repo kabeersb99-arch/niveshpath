@@ -1,0 +1,5 @@
+<?xml version="1.0"?><rss version="2.0"><channel><title>Sample</title>
+<item><title><![CDATA[NPS rules change from December 1: What subscribers need to know]]></title><link>https://example.com/a?x=1&amp;y=2</link><pubDate>Mon, 16 Nov 2026 08:00:00 +0530</pubDate><description>long text that must not be stored</description></item>
+<item><title>Cricket score update</title><link>https://example.com/b</link><pubDate>Mon, 16 Nov 2026 07:00:00 +0530</pubDate></item>
+<item><title>No link item</title></item>
+</channel></rss>

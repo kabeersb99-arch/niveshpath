@@ -265,6 +265,100 @@
       "status": "official",
       "source": "NiveshPath probe run on GitHub Actions",
       "url": "https://github.com/"
+    },
+    "dd.2008": {
+      "asOf": "2026-11-06",
+      "status": "secondary",
+      "source": "integrato.in Nifty 50 history (month-end data from Apr 2006)",
+      "url": "https://integrato.in/market-analysis/nifty-50",
+      "label": "Nifty 50 fall, 2008",
+      "value": "Fell 59.7% from January to October 2008. Back at its old peak in December 2013, about 61 months after the bottom.",
+      "pct": 59.7
+    },
+    "dd.2020": {
+      "asOf": "2026-11-06",
+      "status": "secondary",
+      "source": "integrato.in Nifty 50 history (month-end data from Apr 2006)",
+      "url": "https://integrato.in/market-analysis/nifty-50",
+      "label": "Nifty 50 fall, 2020",
+      "value": "Fell 38.4% in two months (January to March 2020). Back at its old peak by November 2020, about 8 months later.",
+      "pct": 38.4
+    },
+    "dd.2026": {
+      "asOf": "2026-11-06",
+      "status": "secondary",
+      "source": "integrato.in Nifty 50 history (month-end data from Apr 2006)",
+      "url": "https://integrato.in/market-analysis/nifty-50",
+      "label": "Nifty 50 fall, 2026",
+      "value": "Fell 15.1% from January to March 2026. Still 4.2% below that peak on 6 November 2026.",
+      "pct": 15.1
+    },
+    "nifty.cagr10": {
+      "asOf": "2026-11-06",
+      "status": "secondary",
+      "source": "integrato.in Nifty 50 history (month-end data from Apr 2006)",
+      "url": "https://integrato.in/market-analysis/nifty-50",
+      "label": "Nifty 50, 10-year return",
+      "value": 12.4,
+      "unit": "% a year",
+      "note": "Price index, past performance. Not a forecast."
+    },
+    "tax.slabsFull": {
+      "label": "New regime slabs, tax year 2026-27",
+      "value": "Nil to Rs 4 lakh; 5% to 8 lakh; 10% to 12 lakh; 15% to 16 lakh; 20% to 20 lakh; 25% to 24 lakh; 30% above. Rebate makes tax nil up to Rs 12 lakh of taxable income, with marginal relief just above. Standard deduction Rs 75,000 from salary. 4% cess on tax.",
+      "asOf": "2026-02-01",
+      "status": "reported",
+      "source": "Business Today, Budget 2026: slabs unchanged for FY 2026-27; Bajaj Housing Finance worked example",
+      "url": "https://www.businesstoday.in/personal-finance/tax/story/tax-slabs-fy-2026-27-what-budget-2026-changed-for-individual-taxpayers-and-which-regime-works-best-514044-2026-02-01"
+    },
+    "tax.old": {
+      "label": "Old regime",
+      "value": "Nil to Rs 2.5 lakh; 5% to 5 lakh; 20% to 10 lakh; 30% above. Rebate to Rs 5 lakh. Deductions allowed, including Rs 1.5 lakh for PPF, NSC and 5-year deposits.",
+      "asOf": "2026-02-01",
+      "status": "reported",
+      "source": "Bajaj Housing Finance and ClearTax slab tables",
+      "url": "https://cleartax.in/s/mr/income-tax-slabs",
+      "note": "The old-regime standard deduction used in the Tax view (Rs 50,000) is unverified. Check Form 16."
+    },
+    "ups.payout": {
+      "asOf": "2026-11-16",
+      "status": "official",
+      "source": "PFRDA UPS page; FAQs on UPS (Protean CRA); Cabinet note via PIB",
+      "url": "https://www.npscra.proteantech.in/download/government-sector/central-government/forms/FAQs on UPS.pdf",
+      "label": "UPS assured payout",
+      "value": "50% of the average basic pay of the last 12 months, for 25 or more years of qualifying service. Proportionate for 10 to 25 years. Minimum Rs 10,000 a month after 10 years. Dearness relief applies. Family payout is 60%."
+    },
+    "ups.contrib": {
+      "asOf": "2026-11-16",
+      "status": "official",
+      "source": "PFRDA UPS page; FAQs on UPS (Protean CRA); Cabinet note via PIB",
+      "url": "https://www.npscra.proteantech.in/download/government-sector/central-government/forms/FAQs on UPS.pdf",
+      "label": "Contributions",
+      "value": "Employee 10% of basic + DA under both. Government 14% under NPS; 18.5% under UPS (10% matching + 8.5% to the pool)."
+    },
+    "ups.lump": {
+      "asOf": "2026-11-16",
+      "status": "official",
+      "source": "PFRDA UPS page; FAQs on UPS (Protean CRA); Cabinet note via PIB",
+      "url": "https://www.npscra.proteantech.in/download/government-sector/central-government/forms/FAQs on UPS.pdf",
+      "label": "UPS lump sum",
+      "value": "One-tenth of monthly emoluments (basic + DA) for every completed six months of qualifying service, in addition to gratuity. Tax-free. Does not reduce the payout."
+    },
+    "nps.exit": {
+      "label": "NPS exit for government subscribers",
+      "value": "Up to 60% of the corpus as a tax-free lump sum; at least 40% buys an annuity. Full withdrawal allowed if the corpus is Rs 8 lakh or less.",
+      "asOf": "2026-08-11",
+      "status": "reported",
+      "source": "hropal.com summary of PFRDA's December 2025 exit amendments (government sector stays at 60/40)",
+      "url": "https://hropal.com/blog/nps-new-rules-2026/"
+    },
+    "nps.options": {
+      "label": "Investment options (NPS and UPS)",
+      "value": "Default, Scheme G (100% government securities), LC25, LC50, Balanced Life Cycle (BLC) and LC75. Equity share falls with age in the life-cycle options.",
+      "asOf": "2025-11-19",
+      "status": "reported",
+      "source": "Upstox and Outlook Money on the Finance Ministry's approval of LC75 and BLC",
+      "url": "https://upstox.com/news/personal-finance/investing/6-investment-options-for-central-govt-employees-to-optimise-pension-under-nps-and-ups/article-184940/"
     }
   },
   "assumptions": {
@@ -307,7 +401,16 @@
       "gold": 12.5,
       "equity": 12.5
     },
-    "planningInflation": 5
+    "planningInflation": 5,
+    "pension": {
+      "note": "Planning assumptions for the UPS vs NPS calculator. Not forecasts.",
+      "growthPct": 7,
+      "npsLow": 7,
+      "npsMid": 9,
+      "npsHigh": 11,
+      "annuityPct": 6,
+      "basicShare": 0.67
+    }
   },
   "ipos": [
     {

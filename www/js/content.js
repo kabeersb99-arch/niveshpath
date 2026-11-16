@@ -5,10 +5,10 @@ export const REVIEWED = '2026-11-16';
 export const TIERS = [
   { n: 1, name: 'Sovereign / guaranteed', color: 't1', blurb: 'Backed by the Government of India. The safest place for principal.' },
   { n: 2, name: 'DICGC-insured deposits', color: 't2', blurb: 'Bank deposits, insured up to the DICGC limit per bank.' },
-  { n: 3, name: 'Regulated market-linked debt', color: 't3', blurb: 'Debt funds and corporate bonds. Arrives in Phase 2.', phase: 2 },
+  { n: 3, name: 'Regulated market-linked debt', color: 't3', blurb: 'Debt funds and corporate bonds. Not insured. Prices or borrowers can disappoint.' },
   { n: 4, name: 'Gold and silver', color: 't4', blurb: 'An inflation hedge. Prices can fall for years. Keep it small.' },
-  { n: 5, name: 'Equity index funds', color: 't5', blurb: 'Whole-market funds. Arrives in Phase 2, capped by your 10% rule.', phase: 2 },
-  { n: 6, name: 'IPOs and individual stocks', color: 't6', blurb: 'Highest risk. Lessons and IPO Centre arrive in Phase 2.', phase: 2 },
+  { n: 5, name: 'Equity index funds', color: 't5', blurb: 'Whole-market funds. Can halve in a crash. Capped by your 10% rule.' },
+  { n: 6, name: 'IPOs and individual stocks', color: 't6', blurb: 'Highest risk: single-company bets. Learn first.' },
 ];
 
 const IP = 'https://www.indiapost.gov.in/';
@@ -66,7 +66,7 @@ export const INSTRUMENTS = [
   { id: 'gsec', sec: 'B', tier: 1, name: 'Dated G-Secs and State Development Loans', issuer: 'Government of India (G-Secs) and state governments (SDLs)', regulator: 'Reserve Bank of India',
     rate: { fact: 'gsec10' }, min: 10000, minText: '₹10,000 face value', maxText: 'No practical maximum for retail', lockYears: 10, lock: '1 to 40 years. Fixed coupon paid every six months.', exit: 'Sell on RBI Retail Direct (NDS-OM) or the exchange. The price moves with interest rates.',
     tax: 'Coupon taxed at slab rate. Gains on sale: listed bonds are long-term after 12 months.', taxKind: 'slab', drop: 8, bucket: 'core', limits: 'reported', how: ['Bid in the weekly auction on RBI Retail Direct, NSE goBID or BSE Direct.', 'Hold to maturity to get your full principal back.'], url: RD,
-    risks: 'Interest-rate risk. If yields rise 1%, a 10-year bond falls about 7% in price. No default risk on G-Secs.', fit: 'later', fitNote: 'Learn the Bond Academy lessons (Phase 2) first. If you must sell early in a rising-rate year you can lose principal.', lesson: 'L3-01' },
+    risks: 'Interest-rate risk. If yields rise 1%, a 10-year bond falls about 7% in price. No default risk on G-Secs.', fit: 'later', fitNote: 'Learn the Bond Academy lessons (L3-02 to L3-04) first. If you must sell early in a rising-rate year you can lose principal.', lesson: 'L3-01' },
   { id: 'sgb', sec: 'B', tier: 4, name: 'Sovereign Gold Bonds (secondary market only)', issuer: 'Government of India, issued by RBI', regulator: 'Reserve Bank of India',
     rate: { text: '2.5% a year on the issue price + gold price change' }, min: 14000, minText: '1 unit = 1 gram of gold (see live price)', maxText: '4 kg a person a year', lockYears: 8, lock: '8 years from issue. RBI buy-back window from year 5.', exit: 'Sell on NSE/BSE (often thinly traded) or use the RBI premature redemption window.',
     tax: 'See the dated SGB tax fact below. Interest is taxable at slab rate.', taxKind: 'gold', drop: 20, bucket: 'gold', limits: 'reported', factRule: 'sgbTax', how: ['No new issue is open. Existing series trade on NSE and BSE and need a demat account.', 'Compare the SGB price with the IBJA gold price before buying. Avoid paying a premium.'], url: 'https://www.rbi.org.in/',

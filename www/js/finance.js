@@ -214,3 +214,29 @@ export function holdingsXirr(holdings, asOf = new Date()) {
   flows.push({ date: ymd(asOf), amount: total });
   return xirr(flows);
 }
+
+/* ---------- Phase 2: bond maths ---------- */
+/** Macaulay duration (years), modified duration and convexity of a fixed-coupon bond. */
+export function bondRisk(couponPct, ytmPct, years, freq = 2, face = 100) {
+  const n = Math.round(years * freq), c = (face * couponPct) / 100 / freq, y = ytmPct / 100 / freq;
+  let price = 0, wt = 0, cx = 0;
+  for (let k = 1; k <= n; k++) {
+    const cf = c + (k === n ? face : 0), pv = cf / Math.pow(1 + y, k);
+    price += pv; wt += (k / freq) * pv; cx += (k * (k + 1) * pv) / Math.pow(1 + y, 2);
+  }
+  const macaulay = wt / price, modified = macaulay / (1 + y);
+  return { price, macaulay, modified, convexity: cx / price / (freq * freq) };
+}
+
+/** Price change (%) when yield moves by `bp` basis points: exact, and the duration (+convexity) estimates. */
+export function yieldShock(couponPct, ytmPct, years, bp, freq = 2) {
+  const r = bondRisk(couponPct, ytmPct, years, freq), dy = bp / 10000;
+  const exact = (bondPrice(100, couponPct, ytmPct + bp / 100, years, freq) / r.price - 1) * 100;
+  return { exact, byDuration: -r.modified * dy * 100, withConvexity: (-r.modified * dy + 0.5 * r.convexity * dy * dy) * 100, ...r };
+}
+
+/** Current yield (%): yearly coupon divided by price. */
+export const currentYield = (couponPct, price, face = 100) => ((face * couponPct) / 100 / price) * 100;
+
+/** Odds of getting one lot in an oversubscribed retail IPO category (lottery): about 1 / times subscribed (by applications). */
+export const ipoLotOdds = (timesSubscribed) => (timesSubscribed <= 1 ? 1 : 1 / timesSubscribed);

@@ -1,5 +1,7 @@
 import * as F from './finance.js';
-import { TIERS, INSTRUMENTS, LESSONS, GLOSSARY, NOT_FOR_YOU, REVIEWED } from './content.js';
+import { TIERS, INSTRUMENTS as I1, LESSONS as L1, GLOSSARY as G1, NOT_FOR_YOU, REVIEWED } from './content.js';
+import { INSTRUMENTS2, LESSONS2, GLOSSARY2 } from './content2.js';
+const INSTRUMENTS = I1.concat(INSTRUMENTS2), LESSONS = L1.concat(LESSONS2).sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true })), GLOSSARY = { ...G1, ...GLOSSARY2 };
 
 /* ---------- data ---------- */
 const B = window.NP_BUNDLE || { facts: { facts: {}, assumptions: { returns: {}, stress: {}, taxOnGain: {} } }, live: { feeds: {}, updates: [] } };
@@ -81,7 +83,7 @@ const EXTRA_TYPES = [
   { id: 'debtmf', name: 'Liquid / debt mutual fund', bucket: 'safety', drop: 2 },
 ];
 const KIND = { ppf: ['ppf', 1], nsc: ['fixed', 1], kvp: ['fixed', 1], potd: ['fixed', 4], pord: ['fixed', 4], pomis: ['fixed', 0], scss: ['fixed', 0], ssy: ['fixed', 1], posb: ['fixed', 1], frsb: ['fixed', 0], tbill: ['fixed', 0], bankfd: ['fixed', 4], bankrd: ['fixed', 4], sfbfd: ['fixed', 4] };
-const SECURITIES = new Set(['frsb', 'tbill', 'gsec', 'sgb', 'goldetf', 'goldfof', 'silveretf', 'egr', 'indexfund', 'debtmf']);
+const SECURITIES = new Set(['frsb', 'tbill', 'gsec', 'sgb', 'goldetf', 'goldfof', 'silveretf', 'egr', 'indexfund', 'debtmf', 'liquidmf', 'giltmf', 'corpbond', 'taxfree', 'niftyfund', 'niftyetf', 'reit', 'ipo', 'smeipo', 'stocks']);
 const BANK = new Set(['bankfd', 'bankrd', 'sfbfd']);
 const BUCKETS = { safety: 'Safety (FD, RD, TD, liquid)', core: 'Core safe growth (PPF, NSC, RBI bonds)', gold: 'Inflation hedge (gold, silver)', growth: 'Learning growth (index fund)' };
 const typeOf = (id) => INSTRUMENTS.find((i) => i.id === id) || EXTRA_TYPES.find((i) => i.id === id) || { id, name: id, bucket: 'safety' };
@@ -153,6 +155,9 @@ function tokens() {
     rd: r.rd, rd60: Math.round(F.rdMaturity(1000, r.rd || 0, 60)).toLocaleString('en-IN'), mis: r.mis, dicgc: (+fact('dicgc').value || 0).toLocaleString('en-IN'),
     frsb: fact('frsb').value, gsec: fact('gsec10').value, repo: fact('repo').value, gold: g.toLocaleString('en-IN'), silver: (MET().silver999 || 0).toLocaleString('en-IN'), duty: fact('goldDuty').value,
     sgbStatus: fact('sgbStatus').value, sgbTax: fact('sgbTax').value, gold1g: Math.round(g / 10).toLocaleString('en-IN'), g1000: g ? (1000 / (g / 10)).toFixed(3) : '—',
+    px10: F.bondPrice(100, 7, +fact('gsec10').value || 7, 10).toFixed(2), pay10: Math.round(F.bondPrice(100, 7, +fact('gsec10').value || 7, 10) * 100).toLocaleString('en-IN'),
+    maxDrop: p.maxDrop, eqCap: F.equityCap(p.maxDrop, (A().stress || {}).equity || 50).toFixed(0), eqAmt: Math.round(1000 * F.equityCap(p.maxDrop, (A().stress || {}).equity || 50)).toLocaleString('en-IN'),
+    ipoLot: fact('ipo.rules').value, ipoRetail: 'Allotment in an oversubscribed retail portion is by lottery.', ipoSme: fact('ipo.sme').value,
     basic: p.basicPay.toLocaleString('en-IN'), six: sixMonths().toLocaleString('en-IN'), two: (2 * p.basicPay).toLocaleString('en-IN'), ups: fact('ups.option').value,
   };
 }
@@ -169,6 +174,7 @@ function events() {
   push(new Date(now.getFullYear() + 1, 0, 31), 'Conduct-rule intimation due (if over threshold)', 'For calendar year ' + now.getFullYear() + '.');
   push(new Date(now.getMonth() < 3 || (now.getMonth() === 3 && now.getDate() <= 5) ? now.getFullYear() : now.getFullYear() + 1, 3, 5), 'PPF: deposit by 5 April for a full year of interest', '');
   if (p.weddingBy) push(p.weddingBy, 'Short-term goal money needed', 'Keep this money in deposits only.');
+  (FACTS.ipos || []).forEach((i) => { if (i.open) push(i.open, 'IPO opens: ' + i.name, i.bandHigh ? '₹' + i.bandLow + ' to ₹' + i.bandHigh + ', one lot ' + inr(i.lot * i.bandHigh) : 'Price band awaited'); if (i.close) push(i.close, 'IPO closes: ' + i.name, 'UPI mandate cut-off 5 pm'); if (i.allot) push(i.allot, 'IPO allotment: ' + i.name, ''); });
   state.holdings.filter((h) => h.maturity).forEach((h) => push(h.maturity, 'Matures: ' + h.name, typeOf(h.type).name));
   return ev.filter((e) => e.date >= addDays(now, -1)).sort((a, b) => a.date - b.date);
 }
@@ -198,14 +204,16 @@ function vHome() {
     ${factTile('frsb', 'RBI floating bond')}
     ${factTile('repo', 'RBI repo rate')}
     ${factTile('cpi', 'CPI inflation')}
-    ${factTile('gsec10', '10-year G-Sec yield')}
+    ${feed('yields') ? feedTile('yields', '10-year G-Sec yield', pc((Y() || {}).gsec10)) : factTile('gsec10', '10-year G-Sec yield')}
     ${feedTile('metals', 'Gold 24K / 10 g', inr(m.gold999))}
     ${feedTile('metals', 'Silver / kg', inr(m.silver999))}
     ${factTile('fd.sbi1y', 'SBI FD, 1 year')}
-    ${tile('Nifty 50 · Sensex · USD/INR', '—', '<div class="src"><span class="chip fs-warn">Phase 2</span> needs a market-data feed</div>')}
+    ${feed('yields') ? feedTile('yields', '91-day T-Bill', pc((Y() || {}).tbill91)) : ''}
+    ${feed('fx') ? feedTile('fx', 'USD / INR', '₹' + (+((feed('fx').data || {}).usdinr || 0)).toFixed(2)) : ''}
+    ${tile('Nifty 50 · Sensex', '—', '<div class="src"><span class="chip fs-warn">blocked</span> exchanges refuse automated access</div>')}
   </div><p class="muted small">Real return check: PPF ${pc(SS().rates.ppf, 1)} against ${pc(cpi())} inflation is ${pc(F.realReturn(SS().rates.ppf || 0, cpi()))} a year.</p>`);
   h += card('What changed', (LIVE.updates || []).slice().sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 5).map((u) => `<div class="upd"><div class="ud">${fmtD(u.date)}</div><div><b>${esc(u.title)}</b><div class="muted">${esc(u.body)}</div>${u.url ? `<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.source || 'source')}</a>` : ''}</div></div>`).join('') || '<p class="muted">No updates yet.</p>');
-  h += card('Coming up', `<table class="tbl">${events().slice(0, 7).map((e) => `<tr><th class="nowrap">${fmtD(e.date)}</th><td>${esc(e.title)}${e.note ? `<div class="muted small">${esc(e.note)}</div>` : ''}</td><td class="r muted nowrap">${daysTo(e.date) <= 0 ? 'today' : daysTo(e.date) + ' d'}</td></tr>`).join('')}</table><p class="muted small">RBI policy dates and T-Bill auctions join this list in Phase 2.</p>`);
+  h += card('Coming up', `<table class="tbl">${events().slice(0, 9).map((e) => `<tr><th class="nowrap">${fmtD(e.date)}</th><td>${esc(e.title)}${e.note ? `<div class="muted small">${esc(e.note)}</div>` : ''}</td><td class="r muted nowrap">${daysTo(e.date) <= 0 ? 'today' : daysTo(e.date) + ' d'}</td></tr>`).join('')}</table><p class="muted small">RBI policy dates and the T-Bill auction calendar are not on this list yet.</p>`);
   if (nl) h += card('Learn something (5 minutes)', `<div class="muted small">${nl.why} · ${nl.l.id}${state.streak.n ? ` · streak ${state.streak.n} day${state.streak.n > 1 ? 's' : ''}` : ''}</div><p><b>${esc(nl.l.title)}</b></p><button class="btn" data-lesson="${nl.l.id}">Start</button>`);
   return h;
 }
@@ -248,7 +256,7 @@ function vInstruments() {
   for (const t of TIERS) {
     const list = INSTRUMENTS.filter((i) => i.tier === t.n);
     h += `<section class="card tier ${t.color}"><h2><span class="step">${t.n}</span> ${esc(t.name)}</h2><p class="muted small">${esc(t.blurb)}</p>`;
-    h += list.length ? `<div class="list">${list.map((i) => { const f = fitFor(i); return `<button class="item" data-inst="${i.id}"><span><b>${esc(i.name)}</b><span class="muted small"> · ${rateText(i)}</span></span><span class="chip fit-${f.cls}">${esc(f.label)}</span></button>`; }).join('')}</div>` : `<p class="muted small">Coming in Phase ${t.phase}.</p>`;
+    h += list.length ? `<div class="list">${list.map((i) => { const f = fitFor(i); return `<button class="item" data-inst="${i.id}"><span><b>${esc(i.name)}</b><span class="muted small"> · ${rateText(i)}</span></span><span class="chip fit-${f.cls}">${esc(f.label)}</span></button>`; }).join('')}</div>` : '';
     h += `</section>`;
   }
   h += card('Never shown as options for you', `<p class="muted">${NOT_FOR_YOU.map(esc).join(' · ')}</p><button class="btn ghost" data-lesson="L7-01">Why (lesson L7-01)</button>`);
@@ -272,7 +280,7 @@ function vInstrument(i) {
   if (n != null && !i.drop) { const pt = F.postTax(n, taxPct(i.taxKind)); ret = row('After tax (your ' + P().slab + '% slab)', pc(pt)) + row('After inflation (' + pc(cpi()) + ')', `<b class="${F.realReturn(pt, cpi()) >= 0 ? 'up' : 'down'}">${pc(F.realReturn(pt, cpi()))}</b>`); }
   const lesson = LESSONS.find((l) => l.id === i.lesson);
   return `<button class="back" data-back="1">‹ Safety ladder</button>
-  <h1>${esc(i.name)}</h1><div><span class="chip ${t.color}c">${t.n}. ${esc(t.name)}</span> ${i.warn ? '<span class="chip fit-bad">not regulated</span>' : ''} ${i.closed ? '<span class="chip fit-bad">closed</span>' : ''}</div>
+  <h1>${esc(i.name)}</h1><div><span class="chip ${t.color}c">${t.n}. ${esc(t.name)}</span> ${i.warn ? '<span class="chip fit-bad">not regulated</span>' : ''} ${i.warn2 ? '<span class="chip fit-bad">' + esc(i.warn2) + '</span>' : ''} ${i.closed ? '<span class="chip fit-bad">closed</span>' : ''}</div>
   ${card('Live data', live)}
   ${card('Fit for my profile: <span class="chip fit-' + f.cls + '">' + esc(f.label) + '</span>', `<ul class="why">${f.reasons.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><p class="muted small">Worked out from your profile in Settings. Education only, not advice.</p>`)}
   ${card('The facts', `<table class="tbl kvt">
@@ -293,7 +301,7 @@ function vLearn() {
   if (sub && sub.calc) return vCalc();
   if (sub && sub.gloss) return `<button class="back" data-back="1">‹ Learn</button><h1>Glossary</h1>${card('', `<dl class="gl">${Object.keys(GLOSSARY).sort().map((k) => `<dt>${esc(k)}</dt><dd>${esc(GLOSSARY[k])}</dd>`).join('')}</dl>`)}`;
   const done = LESSONS.filter((l) => state.progress[l.id]).length;
-  let h = `<h1>Academy</h1><p class="muted">${done} of ${LESSONS.length} lessons done · Phase 1 covers the safe products. The full L0 to L10 set arrives in Phase 3.</p>
+  let h = `<h1>Academy</h1><p class="muted">${done} of ${LESSONS.length} lessons done · Phases 1 and 2 cover safe products, bonds, index funds and IPOs. The rest arrives in Phase 3.</p>
   <div class="btns"><button class="btn ghost" data-sub="calc">Calculators</button><button class="btn ghost" data-sub="gloss">Glossary</button>
   <label class="tog"><input type="checkbox" id="eli" ${state.settings.eli ? 'checked' : ''}> Explain like I'm new</label></div>`;
   LEVELS.forEach((name, lv) => {
@@ -308,7 +316,7 @@ function vLesson(l) {
   const links = LESSONS.filter((x) => x.id !== l.id && Math.abs(x.level - l.level) <= 1).slice(0, 4);
   return `<button class="back" data-back="1">‹ Academy</button><div class="muted small">${l.id} · about 3 minutes</div><h1>${esc(l.title)}</h1>
   ${card(state.settings.eli ? 'In plain words' : '', (state.settings.eli ? `<p class="simple">${fill(l.simple)}</p>` : '') + `<div class="body">${l.body.map((p) => `<p>${fill(p)}</p>`).join('')}</div>`)}
-  ${card('Worked example with your numbers', `<p>${fill(l.example)}</p>${inst ? `<button class="btn ghost" data-inst="${inst.id}">See it live: ${esc(inst.name)}</button>` : ''}`)}
+  ${card('Worked example with your numbers', `<p>${fill(l.example)}</p><div class="btns">${inst ? `<button class="btn ghost" data-inst="${inst.id}">See it live: ${esc(inst.name)}</button>` : ''}${l.tool ? `<button class="btn ghost" data-tool="${l.tool}">Open the ${l.tool === 'bonds' ? 'bond tools' : l.tool === 'ipo' ? 'IPO centre' : 'fund list'}</button>` : ''}</div>`)}
   ${card('Quiz', l.quiz.map((q, qi) => { const a = quizAns[qi]; return `<div class="q"><p><b>${qi + 1}.</b> ${fill(q.q)}</p>${q.o.map((o, oi) => `<button class="opt ${a != null ? (oi === q.a ? 'right' : oi === a ? 'wrong' : '') : ''}" data-q="${qi}" data-o="${oi}" ${a != null ? 'disabled' : ''}>${fill(o)}</button>`).join('')}${a != null ? `<p class="why2 ${a === q.a ? 'up' : 'down'}">${a === q.a ? 'Correct.' : 'Not quite.'} <span class="muted">${fill(q.why)}</span></p>` : ''}</div>`; }).join('') + (Object.keys(quizAns).length === l.quiz.length ? `<div class="alert ok">Score ${l.quiz.filter((q, qi) => quizAns[qi] === q.a).length} of ${l.quiz.length}. Saved. Next revision: ${fmtD(state.progress[l.id]?.next)}.</div>` : ''))}
   ${card('Related topics', `<div class="list">${links.map((x) => `<button class="item" data-lesson="${x.id}"><span><span class="muted small">${x.id}</span> ${esc(x.title)}</span></button>`).join('')}</div>`)}
   <div class="src">Sources: ${l.sources.map((s) => `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`).join(' · ')} · last reviewed ${fmtD(REVIEWED)}</div>`;
@@ -522,10 +530,10 @@ function vMore() {
     </div><p class="muted small">Slab: the new-regime rebate can make your tax nil up to ₹12 lakh of income. Set this after your first salary slip, or ask a CA.</p><button class="btn" data-act="saveProfile">Save profile</button>`)}
   ${card('Data health', `<table class="tbl"><tr><th>Feed</th><th class="r">Last checked</th><th class="r">Status</th></tr>${feeds}</table><p class="muted small">Feeds are fetched by a scheduled GitHub Actions job and stored with a timestamp. A yellow badge means the data is older than it should be. Bundle built ${fmtDT(LIVE.updatedAt)}.</p>
     <details><summary>All dated facts (${Object.keys(FACTS.facts).length}) · reviewed ${fmtD(FACTS.reviewed)}</summary><div class="scroll"><table class="tbl"><tr><th>Fact</th><th class="r">As of</th><th class="r">Status</th></tr>${facts}</table></div></details>`)}
-  ${card('Notifications', '<p class="muted">Push alerts (rate changes, IPO dates, maturities) arrive in Phase 2 with Firebase Cloud Messaging. Until then, Update cards appear on Home.</p>')}
+  ${card('Notifications', '<p class="muted">Changes appear as Update cards on Home and dates under Coming up. Push alerts to your phone need a free Firebase project that only you can create; say the word and the next build wires it in.</p>')}
   ${card('Backup and lock', `<p class="muted small">Your data lives only on this device, encrypted with your PIN (AES-256-GCM). ${memoryOnly ? '<b class="warnTxt">This browser is not letting the app store data, so it will be lost when you close the page.</b>' : ''}</p>
     <div class="btns"><button class="btn ghost" data-act="backup">Create encrypted backup</button><button class="btn ghost" data-act="showRestore">Restore</button><button class="btn ghost" data-act="lock">Lock now</button><button class="btn ghost danger" data-act="wipe">Erase everything</button></div><div id="bk"></div>`)}
-  ${card('About', `<p><b>NiveshPath</b> 0.1 (Phase 1). A private learning and tracking tool for one user.</p><p class="muted">Education and tracking only. It is not a SEBI-registered investment adviser, does not place orders and carries no referral links. No investment is guaranteed. Verify every figure at its source and double-check major decisions with a SEBI-registered adviser or a CA.</p><p class="muted small">No analytics. No PAN, Aadhaar, bank account numbers or passwords are stored.</p>`)}`;
+  ${card('About', `<p><b>NiveshPath</b> 0.2 (Phase 2). A private learning and tracking tool for one user.</p><p class="muted">Education and tracking only. It is not a SEBI-registered investment adviser, does not place orders and carries no referral links. No investment is guaranteed. Verify every figure at its source and double-check major decisions with a SEBI-registered adviser or a CA.</p><p class="muted small">No analytics. No PAN, Aadhaar, bank account numbers or passwords are stored.</p>`)}`;
 }
 function saveProfile() {
   const p = P();
@@ -560,17 +568,103 @@ async function doUnlock() {
   catch { $('#lockmsg').textContent = 'Wrong PIN.'; }
 }
 
+/* ---------- MARKETS (Phase 2): bonds, funds, IPOs, news ---------- */
+const Y = () => (feed('yields') || {}).data || null;
+function syncFacts() {
+  const y = Y(), f = feed('yields');
+  if (y && y.gsec10) {
+    const base = { asOf: y.date, status: 'secondary', source: 'CCIL tenor-wise indicative yields (indicative, not the FBIL benchmark)', url: f.url, unit: '%' };
+    FACTS.facts.gsec10 = { ...base, label: '10-year G-Sec yield', value: +y.gsec10.toFixed(2) };
+    if (y.tbill91) FACTS.facts.tbill91 = { ...base, label: '91-day T-Bill yield', value: +y.tbill91.toFixed(2) };
+  }
+}
+const MTABS = [['bonds', 'Bonds & yields'], ['funds', 'Funds'], ['ipo', 'IPO centre'], ['news', 'News']];
+function vMarkets() {
+  const tab = (sub && sub.tab) || 'bonds';
+  return `<h1>Markets</h1><div class="seg">${MTABS.map(([k, l]) => `<button class="${k === tab ? 'on' : ''}" data-mtab="${k}">${l}</button>`).join('')}</div>` + ({ bonds: vBonds, funds: vFunds, ipo: vIpo, news: vNews }[tab] || vBonds)();
+}
+function vBonds() {
+  const y = Y(), f = feed('yields'), hist = (f && f.history) || [];
+  let h = '';
+  if (y) {
+    const max = Math.max(...y.curve.map((r) => r.ytm)), min = Math.min(...y.curve.map((r) => r.ytm)) - 0.5;
+    h += card('India yield curve, ' + fmtD(y.date), `<table class="tbl"><tr><th>Maturity</th><th>Security</th><th class="r">Yield</th><th></th></tr>${y.curve.map((r) => `<tr><td class="nowrap">${esc(r.tenor)}</td><td class="muted small">${esc(r.security)}</td><td class="r"><b>${pc(r.ytm)}</b></td><td style="width:34%"><div class="meter"><span class="m-ok" style="width:${(((r.ytm - min) / (max - min)) * 100).toFixed(0)}%"></span></div></td></tr>`).join('')}</table>
+      <p class="muted small">Longer loans pay more: the curve slopes ${y.curve[y.curve.length - 1].ytm > y.curve[0].ytm ? 'up' : 'down'} from ${pc(y.curve[0].ytm)} (91 days) to ${pc(y.curve[y.curve.length - 1].ytm)} (${esc(y.curve[y.curve.length - 1].tenor)}). Repo rate: ${pc(fact('repo').value)}.</p>
+      ${y.sdl && y.sdl.length ? `<details><summary>State Development Loans (${y.sdl.length})</summary><table class="tbl">${y.sdl.map((r) => `<tr><td>${esc(r.tenor)}</td><td class="muted small">${esc(r.security)}</td><td class="r">${pc(r.ytm)}</td></tr>`).join('')}</table></details>` : ''}${srcFeed('yields')}`);
+    h += card('10-year yield history', hist.length > 1 ? `<table class="tbl"><tr><th>Date</th><th class="r">10-year</th><th class="r">91-day</th></tr>${hist.slice(-12).reverse().map((x) => `<tr><td>${fmtD(x.date)}</td><td class="r">${pc(x.gsec10)}</td><td class="r">${pc(x.tbill91)}</td></tr>`).join('')}</table>` : `<p class="muted">History starts today (${fmtD(y.date)}: ${pc(y.gsec10)}). The app adds one row each trading day. A chart with RBI policy dates follows once there is enough history.</p>`);
+  } else h += card('India yield curve', `<p class="muted">Waiting for the first yield fetch.</p>${srcFact('gsec10')}`);
+  const y10 = (y && y.gsec10) || +fact('gsec10').value || 7;
+  h += card('What happens to my bond if yields move?', `<div class="grid2">${num('b_c', 'Coupon %', 7)}${num('b_y', 'Yield today %', y10.toFixed(2))}${num('b_n', 'Years to maturity', 10)}${num('b_bp', 'Yield change (%, e.g. 1 or -0.5)', 1)}${num('b_amt', 'Amount invested (₹)', 10000)}</div><div id="o_bond" class="out"></div><p class="muted small">Hold a G-Sec to maturity and you still get every coupon and the full face value. The fall matters if you sell early or hold a bond fund.</p>`);
+  h += card('T-Bill yield from its price', `<div class="grid2">${num('b_tp', 'Price per ₹100', 98.71)}<label class="f">Days<select id="b_td"><option>91</option><option>182</option><option>364</option></select></label></div><div id="o_tbill" class="out"></div>`);
+  h += card('Bond Academy', `<div class="list">${LESSONS.filter((l) => l.level === 3).map((l) => `<button class="item" data-lesson="${l.id}"><span><span class="muted small">${l.id}</span> <b>${esc(l.title)}</b></span><span class="chip ${state.progress[l.id] ? 'fit-ok' : 'fit-mut'}">${state.progress[l.id] ? state.progress[l.id].score + '/5' : 'new'}</span></button>`).join('')}</div><p class="muted small">Weekly T-Bill auctions are on Wednesdays through RBI Retail Direct. The auction calendar and cut-off results join this page next.</p>`);
+  return h;
+}
+function bondUpdate() {
+  if (!$('#b_c')) return;
+  const c = nval('b_c'), yv = nval('b_y'), n = Math.max(0.5, nval('b_n')), d = nval('b_bp'), amt = nval('b_amt');
+  const s = F.yieldShock(c, yv, n, d * 100);
+  $('#o_bond').innerHTML = `Price today <b>₹${s.price.toFixed(2)}</b> per ₹100 · modified duration <b>${s.modified.toFixed(2)}</b> · current yield ${pc(F.currentYield(c, s.price))}<br>If yields move ${d >= 0 ? '+' : ''}${d}%: price changes <b class="${s.exact < 0 ? 'down' : 'up'}">${s.exact >= 0 ? '+' : ''}${pc(s.exact)}</b> (duration alone says ${pc(s.byDuration)}). On ${inr(amt)} that is <b class="${s.exact < 0 ? 'down' : 'up'}">${inr((amt * s.exact) / 100)}</b>.`;
+  const tp = nval('b_tp'), td = +val('b_td');
+  $('#o_tbill').innerHTML = tp > 0 && tp < 100 ? `Yield <b>${pc(F.tbillYield(tp, td))}</b> a year · ₹10,000 face value costs ${inr(tp * 100)} and returns ₹10,000 after ${td} days` : 'Enter a price below 100.';
+}
+let fundCat = 'Nifty 50 index fund';
+function vFunds() {
+  const f = feed('nav'), d = (f && f.data) || { funds: [] }, cats = [...new Set(d.funds.map((x) => x.cat))];
+  if (!cats.includes(fundCat)) fundCat = cats[0];
+  const list = d.funds.filter((x) => x.cat === fundCat);
+  let h = card('Index and gold fund list', d.funds.length ? `<div class="btns">${cats.map((c) => `<button class="btn ghost ${c === fundCat ? 'sel' : ''}" data-fcat="${esc(c)}">${esc(c)} (${d.funds.filter((x) => x.cat === c).length})</button>`).join('')}</div>
+    <div class="scroll"><table class="tbl"><tr><th>Fund (Direct plan, Growth)</th><th class="r">NAV ₹</th><th class="r">Date</th></tr>${list.map((x) => `<tr><td>${esc(x.name)}<div class="muted small">${esc(x.amc || '')} · code ${esc(x.code)}</div></td><td class="r">${(+x.nav).toFixed(4)}</td><td class="r nowrap">${fmtD(x.date)}</td></tr>`).join('')}</table></div>
+    ${srcFeed('nav')}<p class="muted small"><b>Not ranked yet.</b> The AMFI NAV file has no expense ratio, tracking error or fund size, and those are what you should choose by. Until a sourced feed is added, read them on each fund's factsheet on the AMC website. A NAV of ₹15 is not "cheaper" than a NAV of ₹250.</p>` : `<p class="muted">Waiting for the first NAV fetch.</p>${srcFeed('nav')}`);
+  if (d.newSchemes && d.newSchemes.length) h += card('Newly listed schemes', `<table class="tbl">${d.newSchemes.map((x) => `<tr><td>${esc(x.name)}<div class="muted small">${esc(x.cat)}</div></td><td class="r nowrap">first seen ${fmtD(x.seen)}</td></tr>`).join('')}</table><p class="muted small">A new fund has no track record. An older fund tracking the same index is usually the safer pick.</p>`);
+  h += card('Index levels', `<p class="muted">Nifty 50 and Sensex levels are not shown. ${esc(String(fact('data.blocked').value))}</p>`);
+  h += card('Lessons', `<div class="list">${LESSONS.filter((l) => l.level === 5).map((l) => `<button class="item" data-lesson="${l.id}"><span><span class="muted small">${l.id}</span> <b>${esc(l.title)}</b></span></button>`).join('')}</div>`);
+  return h;
+}
+function ipoStatus(i) {
+  const t = iso(today());
+  if (!i.open) return ['Dates awaited', 'mut'];
+  if (t < i.open) return [daysTo(i.open) <= 1 ? 'Opens tomorrow' : 'Opens ' + fmtD(i.open), 'warn'];
+  if (t <= i.close) return [t === i.close ? 'Closes today (UPI cut-off 5 pm)' : 'Open now', 'ok'];
+  if (i.allot && t <= i.allot) return ['Closed · allotment ' + fmtD(i.allot), 'mut'];
+  return ['Closed', 'mut'];
+}
+function vIpo() {
+  const list = FACTS.ipos || [], w = FACTS.ipoWatch, f = feed('ipo'), d = f && f.data, p = P();
+  let h = `<div class="alert warn">An IPO is a bet on one company at a price chosen by the seller. Nothing here is a recommendation. Applying to many IPOs and selling on listing day counts as speculation under the conduct rules.</div>`;
+  h += card('Mainboard IPOs with dates', list.length ? list.map((i) => { const [st, cls] = ipoStatus(i), cost = i.lot && i.bandHigh ? i.lot * i.bandHigh : null; return `<div class="hold"><div class="hh"><b>${esc(i.name)}</b><span class="chip fit-${cls}">${esc(st)}</span></div>
+      <table class="tbl kvt">${row('Dates', i.open ? fmtD(i.open) + ' to ' + fmtD(i.close) : '—')}${row('Price band', i.bandHigh ? '₹' + i.bandLow + ' to ₹' + i.bandHigh : 'Not announced when checked')}${row('Lot and minimum', cost ? i.lot + ' shares = <b>' + inr(cost) + '</b>' : '—')}
+      ${row('Affordable with ' + inr(p.corpus) + '?', cost ? (cost <= p.corpus ? '<b class="up">Yes</b>' : '<b class="down">No</b>, short by ' + inr(cost - p.corpus)) : '—')}${i.sizeCr ? row('Issue size', '₹' + i.sizeCr + ' crore') : ''}${i.note ? row('Note', esc(i.note)) : ''}</table>
+      <div class="src">${chip(i.status)} as of ${fmtD(i.asOf)} · <a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.source)}</a> · confirm on the NSE or BSE IPO page before acting</div>
+      <div class="btns sm"><button class="btn ghost" data-addtype="ipo">Log an allotment</button></div></div>`; }).join('') : '<p class="muted">No dated mainboard IPO on file.</p>');
+  h += card('Your odds in the retail lottery', `<div class="grid2">${num('i_x', 'Retail portion subscribed (times)', 25)}${num('i_cost', 'One lot costs (₹)', (list[0] && list[0].lot * list[0].bandHigh) || 15000)}</div><div id="o_ipo" class="out"></div>`);
+  if (d) h += card('Latest filings at SEBI', `${d.rhp && d.rhp.length ? `<h3>Red herring prospectuses</h3><table class="tbl">${d.rhp.slice(0, 8).map((r) => `<tr><th class="nowrap">${fmtD(r.date)}</th><td><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></td></tr>`).join('')}</table>` : ''}<h3>Draft offer documents</h3><table class="tbl">${d.drafts.slice(0, 10).map((r) => `<tr><th class="nowrap">${fmtD(r.date)}</th><td><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></td></tr>`).join('')}</table>${srcFeed('ipo')}<p class="muted small">This list mixes mainboard and SME filings. A draft can take months to become an IPO, or never does.</p>`);
+  if (w) h += card('Big names in the pipeline', `<p>${w.names.map(esc).join(' · ')}</p><div class="src">${chip(w.status)} ${esc(w.note)} As of ${fmtD(w.asOf)}.</div>`);
+  h += card('SME IPOs', `<div class="alert bad">High risk. Not for you.</div><p class="muted">${esc(String(fact('ipo.sme').value))} Thin trading and light disclosure. This app does not list them.</p>${srcFact('ipo.sme')}`);
+  h += card('What is missing', `<p class="muted small">Live subscription numbers, allotment status and listing prices come from NSE, BSE and registrars, which refuse automated access from GitHub servers. Dates and price bands above are entered from named reports and dated. Grey market premium is left out on purpose.</p>`);
+  h += card('Lessons', `<div class="list">${LESSONS.filter((l) => l.level === 6).map((l) => `<button class="item" data-lesson="${l.id}"><span><span class="muted small">${l.id}</span> <b>${esc(l.title)}</b></span></button>`).join('')}</div>`);
+  return h;
+}
+function ipoUpdate() {
+  if (!$('#i_x')) return;
+  const x = Math.max(0.01, nval('i_x')), odds = F.ipoLotOdds(x);
+  $('#o_ipo').innerHTML = `Chance of getting one lot: about <b>${pc(odds * 100, 1)}</b>${x > 1 ? ` (1 in ${Math.round(x)})` : ''}. ${inr(nval('i_cost'))} stays blocked in your bank account for about a week either way. Applying for more lots does not raise the odds.`;
+}
+function vNews() {
+  const f = feed('news'), items = (f && f.data && f.data.items) || [];
+  return card('Headlines that touch your money', items.length ? items.slice(0, 40).map((i) => `<div class="upd"><div class="ud">${i.at ? fmtDT(i.at) : ''}<br>${esc(i.src)}</div><div><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a></div></div>`).join('') + srcFeed('news') + `<p class="muted small">Headlines and links only, filtered by keywords (PPF, RBI, inflation, gold, NPS, IPO, tax and similar). Tap to read at the publisher. PIB and Business Standard refuse automated access, so they are not included.</p>` : `<p class="muted">Waiting for the first news fetch.</p>`);
+}
+
 /* ---------- shell ---------- */
 let locked = true;
-const NAV = [['home', 'Home'], ['learn', 'Learn'], ['instruments', 'Products'], ['plan', 'Plan'], ['portfolio', 'Portfolio'], ['more', 'Settings']];
-const VIEWS = { home: vHome, learn: vLearn, instruments: vInstruments, plan: vPlan, portfolio: vPortfolio, more: vMore };
+const NAV = [['home', 'Home'], ['learn', 'Learn'], ['instruments', 'Products'], ['markets', 'Markets'], ['plan', 'Plan'], ['portfolio', 'Portfolio'], ['more', 'Settings']];
+const VIEWS = { home: vHome, learn: vLearn, instruments: vInstruments, markets: vMarkets, plan: vPlan, portfolio: vPortfolio, more: vMore };
 function render() {
   const app = $('#app');
   if (locked) { app.innerHTML = vLock(); $('#nav').hidden = true; return; }
   $('#nav').hidden = false;
   $('#nav').innerHTML = NAV.map(([k, l]) => `<button class="${k === view ? 'on' : ''}" data-go="${k}">${l}</button>`).join('');
   app.innerHTML = `${memoryOnly ? '<div class="alert warn">Storage is unavailable here, so changes last only until you close this page.</div>' : ''}${(VIEWS[view] || vHome)()}<footer class="muted small">Education and tracking only · not a SEBI-registered adviser · no investment is guaranteed · <b>check department-specific instructions with your office</b></footer>`;
-  calcUpdate();
+  calcUpdate(); bondUpdate(); ipoUpdate();
 }
 function go(v, s = null) { view = v; sub = s; quizAns = {}; formOpen = null; try { history.replaceState(null, '', '#' + v); } catch { /* ignore */ } render(); window.scrollTo(0, 0); }
 
@@ -584,6 +678,9 @@ document.addEventListener('click', async (e) => {
   if (d.sub) return go(view, { [d.sub]: true });
   if (d.back) return go(view);
   if (d.q != null) return answer(+d.q, +d.o);
+  if (d.mtab) return go('markets', { tab: d.mtab });
+  if (d.fcat) { fundCat = d.fcat; return render(); }
+  if (d.tool) return go('markets', { tab: d.tool });
   if (d.alloc) { state.plan.alloc = d.alloc; save(); return render(); }
   if (d.addtype) { view = 'portfolio'; sub = null; formOpen = { mode: 'add', type: d.addtype }; render(); return window.scrollTo(0, 0); }
   if (d.copy) { const ta = document.getElementById(d.copy); ta.select(); try { await navigator.clipboard.writeText(ta.value); toast('Copied'); } catch { try { document.execCommand('copy'); toast('Copied'); } catch { toast('Select the text and copy it'); } } return; }
@@ -610,9 +707,10 @@ document.addEventListener('change', (e) => {
   const t = e.target;
   if (t.id === 'eli') { state.settings.eli = t.checked; save(); return render(); }
   if (t.dataset.check) { state.plan.checks = state.plan.checks || {}; state.plan.checks[t.dataset.check] = t.checked; return save(); }
+  if (t.id === 'b_td') return bondUpdate();
   if (t.id === 'h_type') { formOpen = { mode: 'add', type: t.value }; return render(); }
 });
-document.addEventListener('input', (e) => { if (e.target.id && e.target.id.startsWith('c_')) calcUpdate(); });
+document.addEventListener('input', (e) => { const id = e.target.id || ''; if (id.startsWith('c_')) calcUpdate(); if (id.startsWith('b_')) bondUpdate(); if (id.startsWith('i_')) ipoUpdate(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Enter' && locked && (e.target.id === 'pin' || e.target.id === 'pin2')) { ls.get(VKEY) ? doUnlock() : doCreate(); } });
 window.addEventListener('hashchange', () => { const v = location.hash.slice(1); if (!locked && VIEWS[v] && v !== view) go(v); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) hiddenAt = Date.now(); else if (!locked && hiddenAt && Date.now() - hiddenAt > 5 * 60000 && ls.get(VKEY)) { KEY = null; locked = true; state = defState(); render(); } });
@@ -624,9 +722,11 @@ async function refresh() {
     const [l, f] = await Promise.all([fetch('data/live.json', { cache: 'no-store' }), fetch('data/facts.json', { cache: 'no-store' })]);
     if (l.ok) { const j = await l.json(); if (j.feeds && (!LIVE.updatedAt || j.updatedAt >= LIVE.updatedAt)) LIVE = j; }
     if (f.ok) { const j = await f.json(); if (j.facts) FACTS = j; }
+    syncFacts();
     if (!locked) render();
   } catch { /* offline or blocked: keep the bundled snapshot */ }
 }
 if ('serviceWorker' in navigator) { try { navigator.serviceWorker.register('sw.js').catch(() => {}); } catch { /* not allowed here */ } }
+syncFacts();
 const h0 = location.hash.slice(1); if (VIEWS[h0]) view = h0;
 render(); refresh();

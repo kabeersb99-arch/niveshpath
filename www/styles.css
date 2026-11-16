@@ -77,3 +77,5 @@ footer{margin:22px 0 0;text-align:center;line-height:1.6}
 .btn.sel{border-color:var(--acc);color:var(--acc)}
 #nav button{padding-left:0;padding-right:0}
 @media (max-width:420px){#nav button{font-size:.66rem}}
+
+select.inl{width:auto;min-height:36px;padding:4px 8px;margin-left:6px}

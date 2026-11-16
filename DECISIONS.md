@@ -14,3 +14,12 @@
 9. **APK**: the workflow always builds a debug-signed APK (installable by sideloading). A properly signed release APK/AAB is built when the four signing secrets are added.
 10. **Grey Market Premium** will be left out of the IPO Centre (Phase 2).
 11. **Biometric lock** needs a Capacitor plugin and is deferred to Phase 2; PIN lock works on web and APK now.
+
+# Phase 2 decisions (16 Nov 2026)
+
+12. **Sources were chosen by testing them from GitHub's servers** (`scripts/probe.mjs`). NSE, BSE, PIB and Business Standard refuse automated access, so they are not used. Yields come from CCIL's public indicative table, labelled as indicative.
+13. **IPO Centre** = SEBI filing feed (automatic) + a small hand-entered list of dated IPOs with sources. No GMP. SME IPOs are explained but not listed.
+14. **Fund list is unranked on purpose.** Ranking by NAV would mislead; expense ratio and tracking error are not in the AMFI file.
+15. **News** stores headline, link and time only, filtered by keywords. No article text, no AI summary yet.
+16. **Push notifications deferred**: Firebase needs an account and keys that only the owner can create.
+17. **USD/INR** uses the ECB reference rate through Frankfurter, labelled as such, because the RBI/FBIL rate has no open feed.

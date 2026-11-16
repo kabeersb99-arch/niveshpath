@@ -1,4 +1,4 @@
-# NiveshPath (Phase 1)
+# NiveshPath (Phases 1 and 2)
 
 A private app to learn, track and plan safe investing in India. One codebase runs as a website/PWA and as an Android APK.
 
@@ -33,15 +33,23 @@ You need one free account: **GitHub**.
 2. The **Android APK** workflow starts by itself (about 6 to 8 minutes). When it is green, the release page has an `.apk` file. Download it on your phone and install (allow "install unknown apps" for your browser).
 3. This first APK is debug-signed, which is fine for your own phone. For a properly signed release APK and an AAB for the Play Store, create a keystore once and add four repository secrets (`ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD`). Ask me for the exact steps when you want this.
 
-## First run checklist (important)
+## Data feeds (all confirmed from GitHub's servers on 16 Nov 2026)
 
-The data job could not be run against the live sites from the build sandbox. After step 5 above, open the run log and the app's **Settings → Data health**:
+| Feed | Source | Status |
+|---|---|---|
+| Mutual fund NAVs | AMFI NAVAll.txt | working |
+| Gold and silver | ibjarates.com | working |
+| Small savings rates | India Post "Saving Schemes" page | working (2- and 3-year TD carried from the last notification; the page shows only the range) |
+| Yield curve, T-Bills, 10-year | CCIL tenor-wise indicative yields | working (indicative, not the FBIL benchmark) |
+| USD/INR | Frankfurter (ECB reference rate) | working |
+| IPO filings | SEBI draft offer documents / RHPs | working |
+| News | RSS: RBI, ET Wealth, Mint, BusinessLine, The Hindu | working |
+| Nifty, Sensex, live IPO subscription | NSE / BSE | **blocked**: they refuse automated access. Needs a broker market-data API key |
+| PIB, Business Standard RSS | | **blocked** |
 
-- **AMFI NAVs**: should turn green. The parser was tested on real lines from the 13-15 Nov 2026 file.
-- **IBJA gold and silver**: tested on a sample shaped like the page as read on 13 Nov 2026. If it fails, the app keeps the 13 Nov snapshot with a yellow "stale" badge.
-- **Small savings rates**: the two source addresses in `scripts/update_all.mjs` (`SOURCES.smallSavings`) are unconfirmed. If this feed fails, the app keeps the verified Oct-Dec 2026 rates with a yellow badge. Send me the log line and I will fix the source.
+A failed feed never shows old numbers silently. It shows "stale since ...", and GitHub flags the run with a warning. `node scripts/probe.mjs` (also run on every manual workflow run) reports which sources answer.
 
-A failed feed never shows old numbers silently. It shows "stale since …", and GitHub emails you a warning for the run.
+IPO dates, price bands and lot sizes are entered by hand in `www/data/facts.json` under `ipos`, each with a source and date, because the exchanges block automated access.
 
 ## Everyday maintenance
 
@@ -50,14 +58,15 @@ A failed feed never shows old numbers silently. It shows "stale since …", and 
 - **Run tests on your computer** (needs Node 20+): `npm test`. Preview locally: `npm run serve`, then open http://localhost:8080.
 - **Back up your holdings**: Settings → Create encrypted backup. Keep the text somewhere safe. It opens only with your PIN.
 
-## Known limitations in Phase 1
+## Known limitations
 
-- Nifty, Sensex and USD/INR tiles are empty until a market-data feed is added (Phase 2).
-- Limits and exit rules on several product cards are marked "unverified – check source" until checked against the official page. Rates are sourced separately.
-- No push notifications yet (Phase 2, needs a free Firebase account). Update cards appear on Home.
-- No sync between devices. Use backup and restore.
-- Forgetting the PIN means erasing the data. There is no recovery.
+- No Nifty/Sensex levels, live IPO subscription, allotment status or listing prices (exchanges block automated access).
+- The fund list is not ranked: the AMFI file has no expense ratio, tracking error or fund size.
+- No push notifications yet. They need a free Firebase project that only you can create. Update cards appear on Home.
+- The APK is debug-signed. Each new build has a new signature, so Android will ask you to uninstall the old one first: make an encrypted backup in Settings before updating. A fixed signing key (four repository secrets) removes this.
+- Limits and exit rules on several product cards are marked "unverified – check source". Rates are sourced separately.
+- No sync between devices. Use backup and restore. Forgetting the PIN means erasing the data.
 - Bank FD rates come from aggregator sites and are marked "secondary".
-- The APK workflow has not been run yet; the first tag is its first real test.
+- The 10-year yield chart with RBI policy dates needs history; the app starts collecting it from the first run.
 
 See `DECISIONS.md` for every choice made and why.

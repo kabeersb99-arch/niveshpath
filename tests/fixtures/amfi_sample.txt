@@ -1,0 +1,41 @@
+Scheme Code;ISIN Div Payout/ ISIN Growth;ISIN Div Reinvestment;Scheme Name;Plan;Option;Net Asset Value;Date
+
+Open Ended Schemes(Children’s Fund - Childrens' Fund)
+
+Axis Mutual Fund
+
+135762;INF846K01WO1;-;Axis Children's Fund;Direct Plan;Growth Option;31.0814;13-Nov-2026
+135765;INF846K01WP8;-;Axis Children's Fund;Direct Plan;IDCW Option;28.6316;13-Nov-2026
+
+Open Ended Schemes(Debt Scheme - Liquid Fund)
+
+Bajaj Finserv Mutual Fund
+
+151833;INF0QA701011;-;Bajaj Finserv Liquid Fund;Direct Plan;Growth;1253.4022;15-Nov-2026
+151834;INF0QA701029;-;Bajaj Finserv Liquid Fund;Regular Plan;Growth;1240.1100;15-Nov-2026
+
+Bandhan Mutual Fund
+
+118364;INF194K01I60;-;BANDHAN LIQUID Fund;Direct Plan;Growth;3466.3647;15-Nov-2026
+
+Open Ended Schemes(Other Scheme - Index Funds)
+
+Sample One Mutual Fund
+
+900001;INF000000001;-;Sample One Nifty 50 Index Fund;Direct Plan;Growth;245.1200;13-Nov-2026
+900002;INF000000002;-;Sample One Nifty 50 Index Fund;Regular Plan;Growth;238.9000;13-Nov-2026
+900003;INF000000003;-;Sample One Nifty 50 Index Fund;Direct Plan;IDCW;120.5500;13-Nov-2026
+900004;INF000000004;-;Sample One Nifty Next 50 Index Fund;Direct Plan;Growth;88.1000;13-Nov-2026
+900005;INF000000005;-;Sample One BSE Sensex Index Fund;Direct Plan;Growth;160.3300;13-Nov-2026
+900009;INF000000009;-;Sample One Broken Fund;Direct Plan;Growth;N.A.;13-Nov-2026
+
+Open Ended Schemes(Other Scheme - Gold ETF)
+
+Sample Two Mutual Fund
+
+900006;INF000000006;-;Sample Two Gold ETF;;;112.4500;13-Nov-2026
+900007;INF000000007;-;Sample Two Silver ETF;;;171.2000;13-Nov-2026
+
+Open Ended Schemes(Other Scheme - FoF Domestic)
+
+900008;INF000000008;-;Sample Two Gold ETF Fund of Fund;Direct Plan;Growth;41.7700;13-Nov-2026

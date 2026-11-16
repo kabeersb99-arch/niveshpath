@@ -31,3 +31,10 @@
 20. **CAS import runs entirely on the device** with a vendored copy of pdf.js. PAN, name, address, email and phone lines are skipped by the parser and never stored.
 21. **Compliance, Tax and CAS live under Portfolio**, and the pension calculator under My plan, to keep the bottom bar at seven items.
 22. **Market history lesson** uses month-end index data from one named source and states that other sources quote larger intraday falls.
+
+# Phase 4 decisions (16 Nov 2026)
+
+23. **Admin alert = a failing GitHub run.** GitHub already emails the owner when a workflow fails, so a feed that is down twice in a row fails a final `health` job. No extra account or key.
+24. **Service worker is network-first for everything**, with the cache as the offline fallback, so a new release or new data is never hidden by a stale cache.
+25. **Browser smoke test is not run on GitHub**, to keep the pipeline dependency-free. The data job has a full integration test that does run there.
+26. **No chart library.** History is shown as tables; "text and tables come first" was a design principle of the brief.

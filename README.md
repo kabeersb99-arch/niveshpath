@@ -1,8 +1,10 @@
-# NiveshPath (Phases 1 to 3)
+# NiveshPath 1.0
 
 A private app to learn, track and plan safe investing in India. One codebase runs as a website/PWA and as an Android APK.
 
 Education and tracking only. Not a SEBI-registered investment adviser. No orders, no referral links.
+
+**Looking after the app: read [MAINTAIN.md](MAINTAIN.md).** History of changes: [CHANGELOG.md](CHANGELOG.md). Design choices: [DECISIONS.md](DECISIONS.md).
 
 ## What is inside
 
@@ -12,7 +14,7 @@ Education and tracking only. Not a SEBI-registered investment adviser. No orders
 | `www/data/facts.json` | Every dated fact with source, as-of date and status |
 | `www/data/live.json` | Feed snapshots written by the data job (small savings, IBJA, AMFI) |
 | `scripts/` | Data job: fetch, validate, store, detect changes |
-| `tests/` | 30 tests: every finance formula, every parser, staleness guard |
+| `tests/` | 50 tests: every finance formula, every parser, the CAS reader, and the whole data job end to end. `tests/e2e/` holds an optional browser walk-through |
 | `.github/workflows/site.yml` | Runs tests, refreshes data 3 times a day, publishes the website |
 | `.github/workflows/apk.yml` | Builds the Android APK on a release tag |
 
@@ -77,6 +79,7 @@ IPO dates, price bands and lot sizes are entered by hand in `www/data/facts.json
 - The Tax view ignores NPS/UPS contributions, HRA and surcharge; its old-regime standard deduction (Rs 50,000) is unverified.
 - No sync between devices. Use backup and restore. Forgetting the PIN means erasing the data.
 - Bank FD rates come from aggregator sites and are marked "secondary".
-- The 10-year yield chart with RBI policy dates needs history; the app starts collecting it from the first run.
+- The 10-year yield history is shown as a table; a chart with RBI policy dates is not built yet.
+- A Lighthouse score was not measured (the tool was not available in the build environment). Offline behaviour was tested directly instead.
 
 See `DECISIONS.md` for every choice made and why.

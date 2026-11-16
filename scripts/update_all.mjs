@@ -22,6 +22,9 @@ export const SOURCES = {
   ],
 };
 
+// The integration test points every source at a local server.
+if (process.env.NP_SOURCES_JSON) Object.assign(SOURCES, JSON.parse(process.env.NP_SOURCES_JSON));
+
 async function firstGood(urls, parse) {
   let err;
   for (const url of urls) {
@@ -124,6 +127,7 @@ await run('news', 'News headlines', async () => {
 });
 
 live.updatedAt = stamp;
+live.health = { at: stamp, ok: Object.values(live.feeds).filter((f) => f.ok !== false).length, failing: Object.entries(live.feeds).filter(([, f]) => f.ok === false).map(([k, f]) => ({ feed: k, since: f.lastGoodAt || null, runs: f.failCount || 1, error: f.error })) };
 await writeJson(path.join(DATA, 'live.json'), live);
 await writeBundle();
 const failed = Object.entries(live.feeds).filter(([, f]) => f.ok === false).map(([k]) => k);

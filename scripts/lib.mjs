@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-export const DATA = path.join(ROOT, 'www', 'data');
+// NP_DATA_DIR lets the integration test run the whole job against a temporary folder.
+export const DATA = process.env.NP_DATA_DIR || path.join(ROOT, 'www', 'data');
 export const UA = 'NiveshPath-personal-app/0.1 (single-user, non-commercial; polite scheduled fetch)';
 
 export const readJson = async (p) => JSON.parse(await readFile(p, 'utf8'));
@@ -57,11 +58,11 @@ export const htmlToText = (html) => html.replace(/<script[\s\S]*?<\/script>|<sty
 export function applyFeed(live, key, result, now = new Date().toISOString()) {
   const prev = live.feeds[key] || {};
   if (!result.ok) {
-    live.feeds[key] = { ...prev, ok: false, error: String(result.error).slice(0, 300), lastGoodAt: prev.ok === false ? prev.lastGoodAt : prev.fetchedAt, fetchedAt: prev.fetchedAt ?? null, lastTriedAt: now };
+    live.feeds[key] = { ...prev, ok: false, error: String(result.error).slice(0, 300), lastGoodAt: prev.ok === false ? prev.lastGoodAt : prev.fetchedAt, fetchedAt: prev.fetchedAt ?? null, lastTriedAt: now, failCount: (prev.failCount || 0) + 1 };
     return [];
   }
   const changes = result.diff ? result.diff(prev.data, result.data) : [];
-  const next = { ...prev, ...result.meta, ok: true, mode: 'auto', error: undefined, lastGoodAt: undefined, lastTriedAt: now, fetchedAt: now, data: result.data };
+  const next = { ...prev, ...result.meta, ok: true, mode: 'auto', error: undefined, lastGoodAt: undefined, failCount: 0, lastTriedAt: now, fetchedAt: now, data: result.data };
   if (result.history) next.history = result.history(prev);
   live.feeds[key] = next;
   return changes;

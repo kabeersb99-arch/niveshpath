@@ -84,3 +84,50 @@ test('Update cards are not duplicated', () => {
   assert.equal(live.updates.length, 1);
   assert.equal(htmlToText('<b>a</b>&nbsp;&amp; <script>x</script>b'), 'a & b');
 });
+
+/* ---------- Phase 2 parsers (fixtures are real page text captured on 16 Nov 2026) ---------- */
+import { parseIndiaPost, parseCcil, parseRss, parseSebiList, NEWS_KEYS } from '../scripts/parsers.mjs';
+
+test('IBJA live page: today\'s AM box is used when it is newer than the history table', async () => {
+  const d = parseIbja(await fx('ibja_live_text.html'), '2026-11-16');
+  assert.equal(d.date, '2026-11-16'); assert.equal(d.session, 'AM');
+  assert.equal(d.gold999, 134380); assert.equal(d.silver999, 169280);
+  assert.deepEqual(d.prev, { date: '2026-11-13', gold999: 135809, silver999: 178000 });
+});
+
+test('IBJA live page: when the top box only repeats the last table row, the table date is kept', async () => {
+  const t = (await fx('ibja_live_text.html')).replace('Gold 999 134380 Gold 995 133842 Gold 916 123092 Gold 750 100785 Gold 585 78612 Silver 999 169280', 'Gold 999 135884 135809 Gold 995 135340 135265 Gold 916 124470 124401 Gold 750 101913 101857 Gold 585 79492 79448 Silver 999 177500 178000');
+  const d = parseIbja(t, '2026-11-14');
+  assert.equal(d.date, '2026-11-13'); assert.equal(d.session, 'PM'); assert.equal(d.gold999, 135809);
+});
+
+test('India Post: reads each scheme card; TD gives only the 1-year and 5-year ends', async () => {
+  const d = parseIndiaPost(await fx('indiapost_savings.html'));
+  assert.deepEqual(d.rates, { sb: 4, rd: 6.7, mis: 7.4, scss: 8.2, ppf: 7.1, ssy: 8.2, td1: 6.9, td5: 7.5, kvp: 7.5, nsc: 7.7 });
+  assert.equal(d.kvpMonths, 115); assert.deepEqual(d.partial, ['td2', 'td3']);
+  assert.throws(() => parseIndiaPost('<p>Rate of Interest: 7.1% View details of Public Provident Fund Account (PPF)</p>'), /only 1 scheme cards/);
+});
+
+test('CCIL: builds the yield curve and picks the benchmarks', async () => {
+  const d = parseCcil(await fx('ccil_yields.html'));
+  assert.equal(d.date, '2026-11-13'); assert.equal(d.curve.length, 8); assert.equal(d.sdl.length, 2);
+  assert.equal(d.tbill91, 5.8681); assert.equal(d.tbill364, 6.6394); assert.equal(d.gsec10, 7.3069);
+  assert.deepEqual(d.curve.map((r) => r.tenor), ['91D', '182D', '364D', '1Y-2Y', '4Y-5Y', '9Y-10Y', '13Y-15Y', '28Y-30Y']);
+  assert.equal(d.curve[5].security, '6.94% GS 2036');
+  assert.throws(() => parseCcil('<p>maintenance</p>'), /only 0/);
+});
+
+test('RSS: keeps headline, link and time only; drops items without a link', async () => {
+  const items = parseRss(await fx('rss_sample.xml'));
+  assert.equal(items.length, 2);
+  assert.deepEqual(Object.keys(items[0]), ['title', 'url', 'at']);
+  assert.equal(items[0].url, 'https://example.com/a?x=1&y=2'); assert.equal(items[0].at, '2026-11-16T02:30:00.000Z');
+  assert.ok(NEWS_KEYS.test(items[0].title)); assert.ok(!NEWS_KEYS.test(items[1].title));
+  assert.throws(() => parseRss('<rss></rss>'), /no items/);
+});
+
+test('SEBI filings: date, title and sebi.gov.in links only', async () => {
+  const rows = parseSebiList(await fx('sebi_list.html'));
+  assert.equal(rows.length, 2); assert.equal(rows[0].date, '2026-11-13');
+  assert.equal(rows[1].title, 'Hindustan Coca-Cola Holdings Limited - Draft Abridged Prospectus');
+});

@@ -106,3 +106,25 @@ test('Drawdown', () => {
   near(F.drawdown(100000, 93000), 7, 1e-9);
   assert.equal(F.drawdown(100000, 120000), 0);
 });
+
+test('Duration: a zero-coupon bond has Macaulay duration equal to its maturity', () => {
+  near(F.bondRisk(0, 7, 10).macaulay, 10, 1e-9);
+});
+
+test('Duration: 10-year 7% bond at par has modified duration about 7.1 and falls about 6.8% for +100 bp', () => {
+  const s = F.yieldShock(7, 7, 10, 100);
+  near(s.modified, 7.106, 0.01);
+  near(s.exact, -6.80, 0.02);
+  near(s.byDuration, -7.106, 0.01);
+  assert.ok(Math.abs(s.withConvexity - s.exact) < Math.abs(s.byDuration - s.exact), 'convexity improves the estimate');
+});
+
+test('Longer bonds fall more for the same rise in yield', () => {
+  assert.ok(F.yieldShock(7, 7, 30, 100).exact < F.yieldShock(7, 7, 10, 100).exact);
+  assert.ok(F.yieldShock(7, 7, 10, 100).exact < F.yieldShock(7, 7, 1, 100).exact);
+});
+
+test('Current yield and IPO odds', () => {
+  near(F.currentYield(7, 93.2), 7.51, 0.01);
+  assert.equal(F.ipoLotOdds(0.8), 1); near(F.ipoLotOdds(25), 0.04, 1e-9);
+});

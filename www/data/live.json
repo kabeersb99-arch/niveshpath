@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-16T17:33:28.716Z",
+  "updatedAt": "2026-11-16T18:06:45.995Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-16T17:33:28.716Z",
+      "fetchedAt": "2026-11-16T18:06:45.995Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,13 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-16T17:33:28.716Z"
+      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-16T17:33:28.716Z",
+      "fetchedAt": "2026-11-16T18:06:45.995Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -84,13 +85,14 @@
           "silver999": 178000
         }
       },
-      "lastTriedAt": "2026-11-16T17:33:28.716Z"
+      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-16T17:33:28.716Z",
+      "fetchedAt": "2026-11-16T18:06:45.995Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -2012,7 +2014,8 @@
         ],
         "newSchemes": []
       },
-      "lastTriedAt": "2026-11-16T17:33:28.716Z"
+      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "failCount": 0
     },
     "yields": {
       "url": "https://www.ccilindia.com/web/ccil/tenorwise-indicative-yields",
@@ -2022,8 +2025,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-16T17:33:28.716Z",
-      "fetchedAt": "2026-11-16T17:33:28.716Z",
+      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "fetchedAt": "2026-11-16T18:06:45.995Z",
       "data": {
         "date": "2026-11-16",
         "curve": [
@@ -2118,7 +2121,8 @@
           "gsec10": 7.318,
           "tbill91": 5.8681
         }
-      ]
+      ],
+      "failCount": 0
     },
     "fx": {
       "url": "https://api.frankfurter.app/latest?from=USD&to=INR",
@@ -2128,12 +2132,13 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-16T17:33:28.716Z",
-      "fetchedAt": "2026-11-16T17:33:28.716Z",
+      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "fetchedAt": "2026-11-16T18:06:45.995Z",
       "data": {
         "date": "2026-11-16",
         "usdinr": 93.93
-      }
+      },
+      "failCount": 0
     },
     "ipo": {
       "url": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=10",
@@ -2143,8 +2148,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-16T17:33:28.716Z",
-      "fetchedAt": "2026-11-16T17:33:28.716Z",
+      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "fetchedAt": "2026-11-16T18:06:45.995Z",
       "data": {
         "drafts": [
           {
@@ -2400,7 +2405,8 @@
             "url": "https://www.sebi.gov.in/filings/public-issues/sep-2026/adroit-industries-limited-rhp_104607.html"
           }
         ]
-      }
+      },
+      "failCount": 0
     },
     "news": {
       "url": "https://www.rbi.org.in/pressreleases_rss.xml",
@@ -2410,8 +2416,8 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-16T17:33:28.716Z",
-      "fetchedAt": "2026-11-16T17:33:28.716Z",
+      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "fetchedAt": "2026-11-16T18:06:45.995Z",
       "data": {
         "items": [
           {
@@ -2734,7 +2740,8 @@
           }
         ],
         "failed": []
-      }
+      },
+      "failCount": 0
     }
   },
   "updates": [
@@ -2778,5 +2785,10 @@
       "url": "https://cleartax.in/s/capital-gain-tax-on-sovereign-gold-bond-sgb",
       "source": "ClearTax"
     }
-  ]
+  ],
+  "health": {
+    "at": "2026-11-16T18:06:45.995Z",
+    "ok": 7,
+    "failing": []
+  }
 }

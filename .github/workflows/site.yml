@@ -56,3 +56,16 @@ jobs:
     steps:
       - id: d
         uses: actions/deploy-pages@v4
+  health:
+    # Admin alert: fails (and GitHub emails you) when a feed has been down for two runs in a row.
+    if: github.event_name != 'push'
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/health.mjs

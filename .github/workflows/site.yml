@@ -1,0 +1,54 @@
+# Tests, refreshes data on a schedule, and publishes the web app to GitHub Pages.
+name: Site and data
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # UTC. 02:45 = 08:15 IST, 08:15 = 13:45 IST (after IBJA AM), 18:15 = 23:45 IST (after AMFI NAVs).
+    - cron: '45 2 * * *'
+    - cron: '15 8 * * *'
+    - cron: '15 18 * * *'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: site
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run tests
+        run: node --test
+      - name: Refresh data (scheduled or manual runs only)
+        if: github.event_name != 'push'
+        run: node scripts/update_all.mjs
+      - name: Rebuild bundle
+        run: node scripts/bundle.mjs
+      - name: Commit new data
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "niveshpath-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add www/data
+          git diff --cached --quiet || git commit -m "data: refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: www
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.d.outputs.page_url }}
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4

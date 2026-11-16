@@ -52,22 +52,38 @@ export function toIso(d) {
 /* ---------- IBJA (ibjarates.com) ---------- */
 // The page shows one row per date: date, Gold 999, 995, 916, 750, 585, Silver 999, for the AM and the PM session.
 // Gold is per 10 g, silver per kg, both without GST.
-export function parseIbja(html) {
+export function parseIbja(html, todayIso = new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 10)) {
   const text = htmlToText(html);
   const rows = [...text.matchAll(/(\d{2}\/\d{2}\/\d{4})\s+(\d{5,6})\s+(\d{5,6})\s+(\d{5,6})\s+(\d{5,6})\s+(\d{4,6})\s+(\d{5,7})/g)].map((m) => ({
     date: toIso(m[1]), gold999: +m[2], gold995: +m[3], gold916: +m[4], gold750: +m[5], gold585: +m[6], silver999: +m[7],
   }));
-  if (!rows.length) throw new Error('IBJA: no rate rows found; page layout may have changed');
-  const latest = rows.map((r) => r.date).sort().pop();
-  const day = rows.filter((r) => r.date === latest);
-  const am = day[0], pm = day.length > 1 ? day[day.length - 1] : null; // AM table is first on the page, PM second
-  const pick = pm || am;
-  for (const r of day) {
+  const check = (r) => {
     if (!(r.gold999 > 20000 && r.gold999 < 1000000)) throw new Error('IBJA: gold 999 out of range: ' + r.gold999);
     if (!(r.gold999 > r.gold995 && r.gold995 > r.gold916 && r.gold916 > r.gold750 && r.gold750 > r.gold585)) throw new Error('IBJA: purity order check failed');
     if (!(r.silver999 > 20000 && r.silver999 < 2000000)) throw new Error('IBJA: silver out of range: ' + r.silver999);
+  };
+  // "Today" box at the top: Purity AM PM Gold 999 <am> [<pm>] Gold 995 ... Silver 999 <am> [<pm>]
+  const w = text.match(/Purity AM PM Gold 999 (\d{5,6})(?: (\d{5,6}))? Gold 995 (\d{5,6})(?: (\d{5,6}))? Gold 916 (\d{5,6})(?: (\d{5,6}))? Gold 750 (\d{5,6})(?: (\d{5,6}))? Gold 585 (\d{4,6})(?: (\d{4,6}))? Silver 999 (\d{5,7})(?: (\d{5,7}))?/);
+  let today = null;
+  if (w) {
+    const am = { gold999: +w[1], gold995: +w[3], gold916: +w[5], gold750: +w[7], gold585: +w[9], silver999: +w[11] };
+    const pm = w[2] && w[12] ? { gold999: +w[2], gold995: +w[4], gold916: +w[6], gold750: +w[8], gold585: +w[10], silver999: +w[12] } : null;
+    check(am); if (pm) check(pm);
+    today = { am, pm };
   }
-  return { ...pick, session: pm ? 'PM' : 'AM', am: { gold999: am.gold999, silver999: am.silver999 } };
+  if (!rows.length && !today) throw new Error('IBJA: no rate rows found; page layout may have changed');
+  const latest = rows.map((r) => r.date).sort().pop();
+  const day = rows.filter((r) => r.date === latest);
+  day.forEach(check);
+  const hAm = day[0], hPm = day.length > 1 ? day[day.length - 1] : null; // AM table is first on the page, PM second
+  // The top box repeats the last table row until a new day is published. Treat it as a new day only if it differs.
+  const sameAsHistory = today && hAm && (today.am.gold999 === hAm.gold999 || (hPm && today.am.gold999 === hPm.gold999));
+  if (today && !sameAsHistory) {
+    const pick = today.pm || today.am;
+    return { date: todayIso > (latest || '') ? todayIso : latest, ...pick, session: today.pm ? 'PM' : 'AM', am: { gold999: today.am.gold999, silver999: today.am.silver999 }, prev: hPm || hAm ? { date: latest, gold999: (hPm || hAm).gold999, silver999: (hPm || hAm).silver999 } : null };
+  }
+  const pick = hPm || hAm;
+  return { ...pick, session: hPm ? 'PM' : 'AM', am: { gold999: hAm.gold999, silver999: hAm.silver999 } };
 }
 
 /* ---------- Small savings rates ---------- */
@@ -106,4 +122,68 @@ export function quarterOf(d = new Date()) {
   const startM = [3, 6, 9, 0][q - 1], startY = q === 4 ? fy + 1 : fy;
   const from = new Date(Date.UTC(startY, startM, 1)), to = new Date(Date.UTC(startY, startM + 3, 0));
   return { quarter: `Q${q} FY ${fy}-${String(fy + 1).slice(2)}`, from: from.toISOString().slice(0, 10), to: to.toISOString().slice(0, 10) };
+}
+
+/* ---------- India Post savings page (official): "Rate of Interest: X View details of NAME" ---------- */
+const IP_MAP = [['sb', /savings account/i], ['rd', /recurring deposit/i], ['mis', /monthly income/i], ['scss', /senior citizens?/i], ['ppf', /public provident/i], ['ssy', /sukanya/i], ['kvp', /kisan vikas/i], ['nsc', /national savings certificate/i]];
+export function parseIndiaPost(html) {
+  const text = htmlToText(html);
+  const pairs = [...text.matchAll(/Rate of Interest: (.{0,140}?) View details of (.{0,80}?\))/g)].map((m) => ({ rate: m[1], name: m[2] }));
+  if (pairs.length < 8) throw new Error('India Post: only ' + pairs.length + ' scheme cards found; page layout may have changed');
+  const rates = {};
+  let kvpMonths = null;
+  for (const p of pairs) {
+    const n = (p.rate.match(/(\d{1,2}(?:\.\d{1,2})?)\s*%/) || [])[1];
+    if (/time deposit/i.test(p.name)) {
+      const r = p.rate.match(/(\d{1,2}(?:\.\d{1,2})?)\s*%\s*to\s*(\d{1,2}(?:\.\d{1,2})?)\s*%/);
+      if (r) { rates.td1 = +r[1]; rates.td5 = +r[2]; }
+      continue;
+    }
+    const hit = IP_MAP.find(([, re]) => re.test(p.name));
+    if (hit && n) rates[hit[0]] = +n;
+    if (/kisan vikas/i.test(p.name)) kvpMonths = +(p.rate.match(/(\d{2,3}) months/) || [])[1] || null;
+  }
+  const need = ['sb', 'rd', 'mis', 'scss', 'ppf', 'ssy', 'kvp', 'nsc', 'td1', 'td5'];
+  const missing = need.filter((k) => rates[k] == null);
+  if (missing.length) throw new Error('India Post: could not read ' + missing.join(', '));
+  for (const k of need) if (!(rates[k] >= SS_RANGE[k][0] && rates[k] <= SS_RANGE[k][1])) throw new Error(`India Post: ${k} = ${rates[k]} is outside the sane range`);
+  return { rates, kvpMonths, partial: ['td2', 'td3'] }; // the page gives only the 1-year and 5-year ends of the TD range
+}
+
+/* ---------- CCIL tenor-wise indicative yields ---------- */
+// Rows look like: 13-11-2026 9Y-10Y 6.94% GS 2036 7.3069
+export function parseCcil(html) {
+  const text = htmlToText(html);
+  const rows = [...text.matchAll(/(\d{2}-\d{2}-\d{4}) (\d{2,3}D|\d{1,2}Y(?:-\d{1,2}Y)?) (.{4,40}?) (\d{1,2}\.\d{2,4})(?= |$)/g)].map((m) => ({ date: toIso(m[1]), tenor: m[2], security: m[3].trim(), ytm: +m[4] }));
+  const sdl = rows.filter((r) => /SGS|SDL/.test(r.security)), gsec = rows.filter((r) => !/SGS|SDL/.test(r.security) && /DTB|GS /.test(r.security));
+  if (gsec.length < 5) throw new Error('CCIL: only ' + gsec.length + ' G-Sec/T-Bill rows found');
+  for (const r of rows) if (!(r.ytm > 1 && r.ytm < 20)) throw new Error('CCIL: yield out of range ' + r.ytm);
+  const years = (t) => (/D$/.test(t) ? parseInt(t) / 365 : parseInt(t.split('-').pop()));
+  gsec.forEach((r) => { r.years = +years(r.tenor).toFixed(2); }); sdl.forEach((r) => { r.years = years(r.tenor); });
+  gsec.sort((a, b) => a.years - b.years);
+  const find = (t) => (gsec.find((r) => r.tenor === t) || {}).ytm ?? null;
+  return { date: gsec[0].date, curve: gsec, sdl, tbill91: find('91D'), tbill182: find('182D'), tbill364: find('364D'), gsec10: find('9Y-10Y') };
+}
+
+/* ---------- RSS (headlines and links only) ---------- */
+const unx = (s) => (s || '').replace(/<!\[CDATA\[|\]\]>/g, '').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;|&#8217;|&rsquo;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#\d+;|&\w+;/g, ' ').replace(/\s+/g, ' ').trim();
+export function parseRss(xml, { max = 40 } = {}) {
+  const items = [...xml.matchAll(/<item[\s>][\s\S]*?<\/item>/g)].map((m) => {
+    const x = m[0], tag = (t) => (x.match(new RegExp('<' + t + '[^>]*>([\\s\\S]*?)</' + t + '>')) || [])[1];
+    const d = new Date(unx(tag('pubDate')) || unx(tag('dc:date')) || '');
+    return { title: unx(tag('title')).slice(0, 180), url: unx(tag('link')) || unx(tag('guid')), at: isNaN(d) ? null : d.toISOString() };
+  }).filter((i) => i.title && /^https?:\/\//.test(i.url));
+  if (!items.length) throw new Error('RSS: no items');
+  return items.slice(0, max);
+}
+export const NEWS_KEYS = /\b(ppf|small savings|nsc\b|post office|rbi|repo|mpc|inflation|cpi|gold|silver|sgb|nps|ups\b|pension|ipo|bond|g-?sec|t-?bill|treasury|yield|fixed deposit|\bfd\b|income tax|tax regime|dearness|\bda\b|pay commission|central government employees|index fund|mutual fund|sebi|dicgc|amfi|nifty|sensex|rupee)\b/i;
+
+/* ---------- SEBI public-issue filings list ---------- */
+export function parseSebiList(html, { max = 25 } = {}) {
+  const rows = [...html.matchAll(/<tr[^>]*>\s*<td[^>]*>([^<]{6,20})<\/td>\s*<td[^>]*>\s*<a[^>]*href=['"]([^'"]+)['"][^>]*>([\s\S]*?)<\/a>/g)].map((m) => {
+    const d = new Date(m[1].trim() + ' UTC');
+    return { date: isNaN(d) ? null : d.toISOString().slice(0, 10), title: unx(m[3]).slice(0, 140), url: m[2] };
+  }).filter((r) => r.date && r.title && /^https:\/\/www\.sebi\.gov\.in\//.test(r.url));
+  if (!rows.length) throw new Error('SEBI: no filing rows found');
+  return rows.slice(0, max);
 }

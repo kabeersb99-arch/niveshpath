@@ -1,4 +1,4 @@
-# NiveshPath (Phases 1 and 2)
+# NiveshPath (Phases 1 to 3)
 
 A private app to learn, track and plan safe investing in India. One codebase runs as a website/PWA and as an Android APK.
 
@@ -58,6 +58,14 @@ IPO dates, price bands and lot sizes are entered by hand in `www/data/facts.json
 - **Run tests on your computer** (needs Node 20+): `npm test`. Preview locally: `npm run serve`, then open http://localhost:8080.
 - **Back up your holdings**: Settings → Create encrypted backup. Keep the text somewhere safe. It opens only with your PIN.
 
+## Phase 3 features
+
+- **UPS vs NPS calculator** (My plan → Choose UPS or NPS): payout, lump sum, break-even NPS return, in today's rupees. A thinking aid built on the published rules, not the official calculator.
+- **Tax view** (Portfolio): new vs old regime with your salary, the true tax rate on your interest, and tax if market holdings were sold today.
+- **Compliance** (Portfolio): yearly meter, pace to year-end, transaction log, single-transaction flags, intimation draft, allowed / not allowed guide.
+- **CAS import** (Portfolio): reads a CAMS/KFintech statement PDF on the device with the bundled pdf.js (`www/vendor/`, Apache 2.0). **Tested on a sample in the CAMS layout, not on a real statement.**
+- **24 lessons** across L0 to L10, each with a 5-question quiz and spaced revision. Custom goals in My plan.
+
 ## Known limitations
 
 - No Nifty/Sensex levels, live IPO subscription, allotment status or listing prices (exchanges block automated access).
@@ -65,6 +73,8 @@ IPO dates, price bands and lot sizes are entered by hand in `www/data/facts.json
 - No push notifications yet. They need a free Firebase project that only you can create. Update cards appear on Home.
 - The APK is debug-signed. Each new build has a new signature, so Android will ask you to uninstall the old one first: make an encrypted backup in Settings before updating. A fixed signing key (four repository secrets) removes this.
 - Limits and exit rules on several product cards are marked "unverified – check source". Rates are sourced separately.
+- The CAS reader does not handle NSDL/CDSL demat statements yet, and may need adjusting for your statement's layout.
+- The Tax view ignores NPS/UPS contributions, HRA and surcharge; its old-regime standard deduction (Rs 50,000) is unverified.
 - No sync between devices. Use backup and restore. Forgetting the PIN means erasing the data.
 - Bank FD rates come from aggregator sites and are marked "secondary".
 - The 10-year yield chart with RBI policy dates needs history; the app starts collecting it from the first run.

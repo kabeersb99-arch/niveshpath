@@ -23,3 +23,11 @@
 15. **News** stores headline, link and time only, filtered by keywords. No article text, no AI summary yet.
 16. **Push notifications deferred**: Firebase needs an account and keys that only the owner can create.
 17. **USD/INR** uses the ECB reference rate through Frankfurter, labelled as such, because the RBI/FBIL rate has no open feed.
+
+# Phase 3 decisions (16 Nov 2026)
+
+18. **UPS vs NPS model**: one growth rate for basic + DA, and "basic as a share of basic + DA at retirement" as an explicit input, because pay commissions cannot be forecast. NPS returns of 7/9/11% and a 6% annuity rate are labelled assumptions.
+19. **Tax view** models slab tax, rebate, marginal relief and cess. It deliberately leaves out pension contributions, HRA and surcharge and says so.
+20. **CAS import runs entirely on the device** with a vendored copy of pdf.js. PAN, name, address, email and phone lines are skipped by the parser and never stored.
+21. **Compliance, Tax and CAS live under Portfolio**, and the pension calculator under My plan, to keep the bottom bar at seven items.
+22. **Market history lesson** uses month-end index data from one named source and states that other sources quote larger intraday falls.

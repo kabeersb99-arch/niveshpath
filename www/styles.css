@@ -79,3 +79,21 @@ footer{margin:22px 0 0;text-align:center;line-height:1.6}
 @media (max-width:420px){#nav button{font-size:.66rem}}
 
 select.inl{width:auto;min-height:36px;padding:4px 8px;margin-left:6px}
+
+.dotn{display:inline-block;min-width:16px;height:16px;line-height:16px;border-radius:99px;background:var(--warn);color:#0f1417;font-size:.62rem;font-weight:700;margin-left:3px;padding:0 4px;vertical-align:top}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  #nav,#toast,.btn,.btns,.back,footer button,details>summary{display:none!important}
+  main{max-width:none;padding:0}
+  .card,.tile,.item,.out,input,select,textarea{background:#fff!important;color:#000!important;border:1px solid #999}
+  .card{break-inside:avoid;page-break-inside:avoid}
+  .tl,.tv,.tx,.big{color:#000!important}
+  .muted,.src,.tl,.ud,.tbl th{color:#333!important}
+  .chip{border-color:#666;color:#000!important;background:none!important}
+  .up{color:#060!important}.down,.warnTxt{color:#900!important}
+  a{color:#000;text-decoration:underline}
+  .alert{background:#fff!important;border-color:#666}
+  .meter{border:1px solid #666}.meter span{background:#666!important}
+}
+
+.health td:first-child{min-width:190px}

@@ -167,6 +167,16 @@ function tokens() {
 }
 const fill = (s) => { const t = tokens(); return esc(s).replace(/\{(\w+)\}/g, (m, k) => (t[k] != null ? esc(t[k]) : m)); };
 
+/* ---------- health (Phase 4) ---------- */
+function healthSummary() {
+  const fs = Object.entries(LIVE.feeds || {}).map(([k, f]) => ({ k, f, s: feedState(f) }));
+  const bad = fs.filter((x) => x.s.cls !== 'ok');
+  const now = today(), old = Object.entries(FACTS.facts || {}).filter(([, f]) => ['secondary', 'reported'].includes(f.status) && f.unit === '%' && f.asOf && (now - new Date(f.asOf)) / F.DAY > 45);
+  const unv = Object.values(FACTS.facts || {}).filter((f) => f.status === 'unverified').length + INSTRUMENTS.filter((i) => i.limits === 'unverified').length;
+  return { fs, bad, old, unv };
+}
+const newUpdates = () => (LIVE.updates || []).filter((u) => !(state.seenUpdates || []).includes(u.id));
+
 /* ---------- HOME ---------- */
 function events() {
   const p = P(), ev = [];
@@ -198,6 +208,11 @@ function vHome() {
   const dd = F.drawdown(state.peak, pf.value);
   const dJoin = p.joinDate ? daysTo(p.joinDate) : -999, dA1 = p.joinDate ? daysTo(addDays(p.joinDate, 30)) : -999;
   let h = `<div class="hello"><h1>${p.name ? 'Hello, ' + esc(p.name) : 'Today'}</h1><div class="muted">${fmtD(today())}${dJoin > 0 ? ` · ${dJoin} days to joining` : dA1 >= 0 ? ` · <b class="warnTxt">${dA1} days left to choose UPS or NPS</b>` : ''}</div></div>`;
+  const hs = healthSummary();
+  if (!navigator.onLine) h += `<div class="alert amb">You are offline. Showing data saved on ${fmtDT(LIVE.updatedAt)}.</div>`;
+  if (hs.bad.length) h += `<div class="alert warn">${hs.bad.length} data feed(s) need attention: ${hs.bad.map((x) => esc(x.f.label || x.k)).join(', ')}. Figures from them are marked stale. <button class="btn ghost" data-go="more">Data health</button></div>`;
+  const lb = state.lastBackup ? (today() - new Date(state.lastBackup)) / F.DAY : 999;
+  if (state.holdings.length && lb > 30) h += `<div class="alert amb">${state.lastBackup ? 'Your last backup was ' + Math.round(lb) + ' days ago.' : 'You have holdings but no backup yet.'} Your data lives only on this device. <button class="btn ghost" data-go="more">Back up</button></div>`;
   if (!state.profileSet) h += `<div class="alert warn">Your profile is empty, so plans and fit checks use placeholders. <button class="btn ghost" data-go="more">Set up profile</button></div>`;
   h += card('My investments', pf.rows.length
     ? `<div class="big">${inr(pf.value)}</div><div class="${gain >= 0 ? 'up' : 'down'}">${gain >= 0 ? '+' : ''}${inr(gain)} on ${inr(pf.invested)} put in · XIRR ${pf.xirr == null ? '—' : pc(pf.xirr * 100)}</div>${dd >= 7 ? `<div class="alert ${dd >= 10 ? 'bad' : 'warn'}">Down ${pc(dd, 1)} from your peak of ${inr(state.peak)}. ${dd >= 10 ? 'This is at your stated limit.' : 'Your limit is 10%.'}</div>` : ''}`
@@ -216,7 +231,9 @@ function vHome() {
     ${feed('fx') ? feedTile('fx', 'USD / INR', '₹' + (+((feed('fx').data || {}).usdinr || 0)).toFixed(2)) : ''}
     ${tile('Nifty 50 · Sensex', '—', '<div class="src"><span class="chip fs-warn">blocked</span> exchanges refuse automated access</div>')}
   </div><p class="muted small">Real return check: PPF ${pc(SS().rates.ppf, 1)} against ${pc(cpi())} inflation is ${pc(F.realReturn(SS().rates.ppf || 0, cpi()))} a year.</p>`);
-  h += card('What changed', (LIVE.updates || []).slice().sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 5).map((u) => `<div class="upd"><div class="ud">${fmtD(u.date)}</div><div><b>${esc(u.title)}</b><div class="muted">${esc(u.body)}</div>${u.url ? `<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.source || 'source')}</a>` : ''}</div></div>`).join('') || '<p class="muted">No updates yet.</p>');
+  const nu = new Set(newUpdates().map((u) => u.id));
+  h += card('What changed' + (nu.size ? ` <span class="chip fit-warn">${nu.size} new</span>` : ''), (LIVE.updates || []).slice().sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 6).map((u) => `<div class="upd"><div class="ud">${fmtD(u.date)}${nu.has(u.id) ? '<br><span class="chip fit-warn">new</span>' : ''}</div><div><b>${esc(u.title)}</b><div class="muted">${esc(u.body)}</div>${u.url ? `<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.source || 'source')}</a>` : ''}</div></div>`).join('') || '<p class="muted">No updates yet.</p>');
+  if (nu.size) { state.seenUpdates = (LIVE.updates || []).map((u) => u.id); save(); }
   h += card('Coming up', `<table class="tbl">${events().slice(0, 9).map((e) => `<tr><th class="nowrap">${fmtD(e.date)}</th><td>${esc(e.title)}${e.note ? `<div class="muted small">${esc(e.note)}</div>` : ''}</td><td class="r muted nowrap">${daysTo(e.date) <= 0 ? 'today' : daysTo(e.date) + ' d'}</td></tr>`).join('')}</table><p class="muted small">RBI policy dates and the T-Bill auction calendar are not on this list yet.</p>`);
   if (nl) h += card('Learn something (5 minutes)', `<div class="muted small">${nl.why} · ${nl.l.id}${state.streak.n ? ` · streak ${state.streak.n} day${state.streak.n > 1 ? 's' : ''}` : ''}</div><p><b>${esc(nl.l.title)}</b></p><button class="btn" data-lesson="${nl.l.id}">Start</button>`);
   return h;
@@ -310,7 +327,7 @@ function vLearn() {
   <label class="tog"><input type="checkbox" id="eli" ${state.settings.eli ? 'checked' : ''}> Explain like I'm new</label></div>`;
   LEVELS.forEach((name, lv) => {
     const ls2 = LESSONS.filter((l) => l.level === lv);
-    h += `<section class="card"><h2>${esc(name)}</h2>${ls2.length ? `<div class="list">${ls2.map((l) => { const pr = state.progress[l.id]; const due = pr && new Date(pr.next) <= today(); return `<button class="item" data-lesson="${l.id}"><span><span class="muted small">${l.id}</span> <b>${esc(l.title)}</b></span><span class="chip ${pr ? (due ? 'fit-warn' : 'fit-ok') : 'fit-mut'}">${pr ? (due ? 'revise' : pr.score + '/5') : 'new'}</span></button>`; }).join('')}</div>` : ''}</section>`;
+    h += `<section class="card"><h2>${esc(name)}</h2>${ls2.length ? `<div class="list">${ls2.map((l) => { const pr = state.progress[l.id]; const due = pr && (new Date(pr.next) <= today() || (FACTS.reviewed && pr.date < FACTS.reviewed)); return `<button class="item" data-lesson="${l.id}"><span><span class="muted small">${l.id}</span> <b>${esc(l.title)}</b></span><span class="chip ${pr ? (due ? 'fit-warn' : 'fit-ok') : 'fit-mut'}">${pr ? (due ? 'revise' : pr.score + '/5') : 'new'}</span></button>`; }).join('')}</div>` : ''}</section>`;
   });
   return h;
 }
@@ -407,7 +424,7 @@ function vPlan() {
     ${row('After today\'s ' + pc(cpi()) + ' inflation', `<b class="${F.realReturn(st.post, cpi()) >= 0 ? 'up' : 'down'}">${pc(F.realReturn(st.post, cpi()), 1)}</b> real`)}
     ${row('Worst case in one bad year', `<b class="${st.worst > p.maxDrop ? 'down' : ''}">−${pc(st.worst, 1)}</b> = ${inr((p.corpus * st.worst) / 100)} on ${inr(p.corpus)}`)}</table>
     <p class="muted small">Worst-case working: equity ${sel.w.equity}% × ${a.stress.equity}% crash + gold ${sel.w.gold}% × ${a.stress.gold}% fall = ${pc(st.worst, 1)}. Your limit is ${p.maxDrop}%. With no gold, the most equity your rule allows is ${p.maxDrop}% ÷ ${a.stress.equity}% = ${pc(F.equityCap(p.maxDrop, a.stress.equity), 0)}.</p>
-    <p class="muted small">Return ranges and crash sizes are planning assumptions (${chip('assumption')}), editable in data/facts.json. Equity and gold shares wait until Phase 2 lessons are done; until then that money sits in the Safety bucket.</p>
+    <p class="muted small">Return ranges and crash sizes are planning assumptions (${chip('assumption')}), editable in data/facts.json. Put money into the gold and equity buckets only after finishing lessons L4-01, L5-01 and L5-02; until then it sits in the Safety bucket.</p>
     ${p.weddingBy ? `<div class="alert warn">Short-term goal money (needed by ${fmtD(p.weddingBy)}) is separate from this. All of it goes into deposits that mature before that date.</div>` : ''}`);
   const yrs = [1, 3, 5, 10, 15, 20, 25, 32];
   const proj = (k) => F.sipProject({ lump: p.corpus, monthly: p.monthly, stepUpPct: p.stepUp, annualPct: k === 'post' ? st.post : st[k], years: 32 });
@@ -452,7 +469,7 @@ function vPortfolio() {
     <div class="btns"><button class="btn ghost" data-psub="comp">Open Compliance</button><button class="btn ghost" data-psub="tax">Tax view</button><button class="btn ghost" data-psub="cas">Import CAS</button></div>`);
   const over = Object.keys(pf.byBank).filter((k) => pf.byBank[k] > lim);
   if (over.length) h += `<div class="alert bad">DICGC limit: ${over.map((k) => `${esc(k)} holds ${inr(pf.byBank[k])}`).join('; ')}. Cover is ${inr(lim)} per bank. Move the excess to another bank or a Post Office TD.</div>`;
-  h += `<div class="btns"><button class="btn" data-act="addHolding">+ Add holding</button>${pf.rows.length ? '<button class="btn ghost" data-act="csv">Export CSV</button>' : ''}</div><div id="csv"></div>`;
+  h += `<div class="btns"><button class="btn" data-act="addHolding">+ Add holding</button>${pf.rows.length ? '<button class="btn ghost" data-act="csv">Export CSV</button><button class="btn ghost" data-act="print">Print / save as PDF</button>' : ''}</div><div id="csv"></div>`;
   if (formOpen) h += holdingForm();
   h += pf.rows.length ? card('Holdings', pf.rows.map((r) => `<div class="hold"><div class="hh"><b>${esc(r.h.name)}</b><span>${inr(r.value)}</span></div>
     <div class="muted small">${esc(r.t.name)}${r.h.inst ? ' · ' + esc(r.h.inst) : ''}${r.h.rate ? ' · ' + pc(r.h.rate) : ''}${r.h.maturity ? ' · matures ' + fmtD(r.h.maturity) : ''}</div>
@@ -519,7 +536,7 @@ const copyBox = (id, text) => `<textarea class="copy" id="${id}" readonly rows="
 
 /* ---------- MORE / SETTINGS ---------- */
 function vMore() {
-  const p = P();
+  const p = P(), hs = healthSummary();
   const feeds = Object.keys(LIVE.feeds || {}).map((k) => { const f = feed(k), s = feedState(f); return `<tr><td><b>${esc(f.label)}</b><div class="muted small">${esc(f.kind)} · <a href="${esc(f.url)}" target="_blank" rel="noopener">source</a>${f.error ? '<br>' + esc(f.error) : ''}</div></td><td class="r nowrap">${fmtDT(f.fetchedAt)}</td><td class="r"><span class="chip fs-${s.cls}">${esc(s.text)}</span></td></tr>`; }).join('');
   const facts = Object.keys(FACTS.facts).map((k) => { const f = FACTS.facts[k]; return `<tr><td>${esc(f.label)}<div class="muted small">${f.url ? `<a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.source)}</a>` : esc(f.source)}</div></td><td class="r nowrap">${fmtD(f.asOf)}</td><td class="r">${chip(f.status)}</td></tr>`; }).join('');
   return `<h1>Settings</h1>
@@ -533,12 +550,16 @@ function vMore() {
     <label class="f">Short-term goal (e.g. wedding) needed by<input id="p_weddingBy" type="date" value="${esc(p.weddingBy)}"></label>${num('p_weddingTarget', 'Short-term goal target (₹)', p.weddingTarget)}${num('p_dependents', 'People you support', p.dependents)}
     ${num('s_infl', 'Planning inflation %', planInfl())}
     </div><p class="muted small">Slab: the new-regime rebate can make your tax nil up to ₹12 lakh of income. Set this after your first salary slip, or ask a CA.</p><button class="btn" data-act="saveProfile">Save profile</button>`)}
-  ${card('Data health', `<table class="tbl"><tr><th>Feed</th><th class="r">Last checked</th><th class="r">Status</th></tr>${feeds}</table><p class="muted small">Feeds are fetched by a scheduled GitHub Actions job and stored with a timestamp. A yellow badge means the data is older than it should be. Bundle built ${fmtDT(LIVE.updatedAt)}.</p>
+  ${card('Data health ' + (hs.bad.length ? `<span class="chip fs-warn">${hs.bad.length} need attention</span>` : '<span class="chip fs-ok">all feeds fresh</span>'), `<div class="scroll"><table class="tbl health"><tr><th>Feed</th><th class="r">Last good data</th><th class="r">Status</th></tr>${hs.fs.map(({ f, s }) => `<tr><td><b>${esc(f.label)}</b><div class="muted small">${esc(f.kind || '')} · refresh expected within ${f.expectedHours || 24} h · <a href="${esc(f.url)}" target="_blank" rel="noopener">source</a>${f.error ? `<br><span class="warnTxt">${esc(f.error)}</span>${f.failCount ? ' (' + f.failCount + ' run(s) in a row)' : ''}` : ''}</div></td><td class="r nowrap">${fmtDT(f.ok === false ? f.lastGoodAt || f.fetchedAt : f.fetchedAt)}</td><td class="r"><span class="chip fs-${s.cls}">${esc(s.text)}</span></td></tr>`).join('')}</table></div>
+    <p class="muted small">Feeds are fetched three times a day by a scheduled job on GitHub and stored with a timestamp. Last job run: ${fmtDT(LIVE.updatedAt)}. ${navigator.onLine ? '' : '<b class="warnTxt">You are offline.</b> '}A feed that fails twice in a row makes the job fail, and GitHub emails you.</p>
+    ${hs.old.length ? `<div class="alert amb">${hs.old.length} hand-entered rate(s) are over 45 days old and due a re-check: ${hs.old.map(([, f]) => esc(f.label)).join('; ')}.</div>` : ''}
+    <div class="kv"><span>Items still marked "unverified – check source"</span><b>${hs.unv}</b></div>
+    <div class="btns"><button class="btn ghost" data-act="appUpdate">Check for app update</button></div>
     <details><summary>All dated facts (${Object.keys(FACTS.facts).length}) · reviewed ${fmtD(FACTS.reviewed)}</summary><div class="scroll"><table class="tbl"><tr><th>Fact</th><th class="r">As of</th><th class="r">Status</th></tr>${facts}</table></div></details>`)}
   ${card('Notifications', '<p class="muted">Changes appear as Update cards on Home and dates under Coming up. Push alerts to your phone need a free Firebase project that only you can create; say the word and the next build wires it in.</p>')}
   ${card('Backup and lock', `<p class="muted small">Your data lives only on this device, encrypted with your PIN (AES-256-GCM). ${memoryOnly ? '<b class="warnTxt">This browser is not letting the app store data, so it will be lost when you close the page.</b>' : ''}</p>
     <div class="btns"><button class="btn ghost" data-act="backup">Create encrypted backup</button><button class="btn ghost" data-act="showRestore">Restore</button><button class="btn ghost" data-act="lock">Lock now</button><button class="btn ghost danger" data-act="wipe">Erase everything</button></div><div id="bk"></div>`)}
-  ${card('About', `<p><b>NiveshPath</b> 0.3 (Phase 3). A private learning and tracking tool for one user.</p><p class="muted">Education and tracking only. It is not a SEBI-registered investment adviser, does not place orders and carries no referral links. No investment is guaranteed. Verify every figure at its source and double-check major decisions with a SEBI-registered adviser or a CA.</p><p class="muted small">No analytics. No PAN, Aadhaar, bank account numbers or passwords are stored.</p>`)}`;
+  ${card('About', `<p><b>NiveshPath</b> 1.0. A private learning and tracking tool for one user.</p><p class="muted">Education and tracking only. It is not a SEBI-registered investment adviser, does not place orders and carries no referral links. No investment is guaranteed. Verify every figure at its source and double-check major decisions with a SEBI-registered adviser or a CA.</p><p class="muted small">No analytics. No PAN, Aadhaar, bank account numbers or passwords are stored.</p>`)}`;
 }
 function saveProfile() {
   const p = P();
@@ -810,7 +831,8 @@ function render() {
   const app = $('#app');
   if (locked) { app.innerHTML = vLock(); $('#nav').hidden = true; return; }
   $('#nav').hidden = false;
-  $('#nav').innerHTML = NAV.map(([k, l]) => `<button class="${k === view ? 'on' : ''}" data-go="${k}">${l}</button>`).join('');
+  const nb = view === 'home' ? 0 : newUpdates().length;
+  $('#nav').innerHTML = NAV.map(([k, l]) => `<button class="${k === view ? 'on' : ''}" ${k === view ? 'aria-current="page"' : ''} data-go="${k}">${l}${k === 'home' && nb ? `<span class="dotn" aria-label="${nb} new updates">${nb}</span>` : ''}</button>`).join('');
   app.innerHTML = `${memoryOnly ? '<div class="alert warn">Storage is unavailable here, so changes last only until you close this page.</div>' : ''}${(VIEWS[view] || vHome)()}<footer class="muted small">Education and tracking only · not a SEBI-registered adviser · no investment is guaranteed · <b>check department-specific instructions with your office</b></footer>`;
   calcUpdate(); bondUpdate(); ipoUpdate(); pensionUpdate();
 }
@@ -855,7 +877,10 @@ document.addEventListener('click', async (e) => {
     case 'casClear': casFound = null; casMsg = ''; return render();
     case 'addGoal': { const a = nval('g_amt'), by = val('g_by'); if (!(a > 0) || !by) return toast('Enter an amount and a date'); (state.goals = state.goals || []).push({ name: val('g_name') || 'Goal', amount: a, by, have: nval('g_have') }); save(); return render(); }
     case 'delGoal': state.goals.splice(+d.i, 1); save(); return render();
-    case 'backup': $('#bk').innerHTML = KEY ? `<p class="muted small">Copy this text and keep it somewhere safe. It can only be opened with your PIN.</p>` + copyBox('bkT', await encryptState()) : '<p class="muted">Nothing to back up in memory-only mode.</p>'; return;
+    case 'appUpdate': try { const r = await navigator.serviceWorker.getRegistration(); if (r) await r.update(); const ks = await caches.keys(); await Promise.all(ks.map((k) => caches.delete(k))); } catch { /* no service worker here */ } location.reload(); return;
+    case 'print': try { window.print(); } catch { toast('Printing is not available here'); } return;
+    case 'backup': if (KEY) { state.lastBackup = iso(today()); await save(); }
+      $('#bk').innerHTML = KEY ? `<p class="muted small">Copy this text and keep it somewhere safe. It can only be opened with your PIN.</p>` + copyBox('bkT', await encryptState()) : '<p class="muted">Nothing to back up in memory-only mode.</p>'; return;
     case 'showRestore': $('#bk').innerHTML = `<label class="f">Paste a backup<textarea id="rsT" rows="5" class="copy"></textarea></label><button class="btn" data-act="restore">Restore</button><p class="muted small">You will need the PIN that was in use when the backup was made. This replaces the data on this device.</p>`; return;
     case 'restore': try { const b = JSON.parse(val('rsT')); if (!b.salt || !b.ct) throw 0; ls.set(VKEY, JSON.stringify(b)); KEY = null; locked = true; render(); toast('Backup loaded. Enter its PIN.'); } catch { toast('That is not a valid backup'); } return;
   }
@@ -870,6 +895,8 @@ document.addEventListener('change', (e) => {
 });
 document.addEventListener('input', (e) => { const id = e.target.id || ''; if (id.startsWith('c_')) calcUpdate(); if (id.startsWith('b_')) bondUpdate(); if (id.startsWith('i_')) ipoUpdate(); if (id.startsWith('n_')) pensionUpdate(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Enter' && locked && (e.target.id === 'pin' || e.target.id === 'pin2')) { ls.get(VKEY) ? doUnlock() : doCreate(); } });
+window.addEventListener('online', () => { if (!locked) { render(); refresh(); } });
+window.addEventListener('offline', () => { if (!locked) render(); });
 window.addEventListener('hashchange', () => { const v = location.hash.slice(1); if (!locked && VIEWS[v] && v !== view) go(v); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) hiddenAt = Date.now(); else if (!locked && hiddenAt && Date.now() - hiddenAt > 5 * 60000 && ls.get(VKEY)) { KEY = null; locked = true; state = defState(); render(); } });
 let hiddenAt = 0;

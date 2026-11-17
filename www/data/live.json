@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-16T18:06:45.995Z",
+  "updatedAt": "2026-11-17T01:52:46.020Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-16T18:06:45.995Z",
+      "fetchedAt": "2026-11-17T01:52:46.020Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "lastTriedAt": "2026-11-17T01:52:46.020Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-16T18:06:45.995Z",
+      "fetchedAt": "2026-11-17T01:52:46.020Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -78,21 +78,16 @@
         "am": {
           "gold999": 134380,
           "silver999": 169280
-        },
-        "prev": {
-          "date": "2026-11-13",
-          "gold999": 135809,
-          "silver999": 178000
         }
       },
-      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "lastTriedAt": "2026-11-17T01:52:46.020Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-16T18:06:45.995Z",
+      "fetchedAt": "2026-11-17T01:52:46.020Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -498,8 +493,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.3764,
-            "date": "2026-11-13"
+            "nav": 8.2464,
+            "date": "2026-11-16"
           },
           {
             "code": "154209",
@@ -508,8 +503,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.3484,
-            "date": "2026-11-13"
+            "nav": 8.2185,
+            "date": "2026-11-16"
           },
           {
             "code": "152980",
@@ -2014,7 +2009,7 @@
         ],
         "newSchemes": []
       },
-      "lastTriedAt": "2026-11-16T18:06:45.995Z",
+      "lastTriedAt": "2026-11-17T01:52:46.020Z",
       "failCount": 0
     },
     "yields": {
@@ -2025,8 +2020,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-16T18:06:45.995Z",
-      "fetchedAt": "2026-11-16T18:06:45.995Z",
+      "lastTriedAt": "2026-11-17T01:52:46.020Z",
+      "fetchedAt": "2026-11-17T01:52:46.020Z",
       "data": {
         "date": "2026-11-16",
         "curve": [
@@ -2132,8 +2127,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-16T18:06:45.995Z",
-      "fetchedAt": "2026-11-16T18:06:45.995Z",
+      "lastTriedAt": "2026-11-17T01:52:46.020Z",
+      "fetchedAt": "2026-11-17T01:52:46.020Z",
       "data": {
         "date": "2026-11-16",
         "usdinr": 93.93
@@ -2148,8 +2143,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-16T18:06:45.995Z",
-      "fetchedAt": "2026-11-16T18:06:45.995Z",
+      "lastTriedAt": "2026-11-17T01:52:46.020Z",
+      "fetchedAt": "2026-11-17T01:52:46.020Z",
       "data": {
         "drafts": [
           {
@@ -2416,10 +2411,16 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-16T18:06:45.995Z",
-      "fetchedAt": "2026-11-16T18:06:45.995Z",
+      "lastTriedAt": "2026-11-17T01:52:46.020Z",
+      "fetchedAt": "2026-11-17T01:52:46.020Z",
       "data": {
         "items": [
+          {
+            "title": "Sensex today | Stock Market Live Updates: Stock to buy today: CAMS",
+            "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-live-updates-17th-november-2026/article71708442.ece",
+            "at": "2026-11-17T01:16:53.000Z",
+            "src": "BusinessLine Markets"
+          },
           {
             "title": "RBI to conduct 2-day Variable Rate Reverse Repo (VRRR) auction under LAF on November 17, 2026",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63984",
@@ -2592,12 +2593,6 @@
             "title": "Today’s Gold Rate in India November 16: Gold prices down in Coimbatore, Nagpur, Visakhapatnam, Surat, Jaipur",
             "url": "https://www.thehindubusinessline.com/gold-rate-today/gold-price-today-in-coimbatore-nagpur-visakhapatnam-surat-jaipur-lucknow-chandigarh-gold-rates-other-cities-november-16-2026/article71707186.ece",
             "at": "2026-11-16T08:12:33.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Nifty holds 0.45% gains at noon; Bank Nifty hits all-time high, TMPV slumps 8%",
-            "url": "https://www.thehindubusinessline.com/markets/nifty-holds-045-gains-at-noon-bank-nifty-hits-all-time-high-tmpv-slumps-8/article71707144.ece",
-            "at": "2026-11-16T07:50:31.000Z",
             "src": "BusinessLine Markets"
           },
           {
@@ -2787,7 +2782,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-16T18:06:45.995Z",
+    "at": "2026-11-17T01:52:46.020Z",
     "ok": 7,
     "failing": []
   }

@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-17T17:37:38.819Z",
+  "updatedAt": "2026-11-18T00:58:12.608Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-17T17:37:38.819Z",
+      "fetchedAt": "2026-11-18T00:58:12.608Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-17T17:37:38.819Z",
+      "lastTriedAt": "2026-11-18T00:58:12.608Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-17T17:37:38.819Z",
+      "fetchedAt": "2026-11-18T00:58:12.608Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -78,21 +78,16 @@
         "am": {
           "gold999": 134418,
           "silver999": 168950
-        },
-        "prev": {
-          "date": "2026-11-16",
-          "gold999": 134971,
-          "silver999": 170251
         }
       },
-      "lastTriedAt": "2026-11-17T17:37:38.819Z",
+      "lastTriedAt": "2026-11-18T00:58:12.608Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-17T17:37:38.819Z",
+      "fetchedAt": "2026-11-18T00:58:12.608Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -498,8 +493,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.2464,
-            "date": "2026-11-16"
+            "nav": 8.2433,
+            "date": "2026-11-17"
           },
           {
             "code": "154209",
@@ -508,8 +503,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.2185,
-            "date": "2026-11-16"
+            "nav": 8.2153,
+            "date": "2026-11-17"
           },
           {
             "code": "152980",
@@ -2014,7 +2009,7 @@
         ],
         "newSchemes": []
       },
-      "lastTriedAt": "2026-11-17T17:37:38.819Z",
+      "lastTriedAt": "2026-11-18T00:58:12.608Z",
       "failCount": 0
     },
     "yields": {
@@ -2025,8 +2020,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-17T17:37:38.819Z",
-      "fetchedAt": "2026-11-17T17:37:38.819Z",
+      "lastTriedAt": "2026-11-18T00:58:12.608Z",
+      "fetchedAt": "2026-11-18T00:58:12.608Z",
       "data": {
         "date": "2026-11-17",
         "curve": [
@@ -2137,8 +2132,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-17T17:37:38.819Z",
-      "fetchedAt": "2026-11-17T17:37:38.819Z",
+      "lastTriedAt": "2026-11-18T00:58:12.608Z",
+      "fetchedAt": "2026-11-18T00:58:12.608Z",
       "data": {
         "date": "2026-11-17",
         "usdinr": 93.48
@@ -2153,8 +2148,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-17T17:37:38.819Z",
-      "fetchedAt": "2026-11-17T17:37:38.819Z",
+      "lastTriedAt": "2026-11-18T00:58:12.608Z",
+      "fetchedAt": "2026-11-18T00:58:12.608Z",
       "data": {
         "drafts": [
           {
@@ -2421,8 +2416,8 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-17T17:37:38.819Z",
-      "fetchedAt": "2026-11-17T17:37:38.819Z",
+      "lastTriedAt": "2026-11-18T00:58:12.608Z",
+      "fetchedAt": "2026-11-18T00:58:12.608Z",
       "data": {
         "items": [
           {
@@ -2430,6 +2425,24 @@
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63991",
             "at": "2026-11-17T19:05:00.000Z",
             "src": "RBI"
+          },
+          {
+            "title": "BPCL plans to raise ₹9,000 crore through bond sale after nearly four years",
+            "url": "https://www.thehindu.com/business/bpcl-plans-to-raise-9000-crore-through-bond-sale-after-nearly-four-years/article71713305.ece",
+            "at": "2026-11-17T18:09:20.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "SEBI weighs curbs on leveraged stock purchases amid rising retail exposure",
+            "url": "https://www.thehindu.com/business/sebi-weighs-curbs-on-leveraged-stock-purchases-amid-rising-retail-exposure/article71713317.ece",
+            "at": "2026-11-17T18:05:59.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "Nifty 100's 10-year winning streak could end in 2026. Should you continue your mutual fund SIPs or change strategy?",
+            "url": "https://www.livemint.com/money/personal-finance/nifty-100s-10-year-winning-streak-could-end-in-2026-should-you-continue-your-mutual-fund-sips-or-change-strategy-11794937688337.html",
+            "at": "2026-11-17T18:00:53.000Z",
+            "src": "Mint Money"
           },
           {
             "title": "Premature redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for premature redemption of SGB 2020-21 Series VIII due on November 18, 2026",
@@ -2654,12 +2667,6 @@
             "src": "Mint Money"
           },
           {
-            "title": "MCL fixes IPO price band at ₹129-136; Coal India to raise ₹9,000 cr.",
-            "url": "https://www.thehindu.com/business/Industry/mcl-fixes-ipo-price-band-at-129-136-coal-india-to-raise-9000-cr/article71708776.ece",
-            "at": "2026-11-16T15:58:07.000Z",
-            "src": "The Hindu Business"
-          },
-          {
             "title": "Result: Conversion/Switch Auction of Government of India Securities",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63982",
             "at": "2026-11-16T14:55:00.000Z",
@@ -2670,12 +2677,6 @@
             "url": "https://www.livemint.com/money/personal-finance/gold-silver-rates-today-16-november-check-24k-22k-gold-and-999-silver-pm-rates-in-delhi-11794837422736.html",
             "at": "2026-11-16T14:02:55.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "Wholesale inflation rises to 12.3% in October 2026, second straight month of double-digit inflation",
-            "url": "https://www.thehindu.com/business/Economy/wholesale-price-inflation-october-government-data/article71707046.ece",
-            "at": "2026-11-16T12:42:54.000Z",
-            "src": "The Hindu Business"
           },
           {
             "title": "NPS rules change from December 1: What subscribers need to know about choosing pension schemes",
@@ -2770,7 +2771,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-17T17:37:38.819Z",
+    "at": "2026-11-18T00:58:12.608Z",
     "ok": 7,
     "failing": []
   }

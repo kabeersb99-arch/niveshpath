@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-19T17:22:22.485Z",
+  "updatedAt": "2026-11-20T00:37:31.600Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-19T17:22:22.485Z",
+      "fetchedAt": "2026-11-20T00:37:31.600Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-19T17:22:22.485Z",
+      "lastTriedAt": "2026-11-20T00:37:31.600Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-19T17:22:22.485Z",
+      "fetchedAt": "2026-11-20T00:37:31.600Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -78,21 +78,16 @@
         "am": {
           "gold999": 129985,
           "silver999": 161575
-        },
-        "prev": {
-          "date": "2026-11-18",
-          "gold999": 131164,
-          "silver999": 163733
         }
       },
-      "lastTriedAt": "2026-11-19T17:22:22.485Z",
+      "lastTriedAt": "2026-11-20T00:37:31.600Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-19T17:22:22.485Z",
+      "fetchedAt": "2026-11-20T00:37:31.600Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -318,8 +313,8 @@
             "option": "",
             "amc": "Tata Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 12.6967,
-            "date": "2026-11-18"
+            "nav": 12.5514,
+            "date": "2026-11-19"
           },
           {
             "code": "154092",
@@ -498,8 +493,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.0794,
-            "date": "2026-11-18"
+            "nav": 7.9772,
+            "date": "2026-11-19"
           },
           {
             "code": "154209",
@@ -508,8 +503,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.0518,
-            "date": "2026-11-18"
+            "nav": 7.9498,
+            "date": "2026-11-19"
           },
           {
             "code": "152980",
@@ -848,8 +843,8 @@
             "option": "Growth Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 20.0761,
-            "date": "2026-11-18"
+            "nav": 19.7913,
+            "date": "2026-11-19"
           },
           {
             "code": "152288",
@@ -858,8 +853,8 @@
             "option": "IDCW Payout Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 20.0761,
-            "date": "2026-11-18"
+            "nav": 19.7913,
+            "date": "2026-11-19"
           },
           {
             "code": "152289",
@@ -868,8 +863,8 @@
             "option": "IDCW Reinvestment Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 20.0761,
-            "date": "2026-11-18"
+            "nav": 19.7913,
+            "date": "2026-11-19"
           },
           {
             "code": "152290",
@@ -878,8 +873,8 @@
             "option": "Growth Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 19.7972,
-            "date": "2026-11-18"
+            "nav": 19.5161,
+            "date": "2026-11-19"
           },
           {
             "code": "152286",
@@ -888,8 +883,8 @@
             "option": "IDCW Payout Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 19.7972,
-            "date": "2026-11-18"
+            "nav": 19.5161,
+            "date": "2026-11-19"
           },
           {
             "code": "152291",
@@ -898,8 +893,8 @@
             "option": "IDCW Reinvestment Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 19.7972,
-            "date": "2026-11-18"
+            "nav": 19.5161,
+            "date": "2026-11-19"
           },
           {
             "code": "154131",
@@ -1148,8 +1143,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3714.3802,
-            "date": "2026-11-18"
+            "nav": 3715.013,
+            "date": "2026-11-19"
           },
           {
             "code": "118577",
@@ -1428,8 +1423,8 @@
             "option": "Growth Option",
             "amc": "Tata Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4534.6112,
-            "date": "2026-11-18"
+            "nav": 4535.3599,
+            "date": "2026-11-19"
           },
           {
             "code": "153883",
@@ -1588,8 +1583,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 14.9944,
-            "date": "2026-11-18"
+            "nav": 15.1645,
+            "date": "2026-11-19"
           },
           {
             "code": "118581",
@@ -1998,8 +1993,8 @@
             "option": "",
             "amc": "Tata Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 15.9318,
-            "date": "2026-11-18"
+            "nav": 15.6732,
+            "date": "2026-11-19"
           },
           {
             "code": "151730",
@@ -2036,7 +2031,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-19T17:22:22.485Z",
+      "lastTriedAt": "2026-11-20T00:37:31.600Z",
       "failCount": 0
     },
     "yields": {
@@ -2047,8 +2042,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-19T17:22:22.485Z",
-      "fetchedAt": "2026-11-19T17:22:22.485Z",
+      "lastTriedAt": "2026-11-20T00:37:31.600Z",
+      "fetchedAt": "2026-11-20T00:37:31.600Z",
       "data": {
         "date": "2026-11-19",
         "curve": [
@@ -2169,8 +2164,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-19T17:22:22.485Z",
-      "fetchedAt": "2026-11-19T17:22:22.485Z",
+      "lastTriedAt": "2026-11-20T00:37:31.600Z",
+      "fetchedAt": "2026-11-20T00:37:31.600Z",
       "data": {
         "date": "2026-11-19",
         "usdinr": 93.3
@@ -2185,8 +2180,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-19T17:22:22.485Z",
-      "fetchedAt": "2026-11-19T17:22:22.485Z",
+      "lastTriedAt": "2026-11-20T00:37:31.600Z",
+      "fetchedAt": "2026-11-20T00:37:31.600Z",
       "data": {
         "drafts": [
           {
@@ -2453,10 +2448,28 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-19T17:22:22.485Z",
-      "fetchedAt": "2026-11-19T17:22:22.485Z",
+      "lastTriedAt": "2026-11-20T00:37:31.600Z",
+      "fetchedAt": "2026-11-20T00:37:31.600Z",
       "data": {
         "items": [
+          {
+            "title": "Anthropic IPO could mint thousands of employee millionaires, including junior staff",
+            "url": "https://www.thehindubusinessline.com/markets/anthropic-ipo-could-mint-thousands-of-employee-millionaires-including-junior-staff/article71722508.ece",
+            "at": "2026-11-19T23:55:39.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "US stocks tumble 2% as Anthropic IPO fails to revive AI trade optimism",
+            "url": "https://www.thehindubusinessline.com/markets/stock-markets/us-stocks-tumble-2-as-anthropic-ipo-fails-to-revive-ai-trade-optimism/article71721999.ece",
+            "at": "2026-11-19T23:50:33.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Anthropic shares surge 17% after record $107.3 billion IPO, valuing AI firm at $1.8 trillion",
+            "url": "https://www.thehindubusinessline.com/markets/stock-markets/anthropic-shares-surge-17-after-record-1073-billion-ipo-valuing-ai-firm-at-18-trillion/article71721993.ece",
+            "at": "2026-11-19T23:34:41.000Z",
+            "src": "BusinessLine Markets"
+          },
           {
             "title": "Auction of State Government Securities",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64004",
@@ -2470,22 +2483,28 @@
             "src": "RBI"
           },
           {
+            "title": "Anthropic raises $81 billion in IPO amid AI market volatility",
+            "url": "https://www.thehindu.com/business/anthropic-raises-81-billion-in-ipo-amid-ai-market-volatility/article71721392.ece",
+            "at": "2026-11-19T18:38:46.000Z",
+            "src": "The Hindu Business"
+          },
+          {
             "title": "Finances of Panchayati Raj Institutions",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64002",
             "at": "2026-11-19T17:35:00.000Z",
             "src": "RBI"
           },
           {
+            "title": "SEBI, PFRDA call for deeper capital markets to fund Viksit Bharat 2047",
+            "url": "https://www.thehindu.com/business/deep-capital-markets-long-term-financing-key-to-funding-indias-growth-says-sebis-murty/article71721459.ece",
+            "at": "2026-11-19T17:28:06.000Z",
+            "src": "The Hindu Business"
+          },
+          {
             "title": "How to analyse a mutual fund? A beginner’s guide to returns, risk, costs and fund performance for better returns",
             "url": "https://www.livemint.com/money/personal-finance/how-to-analyse-a-mutual-fund-a-beginner-s-guide-to-returns-risk-costs-and-fund-performance-for-better-returns-11795107230060.html",
             "at": "2026-11-19T17:02:00.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "SEBI, PFRDA call for deeper capital markets to fund Viksit Bharat 2047",
-            "url": "https://www.thehindu.com/business/deep-capital-markets-long-term-financing-key-to-funding-indias-growth-says-sebis-murty/article71721459.ece",
-            "at": "2026-11-19T16:46:23.000Z",
-            "src": "The Hindu Business"
           },
           {
             "title": "OPEC share in India’s crude imports drops to 27.4% in Apr-Oct amid West Asia flare-ups",
@@ -2510,12 +2529,6 @@
             "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-will-govt-pensioners-get-a-minimum-monthly-pension-of-45-000-heres-what-the-latest-demand-means-11795103610781.html",
             "at": "2026-11-19T16:30:21.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "Anthropic raises $81 billion in IPO amid AI market volatility",
-            "url": "https://www.thehindu.com/business/anthropic-raises-81-billion-in-ipo-amid-ai-market-volatility/article71721392.ece",
-            "at": "2026-11-19T16:12:12.000Z",
-            "src": "The Hindu Business"
           },
           {
             "title": "15% fall in gold prices could trigger panic, warn lenders",
@@ -2650,12 +2663,6 @@
             "src": "Mint Money"
           },
           {
-            "title": "NLC India Renewables files for ₹3,300-crore IPO",
-            "url": "https://www.thehindubusinessline.com/markets/nlc-india-renewables-files-for-3300-crore-ipo/article71719076.ece",
-            "at": "2026-11-19T07:50:47.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Gold hits 14-month low: Why are silver and copper prices falling too? Experts explain what investors should do now",
             "url": "https://www.livemint.com/money/personal-finance/gold-hits-14-month-low-why-are-silver-and-copper-prices-falling-too-experts-explain-what-investors-should-do-now-11795063390311.html",
             "at": "2026-11-19T06:54:26.000Z",
@@ -2672,12 +2679,6 @@
             "url": "https://economictimes.indiatimes.com/wealth/borrow/loan-against-ppf-borrow-up-to-25-of-your-balance-check-how-much-you-can-get/slideshow/135979585.cms",
             "at": "2026-11-19T06:03:39.000Z",
             "src": "ET Wealth"
-          },
-          {
-            "title": "Gold rate today 22k 19 November: Check city prices of Chennai, Bangalore, Coimbatore, Hyderabad, Mumbai, Surat, Jaipur",
-            "url": "https://www.livemint.com/money/personal-finance/gold-rate-today-22k-19-november-check-city-prices-of-chennai-bangalore-coimbatore-hyderabad-mumbai-surat-jaipur-11795066507412.html",
-            "at": "2026-11-19T06:01:28.000Z",
-            "src": "Mint Money"
           },
           {
             "title": "Rupee slides 8 paise to 93.49 against U.S. dollar in early trade",
@@ -2840,7 +2841,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-19T17:22:22.485Z",
+    "at": "2026-11-20T00:37:31.600Z",
     "ok": 7,
     "failing": []
   }

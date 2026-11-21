@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-21T10:12:42.999Z",
+  "updatedAt": "2026-11-21T16:07:56.913Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-21T10:12:42.999Z",
+      "fetchedAt": "2026-11-21T16:07:56.913Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-21T10:12:42.999Z",
+      "lastTriedAt": "2026-11-21T16:07:56.913Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-21T10:12:42.999Z",
+      "fetchedAt": "2026-11-21T16:07:56.913Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -80,14 +80,14 @@
           "silver999": 150650
         }
       },
-      "lastTriedAt": "2026-11-21T10:12:42.999Z",
+      "lastTriedAt": "2026-11-21T16:07:56.913Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-21T10:12:42.999Z",
+      "fetchedAt": "2026-11-21T16:07:56.913Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -1033,8 +1033,8 @@
             "option": "GROWTH",
             "amc": "Aditya Birla Sun Life Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 464.4005,
-            "date": "2026-11-20"
+            "nav": 464.5666,
+            "date": "2026-11-22"
           },
           {
             "code": "154589",
@@ -1053,8 +1053,8 @@
             "option": "Growth Option",
             "amc": "Axis Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3198.0992,
-            "date": "2026-11-20"
+            "nav": 3199.2512,
+            "date": "2026-11-22"
           },
           {
             "code": "151833",
@@ -1073,8 +1073,8 @@
             "option": "Growth",
             "amc": "Bandhan Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3468.9976,
-            "date": "2026-11-20"
+            "nav": 3470.2325,
+            "date": "2026-11-22"
           },
           {
             "code": "119369",
@@ -1103,8 +1103,8 @@
             "option": "GROWTH OPTION",
             "amc": "Canara Robeco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3444.2363,
-            "date": "2026-11-21"
+            "nav": 3444.8373,
+            "date": "2026-11-22"
           },
           {
             "code": "154011",
@@ -1133,8 +1133,8 @@
             "option": "Growth",
             "amc": "DSP Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4110.5764,
-            "date": "2026-11-20"
+            "nav": 4112.0785,
+            "date": "2026-11-22"
           },
           {
             "code": "140196",
@@ -1143,8 +1143,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3716.1679,
-            "date": "2026-11-21"
+            "nav": 3716.8319,
+            "date": "2026-11-22"
           },
           {
             "code": "118577",
@@ -1153,8 +1153,8 @@
             "option": "Super Institutional Growth",
             "amc": "Franklin Templeton Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4322.1802,
-            "date": "2026-11-20"
+            "nav": 4323.7801,
+            "date": "2026-11-22"
           },
           {
             "code": "119135",
@@ -1163,8 +1163,8 @@
             "option": "Growth",
             "amc": "Groww Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2787.0347,
-            "date": "2026-11-21"
+            "nav": 2787.5366,
+            "date": "2026-11-22"
           },
           {
             "code": "119091",
@@ -1173,8 +1173,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5641.6182,
-            "date": "2026-11-20"
+            "nav": 5643.6156,
+            "date": "2026-11-22"
           },
           {
             "code": "120197",
@@ -1183,8 +1183,8 @@
             "option": "Growth",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 425.1362,
-            "date": "2026-11-20"
+            "nav": 425.2844,
+            "date": "2026-11-22"
           },
           {
             "code": "120537",
@@ -1193,8 +1193,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3943.9649,
-            "date": "2026-11-20"
+            "nav": 3945.3812,
+            "date": "2026-11-22"
           },
           {
             "code": "139390",
@@ -1204,7 +1204,7 @@
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
             "nav": 1000,
-            "date": "2026-11-20"
+            "date": "2026-11-22"
           },
           {
             "code": "139389",
@@ -1213,8 +1213,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1869.3581,
-            "date": "2026-11-20"
+            "nav": 1870.0294,
+            "date": "2026-11-22"
           },
           {
             "code": "139388",
@@ -1224,7 +1224,7 @@
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
             "nav": 1000,
-            "date": "2026-11-20"
+            "date": "2026-11-22"
           },
           {
             "code": "139387",
@@ -1233,8 +1233,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1868.9386,
-            "date": "2026-11-20"
+            "nav": 1869.6097,
+            "date": "2026-11-22"
           },
           {
             "code": "147157",
@@ -1243,8 +1243,8 @@
             "option": "Growth Option",
             "amc": "ITI Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1489.805,
-            "date": "2026-11-20"
+            "nav": 1490.2916,
+            "date": "2026-11-22"
           },
           {
             "code": "153651",
@@ -1253,8 +1253,8 @@
             "option": "Growth Option",
             "amc": "Jio BlackRock Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1090.0201,
-            "date": "2026-11-20"
+            "nav": 1090.4325,
+            "date": "2026-11-22"
           },
           {
             "code": "120406",
@@ -1293,8 +1293,8 @@
             "option": "Growth",
             "amc": "Kotak Mahindra Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5806.1781,
-            "date": "2026-11-21"
+            "nav": 5807.237,
+            "date": "2026-11-22"
           },
           {
             "code": "120249",
@@ -1323,8 +1323,8 @@
             "option": "Growth",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3033.0394,
-            "date": "2026-11-20"
+            "nav": 3034.1656,
+            "date": "2026-11-22"
           },
           {
             "code": "118701",
@@ -1333,8 +1333,8 @@
             "option": "Growth Option",
             "amc": "Nippon India Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 7036.7749,
-            "date": "2026-11-20"
+            "nav": 7039.3387,
+            "date": "2026-11-22"
           },
           {
             "code": "143269",
@@ -1353,8 +1353,8 @@
             "option": "Direct Growth",
             "amc": "PGIM India Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 375.1052,
-            "date": "2026-11-21"
+            "nav": 375.1743,
+            "date": "2026-11-22"
           },
           {
             "code": "120837",
@@ -1363,8 +1363,8 @@
             "option": "Growth Option",
             "amc": "quant Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 45.9765,
-            "date": "2026-11-20"
+            "nav": 45.9929,
+            "date": "2026-11-22"
           },
           {
             "code": "148512",
@@ -1393,8 +1393,8 @@
             "option": "Growth",
             "amc": "SBI Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4491.6281,
-            "date": "2026-11-20"
+            "nav": 4493.234,
+            "date": "2026-11-22"
           },
           {
             "code": "153035",
@@ -1413,8 +1413,8 @@
             "option": "GROWTH",
             "amc": "Sundaram Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2540.6665,
-            "date": "2026-11-20"
+            "nav": 2541.5771,
+            "date": "2026-11-22"
           },
           {
             "code": "119861",
@@ -1433,8 +1433,8 @@
             "option": "Growth",
             "amc": "The Wealth Company Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1073.1058,
-            "date": "2026-11-20"
+            "nav": 1073.4952,
+            "date": "2026-11-22"
           },
           {
             "code": "148841",
@@ -1453,8 +1453,8 @@
             "option": "GROWTH",
             "amc": "Unifi Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1086.0801,
-            "date": "2026-11-20"
+            "nav": 1086.4155,
+            "date": "2026-11-22"
           },
           {
             "code": "119303",
@@ -1463,8 +1463,8 @@
             "option": "Growth Option",
             "amc": "Union Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2772.3586,
-            "date": "2026-11-21"
+            "nav": 2772.8607,
+            "date": "2026-11-22"
           },
           {
             "code": "120304",
@@ -2031,7 +2031,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-21T10:12:42.999Z",
+      "lastTriedAt": "2026-11-21T16:07:56.913Z",
       "failCount": 0
     },
     "yields": {
@@ -2042,8 +2042,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-21T10:12:42.999Z",
-      "fetchedAt": "2026-11-21T10:12:42.999Z",
+      "lastTriedAt": "2026-11-21T16:07:56.913Z",
+      "fetchedAt": "2026-11-21T16:07:56.913Z",
       "data": {
         "date": "2026-11-20",
         "curve": [
@@ -2169,8 +2169,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-21T10:12:42.999Z",
-      "fetchedAt": "2026-11-21T10:12:42.999Z",
+      "lastTriedAt": "2026-11-21T16:07:56.913Z",
+      "fetchedAt": "2026-11-21T16:07:56.913Z",
       "data": {
         "date": "2026-11-20",
         "usdinr": 92.68
@@ -2185,8 +2185,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-21T10:12:42.999Z",
-      "fetchedAt": "2026-11-21T10:12:42.999Z",
+      "lastTriedAt": "2026-11-21T16:07:56.913Z",
+      "fetchedAt": "2026-11-21T16:07:56.913Z",
       "data": {
         "drafts": [
           {
@@ -2453,10 +2453,22 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-21T10:12:42.999Z",
-      "fetchedAt": "2026-11-21T10:12:42.999Z",
+      "lastTriedAt": "2026-11-21T16:07:56.913Z",
+      "fetchedAt": "2026-11-21T16:07:56.913Z",
       "data": {
         "items": [
+          {
+            "title": "Gold, copper, aluminium dive to at least 7-month lows",
+            "url": "https://www.thehindu.com/business/gold-copper-aluminium-dive-to-at-least-7-month-lows/article71729065.ece",
+            "at": "2026-11-21T15:57:45.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "ITAT Bangalore relief to businessman in ₹12 crore tax case: Why Income Tax Department's seizure failed",
+            "url": "https://www.livemint.com/money/personal-finance/itat-bangalore-relief-to-businessman-in-rs-12-crore-tax-case-why-income-tax-departments-seizure-failed-11795257680485.html",
+            "at": "2026-11-21T11:52:32.000Z",
+            "src": "Mint Money"
+          },
           {
             "title": "Income Tax rules: Delhi ITAT holds capital gains on transfer of US entity not taxable in India — Expert explains why",
             "url": "https://www.livemint.com/money/income-tax-rules-delhi-itat-holds-capital-gains-transfer-of-us-entity-not-taxable-expert-explains-why-india-ireland-dtaa-11795251378231.html",
@@ -2722,12 +2734,6 @@
             "src": "Mint Money"
           },
           {
-            "title": "EPF SWP vs mutual fund SWP: How do systematic withdrawals work differently? Returns, liquidity, key rules compared",
-            "url": "https://www.livemint.com/money/personal-finance/epf-swp-vs-mutual-fund-swp-how-do-systematic-withdrawals-work-differently-returns-liquidity-key-rules-compared-11795168695281.html",
-            "at": "2026-11-20T10:44:04.000Z",
-            "src": "Mint Money"
-          },
-          {
             "title": "Sensex today | Stock Market Highlights: Sensex rises 897 pts, Nifty ends at 25,800, ₹ sees largest single day gain in a month",
             "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-live-updates-20th-november-2026/article71720685.ece",
             "at": "2026-11-20T10:33:22.000Z",
@@ -2773,18 +2779,6 @@
             "title": "Rupee strengthens 17 paise to 93.15 against U.S. dollar",
             "url": "https://www.thehindu.com/business/markets/indian-rupee-vs-us-dollar-on-november-20-2026/article71723126.ece",
             "at": "2026-11-20T04:41:26.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "Anthropic raises $81 billion in IPO amid AI market volatility",
-            "url": "https://www.thehindu.com/business/anthropic-raises-81-billion-in-ipo-amid-ai-market-volatility/article71721392.ece",
-            "at": "2026-11-20T03:59:51.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "SEBI, PFRDA call for deeper capital markets to fund Viksit Bharat 2047",
-            "url": "https://www.thehindu.com/business/deep-capital-markets-long-term-financing-key-to-funding-indias-growth-says-sebis-murty/article71721459.ece",
-            "at": "2026-11-19T17:28:06.000Z",
             "src": "The Hindu Business"
           },
           {
@@ -2928,7 +2922,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-21T10:12:42.999Z",
+    "at": "2026-11-21T16:07:56.913Z",
     "ok": 7,
     "failing": []
   }

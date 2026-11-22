@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-22T10:17:28.926Z",
+  "updatedAt": "2026-11-22T16:15:38.199Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-22T10:17:28.926Z",
+      "fetchedAt": "2026-11-22T16:15:38.199Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-22T10:17:28.926Z",
+      "lastTriedAt": "2026-11-22T16:15:38.199Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-22T10:17:28.926Z",
+      "fetchedAt": "2026-11-22T16:15:38.199Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -80,14 +80,14 @@
           "silver999": 150650
         }
       },
-      "lastTriedAt": "2026-11-22T10:17:28.926Z",
+      "lastTriedAt": "2026-11-22T16:15:38.199Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-22T10:17:28.926Z",
+      "fetchedAt": "2026-11-22T16:15:38.199Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -2031,7 +2031,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-22T10:17:28.926Z",
+      "lastTriedAt": "2026-11-22T16:15:38.199Z",
       "failCount": 0
     },
     "yields": {
@@ -2042,8 +2042,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-22T10:17:28.926Z",
-      "fetchedAt": "2026-11-22T10:17:28.926Z",
+      "lastTriedAt": "2026-11-22T16:15:38.199Z",
+      "fetchedAt": "2026-11-22T16:15:38.199Z",
       "data": {
         "date": "2026-11-20",
         "curve": [
@@ -2169,8 +2169,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-22T10:17:28.926Z",
-      "fetchedAt": "2026-11-22T10:17:28.926Z",
+      "lastTriedAt": "2026-11-22T16:15:38.199Z",
+      "fetchedAt": "2026-11-22T16:15:38.199Z",
       "data": {
         "date": "2026-11-20",
         "usdinr": 92.68
@@ -2185,8 +2185,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-22T10:17:28.926Z",
-      "fetchedAt": "2026-11-22T10:17:28.926Z",
+      "lastTriedAt": "2026-11-22T16:15:38.199Z",
+      "fetchedAt": "2026-11-22T16:15:38.199Z",
       "data": {
         "drafts": [
           {
@@ -2453,10 +2453,64 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-22T10:17:28.926Z",
-      "fetchedAt": "2026-11-22T10:17:28.926Z",
+      "lastTriedAt": "2026-11-22T16:15:38.199Z",
+      "fetchedAt": "2026-11-22T16:15:38.199Z",
       "data": {
         "items": [
+          {
+            "title": "FD interest rate vs maturity date: Should you chase higher returns or choose a tenure that suits your financial goals?",
+            "url": "https://www.livemint.com/money/personal-finance/fd-interest-rate-vs-maturity-date-should-you-chase-higher-returns-or-choose-a-tenure-that-suits-your-financial-goals-11795361826216.html",
+            "at": "2026-11-22T16:03:48.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Gold slides to lowest level since September 2025, silver crashes nearly 4%: What's driving the selloff?",
+            "url": "https://www.livemint.com/money/gold-slides-to-lowest-level-since-september-2025-silver-crashes-nearly-4-whats-driving-the-selloff-11795361232751.html",
+            "at": "2026-11-22T15:46:10.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "SEBI starts work on network to train independent directors",
+            "url": "https://www.thehindubusinessline.com/markets/sebi-starts-work-on-network-to-train-independent-directors/article71731685.ece",
+            "at": "2026-11-22T14:54:20.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Gold prices plunge ahead of wedding season. How much can families save when buying bridal jewellery now?",
+            "url": "https://www.livemint.com/money/personal-finance/gold-prices-plunge-ahead-of-wedding-season-how-much-can-families-save-when-buying-bridal-jewellery-now-11795351268809.html",
+            "at": "2026-11-22T12:54:41.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "8th Pay Commission salary hike: Why employees want 50% DA merged with basic pay before fitment factor calculation",
+            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-salary-hike-why-employees-want-50-da-merged-with-basic-pay-before-fitment-factor-calculation-11795347645844.html",
+            "at": "2026-11-22T11:46:09.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "IPO Street set for year-end revival; 29 firms eye ₹42,000 crore as sentiment improves",
+            "url": "https://www.thehindubusinessline.com/markets/ipo-street-set-for-year-end-revival-29-firms-eye-42000-crore-as-sentiment-improves/article71731112.ece",
+            "at": "2026-11-22T11:45:39.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Must balance ‘economic patriotism’ with cultural heritage: GJC on PM Modi’s call to stop gold purchases",
+            "url": "https://www.thehindu.com/business/must-balance-economic-patriotism-with-cultural-heritage-gjc-on-pm-modis-call-to-stop-gold-purchases/article71423466.ece",
+            "at": "2026-11-22T11:23:51.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "SEBI proposals will open window to foreign funds with opaque offshore ownership structures, says Congress",
+            "url": "https://www.thehindu.com/business/markets/sebi-proposals-will-open-window-to-foreign-funds-with-opaque-offshore-ownership-structures-says-congress/article71730702.ece",
+            "at": "2026-11-22T10:23:38.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "Gold, copper, aluminium dive to at least 7-month lows",
+            "url": "https://www.thehindu.com/business/gold-copper-aluminium-dive-to-at-least-7-month-lows/article71729065.ece",
+            "at": "2026-11-22T09:49:41.000Z",
+            "src": "The Hindu Business"
+          },
           {
             "title": "Gold prices slide in Visakhapatnam, but Andhra Pradesh buyers remain cautious: Check retail rates of 24K, 22K, 18K gold",
             "url": "https://www.livemint.com/money/gold-prices-slide-visakhapatnam-buyers-andhra-pradesh-cautious-check-city-retail-rates-24k-22k-18k-gold-999-fine-silver-11795335542746.html",
@@ -2492,12 +2546,6 @@
             "url": "https://www.livemint.com/money/personal-finance/gold-silver-etf-crash-should-investors-buy-the-dip-11795255637502.html",
             "at": "2026-11-22T06:40:32.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "SEBI proposals will open window to foreign funds with opaque offshore ownership structures, says Congress",
-            "url": "https://www.thehindu.com/business/markets/sebi-proposals-will-open-window-to-foreign-funds-with-opaque-offshore-ownership-structures-says-congress/article71730702.ece",
-            "at": "2026-11-22T06:34:21.000Z",
-            "src": "The Hindu Business"
           },
           {
             "title": "Gold crashes 31%, silver plunges 64%: How much your ₹10 lakh investment shrunk since January peak, what lies ahead?",
@@ -2539,66 +2587,6 @@
             "title": "8th Pay Commission: MSA and IRTSA proposals show how fitment factors could reshape central government salary structures",
             "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-msa-and-irtsa-proposals-show-how-fitment-factors-could-reshape-central-government-salary-structures-11795013686090.html",
             "at": "2026-11-22T00:53:19.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold, copper, aluminium dive to at least 7-month lows",
-            "url": "https://www.thehindu.com/business/gold-copper-aluminium-dive-to-at-least-7-month-lows/article71729065.ece",
-            "at": "2026-11-21T15:57:45.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "ITAT Bangalore relief to businessman in ₹12 crore tax case: Why Income Tax Department's seizure failed",
-            "url": "https://www.livemint.com/money/personal-finance/itat-bangalore-relief-to-businessman-in-rs-12-crore-tax-case-why-income-tax-departments-seizure-failed-11795257680485.html",
-            "at": "2026-11-21T11:52:32.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Income Tax rules: Delhi ITAT holds capital gains on transfer of US entity not taxable in India — Expert explains why",
-            "url": "https://www.livemint.com/money/income-tax-rules-delhi-itat-holds-capital-gains-transfer-of-us-entity-not-taxable-expert-explains-why-india-ireland-dtaa-11795251378231.html",
-            "at": "2026-11-21T09:35:01.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold prices crash nearly 10% in a week: Mega reasons behind massive yellow metal rate fall – List",
-            "url": "https://www.livemint.com/money/personal-finance/gold-prices-crash-nearly-10-in-a-week-mega-reasons-behind-massive-yellow-metal-rate-fall-list-11795249539231.html",
-            "at": "2026-11-21T09:27:30.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Key income tax rules: Foreign Disclosure Scheme – What happens if taxman values your assets higher than you declared?",
-            "url": "https://www.livemint.com/money/personal-finance/key-income-tax-rules-foreign-disclosure-scheme-what-happens-if-taxman-values-your-assets-higher-than-you-declared-11795250157092.html",
-            "at": "2026-11-21T09:26:56.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold, debt and equity: Which portfolio mix offers better returns with lower volatility? 25 years of data provide answer",
-            "url": "https://www.livemint.com/money/personal-finance/gold-debt-and-equity-which-portfolio-mix-offers-better-returns-with-lower-volatility-25-years-of-data-provide-answer-11795246256111.html",
-            "at": "2026-11-21T08:33:31.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "NRE FD interest rates in November 2026: PNB, Kotak, Federal Bank offer up to 6.80%; compare top bank rates for NRIs now",
-            "url": "https://www.livemint.com/money/personal-finance/nre-fd-interest-rates-in-november-2026-pnb-kotak-federal-bank-offer-up-to-6-80-compare-top-bank-rates-for-nris-now-11795230455215.html",
-            "at": "2026-11-21T08:06:01.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Golden lessons from past gold price fluctuations amid current gold price crash — 32% down from its peak in 2026",
-            "url": "https://www.livemint.com/money/personal-finance/golden-lessons-from-past-gold-price-fluctuations-amid-current-gold-price-crash-32-down-from-its-peak-in-2026-11795234156396.html",
-            "at": "2026-11-21T07:29:41.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Silver prices crash 64.2% from January peak: Check latest rates in Delhi, Mumbai, Chennai and other cities",
-            "url": "https://www.livemint.com/money/personal-finance/silver-rate-today-in-india-latest-prices-in-delhi-mumbai-chennai-and-other-cities-after-a-sharp-bullion-market-crash-11795243551283.html",
-            "at": "2026-11-21T07:19:52.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Bought gold on Diwali? Prices fall 12.9% in a fortnight: Check today's value of your 22K and 24K gold purchases in India",
-            "url": "https://www.livemint.com/money/personal-finance/bought-gold-on-diwali-prices-fall-12-9-in-a-fortnight-check-todays-value-of-your-22k-and-24k-gold-purchases-in-india-11795236108431.html",
-            "at": "2026-11-21T05:34:25.000Z",
             "src": "Mint Money"
           },
           {
@@ -2704,22 +2692,10 @@
             "src": "RBI"
           },
           {
-            "title": "Rupee soars to 7-month high against the dollar, strengthens below 93 level",
-            "url": "https://www.thehindubusinessline.com/money-and-banking/rupee-soars-to-7-month-high-against-the-dollar-strengthens-below-93-level/article71724707.ece",
-            "at": "2026-11-20T13:28:04.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Reserve Bank issues Foreign Exchange Management (Export and Import of Goods and Services) (Second Amendment) Regulations, 2026",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64009",
             "at": "2026-11-20T13:15:00.000Z",
             "src": "RBI"
-          },
-          {
-            "title": "Rupee settles above 93 level after seven months on FII flows",
-            "url": "https://www.thehindu.com/business/Industry/rupee-settles-above-93-level-after-seven-months-on-fii-flows/article71724100.ece",
-            "at": "2026-11-20T12:35:28.000Z",
-            "src": "The Hindu Business"
           },
           {
             "title": "RBI to conduct Second 3-day Variable Rate Repo (VRR) auction under LAF on November 20, 2026",
@@ -2874,7 +2850,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-22T10:17:28.926Z",
+    "at": "2026-11-22T16:15:38.199Z",
     "ok": 7,
     "failing": []
   }

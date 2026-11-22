@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-22T16:15:38.199Z",
+  "updatedAt": "2026-11-22T23:36:49.439Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-22T16:15:38.199Z",
+      "fetchedAt": "2026-11-22T23:36:49.439Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-22T16:15:38.199Z",
+      "lastTriedAt": "2026-11-22T23:36:49.439Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-22T16:15:38.199Z",
+      "fetchedAt": "2026-11-22T23:36:49.439Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -80,14 +80,14 @@
           "silver999": 150650
         }
       },
-      "lastTriedAt": "2026-11-22T16:15:38.199Z",
+      "lastTriedAt": "2026-11-22T23:36:49.439Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-22T16:15:38.199Z",
+      "fetchedAt": "2026-11-22T23:36:49.439Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -2031,7 +2031,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-22T16:15:38.199Z",
+      "lastTriedAt": "2026-11-22T23:36:49.439Z",
       "failCount": 0
     },
     "yields": {
@@ -2042,8 +2042,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-22T16:15:38.199Z",
-      "fetchedAt": "2026-11-22T16:15:38.199Z",
+      "lastTriedAt": "2026-11-22T23:36:49.439Z",
+      "fetchedAt": "2026-11-22T23:36:49.439Z",
       "data": {
         "date": "2026-11-20",
         "curve": [
@@ -2169,8 +2169,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-22T16:15:38.199Z",
-      "fetchedAt": "2026-11-22T16:15:38.199Z",
+      "lastTriedAt": "2026-11-22T23:36:49.439Z",
+      "fetchedAt": "2026-11-22T23:36:49.439Z",
       "data": {
         "date": "2026-11-20",
         "usdinr": 92.68
@@ -2185,8 +2185,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-22T16:15:38.199Z",
-      "fetchedAt": "2026-11-22T16:15:38.199Z",
+      "lastTriedAt": "2026-11-22T23:36:49.439Z",
+      "fetchedAt": "2026-11-22T23:36:49.439Z",
       "data": {
         "drafts": [
           {
@@ -2453,10 +2453,22 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-22T16:15:38.199Z",
-      "fetchedAt": "2026-11-22T16:15:38.199Z",
+      "lastTriedAt": "2026-11-22T23:36:49.439Z",
+      "fetchedAt": "2026-11-22T23:36:49.439Z",
       "data": {
         "items": [
+          {
+            "title": "SIP on salary day or at month-end? Does your mutual fund investment date affect returns? What Sensex data reveal",
+            "url": "https://www.livemint.com/money/personal-finance/sip-on-salary-day-or-at-month-end-does-your-mutual-fund-investment-date-affect-returns-what-sensex-data-reveal-11795368672894.html",
+            "at": "2026-11-22T17:59:27.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Income tax notice sent to your old address? When can ITAT declare reassessment proceedings invalid for taxpayers",
+            "url": "https://www.livemint.com/money/personal-finance/income-tax-notice-sent-to-your-old-address-when-can-itat-declare-reassessment-proceedings-invalid-for-taxpayers-11795365987908.html",
+            "at": "2026-11-22T17:02:35.000Z",
+            "src": "Mint Money"
+          },
           {
             "title": "FD interest rate vs maturity date: Should you chase higher returns or choose a tenure that suits your financial goals?",
             "url": "https://www.livemint.com/money/personal-finance/fd-interest-rate-vs-maturity-date-should-you-chase-higher-returns-or-choose-a-tenure-that-suits-your-financial-goals-11795361826216.html",
@@ -2482,6 +2494,12 @@
             "src": "Mint Money"
           },
           {
+            "title": "Congress attacks government over SEBI’s proposal to remove disclosure norms for FPIs",
+            "url": "https://www.thehindu.com/business/markets/sebi-proposals-will-open-window-to-foreign-funds-with-opaque-offshore-ownership-structures-says-congress/article71730702.ece",
+            "at": "2026-11-22T12:44:57.000Z",
+            "src": "The Hindu Business"
+          },
+          {
             "title": "8th Pay Commission salary hike: Why employees want 50% DA merged with basic pay before fitment factor calculation",
             "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-salary-hike-why-employees-want-50-da-merged-with-basic-pay-before-fitment-factor-calculation-11795347645844.html",
             "at": "2026-11-22T11:46:09.000Z",
@@ -2497,12 +2515,6 @@
             "title": "Must balance ‘economic patriotism’ with cultural heritage: GJC on PM Modi’s call to stop gold purchases",
             "url": "https://www.thehindu.com/business/must-balance-economic-patriotism-with-cultural-heritage-gjc-on-pm-modis-call-to-stop-gold-purchases/article71423466.ece",
             "at": "2026-11-22T11:23:51.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "SEBI proposals will open window to foreign funds with opaque offshore ownership structures, says Congress",
-            "url": "https://www.thehindu.com/business/markets/sebi-proposals-will-open-window-to-foreign-funds-with-opaque-offshore-ownership-structures-says-congress/article71730702.ece",
-            "at": "2026-11-22T10:23:38.000Z",
             "src": "The Hindu Business"
           },
           {
@@ -2581,12 +2593,6 @@
             "title": "Company FD interest rates in November 2026: Muthoot Capital offers 8.95%; compare Shriram, Bajaj Finance and others now",
             "url": "https://www.livemint.com/money/personal-finance/company-fd-interest-rates-in-november-2026-muthoot-capital-offers-8-95-compare-shriram-bajaj-finance-and-others-now-11795310664714.html",
             "at": "2026-11-22T01:56:14.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "8th Pay Commission: MSA and IRTSA proposals show how fitment factors could reshape central government salary structures",
-            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-msa-and-irtsa-proposals-show-how-fitment-factors-could-reshape-central-government-salary-structures-11795013686090.html",
-            "at": "2026-11-22T00:53:19.000Z",
             "src": "Mint Money"
           },
           {
@@ -2850,7 +2856,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-22T16:15:38.199Z",
+    "at": "2026-11-22T23:36:49.439Z",
     "ok": 7,
     "failing": []
   }

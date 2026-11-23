@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-23T11:15:29.675Z",
+  "updatedAt": "2026-11-23T20:11:08.387Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-23T11:15:29.675Z",
+      "fetchedAt": "2026-11-23T20:11:08.387Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,27 +54,27 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-23T11:15:29.675Z",
+      "lastTriedAt": "2026-11-23T20:11:08.387Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-23T11:15:29.675Z",
+      "fetchedAt": "2026-11-23T20:11:08.387Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
       "url": "https://ibjarates.com/",
       "data": {
-        "date": "2026-11-23",
-        "gold999": 125123,
-        "gold995": 124622,
-        "gold916": 114613,
-        "gold750": 93842,
-        "gold585": 73197,
-        "silver999": 152941,
-        "session": "AM",
+        "date": "2026-11-24",
+        "gold999": 124945,
+        "gold995": 124445,
+        "gold916": 114450,
+        "gold750": 93709,
+        "gold585": 73093,
+        "silver999": 152625,
+        "session": "PM",
         "am": {
           "gold999": 125123,
           "silver999": 152941
@@ -85,20 +85,20 @@
           "silver999": 152528
         }
       },
-      "lastTriedAt": "2026-11-23T11:15:29.675Z",
+      "lastTriedAt": "2026-11-23T20:11:08.387Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-23T11:15:29.675Z",
+      "fetchedAt": "2026-11-23T20:11:08.387Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
       "url": "https://portal.amfiindia.com/spages/NAVAll.txt",
       "data": {
-        "asOf": "2026-11-22",
+        "asOf": "2026-11-24",
         "count": 192,
         "funds": [
           {
@@ -108,8 +108,8 @@
             "option": "GROWTH Option",
             "amc": "360 ONE Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 120.8526,
-            "date": "2026-11-20"
+            "nav": 121.6261,
+            "date": "2026-11-23"
           },
           {
             "code": "115127",
@@ -118,8 +118,8 @@
             "option": "",
             "amc": "Aditya Birla Sun Life Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 108.6467,
-            "date": "2026-11-20"
+            "nav": 109.3542,
+            "date": "2026-11-23"
           },
           {
             "code": "153826",
@@ -138,8 +138,8 @@
             "option": "",
             "amc": "Axis Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 102.8703,
-            "date": "2026-11-20"
+            "nav": 103.5363,
+            "date": "2026-11-23"
           },
           {
             "code": "153930",
@@ -148,8 +148,8 @@
             "option": "Growth",
             "amc": "Bandhan Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 123.7049,
-            "date": "2026-11-20"
+            "nav": 124.4975,
+            "date": "2026-11-23"
           },
           {
             "code": "152231",
@@ -158,8 +158,8 @@
             "option": "Growth Option",
             "amc": "Baroda BNP Paribas Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 119.6265,
-            "date": "2026-11-20"
+            "nav": 120.4006,
+            "date": "2026-11-23"
           },
           {
             "code": "153933",
@@ -168,8 +168,8 @@
             "option": "Growth",
             "amc": "Choice Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 122.7199,
-            "date": "2026-11-20"
+            "nav": 123.5147,
+            "date": "2026-11-23"
           },
           {
             "code": "151737",
@@ -178,8 +178,8 @@
             "option": "",
             "amc": "DSP Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 12.0125,
-            "date": "2026-11-20"
+            "nav": 12.0902,
+            "date": "2026-11-23"
           },
           {
             "code": "152193",
@@ -188,8 +188,8 @@
             "option": "",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 123.5988,
-            "date": "2026-11-20"
+            "nav": 124.3955,
+            "date": "2026-11-23"
           },
           {
             "code": "152957",
@@ -198,8 +198,8 @@
             "option": "",
             "amc": "Groww Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 12.0761,
-            "date": "2026-11-20"
+            "nav": 12.1538,
+            "date": "2026-11-23"
           },
           {
             "code": "113049",
@@ -208,8 +208,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 105.4536,
-            "date": "2026-11-20"
+            "nav": 106.14,
+            "date": "2026-11-23"
           },
           {
             "code": "154294",
@@ -218,8 +218,8 @@
             "option": "Growth",
             "amc": "HSBC Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 107.7569,
-            "date": "2026-11-20"
+            "nav": 108.445,
+            "date": "2026-11-23"
           },
           {
             "code": "113076",
@@ -228,8 +228,8 @@
             "option": "",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 105.8032,
-            "date": "2026-11-20"
+            "nav": 106.4903,
+            "date": "2026-11-23"
           },
           {
             "code": "112368",
@@ -238,8 +238,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 107.3943,
-            "date": "2026-11-20"
+            "nav": 108.0932,
+            "date": "2026-11-23"
           },
           {
             "code": "106193",
@@ -248,8 +248,8 @@
             "option": "",
             "amc": "Kotak Mahindra Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 103.0358,
-            "date": "2026-11-20"
+            "nav": 103.7077,
+            "date": "2026-11-23"
           },
           {
             "code": "151961",
@@ -258,8 +258,8 @@
             "option": "",
             "amc": "LIC Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 111.3583,
-            "date": "2026-11-20"
+            "nav": 112.0811,
+            "date": "2026-11-23"
           },
           {
             "code": "151416",
@@ -268,8 +268,8 @@
             "option": "",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 120.2279,
-            "date": "2026-11-20"
+            "nav": 121.0052,
+            "date": "2026-11-23"
           },
           {
             "code": "153780",
@@ -278,8 +278,8 @@
             "option": "",
             "amc": "Motilal Oswal Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 122.3599,
-            "date": "2026-11-20"
+            "nav": 123.1454,
+            "date": "2026-11-23"
           },
           {
             "code": "140088",
@@ -288,8 +288,8 @@
             "option": "",
             "amc": "Nippon India Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 102.028,
-            "date": "2026-11-20"
+            "nav": 102.689,
+            "date": "2026-11-23"
           },
           {
             "code": "107693",
@@ -298,8 +298,8 @@
             "option": "",
             "amc": "Quantum Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 102.2299,
-            "date": "2026-11-20"
+            "nav": 102.8972,
+            "date": "2026-11-23"
           },
           {
             "code": "111954",
@@ -308,8 +308,8 @@
             "option": "Growth",
             "amc": "SBI Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 105.2976,
-            "date": "2026-11-20"
+            "nav": 105.9797,
+            "date": "2026-11-23"
           },
           {
             "code": "152284",
@@ -318,8 +318,8 @@
             "option": "",
             "amc": "Tata Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 12.0258,
-            "date": "2026-11-20"
+            "nav": 12.1033,
+            "date": "2026-11-23"
           },
           {
             "code": "154092",
@@ -328,8 +328,8 @@
             "option": "Growth",
             "amc": "The Wealth Company Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 123.302,
-            "date": "2026-11-20"
+            "nav": 124.0914,
+            "date": "2026-11-23"
           },
           {
             "code": "153337",
@@ -338,8 +338,8 @@
             "option": "Growth Option",
             "amc": "Union Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 121.1327,
-            "date": "2026-11-20"
+            "nav": 121.9121,
+            "date": "2026-11-23"
           },
           {
             "code": "105463",
@@ -368,8 +368,8 @@
             "option": "GROWTH",
             "amc": "Aditya Birla Sun Life Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 37.2177,
-            "date": "2026-11-20"
+            "nav": 37.4742,
+            "date": "2026-11-23"
           },
           {
             "code": "153828",
@@ -378,8 +378,8 @@
             "option": "Growth",
             "amc": "Angel One Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 11.1228,
-            "date": "2026-11-20"
+            "nav": 11.2865,
+            "date": "2026-11-23"
           },
           {
             "code": "153827",
@@ -388,8 +388,8 @@
             "option": "Growth",
             "amc": "Angel One Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 11.1894,
-            "date": "2026-11-20"
+            "nav": 11.3546,
+            "date": "2026-11-23"
           },
           {
             "code": "120473",
@@ -398,8 +398,8 @@
             "option": "Growth option",
             "amc": "Axis Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 38.6799,
-            "date": "2026-11-20"
+            "nav": 39.2287,
+            "date": "2026-11-23"
           },
           {
             "code": "154129",
@@ -408,8 +408,8 @@
             "option": "Growth",
             "amc": "Bandhan Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.0602,
-            "date": "2026-11-20"
+            "nav": 8.1557,
+            "date": "2026-11-23"
           },
           {
             "code": "154130",
@@ -418,8 +418,8 @@
             "option": "Growth",
             "amc": "Bandhan Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.0287,
-            "date": "2026-11-20"
+            "nav": 8.1234,
+            "date": "2026-11-23"
           },
           {
             "code": "153795",
@@ -428,8 +428,8 @@
             "option": "Growth Option",
             "amc": "Baroda BNP Paribas Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 12.4156,
-            "date": "2026-11-20"
+            "nav": 12.5276,
+            "date": "2026-11-23"
           },
           {
             "code": "153794",
@@ -438,8 +438,8 @@
             "option": "Growth Option",
             "amc": "Baroda BNP Paribas Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 12.3679,
-            "date": "2026-11-20"
+            "nav": 12.4791,
+            "date": "2026-11-23"
           },
           {
             "code": "152183",
@@ -448,8 +448,8 @@
             "option": "Growth",
             "amc": "DSP Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 19.2952,
-            "date": "2026-11-20"
+            "nav": 19.6673,
+            "date": "2026-11-23"
           },
           {
             "code": "152184",
@@ -458,8 +458,8 @@
             "option": "IDCW",
             "amc": "DSP Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 19.2952,
-            "date": "2026-11-20"
+            "nav": 19.6673,
+            "date": "2026-11-23"
           },
           {
             "code": "152182",
@@ -468,8 +468,8 @@
             "option": "Growth",
             "amc": "DSP Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 19.0811,
-            "date": "2026-11-20"
+            "nav": 19.4485,
+            "date": "2026-11-23"
           },
           {
             "code": "152181",
@@ -478,8 +478,8 @@
             "option": "IDCW",
             "amc": "DSP Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 19.0811,
-            "date": "2026-11-20"
+            "nav": 19.4485,
+            "date": "2026-11-23"
           },
           {
             "code": "119277",
@@ -518,8 +518,8 @@
             "option": "Growth",
             "amc": "Groww Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 15.0788,
-            "date": "2026-11-20"
+            "nav": 15.3678,
+            "date": "2026-11-23"
           },
           {
             "code": "153004",
@@ -528,8 +528,8 @@
             "option": "Income Distribution cum capital withdrawal",
             "amc": "Groww Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 15.0788,
-            "date": "2026-11-20"
+            "nav": 15.3678,
+            "date": "2026-11-23"
           },
           {
             "code": "153006",
@@ -538,8 +538,8 @@
             "option": "Growth",
             "amc": "Groww Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 14.9881,
-            "date": "2026-11-20"
+            "nav": 15.2751,
+            "date": "2026-11-23"
           },
           {
             "code": "153005",
@@ -548,8 +548,8 @@
             "option": "Income Distribution cum capital withdrawal",
             "amc": "Groww Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 14.9885,
-            "date": "2026-11-20"
+            "nav": 15.2755,
+            "date": "2026-11-23"
           },
           {
             "code": "119132",
@@ -558,8 +558,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 38.2526,
-            "date": "2026-11-20"
+            "nav": 38.7337,
+            "date": "2026-11-23"
           },
           {
             "code": "115934",
@@ -568,8 +568,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 36.3893,
-            "date": "2026-11-20"
+            "nav": 36.8463,
+            "date": "2026-11-23"
           },
           {
             "code": "154295",
@@ -618,8 +618,8 @@
             "option": "Growth",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 39.2117,
-            "date": "2026-11-20"
+            "nav": 39.8053,
+            "date": "2026-11-23"
           },
           {
             "code": "120686",
@@ -628,8 +628,8 @@
             "option": "IDCW",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 39.2153,
-            "date": "2026-11-20"
+            "nav": 39.8091,
+            "date": "2026-11-23"
           },
           {
             "code": "115833",
@@ -638,8 +638,8 @@
             "option": "Growth",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 37.7075,
-            "date": "2026-11-20"
+            "nav": 38.2771,
+            "date": "2026-11-23"
           },
           {
             "code": "115834",
@@ -648,8 +648,8 @@
             "option": "IDCW",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 37.7082,
-            "date": "2026-11-20"
+            "nav": 38.2778,
+            "date": "2026-11-23"
           },
           {
             "code": "120531",
@@ -658,8 +658,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 35.7146,
-            "date": "2026-11-20"
+            "nav": 36.3525,
+            "date": "2026-11-23"
           },
           {
             "code": "120530",
@@ -668,8 +668,8 @@
             "option": "IDCW",
             "amc": "Invesco Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 35.6599,
-            "date": "2026-11-20"
+            "nav": 36.2968,
+            "date": "2026-11-23"
           },
           {
             "code": "116077",
@@ -678,8 +678,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 34.2411,
-            "date": "2026-11-20"
+            "nav": 34.8514,
+            "date": "2026-11-23"
           },
           {
             "code": "116075",
@@ -688,8 +688,8 @@
             "option": "IDCW",
             "amc": "Invesco Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 34.2449,
-            "date": "2026-11-20"
+            "nav": 34.8552,
+            "date": "2026-11-23"
           },
           {
             "code": "119781",
@@ -698,8 +698,8 @@
             "option": "Growth",
             "amc": "Kotak Mahindra Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 49.5536,
-            "date": "2026-11-20"
+            "nav": 50.3092,
+            "date": "2026-11-23"
           },
           {
             "code": "151974",
@@ -708,8 +708,8 @@
             "option": "Growth",
             "amc": "LIC Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 33.6219,
-            "date": "2026-11-20"
+            "nav": 33.848,
+            "date": "2026-11-23"
           },
           {
             "code": "151973",
@@ -718,8 +718,8 @@
             "option": "Growth",
             "amc": "LIC Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 31.7644,
-            "date": "2026-11-20"
+            "nav": 31.9774,
+            "date": "2026-11-23"
           },
           {
             "code": "153007",
@@ -728,8 +728,8 @@
             "option": "Growth",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 15.589,
-            "date": "2026-11-20"
+            "nav": 15.701,
+            "date": "2026-11-23"
           },
           {
             "code": "153008",
@@ -738,8 +738,8 @@
             "option": "IDCW",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 15.588,
-            "date": "2026-11-20"
+            "nav": 15.699,
+            "date": "2026-11-23"
           },
           {
             "code": "153009",
@@ -748,8 +748,8 @@
             "option": "Growth",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 15.42,
-            "date": "2026-11-20"
+            "nav": 15.53,
+            "date": "2026-11-23"
           },
           {
             "code": "153010",
@@ -758,8 +758,8 @@
             "option": "IDCW",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 15.411,
-            "date": "2026-11-20"
+            "nav": 15.521,
+            "date": "2026-11-23"
           },
           {
             "code": "118663",
@@ -768,8 +768,8 @@
             "option": "Growth Option",
             "amc": "Nippon India Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 49.2543,
-            "date": "2026-11-20"
+            "nav": 49.6588,
+            "date": "2026-11-23"
           },
           {
             "code": "115132",
@@ -778,8 +778,8 @@
             "option": "Growth Option",
             "amc": "Quantum Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 46.8637,
-            "date": "2026-11-20"
+            "nav": 47.576,
+            "date": "2026-11-23"
           },
           {
             "code": "141064",
@@ -788,8 +788,8 @@
             "option": "Growth Option",
             "amc": "Quantum Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 46.0624,
-            "date": "2026-11-20"
+            "nav": 46.761,
+            "date": "2026-11-23"
           },
           {
             "code": "119788",
@@ -798,8 +798,8 @@
             "option": "Growth",
             "amc": "SBI Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 37.369,
-            "date": "2026-11-20"
+            "nav": 37.9269,
+            "date": "2026-11-23"
           },
           {
             "code": "154727",
@@ -848,8 +848,8 @@
             "option": "Growth Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 18.9679,
-            "date": "2026-11-20"
+            "nav": 19.1263,
+            "date": "2026-11-23"
           },
           {
             "code": "152288",
@@ -858,8 +858,8 @@
             "option": "IDCW Payout Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 18.9679,
-            "date": "2026-11-20"
+            "nav": 19.1263,
+            "date": "2026-11-23"
           },
           {
             "code": "152289",
@@ -868,8 +868,8 @@
             "option": "IDCW Reinvestment Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 18.9679,
-            "date": "2026-11-20"
+            "nav": 19.1263,
+            "date": "2026-11-23"
           },
           {
             "code": "152290",
@@ -878,8 +878,8 @@
             "option": "Growth Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 18.704,
-            "date": "2026-11-20"
+            "nav": 18.8594,
+            "date": "2026-11-23"
           },
           {
             "code": "152286",
@@ -888,8 +888,8 @@
             "option": "IDCW Payout Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 18.704,
-            "date": "2026-11-20"
+            "nav": 18.8594,
+            "date": "2026-11-23"
           },
           {
             "code": "152291",
@@ -898,8 +898,8 @@
             "option": "IDCW Reinvestment Option",
             "amc": "Tata Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 18.704,
-            "date": "2026-11-20"
+            "nav": 18.8594,
+            "date": "2026-11-23"
           },
           {
             "code": "154131",
@@ -908,8 +908,8 @@
             "option": "Growth",
             "amc": "The Wealth Company Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 7.8244,
-            "date": "2026-11-20"
+            "nav": 7.9716,
+            "date": "2026-11-23"
           },
           {
             "code": "154132",
@@ -918,8 +918,8 @@
             "option": "IDCW",
             "amc": "The Wealth Company Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 7.8243,
-            "date": "2026-11-20"
+            "nav": 7.9714,
+            "date": "2026-11-23"
           },
           {
             "code": "154133",
@@ -928,8 +928,8 @@
             "option": "Growth",
             "amc": "The Wealth Company Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 7.7967,
-            "date": "2026-11-20"
+            "nav": 7.9431,
+            "date": "2026-11-23"
           },
           {
             "code": "154134",
@@ -938,8 +938,8 @@
             "option": "IDCW",
             "amc": "The Wealth Company Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 7.7966,
-            "date": "2026-11-20"
+            "nav": 7.9429,
+            "date": "2026-11-23"
           },
           {
             "code": "153340",
@@ -948,8 +948,8 @@
             "option": "Growth Option",
             "amc": "Union Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 14.0536,
-            "date": "2026-11-20"
+            "nav": 14.3281,
+            "date": "2026-11-23"
           },
           {
             "code": "153339",
@@ -958,8 +958,8 @@
             "option": "IDCW Option",
             "amc": "Union Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 14.0536,
-            "date": "2026-11-20"
+            "nav": 14.3281,
+            "date": "2026-11-23"
           },
           {
             "code": "153338",
@@ -968,8 +968,8 @@
             "option": "Growth Option",
             "amc": "Union Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 13.9885,
-            "date": "2026-11-20"
+            "nav": 14.2615,
+            "date": "2026-11-23"
           },
           {
             "code": "153341",
@@ -978,8 +978,8 @@
             "option": "IDCW Option",
             "amc": "Union Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 13.9885,
-            "date": "2026-11-20"
+            "nav": 14.2615,
+            "date": "2026-11-23"
           },
           {
             "code": "150714",
@@ -1008,8 +1008,8 @@
             "option": "Growth Option",
             "amc": "Zerodha CASE Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 16.0363,
-            "date": "2026-11-20"
+            "nav": 16.2516,
+            "date": "2026-11-23"
           },
           {
             "code": "125345",
@@ -1018,8 +1018,8 @@
             "option": "GROWTH Option",
             "amc": "360 ONE Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2198.6699,
-            "date": "2026-11-22"
+            "nav": 2198.9851,
+            "date": "2026-11-23"
           },
           {
             "code": "154051",
@@ -1028,8 +1028,8 @@
             "option": "Growth",
             "amc": "Abakkus Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 105.672,
-            "date": "2026-11-22"
+            "nav": 105.6872,
+            "date": "2026-11-23"
           },
           {
             "code": "119568",
@@ -1038,8 +1038,8 @@
             "option": "GROWTH",
             "amc": "Aditya Birla Sun Life Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 464.5666,
-            "date": "2026-11-22"
+            "nav": 464.6225,
+            "date": "2026-11-23"
           },
           {
             "code": "154589",
@@ -1048,8 +1048,8 @@
             "option": "Growth",
             "amc": "ASK MUTUAL FUND",
             "cat": "Liquid fund",
-            "nav": 1014.6254,
-            "date": "2026-11-22"
+            "nav": 1014.9253,
+            "date": "2026-11-24"
           },
           {
             "code": "120389",
@@ -1058,8 +1058,8 @@
             "option": "Growth Option",
             "amc": "Axis Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3199.2512,
-            "date": "2026-11-22"
+            "nav": 3199.6776,
+            "date": "2026-11-23"
           },
           {
             "code": "151833",
@@ -1068,8 +1068,8 @@
             "option": "Growth",
             "amc": "Bajaj Finserv Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1254.806,
-            "date": "2026-11-22"
+            "nav": 1254.9682,
+            "date": "2026-11-23"
           },
           {
             "code": "118364",
@@ -1078,8 +1078,8 @@
             "option": "Growth",
             "amc": "Bandhan Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3470.2325,
-            "date": "2026-11-22"
+            "nav": 3470.642,
+            "date": "2026-11-23"
           },
           {
             "code": "119369",
@@ -1088,8 +1088,8 @@
             "option": "Growth",
             "amc": "Bank of India Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3311.2823,
-            "date": "2026-11-22"
+            "nav": 3311.7305,
+            "date": "2026-11-23"
           },
           {
             "code": "119415",
@@ -1098,8 +1098,8 @@
             "option": "Growth Option",
             "amc": "Baroda BNP Paribas Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3312.5105,
-            "date": "2026-11-22"
+            "nav": 3313.5812,
+            "date": "2026-11-24"
           },
           {
             "code": "118305",
@@ -1108,8 +1108,8 @@
             "option": "GROWTH OPTION",
             "amc": "Canara Robeco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3444.8373,
-            "date": "2026-11-22"
+            "nav": 3445.3489,
+            "date": "2026-11-23"
           },
           {
             "code": "154011",
@@ -1118,8 +1118,8 @@
             "option": "Growth",
             "amc": "Capitalmind Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1065.5511,
-            "date": "2026-11-22"
+            "nav": 1065.909,
+            "date": "2026-11-24"
           },
           {
             "code": "154782",
@@ -1128,8 +1128,8 @@
             "option": "Growth",
             "amc": "Carnelian Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1005.8124,
-            "date": "2026-11-22"
+            "nav": 1005.9589,
+            "date": "2026-11-23"
           },
           {
             "code": "119125",
@@ -1138,8 +1138,8 @@
             "option": "Growth",
             "amc": "DSP Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4112.0785,
-            "date": "2026-11-22"
+            "nav": 4112.532,
+            "date": "2026-11-23"
           },
           {
             "code": "140196",
@@ -1148,8 +1148,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3716.8319,
-            "date": "2026-11-22"
+            "nav": 3717.3461,
+            "date": "2026-11-23"
           },
           {
             "code": "118577",
@@ -1158,8 +1158,8 @@
             "option": "Super Institutional Growth",
             "amc": "Franklin Templeton Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4323.7801,
-            "date": "2026-11-22"
+            "nav": 4324.2417,
+            "date": "2026-11-23"
           },
           {
             "code": "119135",
@@ -1168,8 +1168,8 @@
             "option": "Growth",
             "amc": "Groww Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2787.5366,
-            "date": "2026-11-22"
+            "nav": 2787.8646,
+            "date": "2026-11-23"
           },
           {
             "code": "119091",
@@ -1178,8 +1178,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5643.6156,
-            "date": "2026-11-22"
+            "nav": 5644.2813,
+            "date": "2026-11-23"
           },
           {
             "code": "120197",
@@ -1188,8 +1188,8 @@
             "option": "Growth",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 425.2844,
-            "date": "2026-11-22"
+            "nav": 425.3404,
+            "date": "2026-11-23"
           },
           {
             "code": "120537",
@@ -1198,8 +1198,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3945.3812,
-            "date": "2026-11-22"
+            "nav": 3945.8796,
+            "date": "2026-11-23"
           },
           {
             "code": "139390",
@@ -1209,7 +1209,7 @@
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
             "nav": 1000,
-            "date": "2026-11-22"
+            "date": "2026-11-23"
           },
           {
             "code": "139389",
@@ -1218,8 +1218,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1870.0294,
-            "date": "2026-11-22"
+            "nav": 1870.2656,
+            "date": "2026-11-23"
           },
           {
             "code": "139388",
@@ -1229,7 +1229,7 @@
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
             "nav": 1000,
-            "date": "2026-11-22"
+            "date": "2026-11-23"
           },
           {
             "code": "139387",
@@ -1238,8 +1238,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1869.6097,
-            "date": "2026-11-22"
+            "nav": 1869.8459,
+            "date": "2026-11-23"
           },
           {
             "code": "147157",
@@ -1248,8 +1248,8 @@
             "option": "Growth Option",
             "amc": "ITI Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1490.2916,
-            "date": "2026-11-22"
+            "nav": 1490.7689,
+            "date": "2026-11-24"
           },
           {
             "code": "153651",
@@ -1258,8 +1258,8 @@
             "option": "Growth Option",
             "amc": "Jio BlackRock Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1090.4325,
-            "date": "2026-11-22"
+            "nav": 1090.586,
+            "date": "2026-11-23"
           },
           {
             "code": "120406",
@@ -1268,8 +1268,8 @@
             "option": "Growth Option",
             "amc": "JM Financial Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 78.4086,
-            "date": "2026-11-22"
+            "nav": 78.4183,
+            "date": "2026-11-23"
           },
           {
             "code": "148414",
@@ -1279,7 +1279,7 @@
             "amc": "JM Financial Mutual Fund",
             "cat": "Liquid fund",
             "nav": 41.4437,
-            "date": "2026-11-22"
+            "date": "2026-11-23"
           },
           {
             "code": "148413",
@@ -1289,7 +1289,7 @@
             "amc": "JM Financial Mutual Fund",
             "cat": "Liquid fund",
             "nav": 41.4437,
-            "date": "2026-11-22"
+            "date": "2026-11-23"
           },
           {
             "code": "119766",
@@ -1298,8 +1298,8 @@
             "option": "Growth",
             "amc": "Kotak Mahindra Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5807.237,
-            "date": "2026-11-22"
+            "nav": 5807.8084,
+            "date": "2026-11-23"
           },
           {
             "code": "120249",
@@ -1308,8 +1308,8 @@
             "option": "Growth",
             "amc": "LIC Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5217.6045,
-            "date": "2026-11-22"
+            "nav": 5218.2705,
+            "date": "2026-11-23"
           },
           {
             "code": "139538",
@@ -1318,8 +1318,8 @@
             "option": "Growth",
             "amc": "Mahindra Manulife Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1872.9084,
-            "date": "2026-11-22"
+            "nav": 1873.5372,
+            "date": "2026-11-24"
           },
           {
             "code": "118859",
@@ -1328,8 +1328,8 @@
             "option": "Growth",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3034.1656,
-            "date": "2026-11-22"
+            "nav": 3034.5439,
+            "date": "2026-11-23"
           },
           {
             "code": "118701",
@@ -1338,8 +1338,8 @@
             "option": "Growth Option",
             "amc": "Nippon India Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 7039.3387,
-            "date": "2026-11-22"
+            "nav": 7040.1696,
+            "date": "2026-11-23"
           },
           {
             "code": "143269",
@@ -1348,8 +1348,8 @@
             "option": "Growth",
             "amc": "PPFAS Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1589.1737,
-            "date": "2026-11-22"
+            "nav": 1589.6511,
+            "date": "2026-11-24"
           },
           {
             "code": "138299",
@@ -1358,8 +1358,8 @@
             "option": "Direct Growth",
             "amc": "PGIM India Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 375.1743,
-            "date": "2026-11-22"
+            "nav": 375.2219,
+            "date": "2026-11-23"
           },
           {
             "code": "120837",
@@ -1368,8 +1368,8 @@
             "option": "Growth Option",
             "amc": "quant Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 45.9929,
-            "date": "2026-11-22"
+            "nav": 45.9976,
+            "date": "2026-11-23"
           },
           {
             "code": "148512",
@@ -1388,8 +1388,8 @@
             "option": "Growth Option",
             "amc": "Quantum Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 38.1487,
-            "date": "2026-11-22"
+            "nav": 38.1586,
+            "date": "2026-11-24"
           },
           {
             "code": "119800",
@@ -1398,8 +1398,8 @@
             "option": "Growth",
             "amc": "SBI Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4493.234,
-            "date": "2026-11-22"
+            "nav": 4493.8623,
+            "date": "2026-11-23"
           },
           {
             "code": "153035",
@@ -1408,8 +1408,8 @@
             "option": "Growth",
             "amc": "Shriram Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1134.7403,
-            "date": "2026-11-22"
+            "nav": 1134.8518,
+            "date": "2026-11-23"
           },
           {
             "code": "149664",
@@ -1418,8 +1418,8 @@
             "option": "GROWTH",
             "amc": "Sundaram Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2541.5771,
-            "date": "2026-11-22"
+            "nav": 2541.8882,
+            "date": "2026-11-23"
           },
           {
             "code": "119861",
@@ -1428,8 +1428,8 @@
             "option": "Growth Option",
             "amc": "Tata Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4537.5527,
-            "date": "2026-11-22"
+            "nav": 4538.1666,
+            "date": "2026-11-23"
           },
           {
             "code": "153883",
@@ -1438,8 +1438,8 @@
             "option": "Growth",
             "amc": "The Wealth Company Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1073.4952,
-            "date": "2026-11-22"
+            "nav": 1073.6216,
+            "date": "2026-11-23"
           },
           {
             "code": "148841",
@@ -1448,8 +1448,8 @@
             "option": "Growth",
             "amc": "Trust Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1391.1463,
-            "date": "2026-11-22"
+            "nav": 1391.3095,
+            "date": "2026-11-23"
           },
           {
             "code": "153570",
@@ -1458,8 +1458,8 @@
             "option": "GROWTH",
             "amc": "Unifi Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1086.4155,
-            "date": "2026-11-22"
+            "nav": 1086.5904,
+            "date": "2026-11-23"
           },
           {
             "code": "119303",
@@ -1468,8 +1468,8 @@
             "option": "Growth Option",
             "amc": "Union Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2772.8607,
-            "date": "2026-11-22"
+            "nav": 2773.2502,
+            "date": "2026-11-23"
           },
           {
             "code": "120304",
@@ -1488,8 +1488,8 @@
             "option": "Growth Option",
             "amc": "WhiteOak Capital Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1538.245,
-            "date": "2026-11-22"
+            "nav": 1538.4611,
+            "date": "2026-11-23"
           },
           {
             "code": "151165",
@@ -1498,8 +1498,8 @@
             "option": "GROWTH Option",
             "amc": "360 ONE Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 14.6767,
-            "date": "2026-11-20"
+            "nav": 14.4205,
+            "date": "2026-11-23"
           },
           {
             "code": "119648",
@@ -1508,8 +1508,8 @@
             "option": "GROWTH",
             "amc": "Aditya Birla Sun Life Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 269.7512,
-            "date": "2026-11-20"
+            "nav": 265.0334,
+            "date": "2026-11-23"
           },
           {
             "code": "153529",
@@ -1518,8 +1518,8 @@
             "option": "Growth",
             "amc": "Angel One Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 10.6382,
-            "date": "2026-11-20"
+            "nav": 10.4521,
+            "date": "2026-11-23"
           },
           {
             "code": "149373",
@@ -1528,8 +1528,8 @@
             "option": "Growth Option",
             "amc": "Axis Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 15.7104,
-            "date": "2026-11-20"
+            "nav": 15.4358,
+            "date": "2026-11-23"
           },
           {
             "code": "153506",
@@ -1538,8 +1538,8 @@
             "option": "Growth",
             "amc": "Bajaj Finserv Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 10.5504,
-            "date": "2026-11-20"
+            "nav": 10.3659,
+            "date": "2026-11-23"
           },
           {
             "code": "118482",
@@ -1548,8 +1548,8 @@
             "option": "Growth",
             "amc": "Bandhan Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 57.847,
-            "date": "2026-11-20"
+            "nav": 56.8359,
+            "date": "2026-11-23"
           },
           {
             "code": "152329",
@@ -1558,8 +1558,8 @@
             "option": "Growth Option",
             "amc": "Baroda BNP Paribas Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 12.1912,
-            "date": "2026-11-20"
+            "nav": 11.9788,
+            "date": "2026-11-23"
           },
           {
             "code": "154301",
@@ -1568,8 +1568,8 @@
             "option": "Growth",
             "amc": "Choice Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 11.171,
-            "date": "2026-11-20"
+            "nav": 10.9764,
+            "date": "2026-11-23"
           },
           {
             "code": "146376",
@@ -1578,8 +1578,8 @@
             "option": "Growth",
             "amc": "DSP Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 25.5091,
-            "date": "2026-11-20"
+            "nav": 25.0633,
+            "date": "2026-11-23"
           },
           {
             "code": "149250",
@@ -1598,8 +1598,8 @@
             "option": "Growth",
             "amc": "Franklin Templeton Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 221.0463,
-            "date": "2026-11-20"
+            "nav": 217.2,
+            "date": "2026-11-23"
           },
           {
             "code": "153704",
@@ -1608,8 +1608,8 @@
             "option": "Growth",
             "amc": "Groww Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 10.3572,
-            "date": "2026-11-20"
+            "nav": 10.175,
+            "date": "2026-11-23"
           },
           {
             "code": "119063",
@@ -1618,8 +1618,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 252.6065,
-            "date": "2026-11-20"
+            "nav": 248.1857,
+            "date": "2026-11-23"
           },
           {
             "code": "151157",
@@ -1628,8 +1628,8 @@
             "option": "Growth",
             "amc": "HSBC Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 30.5856,
-            "date": "2026-11-20"
+            "nav": 30.0507,
+            "date": "2026-11-23"
           },
           {
             "code": "153787",
@@ -1638,8 +1638,8 @@
             "option": "Growth Option",
             "amc": "Jio BlackRock Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 10.4761,
-            "date": "2026-11-20"
+            "nav": 10.2927,
+            "date": "2026-11-23"
           },
           {
             "code": "148978",
@@ -1648,8 +1648,8 @@
             "option": "Growth",
             "amc": "Kotak Mahindra Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 17.173,
-            "date": "2026-11-20"
+            "nav": 16.872,
+            "date": "2026-11-23"
           },
           {
             "code": "120307",
@@ -1658,8 +1658,8 @@
             "option": "Growth",
             "amc": "LIC Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 154.646,
-            "date": "2026-11-20"
+            "nav": 151.9404,
+            "date": "2026-11-23"
           },
           {
             "code": "152972",
@@ -1668,8 +1668,8 @@
             "option": "Growth",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 10.7765,
-            "date": "2026-11-20"
+            "nav": 10.588,
+            "date": "2026-11-23"
           },
           {
             "code": "147794",
@@ -1678,8 +1678,8 @@
             "option": "Growth",
             "amc": "Motilal Oswal Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 22.5413,
-            "date": "2026-11-20"
+            "nav": 22.1471,
+            "date": "2026-11-23"
           },
           {
             "code": "149039",
@@ -1688,8 +1688,8 @@
             "option": "Growth",
             "amc": "Navi Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 17.0609,
-            "date": "2026-11-20"
+            "nav": 16.7627,
+            "date": "2026-11-23"
           },
           {
             "code": "154814",
@@ -1698,8 +1698,8 @@
             "option": "Growth Option",
             "amc": "quant Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 11.3903,
-            "date": "2026-11-20"
+            "nav": 11.1487,
+            "date": "2026-11-23"
           },
           {
             "code": "118881",
@@ -1708,8 +1708,8 @@
             "option": "Growth",
             "amc": "Taurus Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 52.3954,
-            "date": "2026-11-20"
+            "nav": 51.4831,
+            "date": "2026-11-23"
           },
           {
             "code": "120716",
@@ -1728,8 +1728,8 @@
             "option": "Growth Option",
             "amc": "Zerodha CASE Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 10.3421,
-            "date": "2026-11-20"
+            "nav": 10.1615,
+            "date": "2026-11-23"
           },
           {
             "code": "152422",
@@ -1738,8 +1738,8 @@
             "option": "Growth Option",
             "amc": "Axis Mutual Fund",
             "cat": "Sensex index fund",
-            "nav": 11.8286,
-            "date": "2026-11-20"
+            "nav": 11.6194,
+            "date": "2026-11-23"
           },
           {
             "code": "119065",
@@ -1748,8 +1748,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Sensex index fund",
-            "nav": 803.797,
-            "date": "2026-11-20"
+            "nav": 789.5732,
+            "date": "2026-11-23"
           },
           {
             "code": "154340",
@@ -1758,8 +1758,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Sensex index fund",
-            "nav": 11.001,
-            "date": "2026-11-20"
+            "nav": 10.8073,
+            "date": "2026-11-23"
           },
           {
             "code": "153286",
@@ -1768,8 +1768,8 @@
             "option": "Growth",
             "amc": "Kotak Mahindra Mutual Fund",
             "cat": "Sensex index fund",
-            "nav": 11.22,
-            "date": "2026-11-20"
+            "nav": 11.021,
+            "date": "2026-11-23"
           },
           {
             "code": "120308",
@@ -1778,8 +1778,8 @@
             "option": "Growth",
             "amc": "LIC Mutual Fund",
             "cat": "Sensex index fund",
-            "nav": 169.3078,
-            "date": "2026-11-20"
+            "nav": 166.3088,
+            "date": "2026-11-23"
           },
           {
             "code": "152062",
@@ -1788,8 +1788,8 @@
             "option": "GROWTH",
             "amc": "Navi Mutual Fund",
             "cat": "Sensex index fund",
-            "nav": 13.0848,
-            "date": "2026-11-20"
+            "nav": 12.8532,
+            "date": "2026-11-23"
           },
           {
             "code": "151769",
@@ -1798,8 +1798,8 @@
             "option": "Growth",
             "amc": "SBI Mutual Fund",
             "cat": "Sensex index fund",
-            "nav": 13.8617,
-            "date": "2026-11-20"
+            "nav": 13.6163,
+            "date": "2026-11-23"
           },
           {
             "code": "149803",
@@ -1818,8 +1818,8 @@
             "option": "Growth Option",
             "amc": "Zerodha CASE Mutual Fund",
             "cat": "Sensex index fund",
-            "nav": 10.1301,
-            "date": "2026-11-20"
+            "nav": 9.951,
+            "date": "2026-11-23"
           },
           {
             "code": "153415",
@@ -1828,8 +1828,8 @@
             "option": "GROWTH Option",
             "amc": "360 ONE Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 149.6983,
-            "date": "2026-11-20"
+            "nav": 149.5209,
+            "date": "2026-11-23"
           },
           {
             "code": "149779",
@@ -1838,8 +1838,8 @@
             "option": "",
             "amc": "Aditya Birla Sun Life Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 152.0225,
-            "date": "2026-11-20"
+            "nav": 151.8445,
+            "date": "2026-11-23"
           },
           {
             "code": "154205",
@@ -1858,8 +1858,8 @@
             "option": "",
             "amc": "Axis Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 151.9132,
-            "date": "2026-11-20"
+            "nav": 151.7369,
+            "date": "2026-11-23"
           },
           {
             "code": "153929",
@@ -1868,8 +1868,8 @@
             "option": "Growth",
             "amc": "Bandhan Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 154.2344,
-            "date": "2026-11-20"
+            "nav": 154.0581,
+            "date": "2026-11-23"
           },
           {
             "code": "150523",
@@ -1878,8 +1878,8 @@
             "option": "",
             "amc": "DSP Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 14.5924,
-            "date": "2026-11-20"
+            "nav": 14.5749,
+            "date": "2026-11-23"
           },
           {
             "code": "152212",
@@ -1888,8 +1888,8 @@
             "option": "",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 152.618,
-            "date": "2026-11-20"
+            "nav": 152.4396,
+            "date": "2026-11-23"
           },
           {
             "code": "153524",
@@ -1898,8 +1898,8 @@
             "option": "",
             "amc": "Groww Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 14.9702,
-            "date": "2026-11-20"
+            "nav": 14.9526,
+            "date": "2026-11-23"
           },
           {
             "code": "150556",
@@ -1908,8 +1908,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 145.9194,
-            "date": "2026-11-20"
+            "nav": 145.7496,
+            "date": "2026-11-23"
           },
           {
             "code": "149464",
@@ -1918,8 +1918,8 @@
             "option": "",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 151.6947,
-            "date": "2026-11-20"
+            "nav": 151.514,
+            "date": "2026-11-23"
           },
           {
             "code": "154870",
@@ -1928,8 +1928,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 15.378,
-            "date": "2026-11-20"
+            "nav": 15.3604,
+            "date": "2026-11-23"
           },
           {
             "code": "150948",
@@ -1938,8 +1938,8 @@
             "option": "",
             "amc": "Kotak Mahindra Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 14.7702,
-            "date": "2026-11-20"
+            "nav": 14.7529,
+            "date": "2026-11-23"
           },
           {
             "code": "151779",
@@ -1948,8 +1948,8 @@
             "option": "",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 148.7211,
-            "date": "2026-11-20"
+            "nav": 148.549,
+            "date": "2026-11-23"
           },
           {
             "code": "153820",
@@ -1958,8 +1958,8 @@
             "option": "",
             "amc": "Motilal Oswal Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 151.2912,
-            "date": "2026-11-20"
+            "nav": 151.1141,
+            "date": "2026-11-23"
           },
           {
             "code": "149758",
@@ -1968,8 +1968,8 @@
             "option": "",
             "amc": "Nippon India Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 145.6167,
-            "date": "2026-11-20"
+            "nav": 145.4444,
+            "date": "2026-11-23"
           },
           {
             "code": "154625",
@@ -1978,8 +1978,8 @@
             "option": "",
             "amc": "quant Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 15.4696,
-            "date": "2026-11-20"
+            "nav": 15.4439,
+            "date": "2026-11-23"
           },
           {
             "code": "152725",
@@ -1988,8 +1988,8 @@
             "option": "Growth",
             "amc": "SBI Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 149.6669,
-            "date": "2026-11-20"
+            "nav": 149.4927,
+            "date": "2026-11-23"
           },
           {
             "code": "152285",
@@ -1998,8 +1998,8 @@
             "option": "",
             "amc": "Tata Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 14.8789,
-            "date": "2026-11-20"
+            "nav": 14.8617,
+            "date": "2026-11-23"
           },
           {
             "code": "151730",
@@ -2036,7 +2036,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-23T11:15:29.675Z",
+      "lastTriedAt": "2026-11-23T20:11:08.387Z",
       "failCount": 0
     },
     "yields": {
@@ -2047,95 +2047,95 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-23T11:15:29.675Z",
-      "fetchedAt": "2026-11-23T11:15:29.675Z",
+      "lastTriedAt": "2026-11-23T20:11:08.387Z",
+      "fetchedAt": "2026-11-23T20:11:08.387Z",
       "data": {
-        "date": "2026-11-20",
+        "date": "2026-11-23",
         "curve": [
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "91D",
             "security": "91 DTB (18/02/2027)",
             "ytm": 5.8602,
             "years": 0.25
           },
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "182D",
             "security": "182 DTB (20/05/2027)",
             "ytm": 6.53,
             "years": 0.5
           },
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "364D",
             "security": "364 DTB (18/11/2027)",
             "ytm": 6.63,
             "years": 1
           },
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "1Y-2Y",
-            "security": "7.06% GS 2028",
-            "ytm": 6.66,
+            "security": "7.17% GS 2028",
+            "ytm": 6.5999,
             "years": 2
           },
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "4Y-5Y",
             "security": "6.53% GS 2031",
-            "ytm": 7.0855,
+            "ytm": 7.0928,
             "years": 5
           },
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "9Y-10Y",
             "security": "6.94% GS 2036",
-            "ytm": 7.2116,
+            "ytm": 7.2123,
             "years": 10
           },
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "13Y-15Y",
-            "security": "6.68% GS 2040",
-            "ytm": 7.2302,
+            "security": "7.06% GS 2041",
+            "ytm": 7.3987,
             "years": 15
           },
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "28Y-30Y",
-            "security": "7.63% GS 2056",
-            "ytm": 7.7082,
+            "security": "7.24% GS 2055",
+            "ytm": 7.6754,
             "years": 30
           }
         ],
         "sdl": [
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "5Y",
-            "security": "7.61% HARYANA SGS 2030",
-            "ytm": 7.61,
+            "security": "7.75% UTTAR PRADESH SGS 2032",
+            "ytm": 7.75,
             "years": 5
           },
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "10Y",
-            "security": "7.82% GUJARAT SGS 2036",
-            "ytm": 7.82,
+            "security": "7.93% TAMILNADU SGS 2036",
+            "ytm": 7.93,
             "years": 10
           },
           {
-            "date": "2026-11-20",
+            "date": "2026-11-23",
             "tenor": "15Y",
-            "security": "7.97% GUJARAT SGS 2039",
-            "ytm": 7.97,
+            "security": "8.07% TAMILNADU SGS 2042",
+            "ytm": 8.07,
             "years": 15
           }
         ],
         "tbill91": 5.8602,
         "tbill182": 6.53,
         "tbill364": 6.63,
-        "gsec10": 7.2116
+        "gsec10": 7.2123
       },
       "history": [
         {
@@ -2162,6 +2162,11 @@
           "date": "2026-11-20",
           "gsec10": 7.2116,
           "tbill91": 5.8602
+        },
+        {
+          "date": "2026-11-23",
+          "gsec10": 7.2123,
+          "tbill91": 5.8602
         }
       ],
       "failCount": 0
@@ -2174,11 +2179,11 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-23T11:15:29.675Z",
-      "fetchedAt": "2026-11-23T11:15:29.675Z",
+      "lastTriedAt": "2026-11-23T20:11:08.387Z",
+      "fetchedAt": "2026-11-23T20:11:08.387Z",
       "data": {
-        "date": "2026-11-20",
-        "usdinr": 92.68
+        "date": "2026-11-23",
+        "usdinr": 92.92
       },
       "failCount": 0
     },
@@ -2190,8 +2195,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-23T11:15:29.675Z",
-      "fetchedAt": "2026-11-23T11:15:29.675Z",
+      "lastTriedAt": "2026-11-23T20:11:08.387Z",
+      "fetchedAt": "2026-11-23T20:11:08.387Z",
       "data": {
         "drafts": [
           {
@@ -2458,10 +2463,64 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-23T11:15:29.675Z",
-      "fetchedAt": "2026-11-23T11:15:29.675Z",
+      "lastTriedAt": "2026-11-23T20:11:08.387Z",
+      "fetchedAt": "2026-11-23T20:11:08.387Z",
       "data": {
         "items": [
+          {
+            "title": "RBI to conduct Overnight Variable Rate Repo (VRR) auction under LAF on November 25, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64033",
+            "at": "2026-11-23T19:25:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Governor, Reserve Bank of India meets Managing Directors & Chief Executive Officers of select NBFCs, HFCs and Industry Representatives in Mumbai on November 23, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64032",
+            "at": "2026-11-23T19:20:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Governor, Reserve Bank of India meets Chairpersons and Managing Directors & Chief Executive Officers of select UCBs and Industry Representatives in Mumbai on November 23, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64031",
+            "at": "2026-11-23T19:15:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Premature redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for premature redemption of SGB 2021-22 Series I due on November 25, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64030",
+            "at": "2026-11-23T18:10:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Auction of Government of India Dated Securities",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64029",
+            "at": "2026-11-23T17:45:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Mahanadi Coalfields IPO fully subscribed on final day",
+            "url": "https://www.thehindu.com/business/mahanadi-coalfields-ipo-fully-subscribed-on-final-day/article71736093.ece",
+            "at": "2026-11-23T17:35:09.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "Reserve Bank (Securitisation Transactions) Amendment Directions, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64028",
+            "at": "2026-11-23T17:00:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "REIT, InvIT dividend income tax-free? ITAT Ahmedabad rules in favour of taxpayer in ₹49.64 lakh tax dispute",
+            "url": "https://www.livemint.com/money/personal-finance/reit-invit-dividend-income-tax-free-itat-ahmedabad-rules-in-favour-of-taxpayer-over-rs-49-64-lakh-tax-dispute-11795448922456.html",
+            "at": "2026-11-23T16:54:12.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "State Government Securities - Full Auction Result",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64027",
+            "at": "2026-11-23T16:50:00.000Z",
+            "src": "RBI"
+          },
           {
             "title": "RBI issues Draft Amendment Directions for ‘Preventive Safeguards for Electronic Banking Transactions (EBTs)’",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64026",
@@ -2475,28 +2534,100 @@
             "src": "RBI"
           },
           {
+            "title": "Market correction or a bad mutual fund? 5 checks you must make before deciding whether to exit or stay invested",
+            "url": "https://www.livemint.com/money/personal-finance/market-correction-or-a-bad-mutual-fund-5-checks-you-must-make-before-deciding-whether-to-exit-or-stay-invested-11795432862240.html",
+            "at": "2026-11-23T16:05:22.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Can the India–US tax treaty or an NRE account make Indian rental income tax-free?",
+            "url": "https://www.livemint.com/money/personal-finance/can-the-india-us-tax-treaty-or-an-nre-account-make-indian-rental-income-taxfree-11795418433970.html",
+            "at": "2026-11-23T15:52:15.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Exits from gold ETFs top $100 billion for 2026, even as inflows remain net positive",
+            "url": "https://www.thehindubusinessline.com/markets/gold/exits-from-gold-etfs-top-100-billion-for-2026-even-as-inflows-remain-net-positive/article71734916.ece",
+            "at": "2026-11-23T15:44:17.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Banks sell-off ends four-week rally; Nifty slumps 1.75%, Rupee weakens",
+            "url": "https://www.thehindubusinessline.com/markets/banks-sell-off-ends-four-week-rally-nifty-slumps-175-rupee-weakens/article71734774.ece",
+            "at": "2026-11-23T15:43:25.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Mahanadi Coalfields IPO subscribed 1.52 times on final day",
+            "url": "https://www.thehindubusinessline.com/markets/mahanadi-coalfields-ipo-subscribed-152-times-on-final-day/article71735552.ece",
+            "at": "2026-11-23T15:34:37.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "8th Pay Commission: Civilian defence staff seek 6% annual increment, OPS and 50% DA merger— 13 key demands explained",
+            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-civilian-defence-staff-seek-6-annual-increment-ops-and-50-da-merger-13-key-demands-explained-11795439112048.html",
+            "at": "2026-11-23T15:23:24.000Z",
+            "src": "Mint Money"
+          },
+          {
             "title": "Result of Yield/Price Based Auction of State Government Securities",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64024",
             "at": "2026-11-23T15:05:00.000Z",
             "src": "RBI"
           },
           {
-            "title": "Money Market Operations as on November 22, 2026",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64023",
-            "at": "2026-11-23T11:45:00.000Z",
-            "src": "RBI"
+            "title": "SEBI’s FPI disclosure rollback may ease inflows, but reduce ownership visibility",
+            "url": "https://www.thehindubusinessline.com/markets/sebis-fpi-disclosure-rollback-may-ease-inflows-but-reduce-ownership-visibility/article71735301.ece",
+            "at": "2026-11-23T14:52:48.000Z",
+            "src": "BusinessLine Markets"
           },
           {
-            "title": "Money Market Operations as on November 21, 2026",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64022",
-            "at": "2026-11-23T11:40:00.000Z",
-            "src": "RBI"
+            "title": "RBI proposes new rules to protect bank accounts from fraud; here's how Stop Switch and trusted person approval work",
+            "url": "https://www.livemint.com/money/personal-finance/rbi-proposes-new-rules-to-protect-bank-accounts-from-fraud-heres-how-stop-switch-and-trusted-person-approval-work-11795441662320.html",
+            "at": "2026-11-23T13:58:27.000Z",
+            "src": "Mint Money"
           },
           {
-            "title": "Result of the 2-day Variable Rate Repo (VRR) auction held on November 23, 2026",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64021",
-            "at": "2026-11-23T11:35:00.000Z",
-            "src": "RBI"
+            "title": "SBI, HDFC Bank, ICICI Bank retain D-SIB status; RBI maintains capital requirements",
+            "url": "https://www.thehindu.com/business/Economy/sbi-hdfc-bank-icici-bank-retain-d-sib-status-rbi-maintains-capital-requirements/article71734757.ece",
+            "at": "2026-11-23T13:46:07.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "DSP Mutual Fund set to boost gold and silver exposure: Inside its price-based buying strategy",
+            "url": "https://www.livemint.com/money/personal-finance/dsp-mutual-fund-set-to-boost-gold-and-silver-exposure-inside-its-price-based-buying-strategy-11795435247003.html",
+            "at": "2026-11-23T13:21:53.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Gold vs Bitcoin: Bitcoin's chances of beating gold fall from 47% to 19% on Kalshi. What should investors know?",
+            "url": "https://www.livemint.com/money/personal-finance/gold-vs-bitcoin-bitcoins-chances-of-beating-gold-fall-from-47-to-19-on-kalshi-what-should-investors-know-11795437774269.html",
+            "at": "2026-11-23T12:47:03.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Rupee snaps 5-day rally; tumbles 30 paise to settle at 92.92 against U.S. dollar",
+            "url": "https://www.thehindu.com/business/markets/rupee-snaps-5-day-rally-tumbles-30-paise-to-settle-at-9292-against-us-dollar/article71734465.ece",
+            "at": "2026-11-23T12:18:12.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "Markets take heavy drubbing dragged by banks; Sensex plunges 1,484 points, Nifty dives to 25,349.65",
+            "url": "https://www.thehindu.com/business/markets/markets-take-heavy-drubbing-dragged-by-banks-sensex-plunges-1484-points-nifty-dives-to-2534965/article71734374.ece",
+            "at": "2026-11-23T12:06:55.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "Coal India unit Mahanadi's IPO fully subscribed on final day, led by institutional investors",
+            "url": "https://www.thehindubusinessline.com/markets/stock-markets/coal-india-unit-mahanadis-ipo-fully-subscribed-on-final-day-led-by-institutional-investors/article71734460.ece",
+            "at": "2026-11-23T12:01:46.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Gold imports into India decline 40% in April-October: CTI",
+            "url": "https://www.thehindubusinessline.com/economy/gold-imports-into-india-decline-40-in-april-october-cti/article71734145.ece",
+            "at": "2026-11-23T11:47:10.000Z",
+            "src": "BusinessLine Markets"
           },
           {
             "title": "Sensex today | Stock Market Highlights: Markets take heavy drubbing dragged by banks; Sensex plunges 1,484 pts, Nifty dives to 25,349.65",
@@ -2505,28 +2636,10 @@
             "src": "BusinessLine Markets"
           },
           {
-            "title": "Rupee snaps 5-day rally; tumbles 30 paise to settle at 92.92 against US dollar",
-            "url": "https://www.thehindubusinessline.com/markets/forex/rupee-snaps-5-day-rally-tumbles-30-paise-to-settle-at-9292-against-us-dollar/article71734316.ece",
-            "at": "2026-11-23T10:55:42.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "NPS retirement planning: 72% choose Auto Choice over Active Choice in FY27 — what ABSL pension fund data reveals",
             "url": "https://www.livemint.com/money/personal-finance/nps-retirement-planning-72-choose-auto-choice-over-active-choice-in-fy27-what-absl-pension-fund-data-reveals-11795428242555.html",
             "at": "2026-11-23T10:52:19.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "Result of the 4-day Variable Rate Repo (VRR) auction held on November 23, 2026",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64020",
-            "at": "2026-11-23T10:40:00.000Z",
-            "src": "RBI"
-          },
-          {
-            "title": "RBI to conduct 2-day Variable Rate Repo (VRR) auction under LAF on November 23, 2026",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64019",
-            "at": "2026-11-23T10:15:00.000Z",
-            "src": "RBI"
           },
           {
             "title": "RBI plans to tap broker apps to boost retail trading in government bonds, sources say",
@@ -2557,12 +2670,6 @@
             "url": "https://www.livemint.com/money/new-nfo-alert-bandhan-nifty-commodities-index-fund-see-full-offer-period-minimum-investment-amount-other-details-11795409449700.html",
             "at": "2026-11-23T09:24:02.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "Money Market Operations as on November 20, 2026",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64018",
-            "at": "2026-11-23T09:00:00.000Z",
-            "src": "RBI"
           },
           {
             "title": "AI reality check: Leadership turmoil, IPO jitters and the fragility of big tech",
@@ -2637,12 +2744,6 @@
             "src": "The Hindu Business"
           },
           {
-            "title": "Foodlink F&B Holdings' ₹361-crore IPO to open on Nov 26; price band set at ₹181-191",
-            "url": "https://www.thehindubusinessline.com/markets/foodlink-fb-holdings-361-crore-ipo-to-open-on-nov-26-price-band-set-at-181-191/article71733345.ece",
-            "at": "2026-11-23T04:21:08.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Gold, silver prices today, 23 November: Check retail rates of 24K, 22K gold, 999 silver in Delhi, Mumbai and Kolkata",
             "url": "https://www.livemint.com/money/personal-finance/gold-silver-prices-today-23-november-check-retail-rates-of-24k-22k-gold-999-silver-in-delhi-mumbai-and-kolkata-11795339984528.html",
             "at": "2026-11-23T04:16:54.000Z",
@@ -2667,88 +2768,10 @@
             "src": "Mint Money"
           },
           {
-            "title": "Gift Nifty signals 175-point gap-up open for Indian markets despite weak global cues",
-            "url": "https://www.thehindubusinessline.com/markets/gift-nifty-signals-175-point-gap-up-open-for-indian-markets-despite-weak-global-cues/article71733203.ece",
-            "at": "2026-11-23T01:44:23.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "8th Pay Commission: Check how ₹25,000, ₹35,000 and ₹50,000 basic salaries could change under proposed fitment factors",
             "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-check-how-25-000-35-000-and-50-000-basic-salaries-could-change-under-proposed-fitment-factors-11795379274172.html",
             "at": "2026-11-23T01:15:33.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "SIP on salary day or at month-end? Does your mutual fund investment date affect returns? What Sensex data reveal",
-            "url": "https://www.livemint.com/money/personal-finance/sip-on-salary-day-or-at-month-end-does-your-mutual-fund-investment-date-affect-returns-what-sensex-data-reveal-11795368672894.html",
-            "at": "2026-11-22T17:59:27.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Income tax notice sent to your old address? When can ITAT declare reassessment proceedings invalid for taxpayers",
-            "url": "https://www.livemint.com/money/personal-finance/income-tax-notice-sent-to-your-old-address-when-can-itat-declare-reassessment-proceedings-invalid-for-taxpayers-11795365987908.html",
-            "at": "2026-11-22T17:02:35.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "FD interest rate vs maturity date: Should you chase higher returns or choose a tenure that suits your financial goals?",
-            "url": "https://www.livemint.com/money/personal-finance/fd-interest-rate-vs-maturity-date-should-you-chase-higher-returns-or-choose-a-tenure-that-suits-your-financial-goals-11795361826216.html",
-            "at": "2026-11-22T16:03:48.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold slides to lowest level since September 2025, silver crashes nearly 4%: What's driving the selloff?",
-            "url": "https://www.livemint.com/money/gold-slides-to-lowest-level-since-september-2025-silver-crashes-nearly-4-whats-driving-the-selloff-11795361232751.html",
-            "at": "2026-11-22T15:46:10.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "SEBI starts work on network to train independent directors",
-            "url": "https://www.thehindubusinessline.com/markets/sebi-starts-work-on-network-to-train-independent-directors/article71731685.ece",
-            "at": "2026-11-22T14:54:20.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Gold prices plunge ahead of wedding season. How much can families save when buying bridal jewellery now?",
-            "url": "https://www.livemint.com/money/personal-finance/gold-prices-plunge-ahead-of-wedding-season-how-much-can-families-save-when-buying-bridal-jewellery-now-11795351268809.html",
-            "at": "2026-11-22T12:54:41.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "8th Pay Commission salary hike: Why employees want 50% DA merged with basic pay before fitment factor calculation",
-            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-salary-hike-why-employees-want-50-da-merged-with-basic-pay-before-fitment-factor-calculation-11795347645844.html",
-            "at": "2026-11-22T11:46:09.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "IPO Street set for year-end revival; 29 firms eye ₹42,000 crore as sentiment improves",
-            "url": "https://www.thehindubusinessline.com/markets/ipo-street-set-for-year-end-revival-29-firms-eye-42000-crore-as-sentiment-improves/article71731112.ece",
-            "at": "2026-11-22T11:45:39.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Must balance ‘economic patriotism’ with cultural heritage: GJC on PM Modi’s call to stop gold purchases",
-            "url": "https://www.thehindu.com/business/must-balance-economic-patriotism-with-cultural-heritage-gjc-on-pm-modis-call-to-stop-gold-purchases/article71423466.ece",
-            "at": "2026-11-22T11:23:51.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "Gold, copper, aluminium dive to at least 7-month lows",
-            "url": "https://www.thehindu.com/business/gold-copper-aluminium-dive-to-at-least-7-month-lows/article71729065.ece",
-            "at": "2026-11-22T09:49:41.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "Mahindra Last Mile Mobility eyes IPO in 18 months; plans expansion into new products: Chairman",
-            "url": "https://www.thehindubusinessline.com/markets/mahindra-last-mile-mobility-eyes-ipo-in-18-months-plans-expansion-into-new-products-chairman/article71730782.ece",
-            "at": "2026-11-22T06:43:59.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Conversion/Switch of State Government Securities",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64017",
-            "at": "2026-11-20T19:45:00.000Z",
-            "src": "RBI"
           },
           {
             "title": "Family pension rules 2026: Who gets it first after a central govt employee dies?",
@@ -2781,6 +2804,14 @@
     }
   },
   "updates": [
+    {
+      "id": "u-rbi-eD9wcmlkPTY0MDMw",
+      "date": "2026-11-23",
+      "title": "Premature redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for premature redemption of SGB 2021-22 Series I due on November 25, 2026",
+      "body": "RBI press release. Open the source for the figures.",
+      "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64030",
+      "source": "RBI"
+    },
     {
       "id": "u-rhp-hp_105931.html",
       "date": "2026-11-20",
@@ -2895,7 +2926,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-23T11:15:29.675Z",
+    "at": "2026-11-23T20:11:08.387Z",
     "ok": 7,
     "failing": []
   }

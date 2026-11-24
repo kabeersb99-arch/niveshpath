@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-24T12:56:07.330Z",
+  "updatedAt": "2026-11-24T19:29:26.221Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-24T12:56:07.330Z",
+      "fetchedAt": "2026-11-24T19:29:26.221Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-24T12:56:07.330Z",
+      "lastTriedAt": "2026-11-24T19:29:26.221Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-24T12:56:07.330Z",
+      "fetchedAt": "2026-11-24T19:29:26.221Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -80,14 +80,14 @@
           "silver999": 152941
         }
       },
-      "lastTriedAt": "2026-11-24T12:56:07.330Z",
+      "lastTriedAt": "2026-11-24T19:29:26.221Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-24T12:56:07.330Z",
+      "fetchedAt": "2026-11-24T19:29:26.221Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -1033,8 +1033,8 @@
             "option": "GROWTH",
             "amc": "Aditya Birla Sun Life Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 464.6225,
-            "date": "2026-11-23"
+            "nav": 464.7083,
+            "date": "2026-11-24"
           },
           {
             "code": "154589",
@@ -1163,8 +1163,8 @@
             "option": "Growth",
             "amc": "Groww Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2787.8646,
-            "date": "2026-11-23"
+            "nav": 2788.368,
+            "date": "2026-11-24"
           },
           {
             "code": "119091",
@@ -1183,8 +1183,8 @@
             "option": "Growth",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 425.3404,
-            "date": "2026-11-23"
+            "nav": 425.4155,
+            "date": "2026-11-24"
           },
           {
             "code": "120537",
@@ -1323,8 +1323,8 @@
             "option": "Growth",
             "amc": "Mirae Asset Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3034.5439,
-            "date": "2026-11-23"
+            "nav": 3035.1082,
+            "date": "2026-11-24"
           },
           {
             "code": "118701",
@@ -1393,8 +1393,8 @@
             "option": "Growth",
             "amc": "SBI Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4493.8623,
-            "date": "2026-11-23"
+            "nav": 4494.6743,
+            "date": "2026-11-24"
           },
           {
             "code": "153035",
@@ -1413,8 +1413,8 @@
             "option": "GROWTH",
             "amc": "Sundaram Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2541.8882,
-            "date": "2026-11-23"
+            "nav": 2542.3472,
+            "date": "2026-11-24"
           },
           {
             "code": "119861",
@@ -2031,7 +2031,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-24T12:56:07.330Z",
+      "lastTriedAt": "2026-11-24T19:29:26.221Z",
       "failCount": 0
     },
     "yields": {
@@ -2042,8 +2042,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-24T12:56:07.330Z",
-      "fetchedAt": "2026-11-24T12:56:07.330Z",
+      "lastTriedAt": "2026-11-24T19:29:26.221Z",
+      "fetchedAt": "2026-11-24T19:29:26.221Z",
       "data": {
         "date": "2026-11-23",
         "curve": [
@@ -2174,10 +2174,10 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-24T12:56:07.330Z",
-      "fetchedAt": "2026-11-24T12:56:07.330Z",
+      "lastTriedAt": "2026-11-24T19:29:26.221Z",
+      "fetchedAt": "2026-11-24T19:29:26.221Z",
       "data": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "usdinr": 92.92
       },
       "failCount": 0
@@ -2190,8 +2190,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-24T12:56:07.330Z",
-      "fetchedAt": "2026-11-24T12:56:07.330Z",
+      "lastTriedAt": "2026-11-24T19:29:26.221Z",
+      "fetchedAt": "2026-11-24T19:29:26.221Z",
       "data": {
         "drafts": [
           {
@@ -2458,10 +2458,16 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-24T12:56:07.330Z",
-      "fetchedAt": "2026-11-24T12:56:07.330Z",
+      "lastTriedAt": "2026-11-24T19:29:26.221Z",
+      "fetchedAt": "2026-11-24T19:29:26.221Z",
       "data": {
         "items": [
+          {
+            "title": "8th Pay Commission: BPMS demands 6% annual increment, five career upgrades and higher insurance cover for employees",
+            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-bpms-demands-6-annual-increment-five-career-upgrades-and-higher-insurance-cover-for-employees-11795531431830.html",
+            "at": "2026-11-24T14:54:21.000Z",
+            "src": "Mint Money"
+          },
           {
             "title": "Bank of India 500-day FD offers up to 7.65% interest: Check rates for senior citizens and other depositors",
             "url": "https://www.livemint.com/money/personal-finance/bank-of-india-500-day-fd-offers-up-to-7-65-interest-check-rates-for-senior-citizens-and-other-depositors-11795521223667.html",
@@ -2685,42 +2691,6 @@
             "src": "BusinessLine Markets"
           },
           {
-            "title": "RBI proposes new rules to protect bank accounts from fraud; here's how Stop Switch and trusted person approval work",
-            "url": "https://www.livemint.com/money/personal-finance/rbi-proposes-new-rules-to-protect-bank-accounts-from-fraud-heres-how-stop-switch-and-trusted-person-approval-work-11795441662320.html",
-            "at": "2026-11-23T13:58:27.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "SBI, HDFC Bank, ICICI Bank retain D-SIB status; RBI maintains capital requirements",
-            "url": "https://www.thehindu.com/business/Economy/sbi-hdfc-bank-icici-bank-retain-d-sib-status-rbi-maintains-capital-requirements/article71734757.ece",
-            "at": "2026-11-23T13:46:07.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "DSP Mutual Fund set to boost gold and silver exposure: Inside its price-based buying strategy",
-            "url": "https://www.livemint.com/money/personal-finance/dsp-mutual-fund-set-to-boost-gold-and-silver-exposure-inside-its-price-based-buying-strategy-11795435247003.html",
-            "at": "2026-11-23T13:21:53.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold vs Bitcoin: Bitcoin's chances of beating gold fall from 47% to 19% on Kalshi. What should investors know?",
-            "url": "https://www.livemint.com/money/personal-finance/gold-vs-bitcoin-bitcoins-chances-of-beating-gold-fall-from-47-to-19-on-kalshi-what-should-investors-know-11795437774269.html",
-            "at": "2026-11-23T12:47:03.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Rupee snaps 5-day rally; tumbles 30 paise to settle at 92.92 against U.S. dollar",
-            "url": "https://www.thehindu.com/business/markets/rupee-snaps-5-day-rally-tumbles-30-paise-to-settle-at-9292-against-us-dollar/article71734465.ece",
-            "at": "2026-11-23T12:18:12.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "Markets take heavy drubbing dragged by banks; Sensex plunges 1,484 points, Nifty dives to 25,349.65",
-            "url": "https://www.thehindu.com/business/markets/markets-take-heavy-drubbing-dragged-by-banks-sensex-plunges-1484-points-nifty-dives-to-2534965/article71734374.ece",
-            "at": "2026-11-23T12:06:55.000Z",
-            "src": "The Hindu Business"
-          },
-          {
             "title": "Coal India unit Mahanadi's IPO fully subscribed on final day, led by institutional investors",
             "url": "https://www.thehindubusinessline.com/markets/stock-markets/coal-india-unit-mahanadis-ipo-fully-subscribed-on-final-day-led-by-institutional-investors/article71734460.ece",
             "at": "2026-11-23T12:01:46.000Z",
@@ -2731,30 +2701,6 @@
             "url": "https://www.thehindubusinessline.com/economy/gold-imports-into-india-decline-40-in-april-october-cti/article71734145.ece",
             "at": "2026-11-23T11:47:10.000Z",
             "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Sensex today | Stock Market Highlights: Markets take heavy drubbing dragged by banks; Sensex plunges 1,484 pts, Nifty dives to 25,349.65",
-            "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-highlights-23-november-2026/article71733179.ece",
-            "at": "2026-11-23T11:03:23.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "AI reality check: Leadership turmoil, IPO jitters and the fragility of big tech",
-            "url": "https://www.thehindu.com/business/Industry/ai-reality-check-leadership-turmoil-ipo-jitters-and-the-fragility-of-big-tech/article71730828.ece",
-            "at": "2026-11-23T08:37:02.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "Rupee declines 23 paise to 92.85 against U.S. dollar in early trade",
-            "url": "https://www.thehindu.com/business/markets/rupee-declines-23-paise-to-9285-against-us-dollar-in-early-trade/article71733376.ece",
-            "at": "2026-11-23T04:35:21.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "Congress attacks government over SEBI’s proposal to remove disclosure norms for FPIs",
-            "url": "https://www.thehindu.com/business/markets/sebi-proposals-will-open-window-to-foreign-funds-with-opaque-offshore-ownership-structures-says-congress/article71730702.ece",
-            "at": "2026-11-23T04:21:27.000Z",
-            "src": "The Hindu Business"
           },
           {
             "title": "Family pension rules 2026: Who gets it first after a central govt employee dies?",
@@ -2909,7 +2855,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-24T12:56:07.330Z",
+    "at": "2026-11-24T19:29:26.221Z",
     "ok": 7,
     "failing": []
   }

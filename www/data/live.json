@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-25T02:30:30.793Z",
+  "updatedAt": "2026-11-25T11:43:00.734Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-25T02:30:30.793Z",
+      "fetchedAt": "2026-11-25T11:43:00.734Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,40 +54,45 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-25T02:30:30.793Z",
+      "lastTriedAt": "2026-11-25T11:43:00.734Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-25T02:30:30.793Z",
+      "fetchedAt": "2026-11-25T11:43:00.734Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
       "url": "https://ibjarates.com/",
       "data": {
-        "date": "2026-11-23",
-        "gold999": 124945,
-        "gold995": 124445,
-        "gold916": 114450,
-        "gold750": 93709,
-        "gold585": 73093,
-        "silver999": 152625,
+        "date": "2026-11-25",
+        "gold999": 121038,
+        "gold995": 120553,
+        "gold916": 110871,
+        "gold750": 90779,
+        "gold585": 70807,
+        "silver999": 142945,
         "session": "PM",
         "am": {
-          "gold999": 125123,
-          "silver999": 152941
+          "gold999": 121310,
+          "silver999": 143522
+        },
+        "prev": {
+          "date": "2026-11-23",
+          "gold999": 124945,
+          "silver999": 152625
         }
       },
-      "lastTriedAt": "2026-11-25T02:30:30.793Z",
+      "lastTriedAt": "2026-11-25T11:43:00.734Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-25T02:30:30.793Z",
+      "fetchedAt": "2026-11-25T11:43:00.734Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -2031,7 +2036,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-25T02:30:30.793Z",
+      "lastTriedAt": "2026-11-25T11:43:00.734Z",
       "failCount": 0
     },
     "yields": {
@@ -2042,8 +2047,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-25T02:30:30.793Z",
-      "fetchedAt": "2026-11-25T02:30:30.793Z",
+      "lastTriedAt": "2026-11-25T11:43:00.734Z",
+      "fetchedAt": "2026-11-25T11:43:00.734Z",
       "data": {
         "date": "2026-11-23",
         "curve": [
@@ -2174,8 +2179,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-25T02:30:30.793Z",
-      "fetchedAt": "2026-11-25T02:30:30.793Z",
+      "lastTriedAt": "2026-11-25T11:43:00.734Z",
+      "fetchedAt": "2026-11-25T11:43:00.734Z",
       "data": {
         "date": "2026-11-24",
         "usdinr": 92.92
@@ -2190,10 +2195,15 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-25T02:30:30.793Z",
-      "fetchedAt": "2026-11-25T02:30:30.793Z",
+      "lastTriedAt": "2026-11-25T11:43:00.734Z",
+      "fetchedAt": "2026-11-25T11:43:00.734Z",
       "data": {
         "drafts": [
+          {
+            "date": "2026-11-25",
+            "title": "NLC India Renewables Limited - Draft Abridged Prospectus",
+            "url": "https://www.sebi.gov.in/filings/public-issues/nov-2026/nlc-india-renewables-limited-drhp_97166.html"
+          },
           {
             "date": "2026-11-23",
             "title": "Pride Hotels Limited - Addendum to the DRHP",
@@ -2313,11 +2323,6 @@
             "date": "2026-10-07",
             "title": "Grace Renewable Energy Limited - Draft Abridged Prospectus",
             "url": "https://www.sebi.gov.in/filings/public-issues/oct-2026/grace-renewable-energy-limited-drhp_105099.html"
-          },
-          {
-            "date": "2026-10-07",
-            "title": "INTEGRUM ENERGY INFRASTRUCTURE LIMITED - Draft Abridged Prospectus",
-            "url": "https://www.sebi.gov.in/filings/public-issues/oct-2026/integrum-energy-infrastructure-limited-drhp_105075.html"
           }
         ],
         "rhp": [
@@ -2458,21 +2463,237 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-25T02:30:30.793Z",
-      "fetchedAt": "2026-11-25T02:30:30.793Z",
+      "lastTriedAt": "2026-11-25T11:43:00.734Z",
+      "fetchedAt": "2026-11-25T11:43:00.734Z",
       "data": {
         "items": [
+          {
+            "title": "Treasury Bills: Full Auction Result",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64040",
+            "at": "2026-11-25T15:50:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "91-Day, 182-Day and 364-Day T-Bill Auction Result: Cut-off",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64039",
+            "at": "2026-11-25T15:00:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Result of the Second Overnight Variable Rate Repo (VRR) auction held on November 25, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64038",
+            "at": "2026-11-25T12:50:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "ITAT cancels ₹20.94 lakh income tax penalty on property sale, grants relief to elderly taxpayer",
+            "url": "https://www.livemint.com/money/personal-finance/itat-cancels-20-94-lakh-income-tax-penalty-on-property-sale-grants-relief-to-elderly-taxpayer-11795601260358.html",
+            "at": "2026-11-25T11:33:53.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Rupee soars 69 paise to settle at its eight-month high of 92.16 against US dollar",
+            "url": "https://www.thehindubusinessline.com/markets/forex/rupee-soars-69-paise-to-settle-at-its-eight-month-high-of-9216-against-us-dollar/article71742189.ece",
+            "at": "2026-11-25T11:33:06.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "RBI to conduct Second Overnight Variable Rate Repo (VRR) auction under LAF on November 25, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64037",
+            "at": "2026-11-25T11:30:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Rupee recoups all its FY27 losses; climbs 56 paise to hit eight-month high of 92.29 against U.S. dollar in intraday",
+            "url": "https://www.thehindu.com/business/markets/indian-rupee-vs-us-dollar-on-november-25-2026/article71741090.ece",
+            "at": "2026-11-25T10:54:09.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "Sensex today | Stock Market Highlights: Sensex surges 1,502 points, Nifty reclaims 25,800 as rupee hits eight-month high",
+            "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-highlights-stock-market-updates-25-november-2026/article71734420.ece",
+            "at": "2026-11-25T10:45:47.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Money Market Operations as on November 24, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64036",
+            "at": "2026-11-25T10:40:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Result of the Overnight Variable Rate Repo (VRR) auction held on November 25, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64035",
+            "at": "2026-11-25T10:25:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Real estate delivers 8.5% returns in 1 year vs gold falls 3%: Is property better investment option now? Experts weigh in",
+            "url": "https://www.livemint.com/money/personal-finance/real-estate-delivers-8-5-returns-in-1-year-vs-gold-falls-3-is-property-better-investment-option-now-experts-weigh-in-11795596886943.html",
+            "at": "2026-11-25T10:09:01.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Air passenger services see 35% inflation in Q2; banking, securities transaction witness deflation",
+            "url": "https://www.thehindu.com/business/Economy/air-passenger-services-see-35-inflation-in-q2-banking-securities-transaction-witness-deflation/article71741711.ece",
+            "at": "2026-11-25T09:51:19.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "Does customer loyalty affect gold loan interest rates?",
+            "url": "https://economictimes.indiatimes.com/wealth/borrow/loan/headline-does-customer-loyalty-affect-gold-loan-interest-rates/articleshow/136155633.cms",
+            "at": "2026-11-25T09:41:40.000Z",
+            "src": "ET Wealth"
+          },
+          {
+            "title": "VU Venture Partners to expand presence in India, evaluating up to $1 mn investments in start-ups",
+            "url": "https://www.thehindubusinessline.com/markets/vu-venture-partners-to-expand-presence-in-india-evaluating-up-to-1-mn-investments-in-start-ups/article71741655.ece",
+            "at": "2026-11-25T09:38:51.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "India’s gold loan portfolio surges 60.6% to ₹23.3 lakh crore, smaller cities drive growth: Report",
+            "url": "https://www.thehindubusinessline.com/money-and-banking/indias-gold-loan-portfolio-surges-606-to-233-lakh-crore-smaller-cities-drive-growth-report/article71741372.ece",
+            "at": "2026-11-25T09:35:48.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "What is driving fall in gold, silver & crude oil? Fed rate hike fears weigh",
+            "url": "https://www.thehindubusinessline.com/markets/commodities/gold-slips-as-fed-hike-bets-weigh-silver-crude-base-metals-also-under-pressure/article71741631.ece",
+            "at": "2026-11-25T09:30:44.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Money Market Operations as on November 23, 2026",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64034",
+            "at": "2026-11-25T09:00:00.000Z",
+            "src": "RBI"
+          },
+          {
+            "title": "Gold prices crash 27% in 3 months: Golden opportunity to invest in jewellery or should households wait? What experts say",
+            "url": "https://www.livemint.com/money/personal-finance/gold-prices-crash-27-in-3-months-golden-opportunity-to-invest-in-jewellery-or-should-households-wait-what-experts-say-11795593473220.html",
+            "at": "2026-11-25T08:47:09.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Rupee rises to 7-month high of 92.42 per US dollar on strong equity inflows",
+            "url": "https://www.thehindubusinessline.com/markets/forex/rupee-rises-to-7-month-high-of-9242-per-us-dollar-on-strong-equity-inflows/article71741450.ece",
+            "at": "2026-11-25T08:28:05.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Bengaluru man gets relief after consumer commission directs Aishwarya Co-op Society to refund ₹2.5 lakh FD",
+            "url": "https://www.livemint.com/money/bengaluru-man-gets-relief-after-consumer-commission-directs-aishwarya-co-op-society-to-refund-rs-2-5-lakh-fd-amount-11795594434781.html",
+            "at": "2026-11-25T08:25:10.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "PL Capital raises Nifty target to 28,561, sees potential for double-digit returns",
+            "url": "https://www.thehindubusinessline.com/markets/pl-capital-raises-nifty-target-to-28561-sees-potential-for-double-digit-returns/article71741481.ece",
+            "at": "2026-11-25T07:52:44.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Silver futures decline to ₹1.44 lakh/kg",
+            "url": "https://www.thehindubusinessline.com/markets/gold/silver-futures-decline-to-144-lakhkg/article71741385.ece",
+            "at": "2026-11-25T07:28:36.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Sensex jumps over 2,000 points, Nifty surges to 25,951 on foreign fund inflows, lower crude oil",
+            "url": "https://www.thehindu.com/business/markets/stock-markets-bse-nse-on-november-25-2026/article71741088.ece",
+            "at": "2026-11-25T07:24:11.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "Chartered Speed targets December IPO after Iran war disruption",
+            "url": "https://www.thehindubusinessline.com/companies/chartered-speed-targets-december-ipo-after-iran-war-disruption/article71741286.ece",
+            "at": "2026-11-25T07:14:54.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Gold price drops to ₹1.21 lakh/10 gram",
+            "url": "https://www.thehindubusinessline.com/markets/gold/gold-price-drops-to-121-lakh10-gram/article71741380.ece",
+            "at": "2026-11-25T07:07:52.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Sharp drop in gold prices triggers margin calls on loans by banks and NBFCs - what customers should know about LTV",
+            "url": "https://www.livemint.com/money/personal-finance/sharp-drop-in-gold-prices-triggers-margin-calls-on-loans-by-banks-and-nbfcs-what-customers-should-know-about-ltv-11795587073208.html",
+            "at": "2026-11-25T06:25:49.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "8th Pay Commission: Tripura CM assures salary revision ahead of local body polls on 27 Nov; check latest fitment factor",
+            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-tripura-cm-assures-salary-revision-ahead-of-local-body-polls-on-27-nov-check-latest-fitment-factor-11795579499141.html",
+            "at": "2026-11-25T06:15:16.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Dalal Street goes on a bull run: Sensex, Nifty jump over 2%, snap 2-day losing streak",
+            "url": "https://www.thehindubusinessline.com/markets/markets-snap-two-day-losing-streak-with-sharp-gap-up-banks-it-lead-recovery/article71741028.ece",
+            "at": "2026-11-25T06:03:23.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "8th Pay Commission pension: Rs 45,000 minimum pension demand, 67% of last salary & OROP explained",
+            "url": "https://economictimes.indiatimes.com/wealth/save/8th-pay-commission-pension-rs-45000-minimum-pension-demand-67-of-last-salary-orop-explained/slideshow/136150071.cms",
+            "at": "2026-11-25T06:00:48.000Z",
+            "src": "ET Wealth"
+          },
+          {
+            "title": "Gold rate today Chennai, 25 November Wednesday: Check latest 24K, 22K and 20K gold prices in ‘Gateway to South India’",
+            "url": "https://www.livemint.com/money/personal-finance/gold-rate-today-chennai-25-november-wednesday-check-latest-24k-22k-and-20k-gold-prices-in-gateway-to-south-india-11795583639620.html",
+            "at": "2026-11-25T05:46:39.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Indian bonds rise as oil eases, traders await RBI rate decision",
+            "url": "https://www.thehindubusinessline.com/markets/indian-bonds-rise-as-oil-eases-traders-await-rbi-rate-decision/article71741174.ece",
+            "at": "2026-11-25T05:29:03.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Gold rates today Andhra Pradesh 25 November: Check price of 24K, 22K, 18K gold as yellow metal rates decline",
+            "url": "https://www.livemint.com/money/gold-rates-today-andhra-pradesh-25-november-check-price-of-24k-22k-18k-gold-as-yellow-metal-rates-decline-11795581875447.html",
+            "at": "2026-11-25T04:56:54.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Rupee jumps 23 paise to 92.62 against US dollar in early trade",
+            "url": "https://www.thehindubusinessline.com/markets/forex/rupee-jumps-23-paise-to-9262-against-us-dollar-in-early-trade/article71741065.ece",
+            "at": "2026-11-25T04:26:14.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Gold, silver prices today 25 November, Wed: Latest 24K, 22K gold, 999 silver rates in Delhi, Mumbai, Kolkata and others",
+            "url": "https://www.livemint.com/money/personal-finance/gold-silver-prices-today-25-november-wed-latest-24k-22k-gold-999-silver-rates-in-delhi-mumbai-kolkata-and-others-11795576136181.html",
+            "at": "2026-11-25T03:52:47.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "RBI retains SBI, HDFC Bank, ICICI Bank as Systemically Important Banks: What's definition, why it matters for your money",
+            "url": "https://www.livemint.com/money/personal-finance/rbi-retains-sbi-hdfc-bank-icici-bank-as-systemically-important-banks-whats-definition-why-it-matters-for-your-money-11795570676444.html",
+            "at": "2026-11-25T03:04:08.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Rupee to resume rally on positive flow backdrop, turn in market sentiment",
+            "url": "https://www.thehindubusinessline.com/markets/forex/rupee-to-resume-rally-on-positive-flow-backdrop-turn-in-market-sentiment/article71740950.ece",
+            "at": "2026-11-25T02:45:30.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Sensex, Nifty may open higher as foreign inflows, lower oil prices aid sentiment",
+            "url": "https://www.thehindubusinessline.com/markets/sensex-nifty-may-open-higher-as-foreign-inflows-lower-oil-prices-aid-sentiment/article71740945.ece",
+            "at": "2026-11-25T02:36:12.000Z",
+            "src": "BusinessLine Markets"
+          },
           {
             "title": "RBI proposes digital payment safeguards: Explained – How customers can control UPI, switch off cards, set payment limits",
             "url": "https://www.livemint.com/money/personal-finance/rbi-proposes-digital-payment-safeguards-explained-how-customers-can-control-upi-switch-off-cards-set-payment-limits-11795565937515.html",
             "at": "2026-11-25T01:29:38.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "Sensex today | Stock Market Live: Stock to buy today: Chalet Hotels (₹868.75) – BUY",
-            "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-live-updates-25-november-2026/article71734420.ece",
-            "at": "2026-11-25T01:04:26.000Z",
-            "src": "BusinessLine Markets"
           },
           {
             "title": "8th Pay Commission: BPMS demands 6% annual increment, five career upgrades and higher insurance cover for employees",
@@ -2487,99 +2708,15 @@
             "src": "Mint Money"
           },
           {
-            "title": "Anthropic shares fall below $83 IPO price days after record-breaking Nasdaq debut",
-            "url": "https://www.thehindubusinessline.com/markets/stock-markets/anthropic-shares-fall-below-83-ipo-price-days-after-record-breaking-nasdaq-debut/article71738365.ece",
-            "at": "2026-11-24T11:54:04.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Supreme Court strikes down UP’s 2021, 2025 pension laws: What does it mean for retired employees & legal heirs",
             "url": "https://www.livemint.com/money/supreme-court-strikes-down-up-s-2021-2025-pension-laws-what-does-it-mean-for-retired-employees-legal-heirs-11795511615720.html",
             "at": "2026-11-24T09:26:27.000Z",
             "src": "Mint Money"
           },
           {
-            "title": "Gold slips with spotlight on US inflation data",
-            "url": "https://www.thehindubusinessline.com/markets/gold/gold-slips-with-spotlight-on-us-inflation-data/article71737874.ece",
-            "at": "2026-11-24T09:11:00.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Kotak Life Insurance launches Variable Index Annuity Plan: Check Nifty 50-linked option, eligibility and death benefits",
             "url": "https://www.livemint.com/money/personal-finance/kotak-life-insurance-launches-variable-index-annuity-plan-check-nifty-50-linked-option-eligibility-and-death-benefits-11795506206718.html",
             "at": "2026-11-24T08:40:24.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Investors get richer by ₹34.61 lakh crore this month as Sensex posts 11% rally",
-            "url": "https://www.thehindubusinessline.com/markets/investors-get-richer-by-3461-lakh-crore-this-month-as-sensex-posts-11-rally/article71737692.ece",
-            "at": "2026-11-24T08:16:09.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Atal Pension Yojana: Enrolling at 30? Check investment required for ₹5,000 monthly pension after retirement",
-            "url": "https://www.livemint.com/money/personal-finance/atal-pension-yojana-enrolling-at-30-check-investment-required-for-5-000-monthly-pension-after-retirement-11795501755628.html",
-            "at": "2026-11-24T07:41:18.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Bank Holiday in Bengaluru, Karnataka on Friday 27 November 2026: Branches to remain closed — Here is why | RBI calendar",
-            "url": "https://www.livemint.com/money/bank-holiday-in-bengaluru-karnataka-on-friday-27-november-2026-branches-to-remain-closed-here-is-why-rbi-calendar-11795505258886.html",
-            "at": "2026-11-24T07:35:28.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold holds gain after Nvidia’s rehiring of Huang sparks rally",
-            "url": "https://www.thehindubusinessline.com/markets/gold/gold-holds-gain-after-nvidias-rehiring-of-huang-sparks-rally/article71737423.ece",
-            "at": "2026-11-24T06:32:38.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Gold ticks up on bargain buying; US inflation data awaited",
-            "url": "https://www.thehindubusinessline.com/markets/gold/gold-ticks-up-on-bargain-buying-us-inflation-data-awaited/article71737088.ece",
-            "at": "2026-11-24T06:31:24.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Gold Rate Today Maharashtra 24 Nov 22K, 24K Prices: Mumbai, Thane, Pune, Nagpur, Nashik, Aurangabad, Kolhapur, Solapur",
-            "url": "https://www.livemint.com/money/gold-rate-today-maharashtra-24-nov-22k-24k-prices-mumbai-thane-pune-nagpur-nashik-aurangabad-kolhapur-solapur-11795500693178.html",
-            "at": "2026-11-24T06:29:38.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold Rate Today Andhra Pradesh, Telangana 24 Nov 22K, 24K Prices: Tirupati, Hyderabad, Amaravati, Warangal, Rangareddy",
-            "url": "https://www.livemint.com/money/personal-finance/gold-rate-today-andhra-pradesh-telangana-24-nov-22k-24k-prices-tirupati-hyderabad-amaravati-warangal-rangareddy-11795501154862.html",
-            "at": "2026-11-24T06:27:26.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold price in Bangalore today, 24 November Tuesday: Check latest 24K, 22K and 20K gold rates in Silicon Valley of India",
-            "url": "https://www.livemint.com/money/personal-finance/gold-price-in-bangalore-today-24-november-tuesday-check-latest-24k-22k-and-20k-gold-rates-in-silicon-valley-of-india-11795494486201.html",
-            "at": "2026-11-24T04:53:04.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "SEBI warns investors against fraudsters impersonating registered intermediaries on WhatsApp groups",
-            "url": "https://www.thehindubusinessline.com/markets/sebi-warns-investors-against-fraudsters-impersonating-registered-intermediaries-on-whatsapp-groups/article71737121.ece",
-            "at": "2026-11-24T04:16:13.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Gold, silver prices today 24 Nov, Tuesday: Check 24K, 22K gold, 999 silver rates in Delhi, Mumbai, Kolkata and others",
-            "url": "https://www.livemint.com/money/personal-finance/gold-silver-prices-today-24-nov-tuesday-check-24k-22k-gold-999-silver-rates-in-delhi-mumbai-kolkata-and-others-11795491016117.html",
-            "at": "2026-11-24T04:07:12.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "SGB 2021-22 Series I premature redemption: Investors gain up to 167%; check RBI-fixed price, exit date and interest rate",
-            "url": "https://www.livemint.com/money/personal-finance/sgb-2021-22-series-i-premature-redemption-investors-gain-up-to-167-check-rbi-fixed-price-exit-date-and-interest-rate-11795483751270.html",
-            "at": "2026-11-24T02:52:24.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Bank holiday today Tuesday, 24 November: Branches closed in these 21 cities across India — Check RBI list and reasons",
-            "url": "https://www.livemint.com/money/personal-finance/bank-holiday-today-tuesday-24-november-branches-closed-in-these-21-cities-across-india-check-rbi-list-and-reasons-11795479485133.html",
-            "at": "2026-11-24T01:19:11.000Z",
             "src": "Mint Money"
           },
           {
@@ -2601,129 +2738,21 @@
             "src": "RBI"
           },
           {
-            "title": "Premature redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for premature redemption of SGB 2021-22 Series I due on November 25, 2026",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64030",
-            "at": "2026-11-23T18:10:00.000Z",
-            "src": "RBI"
-          },
-          {
-            "title": "Auction of Government of India Dated Securities",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64029",
-            "at": "2026-11-23T17:45:00.000Z",
-            "src": "RBI"
-          },
-          {
-            "title": "Mahanadi Coalfields IPO fully subscribed on final day",
-            "url": "https://www.thehindu.com/business/mahanadi-coalfields-ipo-fully-subscribed-on-final-day/article71736093.ece",
-            "at": "2026-11-23T17:35:09.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "Reserve Bank (Securitisation Transactions) Amendment Directions, 2026",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64028",
-            "at": "2026-11-23T17:00:00.000Z",
-            "src": "RBI"
-          },
-          {
-            "title": "REIT, InvIT dividend income tax-free? ITAT Ahmedabad rules in favour of taxpayer in ₹49.64 lakh tax dispute",
-            "url": "https://www.livemint.com/money/personal-finance/reit-invit-dividend-income-tax-free-itat-ahmedabad-rules-in-favour-of-taxpayer-over-rs-49-64-lakh-tax-dispute-11795448922456.html",
-            "at": "2026-11-23T16:54:12.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "State Government Securities - Full Auction Result",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64027",
-            "at": "2026-11-23T16:50:00.000Z",
-            "src": "RBI"
-          },
-          {
-            "title": "RBI issues Draft Amendment Directions for ‘Preventive Safeguards for Electronic Banking Transactions (EBTs)’",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64026",
-            "at": "2026-11-23T16:35:00.000Z",
-            "src": "RBI"
-          },
-          {
-            "title": "RBI releases 2026 list of Domestic Systemically Important Banks (D-SIBs)",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64025",
-            "at": "2026-11-23T16:30:00.000Z",
-            "src": "RBI"
-          },
-          {
-            "title": "Market correction or a bad mutual fund? 5 checks you must make before deciding whether to exit or stay invested",
-            "url": "https://www.livemint.com/money/personal-finance/market-correction-or-a-bad-mutual-fund-5-checks-you-must-make-before-deciding-whether-to-exit-or-stay-invested-11795432862240.html",
-            "at": "2026-11-23T16:05:22.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "IPO Street set for year-end revival; 29 firms eye ₹42,000 crore as sentiment improves",
-            "url": "https://www.thehindubusinessline.com/markets/ipo-street-set-for-year-end-revival-29-firms-eye-42000-crore-as-sentiment-improves/article71731112.ece",
-            "at": "2026-11-23T15:53:28.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Can the India–US tax treaty or an NRE account make Indian rental income tax-free?",
-            "url": "https://www.livemint.com/money/personal-finance/can-the-india-us-tax-treaty-or-an-nre-account-make-indian-rental-income-taxfree-11795418433970.html",
-            "at": "2026-11-23T15:52:15.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Exits from gold ETFs top $100 billion for 2026, even as inflows remain net positive",
-            "url": "https://www.thehindubusinessline.com/markets/gold/exits-from-gold-etfs-top-100-billion-for-2026-even-as-inflows-remain-net-positive/article71734916.ece",
-            "at": "2026-11-23T15:44:17.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Banks sell-off ends four-week rally; Nifty slumps 1.75%, Rupee weakens",
-            "url": "https://www.thehindubusinessline.com/markets/banks-sell-off-ends-four-week-rally-nifty-slumps-175-rupee-weakens/article71734774.ece",
-            "at": "2026-11-23T15:43:25.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Mahanadi Coalfields IPO subscribed 1.52 times on final day",
-            "url": "https://www.thehindubusinessline.com/markets/mahanadi-coalfields-ipo-subscribed-152-times-on-final-day/article71735552.ece",
-            "at": "2026-11-23T15:34:37.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Result of Yield/Price Based Auction of State Government Securities",
-            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64024",
-            "at": "2026-11-23T15:05:00.000Z",
-            "src": "RBI"
-          },
-          {
-            "title": "SEBI’s FPI disclosure rollback may ease inflows, but reduce ownership visibility",
-            "url": "https://www.thehindubusinessline.com/markets/sebis-fpi-disclosure-rollback-may-ease-inflows-but-reduce-ownership-visibility/article71735301.ece",
-            "at": "2026-11-23T14:52:48.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Coal India unit Mahanadi's IPO fully subscribed on final day, led by institutional investors",
-            "url": "https://www.thehindubusinessline.com/markets/stock-markets/coal-india-unit-mahanadis-ipo-fully-subscribed-on-final-day-led-by-institutional-investors/article71734460.ece",
-            "at": "2026-11-23T12:01:46.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Family pension rules 2026: Who gets it first after a central govt employee dies?",
             "url": "https://economictimes.indiatimes.com/wealth/save/family-pension-rules-2026-who-gets-it-first-after-a-central-govt-employee-dies/slideshow/136016325.cms",
             "at": "2026-11-20T06:27:29.000Z",
             "src": "ET Wealth"
           },
           {
+            "title": "Gold rate today: Check 24K, 22K, 20K, 18K gold prices in Chennai, Delhi, Mumbai, Hyderabad & other cities",
+            "url": "https://economictimes.indiatimes.com/wealth/invest/gold-rate-today-check-24k-22k-20k-18k-gold-prices-in-chennai-delhi-mumbai-hyderabad-other-cities/slideshow/136015935.cms",
+            "at": "2026-11-20T06:15:56.000Z",
+            "src": "ET Wealth"
+          },
+          {
             "title": "Loan against PPF: Borrow up to 25% of your balance; check how much you can get",
             "url": "https://economictimes.indiatimes.com/wealth/borrow/loan-against-ppf-borrow-up-to-25-of-your-balance-check-how-much-you-can-get/slideshow/135979585.cms",
             "at": "2026-11-19T06:03:39.000Z",
-            "src": "ET Wealth"
-          },
-          {
-            "title": "Gold rate today: Check 24K, 22K, 20K, 18K gold prices in Chennai, Delhi, Mumbai, Hyderabad & other cities",
-            "url": "https://economictimes.indiatimes.com/wealth/invest/gold-rate-today-check-24k-22k-20k-18k-gold-prices-in-chennai-delhi-mumbai-hyderabad-other-cities/slideshow/135952322.cms",
-            "at": "2026-11-18T06:33:49.000Z",
-            "src": "ET Wealth"
-          },
-          {
-            "title": "Higher EPS pension: PMO examining pending cases? What applicants need to know",
-            "url": "https://economictimes.indiatimes.com/wealth/save/higher-eps-pension-pmo-examining-pending-cases-what-applicants-need-to-know/slideshow/135951738.cms",
-            "at": "2026-11-18T06:09:54.000Z",
             "src": "ET Wealth"
           }
         ],
@@ -2733,6 +2762,22 @@
     }
   },
   "updates": [
+    {
+      "id": "u-rbi-eD9wcmlkPTY0MDQw",
+      "date": "2026-11-25",
+      "title": "Treasury Bills: Full Auction Result",
+      "body": "RBI press release. Open the source for the figures.",
+      "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64040",
+      "source": "RBI"
+    },
+    {
+      "id": "u-gold-2026-11-25",
+      "date": "2026-11-25",
+      "title": "Gold fell 3.1% since the last reading",
+      "body": "IBJA 999 gold is Rs 1,21,038 per 10 g (was Rs 1,24,945 on 2026-11-23). Day-to-day moves like this are why gold stays a small share.",
+      "url": "https://ibjarates.com/",
+      "source": "IBJA"
+    },
     {
       "id": "u-rbi-eD9wcmlkPTY0MDMw",
       "date": "2026-11-23",
@@ -2855,7 +2900,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-25T02:30:30.793Z",
+    "at": "2026-11-25T11:43:00.734Z",
     "ok": 7,
     "failing": []
   }

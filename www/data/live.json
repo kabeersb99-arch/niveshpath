@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-25T18:38:45.908Z",
+  "updatedAt": "2026-11-26T01:47:27.353Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-25T18:38:45.908Z",
+      "fetchedAt": "2026-11-26T01:47:27.353Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,20 +54,20 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-25T18:38:45.908Z",
+      "lastTriedAt": "2026-11-26T01:47:27.353Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-25T18:38:45.908Z",
+      "fetchedAt": "2026-11-26T01:47:27.353Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
       "url": "https://ibjarates.com/",
       "data": {
-        "date": "2026-11-26",
+        "date": "2026-11-25",
         "gold999": 121038,
         "gold995": 120553,
         "gold916": 110871,
@@ -78,21 +78,16 @@
         "am": {
           "gold999": 121310,
           "silver999": 143522
-        },
-        "prev": {
-          "date": "2026-11-23",
-          "gold999": 124945,
-          "silver999": 152625
         }
       },
-      "lastTriedAt": "2026-11-25T18:38:45.908Z",
+      "lastTriedAt": "2026-11-26T01:47:27.353Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-25T18:38:45.908Z",
+      "fetchedAt": "2026-11-26T01:47:27.353Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -2036,7 +2031,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-25T18:38:45.908Z",
+      "lastTriedAt": "2026-11-26T01:47:27.353Z",
       "failCount": 0
     },
     "yields": {
@@ -2047,8 +2042,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-25T18:38:45.908Z",
-      "fetchedAt": "2026-11-25T18:38:45.908Z",
+      "lastTriedAt": "2026-11-26T01:47:27.353Z",
+      "fetchedAt": "2026-11-26T01:47:27.353Z",
       "data": {
         "date": "2026-11-25",
         "curve": [
@@ -2184,8 +2179,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-25T18:38:45.908Z",
-      "fetchedAt": "2026-11-25T18:38:45.908Z",
+      "lastTriedAt": "2026-11-26T01:47:27.353Z",
+      "fetchedAt": "2026-11-26T01:47:27.353Z",
       "data": {
         "date": "2026-11-25",
         "usdinr": 92.24
@@ -2200,8 +2195,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-25T18:38:45.908Z",
-      "fetchedAt": "2026-11-25T18:38:45.908Z",
+      "lastTriedAt": "2026-11-26T01:47:27.353Z",
+      "fetchedAt": "2026-11-26T01:47:27.353Z",
       "data": {
         "drafts": [
           {
@@ -2468,10 +2463,22 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-25T18:38:45.908Z",
-      "fetchedAt": "2026-11-25T18:38:45.908Z",
+      "lastTriedAt": "2026-11-26T01:47:27.353Z",
+      "fetchedAt": "2026-11-26T01:47:27.353Z",
       "data": {
         "items": [
+          {
+            "title": "Sensex today | Stock Market Live: Stocks to watch, November 26: LG Electronics, Tata Steel, SG Mart, APL Apollo Tubes, Fino Payments, PNB, Lupin",
+            "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-live-updates-26-november-2026/article71742218.ece",
+            "at": "2026-11-26T01:44:43.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "8th Pay Commission: Fitment factors of 2.92, 3.61, 3.833 and 4 may lift basic pay; see salary calculations for employees",
+            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-fitment-factors-of-2-92-3-61-3-833-and-4-may-lift-basic-pay-see-salary-calculations-for-employees-11795653430229.html",
+            "at": "2026-11-26T01:09:38.000Z",
+            "src": "Mint Money"
+          },
           {
             "title": "RBI to conduct Overnight Variable Rate Repo (VRR) auction under LAF on November 26, 2026",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64043",
@@ -2497,6 +2504,18 @@
             "src": "RBI"
           },
           {
+            "title": "Rupee hits eight-month high as foreign inflows lift markets; Nifty nears record peak",
+            "url": "https://www.thehindubusinessline.com/markets/rupee-hits-eight-month-high-as-foreign-inflows-lift-markets-nifty-nears-record-peak/article71743427.ece",
+            "at": "2026-11-25T17:30:02.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Dalal Street goes on a bull run: Sensex, Nifty jump over 2%, snap 2-day losing streak",
+            "url": "https://www.thehindubusinessline.com/markets/markets-snap-two-day-losing-streak-with-sharp-gap-up-banks-it-lead-recovery/article71741028.ece",
+            "at": "2026-11-25T17:29:26.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
             "title": "Broad-based pressure on food prices continues: RBI Bulletin",
             "url": "https://www.thehindu.com/business/Economy/broad-based-pressure-on-food-prices-continues-rbi-bulletin/article71743566.ece",
             "at": "2026-11-25T17:09:05.000Z",
@@ -2512,12 +2531,6 @@
             "title": "SEBI simplifies KYC norms, streamlines investor onboarding",
             "url": "https://www.thehindubusinessline.com/markets/sebi-simplifies-kyc-norms-streamlines-investor-onboarding/article71743649.ece",
             "at": "2026-11-25T16:42:25.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Rupee hits eight-month high as foreign inflows lift markets; Nifty nears record peak",
-            "url": "https://www.thehindubusinessline.com/markets/rupee-hits-eight-month-high-as-foreign-inflows-lift-markets-nifty-nears-record-peak/article71743427.ece",
-            "at": "2026-11-25T16:21:34.000Z",
             "src": "BusinessLine Markets"
           },
           {
@@ -2701,24 +2714,6 @@
             "src": "ET Wealth"
           },
           {
-            "title": "VU Venture Partners to expand presence in India, evaluating up to $1 mn investments in start-ups",
-            "url": "https://www.thehindubusinessline.com/markets/vu-venture-partners-to-expand-presence-in-india-evaluating-up-to-1-mn-investments-in-start-ups/article71741655.ece",
-            "at": "2026-11-25T09:38:51.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "India’s gold loan portfolio surges 60.6% to ₹23.3 lakh crore, smaller cities drive growth: Report",
-            "url": "https://www.thehindubusinessline.com/money-and-banking/indias-gold-loan-portfolio-surges-606-to-233-lakh-crore-smaller-cities-drive-growth-report/article71741372.ece",
-            "at": "2026-11-25T09:35:48.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "What is driving fall in gold, silver & crude oil? Fed rate hike fears weigh",
-            "url": "https://www.thehindubusinessline.com/markets/commodities/gold-slips-as-fed-hike-bets-weigh-silver-crude-base-metals-also-under-pressure/article71741631.ece",
-            "at": "2026-11-25T09:30:44.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Money Market Operations as on November 23, 2026",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64034",
             "at": "2026-11-25T09:00:00.000Z",
@@ -2782,12 +2777,6 @@
             "title": "RBI retains SBI, HDFC Bank, ICICI Bank as Systemically Important Banks: What's definition, why it matters for your money",
             "url": "https://www.livemint.com/money/personal-finance/rbi-retains-sbi-hdfc-bank-icici-bank-as-systemically-important-banks-whats-definition-why-it-matters-for-your-money-11795570676444.html",
             "at": "2026-11-25T03:04:08.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "RBI proposes digital payment safeguards: Explained – How customers can control UPI, switch off cards, set payment limits",
-            "url": "https://www.livemint.com/money/personal-finance/rbi-proposes-digital-payment-safeguards-explained-how-customers-can-control-upi-switch-off-cards-set-payment-limits-11795565937515.html",
-            "at": "2026-11-25T01:29:38.000Z",
             "src": "Mint Money"
           },
           {
@@ -2953,7 +2942,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-25T18:38:45.908Z",
+    "at": "2026-11-26T01:47:27.353Z",
     "ok": 7,
     "failing": []
   }

@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-26T18:24:20.688Z",
+  "updatedAt": "2026-11-27T01:44:20.832Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-26T18:24:20.688Z",
+      "fetchedAt": "2026-11-27T01:44:20.832Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-26T18:24:20.688Z",
+      "lastTriedAt": "2026-11-27T01:44:20.832Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-26T18:24:20.688Z",
+      "fetchedAt": "2026-11-27T01:44:20.832Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -78,21 +78,16 @@
         "am": {
           "gold999": 122982,
           "silver999": 146933
-        },
-        "prev": {
-          "date": "2026-11-25",
-          "gold999": 121038,
-          "silver999": 142945
         }
       },
-      "lastTriedAt": "2026-11-26T18:24:20.688Z",
+      "lastTriedAt": "2026-11-27T01:44:20.832Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-26T18:24:20.688Z",
+      "fetchedAt": "2026-11-27T01:44:20.832Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -2036,7 +2031,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-26T18:24:20.688Z",
+      "lastTriedAt": "2026-11-27T01:44:20.832Z",
       "failCount": 0
     },
     "yields": {
@@ -2047,8 +2042,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-26T18:24:20.688Z",
-      "fetchedAt": "2026-11-26T18:24:20.688Z",
+      "lastTriedAt": "2026-11-27T01:44:20.832Z",
+      "fetchedAt": "2026-11-27T01:44:20.832Z",
       "data": {
         "date": "2026-11-26",
         "curve": [
@@ -2189,8 +2184,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-26T18:24:20.688Z",
-      "fetchedAt": "2026-11-26T18:24:20.688Z",
+      "lastTriedAt": "2026-11-27T01:44:20.832Z",
+      "fetchedAt": "2026-11-27T01:44:20.832Z",
       "data": {
         "date": "2026-11-26",
         "usdinr": 92.45
@@ -2205,8 +2200,8 @@
       "expectedHours": 30,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-26T18:24:20.688Z",
-      "fetchedAt": "2026-11-26T18:24:20.688Z",
+      "lastTriedAt": "2026-11-27T01:44:20.832Z",
+      "fetchedAt": "2026-11-27T01:44:20.832Z",
       "data": {
         "drafts": [
           {
@@ -2473,8 +2468,8 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-26T18:24:20.688Z",
-      "fetchedAt": "2026-11-26T18:24:20.688Z",
+      "lastTriedAt": "2026-11-27T01:44:20.832Z",
+      "fetchedAt": "2026-11-27T01:44:20.832Z",
       "data": {
         "items": [
           {
@@ -2502,30 +2497,6 @@
             "src": "The Hindu Business"
           },
           {
-            "title": "Gold loan growth slows as falling gold prices push lenders into collection mode",
-            "url": "https://www.thehindubusinessline.com/markets/gold/gold-loan-growth-slows-as-falling-gold-prices-push-lenders-into-collection-mode/article71746853.ece",
-            "at": "2026-11-26T15:11:46.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "IT stocks surge 3.6% as Nifty edges up; rupee slips to 92.44",
-            "url": "https://www.thehindubusinessline.com/markets/it-stocks-surge-36-as-nifty-edges-up-rupee-slips-to-9244/article71746454.ece",
-            "at": "2026-11-26T14:52:23.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "NSE secures RBI approval for corporate bond index futures",
-            "url": "https://www.thehindubusinessline.com/markets/nse-secures-rbi-approval-for-corporate-bond-index-futures/article71747109.ece",
-            "at": "2026-11-26T14:40:00.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "NSE gets RBI nod to launch corporate bond index futures",
-            "url": "https://www.thehindubusinessline.com/markets/nse-gets-rbi-nod-to-launch-corporate-bond-index-futures/article71746922.ece",
-            "at": "2026-11-26T13:52:00.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Underwriting Auction for sale of Government Securities for 33,000 crore on November 27, 2026",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64048",
             "at": "2026-11-26T12:15:00.000Z",
@@ -2550,40 +2521,16 @@
             "src": "Mint Money"
           },
           {
-            "title": "Indian banks seek RBI intervention as dollar surplus pushes up rupee forward premiums",
-            "url": "https://www.thehindubusinessline.com/markets/forex/indian-banks-seek-rbi-intervention-as-dollar-surplus-pushes-up-rupee-forward-premiums/article71746228.ece",
-            "at": "2026-11-26T11:39:29.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "8th Pay Commission pension hike: ₹45,000 minimum pension and One Rank One Pension demand explained",
             "url": "https://www.livemint.com/money/8th-pay-commission-pension-hike-rs-45-000-minimum-pension-and-one-rank-one-pension-demand-explained-11795691279134.html",
             "at": "2026-11-26T11:35:37.000Z",
             "src": "Mint Money"
           },
           {
-            "title": "Nifty IT jumps over 2% as HCLTech, Wipro, Infosys lead IT rally",
-            "url": "https://www.thehindubusinessline.com/markets/nifty-it-jumps-over-2-as-hcltech-wipro-infosys-lead-it-rally/article71745930.ece",
-            "at": "2026-11-26T10:59:20.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Sensex today | Stock Market Highlights: Stock markets rally for 2nd day on foreign fund inflows, buying in IT shares",
-            "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-highlights-26-november-2026/article71742218.ece",
-            "at": "2026-11-26T10:48:08.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Rupee weakens 24 paise to settle at 92.44 against U.S. dollar",
             "url": "https://www.thehindu.com/business/markets/rupee-weakens-24-paise-to-settle-at-9244-against-us-dollar/article71746086.ece",
             "at": "2026-11-26T10:46:08.000Z",
             "src": "The Hindu Business"
-          },
-          {
-            "title": "Rupee weakens 24 paise to settle at 92.44 against US dollar",
-            "url": "https://www.thehindubusinessline.com/markets/forex/rupee-weakens-24-paise-to-settle-at-9244-against-us-dollar/article71746093.ece",
-            "at": "2026-11-26T10:38:40.000Z",
-            "src": "BusinessLine Markets"
           },
           {
             "title": "RBI to conduct Second Overnight Variable Rate Repo (VRR) auction under LAF on November 26, 2026",
@@ -2602,12 +2549,6 @@
             "url": "https://www.livemint.com/money/personal-finance/gold-etfs-same-gold-prices-why-are-two-funds-gaining-while-others-have-negative-1-year-returns-key-factors-to-check-11795684999656.html",
             "at": "2026-11-26T10:23:53.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "SEBI appoints forensic auditor to probe alleged ₹3,535-crore Coffee Day fund diversion",
-            "url": "https://www.thehindubusinessline.com/markets/stock-markets/sebi-appoints-forensic-auditor-to-probe-alleged-3535-crore-coffee-day-fund-diversion/article71745772.ece",
-            "at": "2026-11-26T09:55:08.000Z",
-            "src": "BusinessLine Markets"
           },
           {
             "title": "Income tax calendar December 2026: Check key deadlines for TDS payments, advance tax, belated ITR and FAST-DS scheme",
@@ -2640,22 +2581,10 @@
             "src": "Mint Money"
           },
           {
-            "title": "Nifty at 26-week high, Sensex up 0.47%; HDFC Bank, IT stocks lead; FMCG lags",
-            "url": "https://www.thehindubusinessline.com/markets/nifty-at-26-week-high-sensex-up-047-hdfc-bank-it-stocks-lead-fmcg-lags/article71745687.ece",
-            "at": "2026-11-26T07:43:25.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Mutual fund returns fall, SIP exits rise: Study explains why regular-plan investors hold on longer than direct ones",
             "url": "https://www.livemint.com/money/personal-finance/mutual-fund-returns-fall-sip-exits-rise-study-explains-why-regular-plan-investors-hold-on-longer-than-direct-ones-11795674358082.html",
             "at": "2026-11-26T07:38:12.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "Silver price today: Futures rise to ₹1.45 lakh per kg",
-            "url": "https://www.thehindubusinessline.com/markets/gold/silver-price-today-futures-rise-to-145-lakh-per-kg/article71745606.ece",
-            "at": "2026-11-26T07:26:21.000Z",
-            "src": "BusinessLine Markets"
           },
           {
             "title": "PNB 680-day FD rates: Calculate returns on ₹5 lakh and ₹10 lakh for regular and senior citizen investors in India",
@@ -2676,46 +2605,16 @@
             "src": "ET Wealth"
           },
           {
-            "title": "SEBI to step up investor protection measures; Kochi office on the anvil",
-            "url": "https://www.thehindubusinessline.com/markets/sebi-to-step-up-investor-protection-measures-kochi-office-on-the-anvil/article71745391.ece",
-            "at": "2026-11-26T06:05:08.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Gold prices slipped 2% below support level before bouncing back — Here's why the precious metal remains under pressure",
             "url": "https://www.livemint.com/money/gold-prices-slip-2-pc-below-support-level-bounce-back-why-precious-metal-remain-under-pressure-fed-rate-hike-inflation-11795666862998.html",
             "at": "2026-11-26T05:49:43.000Z",
             "src": "Mint Money"
           },
           {
-            "title": "Indian bonds tumble as Brent tops $95 per barrel, RBI flags food inflation risks",
-            "url": "https://www.thehindubusinessline.com/markets/indian-bonds-tumble-as-brent-tops-95-per-barrel-rbi-flags-food-inflation-risks/article71745270.ece",
-            "at": "2026-11-26T05:46:13.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "RBI brings 60 tonnes of gold home from overseas vaults in six months amid falling global prices: What numbers tell us",
             "url": "https://www.livemint.com/money/personal-finance/rbi-brings-60-tonnes-of-gold-home-from-overseas-vaults-in-six-months-amid-falling-global-prices-what-numbers-tell-us-11795666935309.html",
             "at": "2026-11-26T05:39:47.000Z",
             "src": "Mint Money"
-          },
-          {
-            "title": "Rupee falls 20 paise to 92.40 against US dollar in early trade",
-            "url": "https://www.thehindubusinessline.com/markets/forex/rupee-falls-20-paise-to-9240-against-us-dollar-in-early-trade/article71745273.ece",
-            "at": "2026-11-26T05:37:16.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Can Nifty cross 26,000 today? FPI buying, global cues hold the key",
-            "url": "https://www.thehindubusinessline.com/markets/will-nifty-cross-26000-today-fpi-inflows-global-cues-in-focus/article71745061.ece",
-            "at": "2026-11-26T05:28:14.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Crystal Crop Protection IPO shares list at 3% premium on BSE",
-            "url": "https://www.thehindubusinessline.com/markets/stock-markets/crystal-crop-protection-shares-list-at-3-premium-on-bse/article71745232.ece",
-            "at": "2026-11-26T05:24:25.000Z",
-            "src": "BusinessLine Markets"
           },
           {
             "title": "Rupee falls 20 paise to 92.40 against U.S. dollar in early trade",
@@ -2778,12 +2677,6 @@
             "src": "The Hindu Business"
           },
           {
-            "title": "Stock indices gain 1.85%, rupee surges to 8-month high aided by foreign inflows, low crude prices",
-            "url": "https://www.thehindu.com/business/markets/sensex-jumps-1502-points-nifty-surges-to-25819-on-foreign-fund-inflows-lower-crude-oil/article71742244.ece",
-            "at": "2026-11-25T13:52:00.000Z",
-            "src": "The Hindu Business"
-          },
-          {
             "title": "Does customer loyalty affect gold loan interest rates?",
             "url": "https://economictimes.indiatimes.com/wealth/borrow/loan/headline-does-customer-loyalty-affect-gold-loan-interest-rates/articleshow/136155633.cms",
             "at": "2026-11-25T09:41:40.000Z",
@@ -2808,7 +2701,9 @@
             "src": "ET Wealth"
           }
         ],
-        "failed": []
+        "failed": [
+          "BusinessLine Markets"
+        ]
       },
       "failCount": 0
     }
@@ -2952,7 +2847,7 @@
     }
   ],
   "health": {
-    "at": "2026-11-26T18:24:20.688Z",
+    "at": "2026-11-27T01:44:20.832Z",
     "ok": 7,
     "failing": []
   }

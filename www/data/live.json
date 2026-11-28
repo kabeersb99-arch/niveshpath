@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-28T10:52:40.020Z",
+  "updatedAt": "2026-11-28T16:51:23.963Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-28T10:52:40.020Z",
+      "fetchedAt": "2026-11-28T16:51:23.963Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-28T10:52:40.020Z",
+      "lastTriedAt": "2026-11-28T16:51:23.963Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-28T10:52:40.020Z",
+      "fetchedAt": "2026-11-28T16:51:23.963Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -80,14 +80,14 @@
           "silver999": 153275
         }
       },
-      "lastTriedAt": "2026-11-28T10:52:40.020Z",
+      "lastTriedAt": "2026-11-28T16:51:23.963Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-28T10:52:40.020Z",
+      "fetchedAt": "2026-11-28T16:51:23.963Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -1013,8 +1013,8 @@
             "option": "GROWTH Option",
             "amc": "360 ONE Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2200.0916,
-            "date": "2026-11-27"
+            "nav": 2200.8875,
+            "date": "2026-11-29"
           },
           {
             "code": "154051",
@@ -1073,8 +1073,8 @@
             "option": "Growth",
             "amc": "Bandhan Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3472.7216,
-            "date": "2026-11-27"
+            "nav": 3474.0454,
+            "date": "2026-11-29"
           },
           {
             "code": "119369",
@@ -1103,8 +1103,8 @@
             "option": "GROWTH OPTION",
             "amc": "Canara Robeco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3447.4019,
-            "date": "2026-11-27"
+            "nav": 3448.6948,
+            "date": "2026-11-29"
           },
           {
             "code": "154011",
@@ -1133,8 +1133,8 @@
             "option": "Growth",
             "amc": "DSP Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4115.6878,
-            "date": "2026-11-28"
+            "nav": 4116.4821,
+            "date": "2026-11-29"
           },
           {
             "code": "140196",
@@ -1143,8 +1143,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3720.1397,
-            "date": "2026-11-28"
+            "nav": 3720.8515,
+            "date": "2026-11-29"
           },
           {
             "code": "118577",
@@ -1153,8 +1153,8 @@
             "option": "Super Institutional Growth",
             "amc": "Franklin Templeton Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4326.6706,
-            "date": "2026-11-27"
+            "nav": 4328.3743,
+            "date": "2026-11-29"
           },
           {
             "code": "119135",
@@ -1173,8 +1173,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5648.5432,
-            "date": "2026-11-28"
+            "nav": 5649.6034,
+            "date": "2026-11-29"
           },
           {
             "code": "120197",
@@ -1183,8 +1183,8 @@
             "option": "Growth",
             "amc": "ICICI Prudential Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 425.5869,
-            "date": "2026-11-27"
+            "nav": 425.7458,
+            "date": "2026-11-29"
           },
           {
             "code": "120537",
@@ -1193,8 +1193,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3948.2852,
-            "date": "2026-11-27"
+            "nav": 3949.7795,
+            "date": "2026-11-29"
           },
           {
             "code": "139390",
@@ -1204,7 +1204,7 @@
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
             "nav": 1000,
-            "date": "2026-11-27"
+            "date": "2026-11-29"
           },
           {
             "code": "139389",
@@ -1213,8 +1213,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1871.4059,
-            "date": "2026-11-27"
+            "nav": 1872.1141,
+            "date": "2026-11-29"
           },
           {
             "code": "139388",
@@ -1224,7 +1224,7 @@
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
             "nav": 1000,
-            "date": "2026-11-27"
+            "date": "2026-11-29"
           },
           {
             "code": "139387",
@@ -1233,8 +1233,8 @@
             "option": "Growth",
             "amc": "Invesco Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1870.9859,
-            "date": "2026-11-27"
+            "nav": 1871.694,
+            "date": "2026-11-29"
           },
           {
             "code": "147157",
@@ -1253,8 +1253,8 @@
             "option": "Growth Option",
             "amc": "Jio BlackRock Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1091.1952,
-            "date": "2026-11-27"
+            "nav": 1091.6117,
+            "date": "2026-11-29"
           },
           {
             "code": "120406",
@@ -1293,8 +1293,8 @@
             "option": "Growth",
             "amc": "Kotak Mahindra Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5812.3064,
-            "date": "2026-11-28"
+            "nav": 5813.4298,
+            "date": "2026-11-29"
           },
           {
             "code": "120249",
@@ -1353,8 +1353,8 @@
             "option": "Direct Growth",
             "amc": "PGIM India Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 375.5222,
-            "date": "2026-11-28"
+            "nav": 375.596,
+            "date": "2026-11-29"
           },
           {
             "code": "120837",
@@ -1363,8 +1363,8 @@
             "option": "Growth Option",
             "amc": "quant Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 46.0258,
-            "date": "2026-11-27"
+            "nav": 46.0422,
+            "date": "2026-11-29"
           },
           {
             "code": "148512",
@@ -1403,8 +1403,8 @@
             "option": "Growth",
             "amc": "Shriram Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1135.7228,
-            "date": "2026-11-28"
+            "nav": 1135.9341,
+            "date": "2026-11-29"
           },
           {
             "code": "149664",
@@ -1413,8 +1413,8 @@
             "option": "GROWTH",
             "amc": "Sundaram Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2543.8601,
-            "date": "2026-11-28"
+            "nav": 2544.3494,
+            "date": "2026-11-29"
           },
           {
             "code": "119861",
@@ -1703,8 +1703,8 @@
             "option": "Growth",
             "amc": "Taurus Mutual Fund",
             "cat": "Nifty 50 index fund",
-            "nav": 52.5566,
-            "date": "2026-11-26"
+            "nav": 51.9971,
+            "date": "2026-11-27"
           },
           {
             "code": "120716",
@@ -2031,7 +2031,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-28T10:52:40.020Z",
+      "lastTriedAt": "2026-11-28T16:51:23.963Z",
       "failCount": 0
     },
     "yields": {
@@ -2042,8 +2042,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-28T10:52:40.020Z",
-      "fetchedAt": "2026-11-28T10:52:40.020Z",
+      "lastTriedAt": "2026-11-28T16:51:23.963Z",
+      "fetchedAt": "2026-11-28T16:51:23.963Z",
       "data": {
         "date": "2026-11-27",
         "curve": [
@@ -2189,8 +2189,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-28T10:52:40.020Z",
-      "fetchedAt": "2026-11-28T10:52:40.020Z",
+      "lastTriedAt": "2026-11-28T16:51:23.963Z",
+      "fetchedAt": "2026-11-28T16:51:23.963Z",
       "data": {
         "date": "2026-11-27",
         "usdinr": 93
@@ -2205,7 +2205,7 @@
       "expectedHours": 30,
       "ok": false,
       "mode": "auto",
-      "lastTriedAt": "2026-11-28T10:52:40.020Z",
+      "lastTriedAt": "2026-11-28T16:51:23.963Z",
       "fetchedAt": "2026-11-27T11:25:03.096Z",
       "data": {
         "drafts": [
@@ -2463,7 +2463,7 @@
           }
         ]
       },
-      "failCount": 3,
+      "failCount": 4,
       "error": "fetch failed",
       "lastGoodAt": "2026-11-27T11:25:03.096Z"
     },
@@ -2475,10 +2475,40 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-28T10:52:40.020Z",
-      "fetchedAt": "2026-11-28T10:52:40.020Z",
+      "lastTriedAt": "2026-11-28T16:51:23.963Z",
+      "fetchedAt": "2026-11-28T16:51:23.963Z",
       "data": {
         "items": [
+          {
+            "title": "How much salary hike do you need to beat inflation in India? What it means for your savings, MF SIPs, financial goals",
+            "url": "https://www.livemint.com/money/personal-finance/how-much-salary-hike-do-you-need-to-beat-inflation-in-india-what-it-means-for-your-savings-mf-sips-financial-goals-11795877535546.html",
+            "at": "2026-11-28T16:10:00.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Index Outlook: Nifty 50, Sensex can see some more dip before a rebound",
+            "url": "https://www.thehindubusinessline.com/portfolio/technical-analysis/index-outlook-some-more-dip-before-a-rebound/article71753770.ece",
+            "at": "2026-11-28T16:06:35.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Gold price forecast: Analyst spots a major bottom after 104-day cycle, sees prices hitting $10,000 by 2030",
+            "url": "https://www.livemint.com/money/personal-finance/gold-price-forecast-analyst-spots-a-major-bottom-after-104-day-cycle-sees-prices-hitting-10-000-by-2030-11795873403964.html",
+            "at": "2026-11-28T13:50:13.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Senior citizen FD rates: Suryoday Bank offers 8.5% on five-year FDs; compare SBI, HDFC and other banks",
+            "url": "https://www.livemint.com/money/personal-finance/senior-citizen-fd-rates-suryoday-bank-offers-8-5-on-five-year-fds-compare-sbi-hdfc-and-other-banks-11795869150154.html",
+            "at": "2026-11-28T12:39:31.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Gold loan stress rises as prices fall; RBI steps up monitoring of banks and NBFCs amid collateral risks",
+            "url": "https://www.livemint.com/money/personal-finance/gold-loan-stress-rises-as-prices-fall-rbi-steps-up-monitoring-of-banks-and-nbfcs-amid-collateral-risks-11795865178399.html",
+            "at": "2026-11-28T11:31:45.000Z",
+            "src": "Mint Money"
+          },
           {
             "title": "Planning to start a mutual fund SIP? 5 key steps to determine your ideal monthly investment amount; experts explain",
             "url": "https://www.livemint.com/money/personal-finance/planning-to-start-a-mutual-fund-sip-5-key-steps-to-determine-your-ideal-monthly-investment-amount-experts-explain-11795859601292.html",
@@ -2546,48 +2576,6 @@
             "src": "Mint Money"
           },
           {
-            "title": "RBI issues ATM cash withdrawal rules: Banks must alert you about monthly free transactions used; 6 key points to know",
-            "url": "https://www.livemint.com/money/personal-finance/rbi-issues-atm-cash-withdrawal-rules-banks-must-alert-you-about-monthly-free-transactions-used-6-key-points-to-know-11795842057053.html",
-            "at": "2026-11-28T05:49:19.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold, silver prices today, 28 November: Check retail rates of 24K, 22K gold, 999 silver in Delhi, Mumbai and Kolkata",
-            "url": "https://www.livemint.com/money/personal-finance/gold-silver-prices-today-28-november-check-retail-rates-of-24k-22k-gold-999-silver-in-delhi-mumbai-and-kolkata-11795842197606.html",
-            "at": "2026-11-28T05:38:17.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "8th Pay Commission: JPMorgan estimates 1.83 fitment factor, ₹7.2 lakh crore payout, including ₹4 lakh crore arrears",
-            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-jpmorgan-estimates-1-83-fitment-factor-7-2-lakh-crore-payout-including-4-lakh-crore-arrears-11795838064732.html",
-            "at": "2026-11-28T04:17:09.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "RBI issues new rules for banks to freeze suspicious accounts linked to cyber fraud, money mules; 7 key points to know",
-            "url": "https://www.livemint.com/money/personal-finance/rbi-issues-new-rules-for-banks-to-freeze-suspicious-accounts-linked-to-cyber-fraud-money-mules-7-key-points-to-know-11795835758057.html",
-            "at": "2026-11-28T04:10:24.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "8th Pay Commission's Ladakh visit puts salary hike and pay parity demands in focus; seeks replies to 33 queries",
-            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commissions-ladakh-visit-puts-salary-hike-and-pay-parity-demands-in-focus-seeks-replies-to-33-queries-11795825978414.html",
-            "at": "2026-11-28T02:53:25.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "8th Pay Commission: Can employees expect an interim report before final recommendations? Expert explains",
-            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-can-employees-expect-an-interim-report-before-final-recommendations-expert-explains-11795830698374.html",
-            "at": "2026-11-28T02:47:57.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "8th Pay Commission implementation: Why a delay until 2028 could prove costly for the Centre's finances",
-            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-implementation-why-a-delay-until-2028-could-prove-costly-for-the-centres-finances-11795827461855.html",
-            "at": "2026-11-28T01:08:53.000Z",
-            "src": "Mint Money"
-          },
-          {
             "title": "RBI Issues Amendment Directions on ‘Suspected Money Mule Accounts to Prevent Cyber-enabled Financial Frauds’",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64062",
             "at": "2026-11-27T20:45:00.000Z",
@@ -2606,40 +2594,16 @@
             "src": "RBI"
           },
           {
-            "title": "Axis Mutual Fund launches Nifty LargeMidcap 250 Index Fund; NFO open until December 11",
-            "url": "https://www.livemint.com/money/personal-finance/axis-mutual-fund-launches-nifty-largemidcap-250-index-fund-nfo-open-until-december-11-11795803141906.html",
-            "at": "2026-11-27T18:38:06.000Z",
-            "src": "Mint Money"
-          },
-          {
             "title": "Thirty First Meeting of the Standing Advisory Committee (SAC) to Review the Flow of Credit to the MSME Sector in Kolkata on November 27, 2026",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64059",
             "at": "2026-11-27T18:25:00.000Z",
             "src": "RBI"
           },
           {
-            "title": "RBI issues new ATM and card rules: What happens to your free withdrawals, extra charges and contactless payments?",
-            "url": "https://www.livemint.com/money/rbi-issues-new-atm-and-card-rules-what-happens-to-your-free-withdrawals-extra-charges-and-contactless-payments-11795803175498.html",
-            "at": "2026-11-27T18:23:38.000Z",
-            "src": "Mint Money"
-          },
-          {
             "title": "Auction of 91-Day, 182-Day and 364-Day Treasury Bills",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64058",
             "at": "2026-11-27T17:35:00.000Z",
             "src": "RBI"
-          },
-          {
-            "title": "₹1.5 crore retirement corpus: How much monthly pension can you withdraw to make it last 20 years?",
-            "url": "https://www.livemint.com/money/personal-finance/rs-1-5-crore-retirement-corpus-how-much-monthly-pension-can-you-withdraw-to-make-it-last-20-years-11795799542687.html",
-            "at": "2026-11-27T17:33:46.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold-silver ratio declines: What drives the drop, why it matters, and what it means for bullion prices",
-            "url": "https://www.livemint.com/money/personal-finance/goldsilver-ratio-declines-what-drives-the-drop-why-it-matters-and-what-it-means-for-bullion-prices-11795796256327.html",
-            "at": "2026-11-27T17:05:52.000Z",
-            "src": "Mint Money"
           },
           {
             "title": "Reserve Bank of India – Bulletin Weekly Statistical Supplement – Extract",
@@ -2750,24 +2714,6 @@
             "src": "The Hindu Business"
           },
           {
-            "title": "Five-day FPI onboarding, simpler disclosures: SEBI outlines major regulatory reforms",
-            "url": "https://www.thehindubusinessline.com/markets/five-day-fpi-onboarding-simpler-disclosures-sebi-outlines-major-regulatory-reforms/article71750196.ece",
-            "at": "2026-11-27T11:13:30.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Rupee nosedives 60 paise to settle at 92.98 against US dollar",
-            "url": "https://www.thehindubusinessline.com/markets/forex/rupee-nosedives-60-paise-to-settle-at-9298-against-us-dollar/article71750336.ece",
-            "at": "2026-11-27T10:57:11.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Sensex today | Stock Market Highlights: Sensex tumbles 989 points, Nifty slips below 25,650 as IT stocks, HDFC Bank drag",
-            "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-highlights-27-november-2026/article71746210.ece",
-            "at": "2026-11-27T10:54:58.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Result of the 3-day Variable Rate Repo (VRR) auction held on November 27, 2026",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64054",
             "at": "2026-11-27T10:25:00.000Z",
@@ -2780,27 +2726,9 @@
             "src": "RBI"
           },
           {
-            "title": "BSE Index Services gets SEBI nod as index provider",
-            "url": "https://www.thehindubusinessline.com/markets/bse-index-services-gets-sebi-nod-as-index-provider/article71749913.ece",
-            "at": "2026-11-27T09:00:16.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
-            "title": "Sensex slips, Nifty flat as IT stocks fall; metals, Titan gain",
-            "url": "https://www.thehindubusinessline.com/markets/sensex-slips-nifty-flat-as-it-stocks-fall-metals-titan-gain/article71749339.ece",
-            "at": "2026-11-27T08:49:26.000Z",
-            "src": "BusinessLine Markets"
-          },
-          {
             "title": "Rupee plunges 24 paise to 92.62 against U.S. dollar",
             "url": "https://www.thehindu.com/business/markets/rupee-plunges-24-paise-to-9262-against-us-dollar/article71749383.ece",
             "at": "2026-11-27T04:23:18.000Z",
-            "src": "The Hindu Business"
-          },
-          {
-            "title": "Yes Bank AT1 bond verdict: 60 lakh retail shareholders face ₹8,415-crore bill",
-            "url": "https://www.thehindu.com/business/yes-bank-at1-bond-verdict-60-lakh-retail-shareholders-face-8415-crore-bill/article71746924.ece",
-            "at": "2026-11-26T16:21:58.000Z",
             "src": "The Hindu Business"
           },
           {
@@ -2992,13 +2920,13 @@
     }
   ],
   "health": {
-    "at": "2026-11-28T10:52:40.020Z",
+    "at": "2026-11-28T16:51:23.963Z",
     "ok": 6,
     "failing": [
       {
         "feed": "ipo",
         "since": "2026-11-27T11:25:03.096Z",
-        "runs": 3,
+        "runs": 4,
         "error": "fetch failed"
       }
     ]

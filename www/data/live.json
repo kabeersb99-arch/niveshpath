@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-28T01:27:58.077Z",
+  "updatedAt": "2026-11-28T10:52:40.020Z",
   "feeds": {
     "smallSavings": {
       "label": "Small savings rates",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-28T01:27:58.077Z",
+      "fetchedAt": "2026-11-28T10:52:40.020Z",
       "expectedHours": 36,
       "kind": "official periodic",
       "source": "India Post, Saving Schemes page (2- and 3-year TD carried from the last notification)",
@@ -54,14 +54,14 @@
           }
         }
       ],
-      "lastTriedAt": "2026-11-28T01:27:58.077Z",
+      "lastTriedAt": "2026-11-28T10:52:40.020Z",
       "failCount": 0
     },
     "metals": {
       "label": "IBJA gold and silver",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-28T01:27:58.077Z",
+      "fetchedAt": "2026-11-28T10:52:40.020Z",
       "expectedHours": 30,
       "kind": "official, twice daily",
       "source": "India Bullion and Jewellers Association, ibjarates.com (excludes 3% GST and making charges)",
@@ -80,14 +80,14 @@
           "silver999": 153275
         }
       },
-      "lastTriedAt": "2026-11-28T01:27:58.077Z",
+      "lastTriedAt": "2026-11-28T10:52:40.020Z",
       "failCount": 0
     },
     "nav": {
       "label": "AMFI mutual fund NAVs",
       "mode": "auto",
       "ok": true,
-      "fetchedAt": "2026-11-28T01:27:58.077Z",
+      "fetchedAt": "2026-11-28T10:52:40.020Z",
       "expectedHours": 30,
       "kind": "official, end of day",
       "source": "AMFI daily NAV file",
@@ -123,8 +123,8 @@
             "option": "",
             "amc": "Angel One Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 11.407,
-            "date": "2026-11-26"
+            "nav": 11.7427,
+            "date": "2026-11-27"
           },
           {
             "code": "113434",
@@ -353,8 +353,8 @@
             "option": "",
             "amc": "Zerodha CASE Mutual Fund",
             "cat": "Gold ETF",
-            "nav": 19.1565,
-            "date": "2026-11-26"
+            "nav": 19.7292,
+            "date": "2026-11-27"
           },
           {
             "code": "120546",
@@ -483,8 +483,8 @@
             "option": "Growth",
             "amc": "DSP Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 48.9626,
-            "date": "2026-11-25"
+            "nav": 54.0804,
+            "date": "2026-11-27"
           },
           {
             "code": "154208",
@@ -573,8 +573,8 @@
             "option": "Growth",
             "amc": "HSBC Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.4791,
-            "date": "2026-11-26"
+            "nav": 8.6821,
+            "date": "2026-11-27"
           },
           {
             "code": "154297",
@@ -583,8 +583,8 @@
             "option": "IDCW",
             "amc": "HSBC Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.4791,
-            "date": "2026-11-26"
+            "nav": 8.6821,
+            "date": "2026-11-27"
           },
           {
             "code": "154298",
@@ -593,8 +593,8 @@
             "option": "Growth",
             "amc": "HSBC Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.4576,
-            "date": "2026-11-26"
+            "nav": 8.6601,
+            "date": "2026-11-27"
           },
           {
             "code": "154296",
@@ -603,8 +603,8 @@
             "option": "IDCW",
             "amc": "HSBC Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.4576,
-            "date": "2026-11-26"
+            "nav": 8.66,
+            "date": "2026-11-27"
           },
           {
             "code": "120685",
@@ -803,8 +803,8 @@
             "option": "Growth",
             "amc": "Shriram Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.3232,
-            "date": "2026-11-26"
+            "nav": 8.5446,
+            "date": "2026-11-27"
           },
           {
             "code": "154726",
@@ -813,8 +813,8 @@
             "option": "IDCWREINVESTMENT",
             "amc": "Shriram Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.3233,
-            "date": "2026-11-26"
+            "nav": 8.5447,
+            "date": "2026-11-27"
           },
           {
             "code": "154724",
@@ -823,8 +823,8 @@
             "option": "Growth",
             "amc": "Shriram Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.3163,
-            "date": "2026-11-26"
+            "nav": 8.5374,
+            "date": "2026-11-27"
           },
           {
             "code": "154728",
@@ -833,8 +833,8 @@
             "option": "REINVESTMENT",
             "amc": "Shriram Mutual Fund",
             "cat": "Gold fund of funds",
-            "nav": 8.3163,
-            "date": "2026-11-26"
+            "nav": 8.5374,
+            "date": "2026-11-27"
           },
           {
             "code": "152287",
@@ -1023,8 +1023,8 @@
             "option": "Growth",
             "amc": "Abakkus Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 105.7433,
-            "date": "2026-11-27"
+            "nav": 105.7817,
+            "date": "2026-11-29"
           },
           {
             "code": "119568",
@@ -1053,8 +1053,8 @@
             "option": "Growth Option",
             "amc": "Axis Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3201.5047,
-            "date": "2026-11-27"
+            "nav": 3202.7198,
+            "date": "2026-11-29"
           },
           {
             "code": "151833",
@@ -1063,8 +1063,8 @@
             "option": "Growth",
             "amc": "Bajaj Finserv Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1255.7312,
-            "date": "2026-11-27"
+            "nav": 1256.2052,
+            "date": "2026-11-29"
           },
           {
             "code": "118364",
@@ -1113,8 +1113,8 @@
             "option": "Growth",
             "amc": "Capitalmind Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1066.3929,
-            "date": "2026-11-27"
+            "nav": 1066.7973,
+            "date": "2026-11-29"
           },
           {
             "code": "154782",
@@ -1123,8 +1123,8 @@
             "option": "Growth",
             "amc": "Carnelian Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1006.1581,
-            "date": "2026-11-27"
+            "nav": 1006.4523,
+            "date": "2026-11-29"
           },
           {
             "code": "119125",
@@ -1133,8 +1133,8 @@
             "option": "Growth",
             "amc": "DSP Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4114.894,
-            "date": "2026-11-27"
+            "nav": 4115.6878,
+            "date": "2026-11-28"
           },
           {
             "code": "140196",
@@ -1143,8 +1143,8 @@
             "option": "Growth",
             "amc": "Edelweiss Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 3719.4284,
-            "date": "2026-11-27"
+            "nav": 3720.1397,
+            "date": "2026-11-28"
           },
           {
             "code": "118577",
@@ -1163,8 +1163,8 @@
             "option": "Growth",
             "amc": "Groww Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2789.5838,
-            "date": "2026-11-27"
+            "nav": 2790.6517,
+            "date": "2026-11-29"
           },
           {
             "code": "119091",
@@ -1173,8 +1173,8 @@
             "option": "Growth Option",
             "amc": "HDFC Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5647.4831,
-            "date": "2026-11-27"
+            "nav": 5648.5432,
+            "date": "2026-11-28"
           },
           {
             "code": "120197",
@@ -1243,8 +1243,8 @@
             "option": "Growth Option",
             "amc": "ITI Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1491.3405,
-            "date": "2026-11-27"
+            "nav": 1491.8573,
+            "date": "2026-11-29"
           },
           {
             "code": "153651",
@@ -1263,8 +1263,8 @@
             "option": "Growth Option",
             "amc": "JM Financial Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 78.4621,
-            "date": "2026-11-27"
+            "nav": 78.4924,
+            "date": "2026-11-29"
           },
           {
             "code": "148414",
@@ -1274,7 +1274,7 @@
             "amc": "JM Financial Mutual Fund",
             "cat": "Liquid fund",
             "nav": 41.4437,
-            "date": "2026-11-27"
+            "date": "2026-11-29"
           },
           {
             "code": "148413",
@@ -1284,7 +1284,7 @@
             "amc": "JM Financial Mutual Fund",
             "cat": "Liquid fund",
             "nav": 41.4437,
-            "date": "2026-11-27"
+            "date": "2026-11-29"
           },
           {
             "code": "119766",
@@ -1293,8 +1293,8 @@
             "option": "Growth",
             "amc": "Kotak Mahindra Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5811.1831,
-            "date": "2026-11-27"
+            "nav": 5812.3064,
+            "date": "2026-11-28"
           },
           {
             "code": "120249",
@@ -1303,8 +1303,8 @@
             "option": "Growth",
             "amc": "LIC Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 5221.284,
-            "date": "2026-11-27"
+            "nav": 5223.3183,
+            "date": "2026-11-29"
           },
           {
             "code": "139538",
@@ -1333,8 +1333,8 @@
             "option": "Growth Option",
             "amc": "Nippon India Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 7044.2259,
-            "date": "2026-11-27"
+            "nav": 7046.9338,
+            "date": "2026-11-29"
           },
           {
             "code": "143269",
@@ -1343,8 +1343,8 @@
             "option": "Growth",
             "amc": "PPFAS Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1590.5536,
-            "date": "2026-11-28"
+            "nav": 1590.8535,
+            "date": "2026-11-29"
           },
           {
             "code": "138299",
@@ -1353,8 +1353,8 @@
             "option": "Direct Growth",
             "amc": "PGIM India Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 375.4485,
-            "date": "2026-11-27"
+            "nav": 375.5222,
+            "date": "2026-11-28"
           },
           {
             "code": "120837",
@@ -1403,8 +1403,8 @@
             "option": "Growth",
             "amc": "Shriram Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1135.5118,
-            "date": "2026-11-27"
+            "nav": 1135.7228,
+            "date": "2026-11-28"
           },
           {
             "code": "149664",
@@ -1413,8 +1413,8 @@
             "option": "GROWTH",
             "amc": "Sundaram Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 2543.3712,
-            "date": "2026-11-27"
+            "nav": 2543.8601,
+            "date": "2026-11-28"
           },
           {
             "code": "119861",
@@ -1423,8 +1423,8 @@
             "option": "Growth Option",
             "amc": "Tata Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 4540.6556,
-            "date": "2026-11-27"
+            "nav": 4542.362,
+            "date": "2026-11-29"
           },
           {
             "code": "153883",
@@ -1433,8 +1433,8 @@
             "option": "Growth",
             "amc": "The Wealth Company Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1074.2134,
-            "date": "2026-11-27"
+            "nav": 1074.6319,
+            "date": "2026-11-29"
           },
           {
             "code": "148841",
@@ -1443,8 +1443,8 @@
             "option": "Growth",
             "amc": "Trust Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1392.1026,
-            "date": "2026-11-27"
+            "nav": 1392.629,
+            "date": "2026-11-29"
           },
           {
             "code": "153570",
@@ -1453,8 +1453,8 @@
             "option": "GROWTH",
             "amc": "Unifi Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 1087.2343,
-            "date": "2026-11-27"
+            "nav": 1087.5773,
+            "date": "2026-11-29"
           },
           {
             "code": "119303",
@@ -1473,8 +1473,8 @@
             "option": "Growth",
             "amc": "UTI Mutual Fund",
             "cat": "Liquid fund",
-            "nav": 471.7957,
-            "date": "2026-11-28"
+            "nav": 471.886,
+            "date": "2026-11-29"
           },
           {
             "code": "145971",
@@ -1843,8 +1843,8 @@
             "option": "",
             "amc": "Angel One Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 5.6567,
-            "date": "2026-11-26"
+            "nav": 5.9202,
+            "date": "2026-11-27"
           },
           {
             "code": "150610",
@@ -2013,8 +2013,8 @@
             "option": "",
             "amc": "Zerodha CASE Mutual Fund",
             "cat": "Silver ETF",
-            "nav": 14.7871,
-            "date": "2026-11-26"
+            "nav": 15.4914,
+            "date": "2026-11-27"
           }
         ],
         "newSchemes": [
@@ -2031,7 +2031,7 @@
           }
         ]
       },
-      "lastTriedAt": "2026-11-28T01:27:58.077Z",
+      "lastTriedAt": "2026-11-28T10:52:40.020Z",
       "failCount": 0
     },
     "yields": {
@@ -2042,8 +2042,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-28T01:27:58.077Z",
-      "fetchedAt": "2026-11-28T01:27:58.077Z",
+      "lastTriedAt": "2026-11-28T10:52:40.020Z",
+      "fetchedAt": "2026-11-28T10:52:40.020Z",
       "data": {
         "date": "2026-11-27",
         "curve": [
@@ -2189,8 +2189,8 @@
       "expectedHours": 80,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-28T01:27:58.077Z",
-      "fetchedAt": "2026-11-28T01:27:58.077Z",
+      "lastTriedAt": "2026-11-28T10:52:40.020Z",
+      "fetchedAt": "2026-11-28T10:52:40.020Z",
       "data": {
         "date": "2026-11-27",
         "usdinr": 93
@@ -2205,7 +2205,7 @@
       "expectedHours": 30,
       "ok": false,
       "mode": "auto",
-      "lastTriedAt": "2026-11-28T01:27:58.077Z",
+      "lastTriedAt": "2026-11-28T10:52:40.020Z",
       "fetchedAt": "2026-11-27T11:25:03.096Z",
       "data": {
         "drafts": [
@@ -2463,7 +2463,7 @@
           }
         ]
       },
-      "failCount": 2,
+      "failCount": 3,
       "error": "fetch failed",
       "lastGoodAt": "2026-11-27T11:25:03.096Z"
     },
@@ -2475,10 +2475,112 @@
       "expectedHours": 12,
       "ok": true,
       "mode": "auto",
-      "lastTriedAt": "2026-11-28T01:27:58.077Z",
-      "fetchedAt": "2026-11-28T01:27:58.077Z",
+      "lastTriedAt": "2026-11-28T10:52:40.020Z",
+      "fetchedAt": "2026-11-28T10:52:40.020Z",
       "data": {
         "items": [
+          {
+            "title": "Planning to start a mutual fund SIP? 5 key steps to determine your ideal monthly investment amount; experts explain",
+            "url": "https://www.livemint.com/money/personal-finance/planning-to-start-a-mutual-fund-sip-5-key-steps-to-determine-your-ideal-monthly-investment-amount-experts-explain-11795859601292.html",
+            "at": "2026-11-28T10:32:07.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Amid gold prices crashing and rebounding, should you buy ornaments or coins? What jewellers rarely tell buyers - Details",
+            "url": "https://www.livemint.com/money/amid-gold-prices-crashing-and-rebounding-should-you-buy-ornaments-or-coins-what-jewellers-rarely-tell-buyers-details-11795859238650.html",
+            "at": "2026-11-28T09:53:27.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Groww investor sees ₹12.7 lakh mutual fund portfolio shrink to ₹84,508; it's not market loss: How she won court relief",
+            "url": "https://www.livemint.com/money/personal-finance/groww-investor-sees-12-7-lakh-mutual-fund-portfolio-shrink-to-84-508-its-not-market-loss-how-she-won-court-relief-11795856899610.html",
+            "at": "2026-11-28T09:51:30.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Gold prices near $3,650: US jobs data and inflation may decide whether bullion’s rebound can last through early December",
+            "url": "https://www.livemint.com/money/personal-finance/gold-prices-near-3-650-us-jobs-data-and-inflation-may-decide-whether-bullion-s-rebound-can-last-through-early-december-11795858042985.html",
+            "at": "2026-11-28T09:42:25.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Bond market to stay cautious ahead of RBI policy: Equirus",
+            "url": "https://www.thehindubusinessline.com/markets/bond-market-to-stay-cautious-ahead-of-rbi-policy-equirus/article71753946.ece",
+            "at": "2026-11-28T09:12:33.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Gold ETF vs Nifty 50 ETF: Which investment has delivered higher returns over 1, 3, 5 years? Check top-performing schemes",
+            "url": "https://www.livemint.com/money/personal-finance/gold-etf-vs-nifty-50-etf-which-investment-has-delivered-higher-returns-over-1-3-5-years-check-top-performing-schemes-11795854701255.html",
+            "at": "2026-11-28T09:02:25.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Gold and silver prices recover, but Fed rate-hike risks persist: Where could prices head in six months? Expert views",
+            "url": "https://www.livemint.com/money/personal-finance/gold-and-silver-prices-recover-but-fed-rate-hike-risks-persist-where-could-prices-head-in-six-months-expert-views-11795851043267.html",
+            "at": "2026-11-28T08:24:46.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Today’s Gold Rate, November 28: Check Gold Rates in Delhi, Mumbai, Chennai",
+            "url": "https://www.thehindubusinessline.com/gold-rate-today/gold-price-today-in-delhi-mumbai-kolkata-chennai-bengaluru-hyderabad-pune-gold-rates-metro-cities-november-28-2026/article71753948.ece",
+            "at": "2026-11-28T08:21:31.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Today’s Gold Rate: Latest gold prices in Coimbatore, Nagpur, Jaipur & other cities",
+            "url": "https://www.thehindubusinessline.com/gold-rate-today/gold-price-today-in-coimbatore-nagpur-visakhapatnam-surat-jaipur-lucknow-chandigarh-gold-rates-other-cities-november-28-2026/article71753949.ece",
+            "at": "2026-11-28T08:21:21.000Z",
+            "src": "BusinessLine Markets"
+          },
+          {
+            "title": "Gold loan borrowers face higher LTV risk as prices fall: Why lenders may seek additional gold or part-payment",
+            "url": "https://www.livemint.com/money/personal-finance/gold-loan-borrowers-face-higher-ltv-risk-as-prices-fall-why-lenders-may-seek-additional-gold-or-partpayment-11795852828525.html",
+            "at": "2026-11-28T08:20:48.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Gold rally puzzles investors: Prices rise despite stronger dollar and higher yields; expert sees ₹1.50 lakh in one year",
+            "url": "https://www.livemint.com/money/personal-finance/gold-rally-puzzles-investors-prices-rise-despite-stronger-dollar-and-higher-yields-expert-sees-1-50-lakh-in-one-year-11795846655349.html",
+            "at": "2026-11-28T07:22:02.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "RBI issues ATM cash withdrawal rules: Banks must alert you about monthly free transactions used; 6 key points to know",
+            "url": "https://www.livemint.com/money/personal-finance/rbi-issues-atm-cash-withdrawal-rules-banks-must-alert-you-about-monthly-free-transactions-used-6-key-points-to-know-11795842057053.html",
+            "at": "2026-11-28T05:49:19.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "Gold, silver prices today, 28 November: Check retail rates of 24K, 22K gold, 999 silver in Delhi, Mumbai and Kolkata",
+            "url": "https://www.livemint.com/money/personal-finance/gold-silver-prices-today-28-november-check-retail-rates-of-24k-22k-gold-999-silver-in-delhi-mumbai-and-kolkata-11795842197606.html",
+            "at": "2026-11-28T05:38:17.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "8th Pay Commission: JPMorgan estimates 1.83 fitment factor, ₹7.2 lakh crore payout, including ₹4 lakh crore arrears",
+            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-jpmorgan-estimates-1-83-fitment-factor-7-2-lakh-crore-payout-including-4-lakh-crore-arrears-11795838064732.html",
+            "at": "2026-11-28T04:17:09.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "RBI issues new rules for banks to freeze suspicious accounts linked to cyber fraud, money mules; 7 key points to know",
+            "url": "https://www.livemint.com/money/personal-finance/rbi-issues-new-rules-for-banks-to-freeze-suspicious-accounts-linked-to-cyber-fraud-money-mules-7-key-points-to-know-11795835758057.html",
+            "at": "2026-11-28T04:10:24.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "8th Pay Commission's Ladakh visit puts salary hike and pay parity demands in focus; seeks replies to 33 queries",
+            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commissions-ladakh-visit-puts-salary-hike-and-pay-parity-demands-in-focus-seeks-replies-to-33-queries-11795825978414.html",
+            "at": "2026-11-28T02:53:25.000Z",
+            "src": "Mint Money"
+          },
+          {
+            "title": "8th Pay Commission: Can employees expect an interim report before final recommendations? Expert explains",
+            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-can-employees-expect-an-interim-report-before-final-recommendations-expert-explains-11795830698374.html",
+            "at": "2026-11-28T02:47:57.000Z",
+            "src": "Mint Money"
+          },
           {
             "title": "8th Pay Commission implementation: Why a delay until 2028 could prove costly for the Centre's finances",
             "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-implementation-why-a-delay-until-2028-could-prove-costly-for-the-centres-finances-11795827461855.html",
@@ -2546,10 +2648,16 @@
             "src": "RBI"
           },
           {
-            "title": "How much gold should you hold in your portfolio? World Gold Council suggests changing allocation with economic cycles",
-            "url": "https://www.livemint.com/money/personal-finance/how-much-gold-should-you-hold-in-your-portfolio-world-gold-council-suggests-changing-allocation-with-economic-cycles-11795791116964.html",
-            "at": "2026-11-27T16:02:01.000Z",
-            "src": "Mint Money"
+            "title": "RBI Governor pegs AI’s potential economic value to MSMEs at $685 billion, urges faster adoption",
+            "url": "https://www.thehindu.com/business/Industry/rbi-governor-pegs-ais-potential-economic-value-to-msmes-at-685-billion-urges-faster-adoption/article71751516.ece",
+            "at": "2026-11-27T16:46:37.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "RBI cuts daily CRR maintenance to 90%, to unlock over ₹40,000 crore",
+            "url": "https://www.thehindu.com/business/Economy/rbi-cuts-daily-crr-maintenance-to-90-to-unlock-over-40000-crore/article71751043.ece",
+            "at": "2026-11-27T16:20:17.000Z",
+            "src": "The Hindu Business"
           },
           {
             "title": "SEBI grants Tata Steel extension till December 8 for detailed public statement on APL Apollo Tubes open offer",
@@ -2576,12 +2684,6 @@
             "src": "BusinessLine Markets"
           },
           {
-            "title": "Equity, gold or debt funds: Where should investors put their money in 2027?",
-            "url": "https://www.livemint.com/money/personal-finance/equity-gold-or-debt-funds-where-should-investors-put-their-money-in-2027-11795787957919.html",
-            "at": "2026-11-27T15:04:55.000Z",
-            "src": "Mint Money"
-          },
-          {
             "title": "Government Stock - Auction Results: Cut-off",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64055",
             "at": "2026-11-27T14:10:00.000Z",
@@ -2594,12 +2696,6 @@
             "src": "BusinessLine Markets"
           },
           {
-            "title": "Bought gold or silver at peak? ETFs plunge up to 62% as late investors bear the brunt of sharp price correction",
-            "url": "https://www.livemint.com/money/personal-finance/bought-gold-or-silver-at-peak-etfs-plunge-up-to-62-as-late-investors-bear-the-brunt-of-sharp-correction-11795782657816.html",
-            "at": "2026-11-27T13:54:50.000Z",
-            "src": "Mint Money"
-          },
-          {
             "title": "SEBI allows FPIs to trade in physically settled commodity derivatives from June 2027",
             "url": "https://www.thehindubusinessline.com/markets/commodities/sebi-allows-fpis-to-trade-in-physically-settled-commodity-derivatives-from-june-2027/article71751009.ece",
             "at": "2026-11-27T13:53:28.000Z",
@@ -2610,18 +2706,6 @@
             "url": "https://www.thehindubusinessline.com/markets/svatantra-microfin-gets-sebi-nod-to-proceed-with-3000-crore-ipo/article71750593.ece",
             "at": "2026-11-27T13:43:37.000Z",
             "src": "BusinessLine Markets"
-          },
-          {
-            "title": "RBI consolidates 25 card payment circulars into one framework; what debit and credit card users should know",
-            "url": "https://www.livemint.com/money/personal-finance/rbi-consolidates-25-card-payment-circulars-into-one-framework-what-debit-and-credit-card-users-should-know-11795785543520.html",
-            "at": "2026-11-27T13:43:37.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Man sold parents' gold to buy a house, faced ₹60 lakh tax additions: What taxpayers should know",
-            "url": "https://www.livemint.com/money/man-sold-parents-gold-to-buy-a-house-faced-rs-60-lakh-tax-additions-what-taxpayers-should-know-11795785468079.html",
-            "at": "2026-11-27T13:35:58.000Z",
-            "src": "Mint Money"
           },
           {
             "title": "SEBI’s much-needed warning against using grey market premium",
@@ -2642,18 +2726,6 @@
             "src": "BusinessLine Markets"
           },
           {
-            "title": "An iPhone for 10g gold, a car for 100g: This entrepreneur wants you to rethink how you measure wealth",
-            "url": "https://www.livemint.com/money/an-iphone-for-10g-gold-a-car-for-100g-this-entrepreneur-wants-you-to-rethink-how-you-measure-wealth-11795781101894.html",
-            "at": "2026-11-27T12:54:57.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "Gold prices under pressure as Russia sells 72 tonnes of reserves in 10 months. What investors should know",
-            "url": "https://www.livemint.com/money/personal-finance/gold-prices-under-pressure-as-russia-sells-72-tonnes-of-reserves-in-10-months-what-investors-should-know-11795783368609.html",
-            "at": "2026-11-27T12:50:49.000Z",
-            "src": "Mint Money"
-          },
-          {
             "title": "India’s forex reserves fall by $4.44 billion to $700.90 billion, RBI data shows",
             "url": "https://www.thehindubusinessline.com/markets/forex/indias-forex-reserves-fall-by-444-billion-to-70090-billion-rbi-data-shows/article71750664.ece",
             "at": "2026-11-27T12:43:14.000Z",
@@ -2666,22 +2738,16 @@
             "src": "BusinessLine Markets"
           },
           {
-            "title": "Gold prices: Is the correction over? HSBC warns bullion could test $3,400 as global equity markets remain under pressure",
-            "url": "https://www.livemint.com/money/personal-finance/gold-prices-is-the-correction-over-hsbc-warns-bullion-could-test-3-400-as-global-equity-markets-remain-under-pressure-11795779330096.html",
-            "at": "2026-11-27T11:47:58.000Z",
-            "src": "Mint Money"
+            "title": "Rupee nosedives 60 paise to settle at 92.98 against U.S. dollar",
+            "url": "https://www.thehindu.com/business/Industry/rupee-nosedives-60-paise-to-settle-at-9298-against-us-dollar/article71750458.ece",
+            "at": "2026-11-27T11:58:57.000Z",
+            "src": "The Hindu Business"
           },
           {
-            "title": "Old Pension Scheme: Gauhati HC says delayed appointments can't deprive teachers of pension benefits",
-            "url": "https://www.livemint.com/money/old-pension-scheme-gauhati-hc-says-delayed-appointments-cant-deprive-teachers-of-pension-benefits-11795778498013.html",
-            "at": "2026-11-27T11:40:13.000Z",
-            "src": "Mint Money"
-          },
-          {
-            "title": "5 timeless investing lessons from Warren Buffett’s 1977 letter decoding how inflation eats into equity returns",
-            "url": "https://www.livemint.com/money/personal-finance/5-timeless-investing-lessons-from-warren-buffett-s-1977-letter-decoding-how-inflation-eats-into-equity-returns-11795777925021.html",
-            "at": "2026-11-27T11:25:50.000Z",
-            "src": "Mint Money"
+            "title": "Stock markets snap two-day rally; Sensex tanks 989 points amid profit booking",
+            "url": "https://www.thehindu.com/business/markets/stock-markets-snap-two-day-rally-sensex-tanks-989-points-amid-profit-booking/article71750358.ece",
+            "at": "2026-11-27T11:35:47.000Z",
+            "src": "The Hindu Business"
           },
           {
             "title": "Five-day FPI onboarding, simpler disclosures: SEBI outlines major regulatory reforms",
@@ -2702,12 +2768,6 @@
             "src": "BusinessLine Markets"
           },
           {
-            "title": "What is Gold ETF-to-jewellery bridge buying strategy? Should you opt for it amid falling gold prices? Experts explain",
-            "url": "https://www.livemint.com/money/personal-finance/what-is-gold-etf-to-jewellery-bridge-buying-strategy-should-you-opt-for-it-amid-falling-gold-prices-experts-explain-11795771887395.html",
-            "at": "2026-11-27T10:34:18.000Z",
-            "src": "Mint Money"
-          },
-          {
             "title": "Result of the 3-day Variable Rate Repo (VRR) auction held on November 27, 2026",
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64054",
             "at": "2026-11-27T10:25:00.000Z",
@@ -2718,12 +2778,6 @@
             "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64053",
             "at": "2026-11-27T10:10:00.000Z",
             "src": "RBI"
-          },
-          {
-            "title": "Gold, equity ETFs or debt mutual funds: How should investors balance their portfolios in 2027? Expert shares allocation",
-            "url": "https://www.livemint.com/money/personal-finance/gold-equity-etfs-or-debt-mutual-funds-how-should-investors-balance-their-portfolios-in-2027-expert-shares-allocation-11795768188827.html",
-            "at": "2026-11-27T09:19:03.000Z",
-            "src": "Mint Money"
           },
           {
             "title": "BSE Index Services gets SEBI nod as index provider",
@@ -2738,10 +2792,16 @@
             "src": "BusinessLine Markets"
           },
           {
-            "title": "Titan shares gain 1.4% as gold rebounds from 1-year low",
-            "url": "https://www.thehindubusinessline.com/markets/stock-markets/titan-shares-gain-14-as-gold-rebounds-from-1-year-low/article71749907.ece",
-            "at": "2026-11-27T08:43:45.000Z",
-            "src": "BusinessLine Markets"
+            "title": "Rupee plunges 24 paise to 92.62 against U.S. dollar",
+            "url": "https://www.thehindu.com/business/markets/rupee-plunges-24-paise-to-9262-against-us-dollar/article71749383.ece",
+            "at": "2026-11-27T04:23:18.000Z",
+            "src": "The Hindu Business"
+          },
+          {
+            "title": "Yes Bank AT1 bond verdict: 60 lakh retail shareholders face ₹8,415-crore bill",
+            "url": "https://www.thehindu.com/business/yes-bank-at1-bond-verdict-60-lakh-retail-shareholders-face-8415-crore-bill/article71746924.ece",
+            "at": "2026-11-26T16:21:58.000Z",
+            "src": "The Hindu Business"
           },
           {
             "title": "I am retired and live on rent. Am I eligible for any income tax deduction or exemption like HRA?",
@@ -2780,9 +2840,7 @@
             "src": "ET Wealth"
           }
         ],
-        "failed": [
-          "The Hindu Business"
-        ]
+        "failed": []
       },
       "failCount": 0
     }
@@ -2934,13 +2992,13 @@
     }
   ],
   "health": {
-    "at": "2026-11-28T01:27:58.077Z",
+    "at": "2026-11-28T10:52:40.020Z",
     "ok": 6,
     "failing": [
       {
         "feed": "ipo",
         "since": "2026-11-27T11:25:03.096Z",
-        "runs": 2,
+        "runs": 3,
         "error": "fetch failed"
       }
     ]
